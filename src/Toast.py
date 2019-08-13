@@ -238,7 +238,7 @@ class Toast(object):
         (Assumes a list of dict items)
         '''
 
-        print ('getListItemByWeightedRandom', theList)
+        #print ('getListItemByWeightedRandom', theList)
 
         #get total sum of values we are weighting so we can calc proper rand percs
         sum = 0
@@ -253,7 +253,7 @@ class Toast(object):
         for i, item in enumerate(theList):
             runSum += item[key]
             if rand <= runSum:
-                print ('weighted random chosen: ', i, ' of ' , len(theList))
+                #print ('weighted random chosen: ', i, ' of ' , len(theList))
                 return item
 
         #should not get here

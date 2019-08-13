@@ -7,7 +7,7 @@ The thinking for this approach is that the complexity of the problem and number 
 # Basic algorithm
 
 - From program data, create full list of of program blocks to schedule.
-- Divide blocks array into groups by size/difficulty (cadence, runs, full, 3/4, 1/2, 1/4) and consider the blocks in decreasing order of difficulty.
+- Divide blocks array into groups by size/difficulty (cadence, runs, full, 3/4, 1/2, 1/4). Schedule the groups in decreasing order of difficulty, but randomize the blocks in each group.
 - For each block:
     - Get list of all remaining valid dates slots and score each one based on several factors and sort by score.
     - Pick a random slot from the top scores (ie weighted randomness with cutoff)

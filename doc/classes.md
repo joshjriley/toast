@@ -1,11 +1,11 @@
 
-# Toast: Main program that builds schedule    
+# Toast: Base class and start point
 
-This class contains the argument parser and code to create the correct type of Toast subclass depending on which method you want to use.  It also contains common functions and variables for all Toast subclasses.
+This class contains common functions and variables for all Toast subclasses, so as to standardize the inputs and outputs of the program.  It also contains the command line parser and code to instantiate the correct type of Toast subclass depending on which method you want to use.  A basic list of member vars and functions:
 
     semester            str     Semester code  (ie 2019B)
-    programs            dict    Dictionary of approved proposal program objects
-    schedules           list    List of scheduled observing blocks for each telescope
+    programs            dict    Collection of approved proposal program objects (main input)
+    schedules           list    List of scheduled observing blocks for each telescope (main output)
     getSemesterDates()          Get start and end dates of semester
     createDatesList()           Get list of consecutive dates in date range
     getMoonDates()              Get list of moon brightness periods in date range
@@ -20,7 +20,7 @@ This class contains the argument parser and code to create the correct type of T
     createSchedule()            This subclass start point for solving schedule creation problem
 
 
-# Program: An approved proposal
+# Program: An approved proposal needing to be scheduled
 
 A program is an approved proposal that we need to schedule.  A program consists of one or more instrument requests each needing one more more nights of a particular portion of the night.  Thus, dirived from a program is a list of scheduled observing Blocks that consitute a single unit that must be slotted into the schedule.  Programs also contain information on preferred dates and dates to avoid.
 

@@ -52,3 +52,22 @@
 - date specific requests (should be cadence but they put them in as classical)
 - minimize instrument reconfigs, schedule runs (nirspao minimize runs, consolidate esi runs)
 - machine learning?
+
+
+# Special considerations:
+- If there are more requests than space in calendar:
+    - Shorten full nights and 3/4 nights to fit in remaining quarter nights.
+    - Shorten full nights to fit in remaining half nights.
+
+- If there is remaining space in calendar:
+    - Bump up quarter nights to half nights first.
+    - Bump up halfs and 3/4 to fulls.
+
+
+# Factors in scoring a schedule
+- number of instrument switches
+- visit is on preferred/acceptable/neutral/bad date
+- visit date and time has priority target visible
+(todo: finish this)
+
+

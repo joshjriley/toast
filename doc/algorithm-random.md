@@ -1,10 +1,5 @@
-# Data queries needed
-- Program data
-- Telescope and instrument shutdown dates
-- Moon phase date ranges
+# Basic algorithm
 
-
-# Basic algorithym
 - From program data, create full list of of program blocks to schedule. Example:
     [
         {progId:'C123', 'instr':'MOSFIRE', portion:1.0, run:1}
@@ -13,26 +8,11 @@
     ]
    (Runs: Use 'run' to indicate a run of consecutive nights. Some instruments prefer runs.)
    (Cadence: Defines repititive scheduling from a start date.)
-- Divide blocks array into groups by size/difficulty (cadence, runs, full, 3/4, 1/2, 1/4). 
+- Divide blocks array into groups by size/difficulty (cadence, runs, full, 3/4, 1/2, 1/4) and consider the blocks in decreasing order of difficulty.
 - For each block:
     - Get list of all remaining valid dates slots and score each one based on several factors and sort by score.
     - Pick a random slot from the top scores (ie weighted randomness with cutoff)
-- Score schedule
-- Repeat X number of times and take best or repeat until high score converges
+- Score schedule (Getting the scoring right is very important)
+- Repeat X number of times and take best schedule or repeat until high score converges
 
-
-# Special considerations:
-- If there are more requests than space in calendar:
-    - Shorten full nights and 3/4 nights to fit in remaining quarter nights.
-    - Shorten full nights to fit in remaining half nights.
-
-- If there is remaining space in calendar:
-    - Bump up quarter nights to half nights first.
-    - Bump up halfs and 3/4 to fulls.
-
-
-# Factors in scoring a schedule
-- number of instrument switches
-- visit is on preferred/acceptable/neutral/bad date
-- visit date and time has priority target visible
 

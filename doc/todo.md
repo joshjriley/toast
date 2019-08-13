@@ -42,3 +42,13 @@
     http://ssd.jpl.nasa.gov/horizons.cgi
 - Check out SPIE paper: "Research on schedulers for astronomical observatories"
 
+- Ability to pre-lock certain program assignments before builder is run (ie manual intervention)
+- Meetings/PI conflicts
+- Holidays
+- PI particularness
+- Offline instruments (sometimes defined, sometimes Carolyn picks downtime
+- Segex defined dates
+- special requests
+- date specific requests (should be cadence but they put them in as classical)
+- minimize instrument reconfigs, schedule runs (nirspao minimize runs, consolidate esi runs)
+- machine learning?

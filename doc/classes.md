@@ -108,7 +108,7 @@ NOTE: In lieu of a full OOP approach, we will just define this data as a JSON ob
 
 # Block: An observing period for a program on a particular night
 
-Blocks are discrete schedulable chunks of a program to be slotted into the schedul.  For instruments that prefer runs, use 'num' to group together consecutive blocks.
+Blocks are discrete schedulable chunks of a program to be slotted into the schedule.  For instruments that prefer runs, use 'num' to group together consecutive blocks.
 
 
     {

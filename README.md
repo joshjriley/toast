@@ -9,7 +9,7 @@ PIs submit proposals before each semester for each of their observing programs. 
 
 Other considerations come into play such as holidays, telescope shutdowns, instrument downtime, scientific conferences, special requests, etc.
 
-The output will be a schedule which is a list of Visits (ie night program portions) that fill the schedule for each observing night in the semester date range.  A Visit will consist simply of the following data for each record:
+The output will be a schedule which is a list of observing Blocks (ie night program portions) that fill the schedule for each observing night in the semester date range.  A Block will consist simply of the following data for each record:
 - Date
 - Portion of Night
 - Instrument

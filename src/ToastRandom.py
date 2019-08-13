@@ -14,6 +14,8 @@ class ToastRandom(Toast):
 
     def createSchedule(self):
 
+        #todo: Loop and create X number of schedules and take the one that scores best.
+
         #get list of program portions blocks
         blocks = self.getRandomProgramBlocks(self.programs)
 

@@ -14,16 +14,6 @@ class ToastRandom(Toast):
 
     def createSchedule(self):
 
-        #get needed input data
-        self.datesList      = self.createDatesList(self.startDate, self.endDate)
-        self.moonDates      = self.getMoonDates(self.startDate, self.endDate)
-        self.programs       = self.getPrograms(self.semester)
-        self.telShutdowns   = self.getTelescopeShutdowns(self.semester)
-        self.instrShutdowns = self.getInstrumentShutdowns(self.semester)
-
-        #create new blank schedule
-        self.initSchedule()
-
         #get list of program portions blocks
         blocks = self.getRandomProgramBlocks(self.programs)
 

@@ -15,18 +15,18 @@
 
 
 # questions: 
-- What to do if proposal hours are greater/less than semester hours?
+- From experience, what order do you consider first when scheduling (ie cadence first, then instr runs, full, 3/4, 1/2, 1/4)?
+- How do we typically spread out non-cadence nights?  Try for optimize for preferences and priority targets first?  Otherwise, spread out across semester?
+- What is a good strategy for creating instrument runs?
+- Do we want to minimize instrument switches?  Are some instrument switches more painful than others?  ie K1DM3 switching vs ?
+- Do we typically avoid scheduling the same program on the same night (ie two 1/2 nights, same night , same program)
 - Are cadence observations strict with start date and delta and nightPart?
 - Having trouble understanding cadence input form?  What is Range input? How do you requests every nth night?
-- From experience, what order of blocks do you consider first when scheduling (ie cadence first, instr runs, big to small)?
-- Do we typically avoid scheduling the same program with 0.25 or 0.5 portions on the same night?
-- How do we typically spread out non-cadence nights?  Try for optimize for preferences and priority targets first?  Otherwise, spread out across semester?
-- Which instrumnents need runs?  
-- What is a good strategy for creating runs?
-- Do we want to minimize instrument switches?  Are some instrument switches more painful than others?  ie K1DM3 switching vs ?
-- How are priority targets considered?
-- Are "Dates to Avoid" considered an absolute no? 
+- How are priority targets and their ranking considered?  Just try and optimize airmass for each in a weighted fashion?
+- Are "Dates to Avoid" considered an absolute no?  How is the 'X' in moon phase preferences considered?  Only coupled in relation to Dates to Avoid?
 - Should we change form to say "X = cannot observe (please list specific dates in the Date to Avoid section below)"
+- What to do if proposal hours are greater/less than semester hours?
+- What are common special requests that we could avert with some additional form inputs?
 
 
 

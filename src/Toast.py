@@ -13,15 +13,31 @@ class Toast(object):
     
         #input class vars
         self.semester = semester
+
+        #member class vars
+        self.schedule = None
   
+
+    def start(self):
+
         #calc start and end date
         self.startDate, self.endDate = self.getSemesterDates(self.semester)
+
+        #get needed input data
+        self.datesList      = self.createDatesList(self.startDate, self.endDate)
+        self.moonDates      = self.getMoonDates(self.startDate, self.endDate)
+        self.programs       = self.getPrograms(self.semester)
+        self.telShutdowns   = self.getTelescopeShutdowns(self.semester)
+        self.instrShutdowns = self.getInstrumentShutdowns(self.semester)
+
+        #create new blank schedule
+        self.initSchedule()
         
         #todo: check if they total proposed hours exceeds semester hours
 
         #do it
         self.schedule = self.createSchedule()
-  
+
     
     #abstract methods that must be implemented by inheriting classes
     def createSchedule(self) : raise NotImplementedError("Abstract method not implemented!")
@@ -97,7 +113,7 @@ class Toast(object):
             self.schedules[key]["nights"] = {}
             for date in self.datesList:
                 night = {}
-                night['visits'] = []
+                night['slots'] = []
                 self.schedules[key]['nights'][date] = night
       
 
@@ -110,16 +126,16 @@ class Toast(object):
             'progId': progId,
             'instr': instr
         }
-        night['visits'].append(data)
+        night['slots'].append(data)
 
 
     def isSlotAvailable(self, telNum, date, index, portion):
 
-        #see if slot requested overlaps any visit assignments
+        #see if slot requested overlaps any slot assignments
         night = self.schedules[telNum]['nights'][date]
-        for visit in night['visits']:
-            vStart = visit['index']
-            vEnd = vStart + int(visit['portion'] / config.kPortionPerc) - 1
+        for slot in night['slots']:
+            vStart = slot['index']
+            vEnd = vStart + int(slot['portion'] / config.kPortionPerc) - 1
             sStart = index 
             sEnd = sStart + int(portion / config.kPortionPerc) - 1
 
@@ -193,7 +209,7 @@ class Toast(object):
 
         #TODO: finish this psuedocode
         gInstrSwitchesFactor = -1.5
-        gVisitPrefFactor = {'P': 10,  'A': 5,  'N': 0,  'X': -20}
+        gslotPrefFactor = {'P': 10,  'A': 5,  'N': 0,  'X': -20}
 
         score = 0
         for night in schedule:
@@ -202,10 +218,10 @@ class Toast(object):
             numInstrSwitches = night.getNumInstrSwitches()
             score += numInstrSwitches * gInstrSwitchesFactor
 
-            # for each visit, alter score based on assignment preference [P,A,N,X]
-            for visit in night:
-                pref = self.getAssignmentPref(visit.date, visit.progId)
-                score += gVisitPrefFactor[pref]
+            # for each slot, alter score based on assignment preference [P,A,N,X]
+            for slot in night:
+                pref = self.getAssignmentPref(slot.date, slot.progId)
+                score += gslotPrefFactor[pref]
 
             #todo: alter score based on priority RA/DEC list?
 
@@ -257,6 +273,8 @@ class Toast(object):
             2019-08-02  K2  [     N111     ][     C222     ]
             2019-08-02  K2  [ N123 ][ C123 ][ U123 ][ K123 ]
         '''        
+        import pprint
+        pprint.pprint(self.schedules)
         print ('Semester: ', self.semester)
         for schedKey, schedule in self.schedules.items():            
             schedName = config.kTelescopes[schedKey]['name']
@@ -270,10 +288,10 @@ class Toast(object):
                 if date in self.telShutdowns[schedKey]:
                     print(" *** SHUTDOWN ***")
 
-                visits = night['visits']
-                visitsSorted = sorted(visits, key=lambda k: k['index'], reverse=False)
-                for visit in visitsSorted:
-                    print(f"{visit['index']}\t{visit['portion']}\t{visit['progId']}\t{visit['instr']}")
+                slots = night['slots']
+                slotsSorted = sorted(slots, key=lambda k: k['index'], reverse=False)
+                for slot in slotsSorted:
+                    print(f"{slot['index']}\t{slot['portion']}\t{slot['progId']}\t{slot['instr']}")
     
     
 
@@ -299,6 +317,7 @@ if __name__ == "__main__":
         sys.exit(0)
 
     #result
+    toast.start()
     toast.printSchedule()
     
     

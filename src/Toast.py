@@ -273,8 +273,6 @@ class Toast(object):
             2019-08-02  K2  [     N111     ][     C222     ]
             2019-08-02  K2  [ N123 ][ C123 ][ U123 ][ K123 ]
         '''        
-        import pprint
-        pprint.pprint(self.schedules)
         print ('Semester: ', self.semester)
         for schedKey, schedule in self.schedules.items():            
             schedName = config.kTelescopes[schedKey]['name']

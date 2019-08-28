@@ -15,18 +15,27 @@
 
 
 # questions: 
-- From experience, what order do you consider first when scheduling (ie cadence first, then instr runs, full, 3/4, 1/2, 1/4)?
-- How do we typically spread out non-cadence nights?  Try for optimize for preferences and priority targets first?  Otherwise, spread out across semester?
-- What is a good strategy for creating instrument runs?
-- Do we want to minimize instrument switches?  Are some instrument switches more painful than others?  ie K1DM3 switching vs ?
-- Do we typically avoid scheduling the same program on the same night (ie two 1/2 nights, same night , same program)
-- Are cadence observations strict with start date and delta and nightPart?
-- Having trouble understanding cadence input form?  What is Range input? How do you requests every nth night?
-- How are priority targets and their ranking considered?  Just try and optimize airmass for each in a weighted fashion?
-- Are "Dates to Avoid" considered an absolute no?  How is the 'X' in moon phase preferences considered?  Only coupled in relation to Dates to Avoid?
-- Should we change form to say "X = cannot observe (please list specific dates in the Date to Avoid section below)"
-- What to do if proposal hours are greater/less than semester hours?
-- What are common special requests that we could avert with some additional form inputs?
+- The "Cadence" form seems like a misnomer since it is really only for selecting exact dates.  Should it say "Cadence/Exact Dates"?
+
+
+# notes:
+- Consider date-critical observations first (ie cadence and those that were given a date by TAC). 
+- Consider dark time requests first, then grey, then bright. (Since bright requests can obviously use dark time)
+- Always go for "P" and only use "A" if necessary.  Flag for review if we have to use neutral.  "X" must avoid.  This places more emphasis on ordering the blocks.
+- For each classical program instrument entry, if the number of "P"s is one or two back-to-back this typically represents a cluster of observations that we should schedule consecutively.  If there are may "P"s spread out, this *may* indicate to spread the program out though typically they will use multiple instrument entries to indicate a different cluster.  We want to minimize observer travel requirements.
+- Reconfig is more important than instrument runs, though runs are nice too.  Reconfig compat chart: https://www2.keck.hawaii.edu/observing/instrumentaccess.html
+- Cadence form input dates are absolutely strict.  
+- concept of "paired nights" where it is requested (special) that two different hald-night programs could be scheduled on the same night.  
+- Probably need a pre-definitions file for special cases like 'paired nights' etc.
+- Priority targets is sort of duplicate info b/c they probably did the work in the preferences section.  However, we can use it anyway for weighting the block scoring in case it is needed.
+- "X" in moon phase is an absolute no as is DatesToAvoid.
+- Engineering can be used as the final blocks filler.  Well unless there are full engineering nights.  Hmm, maybe then put them at the end of each subgroup grouped by size if we know the size of engineering nights.
+- We may end up short in the end by a night or two.  That is ok.  Leave those unscheduled.
+
+# coversheet form changes needed:
+- Make it clear not to put dates in the special request field. (parse for them and warn)?
+- Make it clear that HST is used throughout.  Where was it that Carolyn said UT date was used?
+
 
 
 

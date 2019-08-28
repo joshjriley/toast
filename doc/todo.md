@@ -6,19 +6,21 @@
 - real queries for program data and shutdown data
 - real query for moon phases
 - Airmass, target scoring
-- force small portions to different days?
+- force small portions to different days (ie avoid same program on same night for 1/2 and 1/4)
 - Deal with instrument base config info (ie HIRESr and HIRESb are both base HIRES)
 - Deal with multi instrument selection (ie NIRC2+NIRESPEC)
-- Whats up with Subaru instrument selects?
-- Should we assume if they put an "X" in a moon date range but didn't list individual dates below that they don't want the entire date range?
 - Consider a sequential approach instead of random?
 
 
 # questions: 
 - The "Cadence" form seems like a misnomer since it is really only for selecting exact dates.  Should it say "Cadence/Exact Dates"?
+- Whats up with Subaru instrument selects?
 
 
 # notes:
+- NOTE: We are not loading info from coversheet db tables but rather from post-TAC tables.
+- 
+- TACs can specify specific dates and/or portion of night and these should be followed if at all possible.
 - Consider date-critical observations first (ie cadence and those that were given a date by TAC). 
 - Consider dark time requests first, then grey, then bright. (Since bright requests can obviously use dark time)
 - Always go for "P" and only use "A" if necessary.  Flag for review if we have to use neutral.  "X" must avoid.  This places more emphasis on ordering the blocks.
@@ -31,6 +33,10 @@
 - "X" in moon phase is an absolute no as is DatesToAvoid.
 - Engineering can be used as the final blocks filler.  Well unless there are full engineering nights.  Hmm, maybe then put them at the end of each subgroup grouped by size if we know the size of engineering nights.
 - We may end up short in the end by a night or two.  That is ok.  Leave those unscheduled.
+- If you have to use a grey time for a half night, make sure to consider the DE or DL.
+- Full nights sometimes need to be split, but rate.
+- Program rankings are independent numerical systems per TAC (letter code?)
+
 
 # coversheet form changes needed:
 - Make it clear not to put dates in the special request field. (parse for them and warn)?

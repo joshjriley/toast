@@ -1,0 +1,19 @@
+{
+    "keckOperations":
+    {
+        "server" : "",
+        "user"   : "",
+        "pwd "   : "",
+        "port"   : 0,
+        "type"   : ""
+    },
+    "proposals":
+    {
+        "server" : "",
+        "user"   : "",
+        "pwd"    : "",
+        "port"   : 0,
+        "type"   : ""
+    }
+}
+

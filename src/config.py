@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 #todo: these could go in each kTelescopes
 kPortionPerc = 0.25
 kNumPortions = int(1 / kPortionPerc)

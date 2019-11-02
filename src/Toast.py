@@ -1,8 +1,9 @@
+import os
+import yaml
 import json
 import argparse
 import pandas
 from random import randrange, shuffle, random
-import config
 from ToastRandom import *
 from datetime import datetime as dt
 
@@ -15,17 +16,20 @@ class Toast(object):
         self.semester = semester
 
         #member class vars
+        self.config = None
         self.schedule = None
   
 
     def start(self):
+
+        self.loadConfig()
 
         #calc start and end date
         self.startDate, self.endDate = self.getSemesterDates(self.semester)
 
         #get needed input data
         self.datesList      = self.createDatesList(self.startDate, self.endDate)
-        self.moonDates      = self.getMoonDates(self.startDate, self.endDate)
+        self.moonPhases      = self.getMoonPhases()
         self.programs       = self.getPrograms(self.semester)
         self.telShutdowns   = self.getTelescopeShutdowns(self.semester)
         self.instrShutdowns = self.getInstrumentShutdowns(self.semester)
@@ -37,6 +41,17 @@ class Toast(object):
 
         #do it
         self.schedule = self.createSchedule()
+
+
+    def loadConfig(self):
+
+        #load config
+        configFile = 'config.yaml'
+        assert os.path.isfile(configFile), f"ERROR: config file '{configFile}'' does not exist.  Exiting."
+        with open(configFile) as f: self.config = yaml.safe_load(f)        
+
+        #do some basic calcs from config
+        self.numPortions = int(1 / self.config['portionPerc'])
 
     
     #abstract methods that must be implemented by inheriting classes
@@ -70,7 +85,7 @@ class Toast(object):
 
         #todo: temp: test data one random shutdown date per telescope
         shutdowns = {}
-        for telNum in config.kTelescopes:
+        for telNum in self.config['telescopes']:
             shutdowns[telNum] = []
             index = randrange(0, len(self.datesList))
             randDate = self.datesList[index]
@@ -79,7 +94,7 @@ class Toast(object):
 
         #query for known telescope shutdowns
 #        shutdowns = {}
-#        for telNum in config.kTelescopes:
+#        for telNum in self.config['telescopes']:
 #            shutdowns[telNum] = []
 #            #todo: query
 #        return shutdowns
@@ -89,7 +104,7 @@ class Toast(object):
 
         #todo: temp: test data one random shutdown date per telescope
         shutdowns = {}
-        for instr in config.kInstruments:
+        for instr in self.config['instruments']:
             shutdowns[instr] = []
             index = randrange(0, len(self.datesList))
             randDate = self.datesList[index]
@@ -98,7 +113,7 @@ class Toast(object):
 
         #query for known telescope shutdowns
 #        shutdowns = {}
-#        for instr in config.kInstruments:
+#        for instr in self.config['instruments']:
 #            shutdowns[instr] = []
 #            #todo: query
 #        return shutdowns
@@ -108,7 +123,7 @@ class Toast(object):
 
         #create blank schedule for each telescope
         self.schedules = {}
-        for key, tel in config.kTelescopes.items():
+        for key, tel in self.config['telescopes'].items():
             self.schedules[key] = {}
             self.schedules[key]["nights"] = {}
             for date in self.datesList:
@@ -135,9 +150,9 @@ class Toast(object):
         night = self.schedules[telNum]['nights'][date]
         for slot in night['slots']:
             vStart = slot['index']
-            vEnd = vStart + int(slot['portion'] / config.kPortionPerc) - 1
+            vEnd = vStart + int(slot['portion'] / self.config['portionPerc']) - 1
             sStart = index 
-            sEnd = sStart + int(portion / config.kPortionPerc) - 1
+            sEnd = sStart + int(portion / self.config['portionPerc']) - 1
 
             if (sStart >= vStart and sStart <= vEnd) or (sEnd >= vStart and sEnd <=vEnd):
                 return False
@@ -153,55 +168,38 @@ class Toast(object):
         return dates
 
 
-    def getMoonDates(self, startDate, endDate):
+    #######################################################################
+    # MOON PHASE FUNCTIONS
+    #######################################################################
 
-        #todo: temp: test data
-        dates = [
-            ['2019-08-01', 'D'],
-            ['2019-08-05', 'G-DL'],
-            ['2019-08-10', 'B'],
-            ['2019-08-21', 'G-DE'],
-            ['2019-08-26', 'D'],
-            ['2019-09-03', 'G-DL'],
-            ['2019-09-08', 'B'],
-            ['2019-09-20', 'G-DE'],
-            ['2019-09-24', 'D'],
-            ['2019-10-03', 'G-DL'],
-            ['2019-10-07', 'B'],
-            ['2019-10-19', 'G-DE'],
-            ['2019-10-23', 'D'],
-            ['2019-11-01', 'G-DL'],
-            ['2019-11-06', 'B'],
-            ['2019-11-17', 'G-DE'],
-            ['2019-11-21', 'D'],
-            ['2019-12-01', 'G-DL'],
-            ['2019-12-06', 'B'],
-            ['2019-12-16', 'G-DE'],
-            ['2019-12-21', 'D'],
-            ['2019-12-30', 'G-DL'],
-            ['2020-01-05', 'B'],
-            ['2020-01-15', 'G-DE'],
-            ['2020-01-19', 'D'],
-            ['2020-01-29', 'G-DL'],
-        ]
+    def getMoonPhases(self):
+        if self.config['moonPhasesFile']: 
+            return self.getMoonPhasesFromFile(self.config['moonPhasesFile'])
+        else:
+            return self.getMoonPhasesFromDB(self.startDate, self.endDate)
+
+    def getMoonPhasesFromDB(self, startDate, endDate):
+        #todo: optional query for moon dates.  Note: No such table yet.
+        assert False, "getMoonPhasesFromDB not implemented!"
+
+    def getMoonPhasesFromFile(self, filepath):
+        assert os.path.isfile(filepath), f"ERROR: getMoonPhasesFromFile: file '{filepath}'' does not exist.  Exiting."
+        with open(filepath) as f: dates = yaml.safe_load(f)        
         return dates
 
-        #todo: query or calc moon dates
-
-
     def getMoonDatePreference(self, date, progId, instr):
-
+        '''
+        Find moon phase by date and use same index to look up moon phase preference for program+instr
+        '''
+        pref = None
         date = dt.strptime(date, "%Y-%m-%d")
-
-        #start with second date and loop until not less than date
-        for index in range(0, len(self.moonDates)-1):
-            mDateEnd   = self.moonDates[index+1][0]
-            mDateEnd = dt.strptime(mDateEnd, "%Y-%m-%d")
-            if date < mDateEnd:
+        for index, mp in enumerate(self.moonPhases):
+            phaseStart = dt.strptime(mp['start'], "%Y-%m-%d")
+            phaseEnd   = dt.strptime(mp['end'],   "%Y-%m-%d")
+            if phaseStart <= date <= phaseEnd:
+                moonPrefs = self.programs[progId]['instruments'][instr]['moonPrefs']
+                pref = moonPrefs[index]
                 break
-
-        moonPrefs = self.programs[progId]['instruments'][instr]['moonPrefs']
-        pref = moonPrefs[index]
         return pref
 
       
@@ -275,7 +273,7 @@ class Toast(object):
         '''        
         print ('Semester: ', self.semester)
         for schedKey, schedule in self.schedules.items():            
-            schedName = config.kTelescopes[schedKey]['name']
+            schedName = self.config['telescopes'][schedKey]['name']
             print (f'\nSchedule for {schedName}:')
             print (f'--------------------------')
 

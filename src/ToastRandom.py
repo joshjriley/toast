@@ -1,7 +1,6 @@
 from Toast import *
 from random import randrange, shuffle, random
 import math
-import config
 
 
 class ToastRandom(Toast):
@@ -48,7 +47,7 @@ class ToastRandom(Toast):
                     block['instr']   = instr
                     block['progId']  = progId
                     block['portion'] = progInstr['portion']
-                    block['telNum']  = config.kInstruments[instr]['telNum']
+                    block['telNum']  = self.config['instruments'][instr]['telNum']
                     block['num']     = 1
                     block['runSize'] = block['portion'] * block['num']
                     blocks.append(block)
@@ -78,7 +77,7 @@ class ToastRandom(Toast):
         #for each portion in each date, create a little slot object to track its fitness score
         block['slots'] = []
         for date in self.datesList:
-            for pIndex in range(0, config.kNumPortions):
+            for pIndex in range(0, self.numPortions):
                 slot = {}
                 slot['date']  = date
                 slot['index'] = pIndex
@@ -99,7 +98,7 @@ class ToastRandom(Toast):
             slot['score'] = 0
 
             #check for block length versus portion available length
-            portionRemain = 1 - (slot['index'] * config.kPortionPerc)
+            portionRemain = 1 - (slot['index'] * self.config['portionPerc'])
             if (block['portion'] > portionRemain):
                 slot['score'] = 0
                 # print ("\tTOO LONG")
@@ -134,7 +133,8 @@ class ToastRandom(Toast):
 
             #add preference score
             pref = self.getMoonDatePreference(slot['date'], block['progId'], block['instr'])
-            slot['score'] += config.kMoonDatePrefScore[pref]
+            print (slot['date'], block['progId'], block['instr'], pref)
+            slot['score'] += self.config['moonDatePrefScore'][pref]
 
             #add priority target score
             slot['score'] += self.getTargetScore(slot['date'], block['progId'], slot['index'], block['portion'])
@@ -162,7 +162,7 @@ class ToastRandom(Toast):
         max = slotsSorted[0]['score']
         for slot in slotsSorted:
             perc = slot['score'] / max
-            if perc < (1 - config.kSlotScoreTopPerc): continue
+            if perc < (1 - self.config['slotScoreTopPerc']): continue
             finalSlots.append(slot)
 
         #pick weighted random item

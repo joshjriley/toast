@@ -1,0 +1,21 @@
+# Database connection config information
+# Edit and save as config_db.live.yaml
+{
+    "keckOperations":
+    {
+        "server" : "",
+        "user"   : "",
+        "pwd "   : "",
+        "port"   : 0,
+        "type"   : ""
+    },
+    "proposals":
+    {
+        "server" : "",
+        "user"   : "",
+        "pwd"    : "",
+        "port"   : 0,
+        "type"   : ""
+    }
+}
+

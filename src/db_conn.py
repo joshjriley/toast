@@ -1,5 +1,5 @@
 import os
-import json
+import yaml
 
 # import psycopg2
 # from psycopg2.extras import RealDictCursor
@@ -32,7 +32,7 @@ class db_conn(object):
 
         #parse config file
         assert os.path.isfile(configFile), f"ERROR: config file '{configFile}'' does not exist.  Exiting."
-        with open(configFile) as f: self.config = json.load(f)
+        with open(configFile) as f: self.config = yaml.safe_load(f)
 
 
     def connect(self, database):

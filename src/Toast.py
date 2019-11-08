@@ -53,7 +53,7 @@ class Toast(object):
         with open(configFile) as f: self.config = yaml.safe_load(f)        
 
         #do some basic calcs from config
-        self.numPortions = int(1 / self.config['portionPerc'])
+        self.numSlots = int(1 / self.config['slotPerc'])
 
     
 
@@ -176,27 +176,27 @@ class Toast(object):
                 self.schedules[key]['nights'][date] = night
       
 
-    def assignToSchedule(self, tel, date, index, portion, progId, instr):
+    def assignToSchedule(self, tel, date, index, size, progId, instr):
         schedule = self.schedules[tel]
         night = schedule['nights'][date]
         data = {
             'index': index,
-            'portion': portion,
+            'size': size,
             'progId': progId,
             'instr': instr
         }
         night['slots'].append(data)
 
 
-    def isSlotAvailable(self, tel, date, index, portion):
+    def isSlotAvailable(self, tel, date, index, size):
 
         #see if slot requested overlaps any slot assignments
         night = self.schedules[tel]['nights'][date]
         for slot in night['slots']:
             vStart = slot['index']
-            vEnd = vStart + int(slot['portion'] / self.config['portionPerc']) - 1
+            vEnd = vStart + int(slot['size'] / self.config['slotPerc']) - 1
             sStart = index 
-            sEnd = sStart + int(portion / self.config['portionPerc']) - 1
+            sEnd = sStart + int(size / self.config['slotPerc']) - 1
 
             if (sStart >= vStart and sStart <= vEnd) or (sEnd >= vStart and sEnd <=vEnd):
                 return False
@@ -271,7 +271,7 @@ class Toast(object):
 
             #todo: alter score based on priority RA/DEC list?
 
-            #todo: can a program get a portion of night greater or less than requested?
+            #todo: can a block get a size greater or less than requested?
 
             #todo: score based on minimal runs for instruments that want runs
 
@@ -339,7 +339,7 @@ class Toast(object):
                 slots = night['slots']
                 slotsSorted = sorted(slots, key=lambda k: k['index'], reverse=False)
                 for slot in slotsSorted:
-                    print(f"{slot['index']}\t{slot['portion']}\t{slot['progId']}\t{slot['instr']}")
+                    print(f"{slot['index']}\t{slot['size']}\t{slot['progId']}\t{slot['instr']}")
 
 
     def getSemesterDates(self, semester):

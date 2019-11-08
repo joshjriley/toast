@@ -18,7 +18,7 @@
     
     #Minimal block size
     #todo: these could go in each telescopes
-    "portionPerc": 0.25,
+    "slotPerc": 0.25,
 
 
     #######################################################################

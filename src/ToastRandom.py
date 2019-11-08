@@ -30,14 +30,14 @@ class ToastRandom(Toast):
             self.assignToSchedule(block['tel'], 
                                   slot['date'], 
                                   slot['index'], 
-                                  block['portion'], 
+                                  block['size'], 
                                   block['progId'],
                                   block['instr'])
 
 
     def createProgramBlocks(self, programs):
 
-        #For each program, get all program portion objects (ie blocks)
+        #For each program, get all schedulable blocks
         #todo: for instruments that prefer runs, use 'num' to group together consecutive blocks
         blocks = []
         for progId, program in programs.items():
@@ -47,10 +47,10 @@ class ToastRandom(Toast):
                     block = {}
                     block['instr']   = instr
                     block['progId']  = progId
-                    block['portion'] = progInstr['portion']
+                    block['size']    = progInstr['size']
                     block['tel']     = self.instruments[instr]['tel']
                     block['num']     = 1
-                    block['runSize'] = block['portion'] * block['num']
+                    block['runSize'] = block['size'] * block['num']
                     blocks.append(block)
                     print (block)
         return blocks
@@ -80,10 +80,10 @@ class ToastRandom(Toast):
 
     def initBlockSlots(self, block):
 
-        #for each portion in each date, create a little slot object to track its fitness score
+        #for each sized slot in each date, create a little slot object to track its fitness score
         block['slots'] = []
         for date in self.datesList:
-            for pIndex in range(0, self.numPortions):
+            for pIndex in range(0, self.numSlots):
                 slot = {}
                 slot['date']  = date
                 slot['index'] = pIndex
@@ -94,7 +94,7 @@ class ToastRandom(Toast):
 
     def scoreBlockSlots(self, block):
         
-        #todo: should we prevent small portions on the same program from being scheduled on the same night? 
+        #todo: should we prevent small sizes on the same program from being scheduled on the same night? 
 
         #For each slot, score it from 0 to 1 based on several factors
         for slot in block['slots']:
@@ -103,9 +103,9 @@ class ToastRandom(Toast):
             #default score of 0
             slot['score'] = 0
 
-            #check for block length versus portion available length
-            portionRemain = 1 - (slot['index'] * self.config['portionPerc'])
-            if (block['portion'] > portionRemain):
+            #check for block length versus size available length
+            sizeRemain = 1 - (slot['index'] * self.config['slotPerc'])
+            if (block['size'] > sizeRemain):
                 # print ("\tTOO LONG")
                 slot['score'] = 0
                 continue
@@ -123,7 +123,7 @@ class ToastRandom(Toast):
                 continue
 
             #check for assigned
-            if not self.isSlotAvailable(block['tel'], slot['date'], slot['index'], block['portion']):
+            if not self.isSlotAvailable(block['tel'], slot['date'], slot['index'], block['size']):
                 slot['score'] = 0
                 # print ("\tOVERLAP")
                 continue
@@ -141,12 +141,12 @@ class ToastRandom(Toast):
             slot['score'] += self.config['moonDatePrefScore'][pref]
 
             #add priority target score
-            slot['score'] += self.getTargetScore(slot['date'], block['progId'], slot['index'], block['portion'])
+            slot['score'] += self.getTargetScore(slot['date'], block['progId'], slot['index'], block['size'])
 
             # print (f"\tscore = {slot['score']}")
 
 
-    def getTargetScore(self, date, progId, index, portion):
+    def getTargetScore(self, date, progId, index, size):
 
         #todo: find out how well this date time range overlaps with all priority targets' airmass and give score
         return 0

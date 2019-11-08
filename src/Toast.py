@@ -29,10 +29,12 @@ class Toast(object):
 
         #get needed input data
         self.datesList      = self.createDatesList(self.startDate, self.endDate)
-        self.moonPhases      = self.getMoonPhases()
+        self.telescopes     = self.getTelescopes()
+        self.instruments    = self.getInstruments()
+        self.moonPhases     = self.getMoonPhases()
         self.programs       = self.getPrograms(self.semester)
-        self.telShutdowns   = self.getTelescopeShutdowns(self.semester)
-        self.instrShutdowns = self.getInstrumentShutdowns(self.semester)
+        self.telShutdowns   = self.getTelescopeShutdowns()
+        self.instrShutdowns = self.getInstrumentShutdowns()
 
         #create new blank schedule
         self.initSchedule()
@@ -54,76 +56,118 @@ class Toast(object):
         self.numPortions = int(1 / self.config['portionPerc'])
 
     
-    #abstract methods that must be implemented by inheriting classes
+
+    #######################################################################
+    # ABSTRACT METHODS
+    #######################################################################
     def createSchedule(self) : raise NotImplementedError("Abstract method not implemented!")
 
 
-    def getSemesterDates(self, semester):
-        #todo: calc from semester
-        # return '2019-08-01', '2019-08-01'
-        return '2019-08-01', '2019-08-12'
-        return '2019-08-01', '2020-01-31'
+
+    #######################################################################
+    # INPUT DATA FUNCTIONS
+    #######################################################################
+
+    def getTelescopes(self):
+
+        data = None
+        if 'telescopesFile' in self.config: 
+            fp = self.config['telescopesFile']
+            assert os.path.isfile(fp), f"ERROR: getTelescopes: file '{fp}'' does not exist.  Exiting."
+            with open(fp) as f: data = yaml.safe_load(f)        
+        else:
+            #todo: optional query.  Note: No such table yet.
+            assert False, "ERROR: getTelescopes: DB retrieve not implemented!"
+
+        #convert to dict indexed by primary key
+        data = self.convertDictArrayToDict(data, 'tel')
+        return data
+
+
+    def getInstruments(self):
+
+        data = None
+        if 'instrumentsFile' in self.config: 
+            fp = self.config['instrumentsFile']
+            assert os.path.isfile(fp), f"ERROR: getInstruments: file '{fp}'' does not exist.  Exiting."
+            with open(fp) as f: data = yaml.safe_load(f)        
+        else:
+            #todo: optional query.  Note: No such table yet.
+            assert False, "ERROR: getInstruments: DB retrieve not implemented!"
+
+        #convert to dict indexed by primary key
+        data = self.convertDictArrayToDict(data, 'instr')
+        return data
 
 
     def getPrograms(self, semester):
 
-        #todo: generate random data for testing?
-
-        #todo: temp: get test data for now
-        with open('../test/test-data-programs.json') as f:
-            data = json.load(f)
+        data = None
+        if 'programsFile' in self.config: 
+            fp = self.config['programsFile']
+            assert os.path.isfile(fp), f"ERROR: getPrograms: file '{fp}'' does not exist.  Exiting."
+            with open(fp) as f: data = yaml.safe_load(f)        
+        else:
+            #todo: optional query.  Note: No such table yet.
+            assert False, "ERROR: getPrograms: DB retrieve not implemented!"
         return data
-        
-        #todo: query proposals database for all approved programs for semester
-        #todo: query for all the other auxilliary info needed
-        # query = f"select * from ClassicalInformation_TAC where semester='{semester}' and DelFlag=0"
-        # data = dbConn.query(query)
-        # return data
-  
-
-    def getTelescopeShutdowns(self, semester):
-
-        #todo: temp: test data one random shutdown date per telescope
-        shutdowns = {}
-        for telNum in self.config['telescopes']:
-            shutdowns[telNum] = []
-            index = randrange(0, len(self.datesList))
-            randDate = self.datesList[index]
-            shutdowns[telNum].append(randDate)
-        return shutdowns
-
-        #query for known telescope shutdowns
-#        shutdowns = {}
-#        for telNum in self.config['telescopes']:
-#            shutdowns[telNum] = []
-#            #todo: query
-#        return shutdowns
 
 
-    def getInstrumentShutdowns(self, semester):
+    def getTelescopeShutdowns(self):
 
-        #todo: temp: test data one random shutdown date per telescope
-        shutdowns = {}
-        for instr in self.config['instruments']:
-            shutdowns[instr] = []
-            index = randrange(0, len(self.datesList))
-            randDate = self.datesList[index]
-            shutdowns[instr].append(randDate)
-        return shutdowns
+        data = None
+        if self.config['telShutdownsFile']: 
+            fp = self.config['telShutdownsFile']
+            assert os.path.isfile(fp), f"ERROR: getTelescopeShutdowns: file '{fp}'' does not exist.  Exiting."
+            with open(fp) as f: data = yaml.safe_load(f)        
+        else:
+            #todo: optional query.  Note: No such table yet.
+            assert False, "ERROR: getTelescopeShutdowns: DB retrieve not implemented!"
 
-        #query for known telescope shutdowns
-#        shutdowns = {}
-#        for instr in self.config['instruments']:
-#            shutdowns[instr] = []
-#            #todo: query
-#        return shutdowns
+        #convert to dict indexed by keys
+        data = self.convertDictArrayToArrayDict(data, 'tel', 'date')
+        return data
 
+    def isTelShutdown(self, tel, date):
+        if tel in self.telShutdowns: 
+            shutdownDates = self.telShutdowns[tel]
+            if date in shutdownDates:
+                return True
+        return False
+
+
+    def getInstrumentShutdowns(self):
+
+        data = None
+        if self.config['instrShutdownsFile']: 
+            fp = self.config['instrShutdownsFile']
+            assert os.path.isfile(fp), f"ERROR: getInstrumentShutdowns: file '{fp}'' does not exist.  Exiting."
+            with open(fp) as f: data = yaml.safe_load(f)        
+        else:
+            #todo: optional query.  Note: No such table yet.
+            assert False, "ERROR: getInstrumentShutdowns: DB retrieve not implemented!"
+
+        #convert to dict indexed by keys
+        data = self.convertDictArrayToArrayDict(data, 'instr', 'date')
+        return data
+
+    def isInstrShutdown(self, instr, date):
+        if instr in self.instrShutdowns: 
+            shutdownDates = self.instrShutdowns[instr]
+            if date in shutdownDates:
+                return True
+        return False
+
+
+    #######################################################################
+    # SCHEDULE FUNCTIONS
+    #######################################################################
 
     def initSchedule(self):
 
         #create blank schedule for each telescope
         self.schedules = {}
-        for key, tel in self.config['telescopes'].items():
+        for key, tel in self.telescopes.items():
             self.schedules[key] = {}
             self.schedules[key]["nights"] = {}
             for date in self.datesList:
@@ -132,8 +176,8 @@ class Toast(object):
                 self.schedules[key]['nights'][date] = night
       
 
-    def assignToSchedule(self, telNum, date, index, portion, progId, instr):
-        schedule = self.schedules[telNum]
+    def assignToSchedule(self, tel, date, index, portion, progId, instr):
+        schedule = self.schedules[tel]
         night = schedule['nights'][date]
         data = {
             'index': index,
@@ -144,10 +188,10 @@ class Toast(object):
         night['slots'].append(data)
 
 
-    def isSlotAvailable(self, telNum, date, index, portion):
+    def isSlotAvailable(self, tel, date, index, portion):
 
         #see if slot requested overlaps any slot assignments
-        night = self.schedules[telNum]['nights'][date]
+        night = self.schedules[tel]['nights'][date]
         for slot in night['slots']:
             vStart = slot['index']
             vEnd = vStart + int(slot['portion'] / self.config['portionPerc']) - 1
@@ -174,23 +218,23 @@ class Toast(object):
 
     def getMoonPhases(self):
         if self.config['moonPhasesFile']: 
-            return self.getMoonPhasesFromFile(self.config['moonPhasesFile'])
+            fp = self.config['moonPhasesFile']
+            assert os.path.isfile(fp), f"ERROR: getMoonPhases: file '{fp}'' does not exist.  Exiting."
+            with open(fp) as f: data = yaml.safe_load(f)        
+            return data
         else:
-            return self.getMoonPhasesFromDB(self.startDate, self.endDate)
-
-    def getMoonPhasesFromDB(self, startDate, endDate):
-        #todo: optional query for moon dates.  Note: No such table yet.
-        assert False, "getMoonPhasesFromDB not implemented!"
-
-    def getMoonPhasesFromFile(self, filepath):
-        assert os.path.isfile(filepath), f"ERROR: getMoonPhasesFromFile: file '{filepath}'' does not exist.  Exiting."
-        with open(filepath) as f: dates = yaml.safe_load(f)        
-        return dates
+            #todo: optional query.  Note: No such table yet.
+            assert False, "ERROR: getMoonPhases: DB retrieve not implemented!"
 
     def getMoonDatePreference(self, date, progId, instr):
         '''
         Find moon phase by date and use same index to look up moon phase preference for program+instr
         '''
+
+        #todo: temp
+        print ("getMoonDatePreference broken")
+        return "N"
+
         pref = None
         date = dt.strptime(date, "%Y-%m-%d")
         for index, mp in enumerate(self.moonPhases):
@@ -202,6 +246,10 @@ class Toast(object):
                 break
         return pref
 
+
+    #######################################################################
+    # SCORING FUNCTIONS
+    #######################################################################
       
     def scoreSchedule(self, schedule):
 
@@ -229,6 +277,10 @@ class Toast(object):
 
             return score
 
+
+    #######################################################################
+    # UTILITY FUNCTIONS
+    #######################################################################
 
     def getListItemByWeightedRandom(theList, key):
         '''
@@ -258,7 +310,7 @@ class Toast(object):
         return None
 
 
-    def printSchedule(self, telNum=None, format='txt'):
+    def printSchedule(self, tel=None, format='txt'):
         '''
         Print out a schedule in text or html.
         
@@ -273,7 +325,7 @@ class Toast(object):
         '''        
         print ('Semester: ', self.semester)
         for schedKey, schedule in self.schedules.items():            
-            schedName = self.config['telescopes'][schedKey]['name']
+            schedName = self.telescopes[schedKey]['name']
             print (f'\nSchedule for {schedName}:')
             print (f'--------------------------')
 
@@ -281,13 +333,40 @@ class Toast(object):
                 night = schedule['nights'][date]
                 print(f"==={date}===")
 
-                if date in self.telShutdowns[schedKey]:
+                if self.isTelShutdown(schedKey, date):
                     print(" *** SHUTDOWN ***")
 
                 slots = night['slots']
                 slotsSorted = sorted(slots, key=lambda k: k['index'], reverse=False)
                 for slot in slotsSorted:
                     print(f"{slot['index']}\t{slot['portion']}\t{slot['progId']}\t{slot['instr']}")
+
+
+    def getSemesterDates(self, semester):
+        #todo: calc from semester
+        # return '2019-08-01', '2019-08-01'
+        return '2019-08-01', '2019-08-12'
+        return '2019-08-01', '2020-01-31'
+
+
+    def convertDictArrayToDict(self, data, pKey):
+        data2 = {}
+        for d in data:
+            key = d[pKey]
+            assert key not in data2, f"ERROR: {pKey} is not unique.  Aborting."
+            data2[key] = d
+        return data2
+
+  
+    def convertDictArrayToArrayDict(self, data, key1, key2):
+        data2 = {}
+        for d in data:
+            if d[key1] not in data2: 
+                data2[d[key1]] = []
+            data2[d[key1]].append(d[key2])
+        return data2
+
+
     
     
 

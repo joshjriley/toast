@@ -2,7 +2,14 @@
     #######################################################################
     # DATA INPUTS
     #######################################################################
-    "moonPhasesFile": '../test/test-data-moon-phases-2019B.json',
+    "telescopesFile"     : '../test/test-data-telescopes-2019B.json',
+    "instrumentsFile"    : '../test/test-data-instruments-2019B.json',
+    "moonPhasesFile"     : '../test/test-data-moon-phases-2019B.json',
+    "telShutdownsFile"   : '../test/test-data-tel-shutdowns-2019B.json',
+    "instrShutdownsFile" : '../test/test-data-instr-shutdowns-2019B.json',
+    "programsFile"       : '../test/test-data-programs-2019B.json',
+#    "blocksFile"         : '../test/test-data-blocks-2019B.json',
+
 
 
     #######################################################################
@@ -13,35 +20,12 @@
     #todo: these could go in each telescopes
     "portionPerc": 0.25,
 
-    #telescopes
-    "telescopes":
-    {
-        1: {"name": "Keck 1"},
-        2: {"name": "Keck 2"}
-    },
-
-    #instruments
-    "instruments":
-    {
-        "HIRESb":    {"telNum": 1, "doRuns": False},
-        "HIRESr":    {"telNum": 1, "doRuns": False},
-        "LRIS-ADC":  {"telNum": 1, "doRuns": False},
-        "LRISp-ADC": {"telNum": 1, "doRuns": False},
-        "MOSFIRE":   {"telNum": 1, "doRuns": False},
-        "OSIRIS":    {"telNum": 1, "doRuns": False},
-
-        "ESI":     {"telNum": 2, "doRuns": False},
-        "DEIMOS":  {"telNum": 2, "doRuns": True},
-        "KCWI":    {"telNum": 2, "doRuns": False},
-        "NIRES":   {"telNum": 2, "doRuns": False},
-        "NIRC2":   {"telNum": 2, "doRuns": False},
-        "NIRSPEC": {"telNum": 2, "doRuns": False},
-    },
-
 
     #######################################################################
     # SCORING PARAMETERS
     #######################################################################
+    #todo: should we change this to assume a scheduled block is given a perfect score of 1 and scoring only multiplies
+    # by a factor < 1.0 for less than perfect things?
 
     # score added for slot match with date range preference
     # P = preferred, A = acceptable, N = neutral, X = avoid
@@ -56,6 +40,11 @@
 
     #Slot score percentage difference from top slot score value for it to be considered for pool of random slots to choose from.
     # value from 0 to 1.0 where 0.0 means keep only the top scoring slots, 0.20 means choose from top 20% of values, and 1.0 means chose randomly from all slots
-    "slotScoreTopPerc": 0.20
+    "slotScoreTopPerc": 0.20,
 
+    #Score multiplier for scheduling a block in the requested date (block['reqDate'])
+    "reqDateMult": 1.5,
+
+    #Score multiplier for scheduling a block in the requested portion of the night (block['reqSlot'])
+    "reqPortionMult": 1.25,
 }

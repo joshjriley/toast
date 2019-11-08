@@ -15,8 +15,9 @@ class ToastRandom(Toast):
 
         #todo: Loop and create X number of schedules and take the one that scores best.
 
-        #get list of program portions blocks
-        blocks = self.getRandomProgramBlocks(self.programs)
+        #create blocks from all programs
+        blocks = self.createProgramBlocks(self.programs)
+        blocks = self.randomSortBlocks(blocks)
 
         #for each block, init slots to try and score each slot
         for block in blocks:
@@ -26,7 +27,7 @@ class ToastRandom(Toast):
             if slot == None: 
                 print (f"No valid slots found for block program {block['progId']}, instr {block['instr']}")
                 continue
-            self.assignToSchedule(block['telNum'], 
+            self.assignToSchedule(block['tel'], 
                                   slot['date'], 
                                   slot['index'], 
                                   block['portion'], 
@@ -34,26 +35,31 @@ class ToastRandom(Toast):
                                   block['instr'])
 
 
-    def getRandomProgramBlocks(self, programs):
+    def createProgramBlocks(self, programs):
 
         #For each program, get all program portion objects (ie blocks)
         #todo: for instruments that prefer runs, use 'num' to group together consecutive blocks
         blocks = []
-        count = 0
         for progId, program in programs.items():
-            for instr, progInstr in program['instruments'].items():
+            for progInstr in program['instruments']:
                 for n in range(0, progInstr['nights']):
+                    instr = progInstr['instr']
                     block = {}
                     block['instr']   = instr
                     block['progId']  = progId
                     block['portion'] = progInstr['portion']
-                    block['telNum']  = self.config['instruments'][instr]['telNum']
+                    block['tel']     = self.instruments[instr]['tel']
                     block['num']     = 1
                     block['runSize'] = block['portion'] * block['num']
                     blocks.append(block)
+                    print (block)
+        return blocks
+
+
+    def randomSortBlocks(self, blocks):
 
         #psuedo-randomize blocks in groups by order of size from biggest to smallest
-        #todo: This might result in the largest run having a uniquely big size and always going first.  Might want to prevent that.
+        #todo: This might result in large runs having a uniquely big size and always going first.  Might want to prevent that.
         blocksSorted = sorted(blocks, key=lambda k: k['runSize'], reverse=True)
         lastSize = None
         blocksFinal = []
@@ -100,26 +106,24 @@ class ToastRandom(Toast):
             #check for block length versus portion available length
             portionRemain = 1 - (slot['index'] * self.config['portionPerc'])
             if (block['portion'] > portionRemain):
-                slot['score'] = 0
                 # print ("\tTOO LONG")
+                slot['score'] = 0
                 continue
 
             #check for telescope shutdowns
-            shutdownDates = self.telShutdowns[block['telNum']]
-            if slot['date'] in shutdownDates:
+            if self.isTelShutdown(block['tel'], slot['date']):
+                # print (f"\tTELESCOPE SHUTDOWN: {block['tel']}, {slot['date']}")
                 slot['score'] = 0
-                # print ("\tTELESCOPE SHUTDOWN")
                 continue
 
             #check for instrument unavailability
-            instrShutdowns = self.instrShutdowns
-            if slot['date'] in instrShutdowns:
+            if self.isInstrShutdown(block['instr'], slot['date']):
+                # print (f"\tINSTRUMENT UNAVAILABLE: {block['instr']} {slot['date']}")
                 slot['score'] = 0
-                # print ("\tINSTRUMENT UNAVAILABLE")
                 continue
 
             #check for assigned
-            if not self.isSlotAvailable(block['telNum'], slot['date'], slot['index'], block['portion']):
+            if not self.isSlotAvailable(block['tel'], slot['date'], slot['index'], block['portion']):
                 slot['score'] = 0
                 # print ("\tOVERLAP")
                 continue
@@ -133,7 +137,7 @@ class ToastRandom(Toast):
 
             #add preference score
             pref = self.getMoonDatePreference(slot['date'], block['progId'], block['instr'])
-            print (slot['date'], block['progId'], block['instr'], pref)
+            # print (slot['date'], block['progId'], block['instr'], pref)
             slot['score'] += self.config['moonDatePrefScore'][pref]
 
             #add priority target score

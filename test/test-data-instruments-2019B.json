@@ -1,0 +1,14 @@
+[
+    {"instr": "HIRESb",    "tel": "1",  "doRuns": 0},
+    {"instr": "HIRESr",    "tel": "1",  "doRuns": 0},
+    {"instr": "LRIS-ADC",  "tel": "1",  "doRuns": 0},
+    {"instr": "LRISp-ADC", "tel": "1",  "doRuns": 0},
+    {"instr": "MOSFIRE",   "tel": "1",  "doRuns": 0},
+    {"instr": "OSIRIS",    "tel": "1",  "doRuns": 0},
+    {"instr": "ESI",       "tel": "2",  "doRuns": 0},
+    {"instr": "DEIMOS",    "tel": "2",  "doRuns": 1},
+    {"instr": "KCWI",      "tel": "2",  "doRuns": 0},
+    {"instr": "NIRES",     "tel": "2",  "doRuns": 0},
+    {"instr": "NIRC2",     "tel": "2",  "doRuns": 0},
+    {"instr": "NIRSPEC",   "tel": "2",  "doRuns": 0},
+]

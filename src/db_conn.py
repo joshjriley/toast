@@ -14,13 +14,17 @@ class db_conn(object):
     Opens and closes and new connection each query.
     Define db connection params in config file.
 
-    Config file follows configparser standard format and should contain the following per database config
-        [database name]
-        server         = (server name)
-        user           = (db username)
-        pwd            = (db password)
-        port           = (db server port)
-        type           = (db type: mysql, postgresql)
+    Config file follows yaml format and should contain one dict entry per database:
+    {
+        "(database name)":
+        {
+            "server" : (server name/ip),
+            "user"   : (db username),
+            "pwd "   : (db password,
+            "port"   : (db server port),
+            "type"   : (db type: mysql, postgresql),
+        },
+    }
 
     TODO: improve error/warning reporting and logging
     '''

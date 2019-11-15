@@ -1,15 +1,25 @@
-# todo
+# todo: high level
+- [DONE] Keck proposal data translator tool
+- [josh] Algorithm logic
+- Schedule scoring
+- Airmass/target scoring
+- Schedule output display
+
+
+
+#todo: proposal translator tool
+- Implement classes for: Program, ProgInstr, Block
+
+
+# todo: algorithm
 - Implement cadence
 - Implement runs
-- instrument switch incompatibility (ie LRIS/MOSFIRE)
-- schedule scoring
-- real queries for program data and shutdown data
-- real query for moon phases
-- Airmass, target scoring
-- force small portions to different days (ie avoid same program on same night for 1/2 and 1/4)
+- Implement instrument switch incompatibility (ie LRIS/MOSFIRE)
 - Deal with instrument base config info (ie HIRESr and HIRESb are both base HIRES)
 - Deal with multi instrument selection (ie NIRC2+NIRESPEC)
-- Consider a sequential approach instead of random?
+- force small portions to different days (ie avoid same program on same night for 1/2 and 1/4)
+- real query for other data: shutdown, moon phases, etc
+
 
 
 # questions: 
@@ -24,3 +34,5 @@
 
 
 
+#misc
+- Consider a sequential approach instead of random?

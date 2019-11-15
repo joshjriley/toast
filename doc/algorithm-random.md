@@ -6,12 +6,31 @@ The thinking for this approach is that the complexity of the problem and number 
 
 # Basic algorithm
 
-- From program data, create full list of of program blocks to schedule.
-- Divide blocks array into groups by size/difficulty (cadence, runs, full, 3/4, 1/2, 1/4). Schedule the groups in decreasing order of difficulty, but randomize the blocks in each group.
-- For each block:
-    - Get list of all remaining valid dates slots and score each one based on several factors and sort by score.
+- Load program data
+
+- Create array of blocks to schedule
+    - Blocks need to link back to progInstr parent and program parent.
+    - Blocks can be a run (consecutive days to schedule)
+    - Blocks with requested Date cannot be part of run.
+- Sort block's by priority score based on :
+    - size (size * run length)
+    - requested Specific Date
+    - Institution priority factor
+    - Randomness factor
+    - Admin priority factor (program, progInstr, block)
+- In order of priority, schedule each block according to these steps:
+    - Try specific date, if requested
+    - Try dates in scheduled moon range
+    - Try dates for all moon prefs
+        - Use existing weighted randomness with cutoff?
+<!--     - Get list of all remaining valid dates slots and score each one based on several factors and sort by score.
     - Pick a random slot from the top scores (ie weighted randomness with cutoff)
+ -->
+    - If a block run cannot be scheduled, divide in half and/or treat individually?
+
 - Score schedule (Getting the scoring right is very important)
+    - ????
+
 - Repeat X number of times and take best schedule or repeat until high score converges
 
 

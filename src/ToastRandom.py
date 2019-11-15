@@ -25,13 +25,13 @@ class ToastRandom(Toast):
             self.scoreBlockSlots(block)
             slot = self.pickRandomBlockSlot(block)
             if slot == None: 
-                print (f"No valid slots found for block program {block['progId']}, instr {block['instr']}")
+                print (f"No valid slots found for block program {block['ktn']}, instr {block['instr']}")
                 continue
             self.assignToSchedule(block['tel'], 
                                   slot['date'], 
                                   slot['index'], 
                                   block['size'], 
-                                  block['progId'],
+                                  block['ktn'],
                                   block['instr'])
 
 
@@ -40,13 +40,13 @@ class ToastRandom(Toast):
         #For each program, get all schedulable blocks
         #todo: for instruments that prefer runs, use 'num' to group together consecutive blocks
         blocks = []
-        for progId, program in programs.items():
+        for ktn, program in programs.items():
             for progInstr in program['instruments']:
                 for n in range(0, progInstr['nights']):
                     instr = progInstr['instr']
                     block = {}
                     block['instr']   = instr
-                    block['progId']  = progId
+                    block['ktn']     = ktn
                     block['size']    = progInstr['size']
                     block['tel']     = self.instruments[instr]['tel']
                     block['num']     = 1
@@ -88,7 +88,7 @@ class ToastRandom(Toast):
                 slot['date']  = date
                 slot['index'] = pIndex
                 slot['instr'] = block['instr']
-                slot['progId'] = block['progId']
+                slot['ktn']   = block['ktn']
                 block['slots'].append(slot)
 
 
@@ -129,24 +129,24 @@ class ToastRandom(Toast):
                 continue
 
             #check for program dates to avoid
-            prog = self.programs[block['progId']]
+            prog = self.programs[block['ktn']]
             if slot['date'] in prog['datesToAvoid']:
                 slot['score'] = 0
                 # print ("\tBAD PROGRAM DATE")
                 continue
 
             #add preference score
-            pref = self.getMoonDatePreference(slot['date'], block['progId'], block['instr'])
-            # print (slot['date'], block['progId'], block['instr'], pref)
+            pref = self.getMoonDatePreference(slot['date'], block['ktn'], block['instr'])
+            # print (slot['date'], block['ktn'], block['instr'], pref)
             slot['score'] += self.config['moonDatePrefScore'][pref]
 
             #add priority target score
-            slot['score'] += self.getTargetScore(slot['date'], block['progId'], slot['index'], block['size'])
+            slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
 
             # print (f"\tscore = {slot['score']}")
 
 
-    def getTargetScore(self, date, progId, index, size):
+    def getTargetScore(self, date, ktn, index, size):
 
         #todo: find out how well this date time range overlaps with all priority targets' airmass and give score
         return 0

@@ -176,13 +176,13 @@ class Toast(object):
                 self.schedules[key]['nights'][date] = night
       
 
-    def assignToSchedule(self, tel, date, index, size, progId, instr):
+    def assignToSchedule(self, tel, date, index, size, ktn, instr):
         schedule = self.schedules[tel]
         night = schedule['nights'][date]
         data = {
             'index': index,
             'size': size,
-            'progId': progId,
+            'ktn': ktn,
             'instr': instr
         }
         night['slots'].append(data)
@@ -226,7 +226,7 @@ class Toast(object):
             #todo: optional query.  Note: No such table yet.
             assert False, "ERROR: getMoonPhases: DB retrieve not implemented!"
 
-    def getMoonDatePreference(self, date, progId, instr):
+    def getMoonDatePreference(self, date, ktn, instr):
         '''
         Find moon phase by date and use same index to look up moon phase preference for program+instr
         '''
@@ -241,7 +241,7 @@ class Toast(object):
             phaseStart = dt.strptime(mp['start'], "%Y-%m-%d")
             phaseEnd   = dt.strptime(mp['end'],   "%Y-%m-%d")
             if phaseStart <= date <= phaseEnd:
-                moonPrefs = self.programs[progId]['instruments'][instr]['moonPrefs']
+                moonPrefs = self.programs[ktn]['instruments'][instr]['moonPrefs']
                 pref = moonPrefs[index]
                 break
         return pref
@@ -266,7 +266,7 @@ class Toast(object):
 
             # for each slot, alter score based on assignment preference [P,A,N,X]
             for slot in night:
-                pref = self.getAssignmentPref(slot.date, slot.progId)
+                pref = self.getAssignmentPref(slot.date, slot.ktn)
                 score += gslotPrefFactor[pref]
 
             #todo: alter score based on priority RA/DEC list?
@@ -339,7 +339,7 @@ class Toast(object):
                 slots = night['slots']
                 slotsSorted = sorted(slots, key=lambda k: k['index'], reverse=False)
                 for slot in slotsSorted:
-                    print(f"{slot['index']}\t{slot['size']}\t{slot['progId']}\t{slot['instr']}")
+                    print(f"{slot['index']}\t{slot['size']}\t{slot['ktn']}\t{slot['instr']}")
 
 
     def getSemesterDates(self, semester):

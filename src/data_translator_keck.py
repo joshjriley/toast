@@ -40,7 +40,7 @@ def queryProgramData(semester, tel, dbConfigFile):
     for i, ktn in enumerate(ktns):
 
         #todo: temp
-        if i> 4: continue
+        #if i> 5: continue
         #if ktn != '2019B_C248': continue
 
         #------------------------------------------------------------------------------
@@ -243,11 +243,56 @@ def convertDateRangeToDatesArray(start, end):
 
 
 
-def saveProgramDataToFile(programs, outfile):
+def saveProgramDataToFile(programs, outfile, compact=False):
 
-    with open(outfile, 'w') as f:
-        txt = json.dumps(programs, indent=4, default=jsonConverter)
-        f.write(txt)
+    if not compact:
+        with open(outfile, 'w') as f:
+            txt = json.dumps(programs, indent=4, default=jsonConverter)
+            f.write(txt)
+
+    else:
+        txt = ''
+        txt += "{\n"
+        for i, prog in programs.items():
+            txt += f'\t"{prog["ktn"]}": \n'
+            txt += "\t{\n"
+            txt += f'\t\t"ktn": "{prog["ktn"]}",\n'
+            txt += f'\t\t"type": "{prog["type"]}",\n'
+            txt += f'\t\t"datesToAvoid": {json.dumps(prog["datesToAvoid"], default=jsonConverter)},\n'
+
+            if len(prog['priorityTargets']) == 0:
+                txt += f'\t\t"priorityTargets": [],\n'
+            else:
+                txt += f'\t\t"priorityTargets":\n'
+                txt += f'\t\t[\n'
+                for pt in prog['priorityTargets']:
+                    txt += f'\t\t\t{json.dumps(pt, default=jsonConverter)},\n'
+                txt += f'\t\t],\n'
+
+            txt += f'\t\t"instruments":\n'
+            txt += f'\t\t[\n'
+            for instr in prog['instruments']:
+                txt += "\t\t\t{\n"
+                txt += f'\t\t\t\t"moonPrefs": "{instr["moonPrefs"]}",\n'
+                txt += f'\t\t\t\t"reqPortion": "{instr["reqPortion"]}",\n'
+                txt += f'\t\t\t\t"appPortion": "{instr["appPortion"]}",\n'
+                txt += f'\t\t\t\t"appTotal": "{instr["appTotal"]}",\n'
+                txt += f'\t\t\t\t"instr": "{instr["instr"]}",\n'
+                txt += f'\t\t\t\t"blocks":\n'
+                txt += f'\t\t\t\t[\n'
+                for block in instr['blocks']:
+                    txt += f'\t\t\t\t\t{json.dumps(block, default=jsonConverter)},\n'
+                txt += f'\t\t\t\t],\n'
+                txt += "\t\t\t}\n"
+
+            txt += f'\t\t],\n'
+
+            txt += "\t},\n"
+
+        txt += "}\n"
+
+        with open(outfile, 'w') as f:
+            f.write(txt)
 
 
 
@@ -259,9 +304,10 @@ if __name__ == "__main__":
     semester     = sys.argv[1]
     tel          = sys.argv[2]
     dbConfigFile = sys.argv[3]
+    outdir       = sys.argv[4] 
 
     data = queryProgramData(semester, tel, dbConfigFile)
     programs = formDataToStandard(data)
 
-    outfile = f"{semester}-{tel}-programs.json"
-    saveProgramDataToFile(programs, outfile)
+    outfile = f"{outdir}/{semester}-{tel}-programs.json"
+    saveProgramDataToFile(programs, outfile, True)

@@ -7,12 +7,12 @@ import datetime
 import db_conn
 
 
+
 #todo: Load this from config file
 telescopes_assoc = { 
     "1": ["LRIS-ADC","LRISp-ADC","HIRESr","HIRESb","OSIRIS-NGS","OSIRIS-LGS","MOSFIRE"], 
     "2": ["DEIMOS","ESI","ESI-ifu","KCWI","NIRSPEC","NIRSPAO-NGS","NIRSPAO-LGS","NIRC2-NGS","NIRC2-NGS+NIRSPEC", "NIRC2-NGS+NIRSPAO", "NIRC2-LGS", "NIRC2-LGS+NIRSPEC", "NIRC2-LGS+NIRSPAO", "NIRES"]
     } 
-
 
 
 def jsonConverter(o):
@@ -21,7 +21,7 @@ def jsonConverter(o):
 
 
 
-def queryProgramData(semester, tel, dbConfigFile):
+def queryProgramData(semester, dbConfigFile):
 
     #db connection
     dbc = db_conn.db_conn(dbConfigFile)
@@ -41,7 +41,6 @@ def queryProgramData(semester, tel, dbConfigFile):
 
         #todo: temp
         #if i> 5: continue
-        #if ktn != '2019B_C248': continue
 
         #------------------------------------------------------------------------------
         # Get program data
@@ -90,7 +89,6 @@ def queryProgramData(semester, tel, dbConfigFile):
             #------------------------------------------------------------------------------
             # Get requested info
             #------------------------------------------------------------------------------
-
             portion = ""
             query =  f"select * from {type}Information "
             query += f" where KTN='{ktn}' and ID={typeId} and DelFlag=0 "
@@ -125,22 +123,26 @@ def queryProgramData(semester, tel, dbConfigFile):
 
 
             #------------------------------------------------------------------------------
+            # Get instr and check instr in instrument list
+            #------------------------------------------------------------------------------
+            #NOTE: Approval step can change the instrument so we must get instr from *_TAC table
+            progInstr['instr'] = infoTac['Instrument']
+            found = 0
+            for tel, instlist in telescopes_assoc.items():
+                if progInstr['instr'] in instlist:
+                    found = 1
+                    break
+            if not found:
+                continue
+                
+
+            #------------------------------------------------------------------------------
             # Check thisTotal > 0
             #------------------------------------------------------------------------------
             #NOTE: We do this b/c of design of *_TAC tables which insert new rows each time with no DelFlag
             #So, the distinct KTN query will still query a KTN if it was approved but then zeroed out.
             if progInstr['appTotal'] <= 0: 
                 continue
-
-
-            #------------------------------------------------------------------------------
-            # Check instr in telescope instrument list if telescope was defined (ie: 1, 2)
-            #------------------------------------------------------------------------------
-            #NOTE: Approval step can change the instrument so we must get instr from *_TAC table
-            progInstr['instr'] = infoTac['Instrument']
-            if tel:
-                if infoTac['Instrument'] not in telescopes_assoc[tel]:
-                    continue;
 
 
             #------------------------------------------------------------------------------
@@ -211,11 +213,11 @@ def formDataToStandard(progData):
         instruments = []
         for instr in prog['instruments']:
             progInstr = {
+                'instr'     : instr['instr'],
                 'moonPrefs' : instr['moonPrefs'],
                 'reqPortion': instr['reqPortion'],
                 'appPortion': instr['appPortion'],
                 'appTotal'  : instr['appTotal'],
-                'instr'     : instr['instr'],
             }
             blocks = []
             for card in instr['cards']:
@@ -275,11 +277,11 @@ def saveProgramDataToFile(programs, outfile, compact=False):
             txt += f'\t\t[\n'
             for icount, instr in enumerate(prog['instruments']):
                 txt += "\t\t\t{\n"
+                txt += f'\t\t\t\t"instr": "{instr["instr"]}",\n'
                 txt += f'\t\t\t\t"moonPrefs": "{instr["moonPrefs"]}",\n'
                 txt += f'\t\t\t\t"reqPortion": "{instr["reqPortion"]}",\n'
                 txt += f'\t\t\t\t"appPortion": "{instr["appPortion"]}",\n'
                 txt += f'\t\t\t\t"appTotal": "{instr["appTotal"]}",\n'
-                txt += f'\t\t\t\t"instr": "{instr["instr"]}",\n'
                 txt += f'\t\t\t\t"blocks":\n'
                 txt += f'\t\t\t\t[\n'
                 for bcount, block in enumerate(instr['blocks']):
@@ -306,12 +308,11 @@ def saveProgramDataToFile(programs, outfile, compact=False):
 if __name__ == "__main__":
 
     semester     = sys.argv[1]
-    tel          = sys.argv[2]
-    dbConfigFile = sys.argv[3]
-    outdir       = sys.argv[4] 
+    dbConfigFile = sys.argv[2]
+    outdir       = sys.argv[3] 
 
-    data = queryProgramData(semester, tel, dbConfigFile)
+    data = queryProgramData(semester, dbConfigFile)
     programs = formDataToStandard(data)
 
-    outfile = f"{outdir}/{semester}-{tel}-programs.json"
+    outfile = f"{outdir}/{semester}-programs.json"
     saveProgramDataToFile(programs, outfile, True)

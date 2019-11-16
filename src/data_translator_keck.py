@@ -250,10 +250,11 @@ def saveProgramDataToFile(programs, outfile, compact=False):
             txt = json.dumps(programs, indent=4, default=jsonConverter)
             f.write(txt)
 
+    #todo: https://stackoverflow.com/questions/13249415/how-to-implement-custom-indentation-when-pretty-printing-with-the-json-module
     else:
         txt = ''
         txt += "{\n"
-        for i, prog in programs.items():
+        for pcount, (i, prog) in enumerate(programs.items()):
             txt += f'\t"{prog["ktn"]}": \n'
             txt += "\t{\n"
             txt += f'\t\t"ktn": "{prog["ktn"]}",\n'
@@ -265,13 +266,14 @@ def saveProgramDataToFile(programs, outfile, compact=False):
             else:
                 txt += f'\t\t"priorityTargets":\n'
                 txt += f'\t\t[\n'
-                for pt in prog['priorityTargets']:
-                    txt += f'\t\t\t{json.dumps(pt, default=jsonConverter)},\n'
+                for ptcount, pt in enumerate(prog['priorityTargets']):
+                    txt += f'\t\t\t{json.dumps(pt, default=jsonConverter)}'
+                    txt += ",\n" if ptcount < len(prog['priorityTargets'])-1 else "\n"
                 txt += f'\t\t],\n'
 
             txt += f'\t\t"instruments":\n'
             txt += f'\t\t[\n'
-            for instr in prog['instruments']:
+            for icount, instr in enumerate(prog['instruments']):
                 txt += "\t\t\t{\n"
                 txt += f'\t\t\t\t"moonPrefs": "{instr["moonPrefs"]}",\n'
                 txt += f'\t\t\t\t"reqPortion": "{instr["reqPortion"]}",\n'
@@ -280,14 +282,16 @@ def saveProgramDataToFile(programs, outfile, compact=False):
                 txt += f'\t\t\t\t"instr": "{instr["instr"]}",\n'
                 txt += f'\t\t\t\t"blocks":\n'
                 txt += f'\t\t\t\t[\n'
-                for block in instr['blocks']:
-                    txt += f'\t\t\t\t\t{json.dumps(block, default=jsonConverter)},\n'
-                txt += f'\t\t\t\t],\n'
-                txt += "\t\t\t}\n"
+                for bcount, block in enumerate(instr['blocks']):
+                    txt += f'\t\t\t\t\t{json.dumps(block, default=jsonConverter)}'
+                    txt += ",\n" if bcount < len(instr['blocks'])-1 else "\n"
+                txt += f'\t\t\t\t]\n'
+                txt += "\t\t\t}"
+                txt += ",\n" if icount < len(prog['instruments'])-1 else "\n"
+            txt += f'\t\t]\n'
 
-            txt += f'\t\t],\n'
-
-            txt += "\t},\n"
+            txt += "\t}"
+            txt += ",\n" if pcount < len(programs)-1 else "\n"
 
         txt += "}\n"
 

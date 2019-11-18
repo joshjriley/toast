@@ -88,41 +88,6 @@
 			}
 		]
 	},
-	"2019B_C219": 
-	{
-		"ktn": "2019B_C219",
-		"type": "Classical",
-		"datesToAvoid": [],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "00:42:44", "dec": "+41:16:09", "epoch": "2000", "target": "M31"}
-		],
-		"instruments":
-		[
-		]
-	},
-	"2019B_C220": 
-	{
-		"ktn": "2019B_C220",
-		"type": "Classical",
-		"datesToAvoid": [],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "00:19:36.10", "dec": "+25:17:47.39", "epoch": "2000", "target": "PSZ2G113.91-37.01"},
-			{"priority": 2, "ra": "07:38:17.69", "dec": "+01:01:37.43", "epoch": "2000", "target": "PSZ2G217.40+10.88"},
-			{"priority": 3, "ra": "10:23:53.16", "dec": "-27:15:07.84", "epoch": "2000", "target": "PSZ2G266.83+25.08"},
-			{"priority": 4, "ra": "02:21:30.07", "dec": "+21:21:16.69", "epoch": "2000", "target": "PSZ2G149.39-36.84"},
-			{"priority": 5, "ra": "07:29:59.28", "dec": "+11:56:20.73", "epoch": "2000", "target": "PSZ2G206.45+13.89"},
-			{"priority": 6, "ra": "07:35:50.45", "dec": "+15:05:52.50", "epoch": "2000", "target": "PSZ2G204.10+16.51 "},
-			{"priority": 7, "ra": "07:48:49.72", "dec": "+09:40:06.69", "epoch": "2000", "target": "PSZ2G210.64+17.09 "},
-			{"priority": 8, "ra": "18:57:34.69", "dec": "+38:00:17.92", "epoch": "2000", "target": "PSZ2G068.22+15.18"},
-			{"priority": 9, "ra": "19:26:11.22", "dec": "+48:33:22.44", "epoch": "2000", "target": "PSZ2G080.37+14.64"},
-			{"priority": 10, "ra": "06:00:15.62", "dec": "-20:07:27.60", "epoch": "2000", "target": "PSZ2G225.93-19.99"}
-		],
-		"instruments":
-		[
-		]
-	},
 	"2019B_C221": 
 	{
 		"ktn": "2019B_C221",
@@ -332,23 +297,6 @@
 					{"size": 0.5, "moonSlot": "G-DE", "reqDate": null, "reqPortion": null}
 				]
 			}
-		]
-	},
-	"2019B_C248": 
-	{
-		"ktn": "2019B_C248",
-		"type": "Classical",
-		"datesToAvoid": ["2019-12-09", "2019-12-10", "2019-12-11", "2019-11-12", "2019-11-13", "2019-11-14", "2020-01-06", "2020-01-07", "2020-01-08"],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "05:16:34", "dec": "+20:15: 18", "epoch": "2000", "target": "EPIC 247267267"},
-			{"priority": 1, "ra": "04:13:06", "dec": "+15:14:52", "epoch": "2000", "target": "K2-25 b"},
-			{"priority": 1, "ra": "04:05:20", "dec": "+20:09:26", "epoch": "2000", "target": "V1928 Tau"},
-			{"priority": 1, "ra": "04:33:10", "dec": "+24:33:43", "epoch": "2000", "target": "V830 Tau"},
-			{"priority": 2, "ra": "08:38:24", "dec": "+20:06:22", "epoch": "2000", "target": "K2-100 b"}
-		],
-		"instruments":
-		[
 		]
 	},
 	"2019B_C255": 
@@ -685,16 +633,6 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:-:-:-:A:P:A:-:A:P:A:-:A:P:A:-:-:-:-:-:-:-:",
-				"reqPortion": "1.0",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
-				"blocks":
-				[
-				]
-			},
-			{
-				"instr": "LRIS-ADC",
 				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:A:P:A:-:A:P:A:-:A:P:A",
 				"reqPortion": "1.0",
 				"appPortion": "0.5",
@@ -704,21 +642,6 @@
 					{"size": 0.5, "moonSlot": "D", "reqDate": null, "reqPortion": null}
 				]
 			}
-		]
-	},
-	"2019B_C273": 
-	{
-		"ktn": "2019B_C273",
-		"type": "Classical",
-		"datesToAvoid": [],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "08:02:37.6", "dec": "+34:04:46.6", "epoch": "2000", "target": "J080237+340446"},
-			{"priority": 1, "ra": "13:00:40.6", "dec": "+17:27:58.5", "epoch": "2000", "target": "J130040+172758"},
-			{"priority": 1, "ra": "17:26:56.9", "dec": "+60:03:49.1", "epoch": "2000", "target": "J172656+600349"}
-		],
-		"instruments":
-		[
 		]
 	},
 	"2019B_C274": 
@@ -794,21 +717,6 @@
 					{"size": 1.0, "moonSlot": "G-DE", "reqDate": null, "reqPortion": null}
 				]
 			}
-		]
-	},
-	"2019B_C276": 
-	{
-		"ktn": "2019B_C276",
-		"type": "Classical",
-		"datesToAvoid": [],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "05:00:00", "dec": "+20:00:00", "epoch": "2000", "target": "center of cluster"},
-			{"priority": 2, "ra": "02:40:00", "dec": "+05:00:00", "epoch": "2000", "target": "western edge"},
-			{"priority": 3, "ra": "07:40:00", "dec": "+30:00:00", "epoch": "2000", "target": "eastern edge"}
-		],
-		"instruments":
-		[
 		]
 	},
 	"2019B_C277": 
@@ -1092,16 +1000,6 @@
 				"blocks":
 				[
 					{"size": 0.5, "moonSlot": "B", "reqDate": null, "reqPortion": null}
-				]
-			},
-			{
-				"instr": "HIRESr",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:X:P:X:X:A:X:A:X:A:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
-				"blocks":
-				[
 				]
 			},
 			{
@@ -1966,19 +1864,6 @@
 			}
 		]
 	},
-	"2019B_K001": 
-	{
-		"ktn": "2019B_K001",
-		"type": "Classical",
-		"datesToAvoid": [],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "00", "dec": "13", "epoch": "2000", "target": "Primary target"}
-		],
-		"instruments":
-		[
-		]
-	},
 	"2019B_K303": 
 	{
 		"ktn": "2019B_K303",
@@ -2343,21 +2228,6 @@
 			}
 		]
 	},
-	"2019B_N059": 
-	{
-		"ktn": "2019B_N059",
-		"type": "Classical",
-		"datesToAvoid": ["2020-01-09", "2020-01-10", "2020-01-11", "2020-01-12", "2020-01-13", "2020-01-14", "2020-01-15", "2020-01-16", "2020-01-17", "2020-01-18", "2020-01-19", "2020-01-20", "2020-01-21", "2020-01-22", "2020-01-23", "2020-01-24", "2020-01-25", "2020-01-26", "2020-01-27", "2020-01-28", "2020-01-29", "2020-01-30", "2020-01-31"],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "02:09:27.3", "dec": "+12:30:56.0", "epoch": "J2000", "target": "Uranus"},
-			{"priority": 2, "ra": "03:02:16.8", "dec": "+04:05:23.1", "epoch": "J2000", "target": "Alpha Ceti"},
-			{"priority": 10, "ra": "23:10:32.7", "dec": "-06:26:41.8", "epoch": "J2000", "target": "Neptune"}
-		],
-		"instruments":
-		[
-		]
-	},
 	"2019B_N063": 
 	{
 		"ktn": "2019B_N063",
@@ -2543,52 +2413,6 @@
 				"blocks":
 				[
 					{"size": 1.0, "moonSlot": "G-DL", "reqDate": null, "reqPortion": null}
-				]
-			}
-		]
-	},
-	"2019B_N095": 
-	{
-		"ktn": "2019B_N095",
-		"type": "Cadence",
-		"datesToAvoid": [],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "05:24:19.14", "dec": "-16:01:15.3 ", "epoch": "2000", "target": "J05241914-1601153"},
-			{"priority": 1, "ra": "04:37:37.46", "dec": "-02:29:28.2", "epoch": "2000", "target": "J04373746-0229282"},
-			{"priority": 1, "ra": "04:59:59", "dec": "-03:33:30", "epoch": "2000", "target": "J04599-0333E"},
-			{"priority": 1, "ra": "20:222:33.06", "dec": "-29:27:49.9 ", "epoch": "2000", "target": "J20223306-2927499 "}
-		],
-		"instruments":
-		[
-			{
-				"instr": "NIRC2-NGS",
-				"moonPrefs": "None",
-				"reqPortion": "0.1",
-				"appPortion": "0.1",
-				"appTotal": "0.1",
-				"blocks":
-				[
-				]
-			},
-			{
-				"instr": "NIRC2-NGS",
-				"moonPrefs": "None",
-				"reqPortion": "0.1",
-				"appPortion": "0.1",
-				"appTotal": "0.1",
-				"blocks":
-				[
-				]
-			},
-			{
-				"instr": "NIRC2-NGS",
-				"moonPrefs": "None",
-				"reqPortion": "0.1",
-				"appPortion": "0.1",
-				"appTotal": "0.1",
-				"blocks":
-				[
 				]
 			}
 		]
@@ -2959,34 +2783,6 @@
 			}
 		]
 	},
-	"2019B_N134": 
-	{
-		"ktn": "2019B_N134",
-		"type": "Classical",
-		"datesToAvoid": [],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "01:00:13.01 ", "dec": "28:02:25.80 ", "epoch": "J2000", "target": "J0100+2802"},
-			{"priority": 1, "ra": "01:48:37.639", "dec": "+06:00:20.01", "epoch": "J2000", "target": "J0148+0600"}
-		],
-		"instruments":
-		[
-		]
-	},
-	"2019B_N136": 
-	{
-		"ktn": "2019B_N136",
-		"type": "Cadence",
-		"datesToAvoid": [],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "20:45:09.53", "dec": "-31:20:27.24", "epoch": "2000", "target": "AU Mic"},
-			{"priority": 2, "ra": "03:32:55.84", "dec": "-09:27:29.73", "epoch": "2000", "target": "Eps Eri"}
-		],
-		"instruments":
-		[
-		]
-	},
 	"2019B_N140": 
 	{
 		"ktn": "2019B_N140",
@@ -3305,16 +3101,6 @@
 				[
 					{"size": 2.0, "moonSlot": "D", "reqDate": null, "reqPortion": null}
 				]
-			},
-			{
-				"instr": "MOSFIRE",
-				"moonPrefs": "P:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:P:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
-				"blocks":
-				[
-				]
 			}
 		]
 	},
@@ -3339,39 +3125,6 @@
 				"blocks":
 				[
 					{"size": 1.0, "moonSlot": "D", "reqDate": null, "reqPortion": null}
-				]
-			},
-			{
-				"instr": "MOSFIRE",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:P:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
-				"blocks":
-				[
-				]
-			}
-		]
-	},
-	"2019B_S325": 
-	{
-		"ktn": "2019B_S325",
-		"type": "Classical",
-		"datesToAvoid": ["2019-10-11", "2019-10-12", "2019-10-13", "2019-10-14", "2019-10-15", "2019-10-16", "2019-10-17", "2019-11-07", "2019-11-08", "2019-11-09", "2019-11-10", "2019-11-11", "2019-11-12", "2019-11-13", "2019-11-14", "2019-11-16", "2019-11-17", "2019-11-18", "2019-11-19", "2019-11-20", "2019-11-21", "2019-11-22", "2019-11-23", "2019-11-24"],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "02:17:34.46", "dec": "-05:10:19.1", "epoch": "J2000", "target": "UDS-CANDELS"}
-		],
-		"instruments":
-		[
-			{
-				"instr": "MOSFIRE",
-				"moonPrefs": "X:X:X:X:X:X:X:X:A:P:P:P:P:P:A:A:X:A:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
-				"blocks":
-				[
 				]
 			}
 		]
@@ -4247,19 +4000,6 @@
 			}
 		]
 	},
-	"2019B_U148": 
-	{
-		"ktn": "2019B_U148",
-		"type": "Classical",
-		"datesToAvoid": [],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "23:56:32.45", "dec": "-06:22:59.26", "epoch": "J2000", "target": "PSO J359-06"}
-		],
-		"instruments":
-		[
-		]
-	},
 	"2019B_U149": 
 	{
 		"ktn": "2019B_U149",
@@ -4667,19 +4407,6 @@
 			}
 		]
 	},
-	"2019B_U173": 
-	{
-		"ktn": "2019B_U173",
-		"type": "Classical",
-		"datesToAvoid": [],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "09:10:54.535", "dec": "-04:14:06.84", "epoch": "2000", "target": "J0910-0414"}
-		],
-		"instruments":
-		[
-		]
-	},
 	"2019B_U174": 
 	{
 		"ktn": "2019B_U174",
@@ -5075,19 +4802,6 @@
 			}
 		]
 	},
-	"2019B_U194": 
-	{
-		"ktn": "2019B_U194",
-		"type": "Classical",
-		"datesToAvoid": [],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "19:19:03.26", "dec": "+51:57:45.4", "epoch": "2000", "target": "Kepler-86"}
-		],
-		"instruments":
-		[
-		]
-	},
 	"2019B_U195": 
 	{
 		"ktn": "2019B_U195",
@@ -5276,20 +4990,6 @@
 					{"size": 0.5, "moonSlot": "B", "reqDate": null, "reqPortion": null}
 				]
 			}
-		]
-	},
-	"2019B_U205": 
-	{
-		"ktn": "2019B_U205",
-		"type": "Classical",
-		"datesToAvoid": [],
-		"priorityTargets":
-		[
-			{"priority": 1, "ra": "05 19 41.4", "dec": "+05 38 42.8", "epoch": "J2000", "target": "HD 34700"},
-			{"priority": 1, "ra": "02 26 16.2", "dec": "+06 17 33.2", "epoch": "J2000", "target": "HD 15115"}
-		],
-		"instruments":
-		[
 		]
 	},
 	"2019B_U207": 

@@ -25,6 +25,8 @@ def queryProgramData(semester, dbConfigFile):
 
     #db connection
     dbc = db_conn.db_conn(dbConfigFile)
+    if not dbc: return False
+
 
     #programs object to store all results
     programs = {}
@@ -35,7 +37,7 @@ def queryProgramData(semester, dbConfigFile):
     #------------------------------------------------------------------------------
     query1 = f"select KTN from ClassicalInformation_TAC where KTN like '{semester}_%' and Blocks > 0"
     query2 = f"select KTN from CadenceInformation_TAC   where KTN like '{semester}_%' and Nights > 0"
-    query  = f"select distinct(KTN) from ({query1} union {query2}) t order by KTN"
+    query  = f"select distinct(KTN) from ({query1} union {query2}) t order by KTN"    
     ktns = dbc.query('proposals', query, getColumn='KTN')
     for i, ktn in enumerate(ktns):
 
@@ -47,6 +49,9 @@ def queryProgramData(semester, dbConfigFile):
         #------------------------------------------------------------------------------
         query = f"select KTN, ProgramType from ProgramInformation where KTN='{ktn}'"
         prog = dbc.query('proposals', query, getOne=True)
+        if not prog:
+            print ('WARNING: NO PROG INFO. SKIPPING. (possible ktn rename) ', ktn)
+            continue
         type        = prog['ProgramType']
         typeCol     = type+"ID"
 
@@ -134,7 +139,7 @@ def queryProgramData(semester, dbConfigFile):
                     break
             if not found:
                 continue
-                
+
 
             #------------------------------------------------------------------------------
             # Check thisTotal > 0
@@ -169,9 +174,13 @@ def queryProgramData(semester, dbConfigFile):
 
 
             #add full progInstr data to array
+            #NOTE: skip if no scheduled cards
+            if not progInstr['cards']: continue
             prog['instruments'].append(progInstr)
 
         #add full KTN data to programs dict
+        #NOTE: skip if no instruments
+        if not prog['instruments']: continue
         programs[ktn] = prog
 
     return programs

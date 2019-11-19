@@ -1,6 +1,7 @@
 from Toast import *
 from random import randrange, shuffle, random
 import math
+import sys
 
 
 class ToastRandom(Toast):
@@ -21,6 +22,7 @@ class ToastRandom(Toast):
 
         #for each block, init slots to try and score each slot
         for block in blocks:
+            print ('block: ', block['ktn'], block['instr'], block['size'])
             self.initBlockSlots(block)
             self.scoreBlockSlots(block)
             slot = self.pickRandomBlockSlot(block)
@@ -39,20 +41,19 @@ class ToastRandom(Toast):
 
         #For each program, get all schedulable blocks
         #todo: for instruments that prefer runs, use 'num' to group together consecutive blocks
+        #todo: use pointers or indexes to parent program
         blocks = []
         for ktn, program in programs.items():
             for progInstr in program['instruments']:
-                for n in range(0, progInstr['nights']):
+                for block in progInstr['blocks']:
                     instr = progInstr['instr']
-                    block = {}
-                    block['instr']   = instr
-                    block['ktn']     = ktn
-                    block['size']    = progInstr['size']
-                    block['tel']     = self.instruments[instr]['tel']
-                    block['num']     = 1
-                    block['runSize'] = block['size'] * block['num']
+                    block['progInstr'] = progInstr
+                    block['instr']     = instr
+                    block['ktn']       = ktn
+                    block['tel']       = self.instruments[instr]['tel']
+                    block['num']       = 1
+                    block['runSize']   = block['size'] * block['num']
                     blocks.append(block)
-                    print (block)
         return blocks
 
 
@@ -135,10 +136,16 @@ class ToastRandom(Toast):
                 # print ("\tBAD PROGRAM DATE")
                 continue
 
-            #add preference score
-            pref = self.getMoonDatePreference(slot['date'], block['ktn'], block['instr'])
-            # print (slot['date'], block['ktn'], block['instr'], pref)
-            slot['score'] += self.config['moonDatePrefScore'][pref]
+            #add moon preference score
+            if block['progInstr']['moonPrefLookup']:
+                pref = block['progInstr']['moonPrefLookup'][slot['date']]
+                slot['score'] += self.config['moonDatePrefScore'][pref]
+            else:
+                slot['score'] += self.config['moonDatePrefScore']["N"]
+
+            #add moon scheduled score
+            if slot['date'] in self.moonIndexDates[block['moonIndex']]:
+                slot['score'] += self.config['reqMoonIndexScore']
 
             #add priority target score
             slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])

@@ -1,11 +1,12 @@
 import os
+import sys
 import yaml
 import json
 import argparse
 import pandas
 from random import randrange, shuffle, random
 from ToastRandom import *
-from datetime import datetime as dt
+from datetime import datetime as dt, timedelta
 
 
 class Toast(object):
@@ -32,14 +33,18 @@ class Toast(object):
         self.telescopes     = self.getTelescopes()
         self.instruments    = self.getInstruments()
         self.moonPhases     = self.getMoonPhases()
-        self.programs       = self.getPrograms(self.semester)
         self.telShutdowns   = self.getTelescopeShutdowns()
         self.instrShutdowns = self.getInstrumentShutdowns()
+        self.programs       = self.getPrograms(self.semester)
+
+        #perform data conversion optimizations
+        self.createMoonIndexDates()
+        self.createMoonPrefLookups()
 
         #create new blank schedule
         self.initSchedule()
         
-        #todo: check if they total proposed hours exceeds semester hours
+        #todo: check if the total proposed hours exceeds semester hours
 
         #do it
         self.schedule = self.createSchedule()
@@ -106,7 +111,7 @@ class Toast(object):
         if 'programsFile' in self.config: 
             fp = self.config['programsFile']
             assert os.path.isfile(fp), f"ERROR: getPrograms: file '{fp}'' does not exist.  Exiting."
-            with open(fp) as f: data = yaml.safe_load(f)        
+            with open(fp) as f: data = json.load(f)        
         else:
             #todo: optional query.  Note: No such table yet.
             assert False, "ERROR: getPrograms: DB retrieve not implemented!"
@@ -226,25 +231,44 @@ class Toast(object):
             #todo: optional query.  Note: No such table yet.
             assert False, "ERROR: getMoonPhases: DB retrieve not implemented!"
 
-    def getMoonDatePreference(self, date, ktn, instr):
-        '''
-        Find moon phase by date and use same index to look up moon phase preference for program+instr
-        '''
 
-        #todo: temp
-        print ("getMoonDatePreference broken")
-        return "N"
+    def createMoonPrefLookups(self):
+        '''
+        For each progInstr, create a moon pref hash for each date so we don't have to search for date ranges
+        during processing.
+        '''
+        #todo: note: any value not defined is set to neutral (ie blank, "-"). handle this better
+        for ktn, program in self.programs.items():
+            for progInstr in program['instruments']:
+                progInstr['moonPrefLookup'] = {}
+                if not progInstr['moonPrefs']: continue
+                for index, mp in enumerate(self.moonPhases):
+                    start = dt.strptime(mp['start'], "%Y-%m-%d")
+                    end   = dt.strptime(mp['end'],   "%Y-%m-%d")
+                    delta = end - start
+                    for i in range(delta.days + 1):
+                        day = start + timedelta(days=i)
+                        daystr = day.strftime('%Y-%m-%d')
+                        val = progInstr['moonPrefs'][index]
+                        if val not in self.config['moonDatePrefScore']:
+                            val = "N"
+                        progInstr['moonPrefLookup'][daystr] = val
 
-        pref = None
-        date = dt.strptime(date, "%Y-%m-%d")
+
+    def createMoonIndexDates(self):
+        '''
+        For each moon phase date range, create a hash of dates in that range for easier lookup
+        '''
+        self.moonIndexDates = {}
         for index, mp in enumerate(self.moonPhases):
-            phaseStart = dt.strptime(mp['start'], "%Y-%m-%d")
-            phaseEnd   = dt.strptime(mp['end'],   "%Y-%m-%d")
-            if phaseStart <= date <= phaseEnd:
-                moonPrefs = self.programs[ktn]['instruments'][instr]['moonPrefs']
-                pref = moonPrefs[index]
-                break
-        return pref
+            self.moonIndexDates[index] = {}
+            start = dt.strptime(mp['start'], "%Y-%m-%d")
+            end   = dt.strptime(mp['end'],   "%Y-%m-%d")
+            delta = end - start
+            for i in range(delta.days + 1):
+                day = start + timedelta(days=i)
+                daystr = day.strftime('%Y-%m-%d')
+                self.moonIndexDates[index][daystr] = 1
 
 
     #######################################################################
@@ -343,10 +367,12 @@ class Toast(object):
 
 
     def getSemesterDates(self, semester):
-        #todo: calc from semester
-        # return '2019-08-01', '2019-08-01'
-        return '2019-08-01', '2019-08-12'
-        return '2019-08-01', '2020-01-31'
+        #return '2020-02-01', '2020-02-03'
+        year = int(semester[0:4])
+        semStart = f'{year}-02-01' if ('A' in semester) else f'{year}-08-01'
+        semEnd   = f'{year}-07-31' if ('A' in semester) else f'{year+1}-01-31'
+        return semStart, semEnd
+    
 
 
     def convertDictArrayToDict(self, data, pKey):

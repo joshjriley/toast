@@ -2,13 +2,13 @@
     #######################################################################
     # DATA INPUTS
     #######################################################################
-    "telescopesFile"     : '../test/test-data-telescopes-2019B.json',
-    "instrumentsFile"    : '../test/test-data-instruments-2019B.json',
-    "moonPhasesFile"     : '../test/test-data-moon-phases-2019B.json',
-    "telShutdownsFile"   : '../test/test-data-tel-shutdowns-2019B.json',
-    "instrShutdownsFile" : '../test/test-data-instr-shutdowns-2019B.json',
-    "programsFile"       : '../test/test-data-programs-2019B.json',
-#    "blocksFile"         : '../test/test-data-blocks-2019B.json',
+    "telescopesFile"     : '../test/2020A-telescopes.json',
+    "instrumentsFile"    : '../test/2020A-instruments.json',
+    "moonPhasesFile"     : '../test/2020A-moon-phases.json',
+    "telShutdownsFile"   : '../test/2020A-tel-shutdowns.json',
+    "instrShutdownsFile" : '../test/2020A-instr-shutdowns.json',
+    "programsFile"       : '../test/2020A-programs.json',
+
 
 
 
@@ -38,9 +38,12 @@
         'X': 0.1
     },
 
+    #score added for slot match with requested (TAC scheduled) moon phase
+    "reqMoonIndexScore": 15,
+
     #Slot score percentage difference from top slot score value for it to be considered for pool of random slots to choose from.
     # value from 0 to 1.0 where 0.0 means keep only the top scoring slots, 0.20 means choose from top 20% of values, and 1.0 means chose randomly from all slots
-    "slotScoreTopPerc": 0.20,
+    "slotScoreTopPerc": 0.25,
 
     #Score multiplier for scheduling a block in the requested date (block['reqDate'])
     "reqDateMult": 1.5,

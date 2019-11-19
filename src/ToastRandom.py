@@ -6,15 +6,38 @@ import sys
 
 class ToastRandom(Toast):
 
-    def __init__(self, semester):
+    def __init__(self, semester, runCount):
 
         # Call the parent init
         super().__init__(semester)
+
+        #input class vars
+        self.runCount = runCount
 
 
     def createSchedule(self):
 
         #todo: Loop and create X number of schedules and take the one that scores best.
+        bestScore = 0
+        bestSchedule = None
+        for i in range(0, self.runCount):
+    
+            schedule = self.createScheduleRandom()
+            self.scoreSchedule(schedule)
+            print (f"sched {i}: score = {schedule['meta']['score']}")
+
+            if schedule['meta']['score'] >= bestScore:
+                bestScore = schedule['meta']['score']
+                bestSchedule = schedule
+
+        #todo: should we store all schedules in an array or keep a running top 10%?
+        return bestSchedule
+
+
+    def createScheduleRandom(self):
+
+        #init a schedule object
+        schedule = self.initSchedule()
 
         #create blocks from all programs
         blocks = self.createProgramBlocks(self.programs)
@@ -22,19 +45,24 @@ class ToastRandom(Toast):
 
         #for each block, init slots to try and score each slot
         for block in blocks:
-            print ('block: ', block['ktn'], block['instr'], block['size'])
+            #print ('block: ', block['ktn'], block['instr'], block['size'])
             self.initBlockSlots(block)
-            self.scoreBlockSlots(block)
+            self.scoreBlockSlots(schedule, block)
             slot = self.pickRandomBlockSlot(block)
             if slot == None: 
-                print (f"No valid slots found for block program {block['ktn']}, instr {block['instr']}")
+                print (f"WARNING: No valid slots found for block program {block['ktn']}, instr {block['instr']}")
                 continue
-            self.assignToSchedule(block['tel'], 
-                                  slot['date'], 
-                                  slot['index'], 
-                                  block['size'], 
-                                  block['ktn'],
-                                  block['instr'])
+            self.assignToSchedule(
+                schedule,
+                block['tel'], 
+                slot['date'], 
+                slot['index'], 
+                block['size'], 
+                block['ktn'],
+                block['instr']
+            )
+
+        return schedule
 
 
     def createProgramBlocks(self, programs):
@@ -93,7 +121,7 @@ class ToastRandom(Toast):
                 block['slots'].append(slot)
 
 
-    def scoreBlockSlots(self, block):
+    def scoreBlockSlots(self, schedule, block):
         
         #todo: should we prevent small sizes on the same program from being scheduled on the same night? 
 
@@ -124,7 +152,7 @@ class ToastRandom(Toast):
                 continue
 
             #check for assigned
-            if not self.isSlotAvailable(block['tel'], slot['date'], slot['index'], block['size']):
+            if not self.isSlotAvailable(schedule, block['tel'], slot['date'], slot['index'], block['size']):
                 slot['score'] = 0
                 # print ("\tOVERLAP")
                 continue

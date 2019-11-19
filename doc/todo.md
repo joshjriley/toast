@@ -1,9 +1,13 @@
 # todo: high level
 - [DONE] Keck proposal data translator tool
-- [josh] Algorithm logic
+- [jr] TOAST Framework
+- [jr] Random algorithm logic
 - Schedule scoring
 - Airmass/target scoring
-- Schedule output display
+- Schedule GUI display
+- Save schedule to file and/or db
+- Integration with 
+- Optimize for speed
 
 
 
@@ -11,14 +15,18 @@
 - Implement classes for: Program, ProgInstr, Block
 
 
-# todo: algorithm
-- Implement cadence
-- Implement runs
+#todo: framework
+- Deal with multi instrument selection (ie NIRC2+NIRESPEC)
+- real query for other data: shutdown, moon phases, etc
 - Implement instrument switch incompatibility (ie LRIS/MOSFIRE)
 - Deal with instrument base config info (ie HIRESr and HIRESb are both base HIRES)
-- Deal with multi instrument selection (ie NIRC2+NIRESPEC)
+
+
+
+# todo: random algorithm
+- Implement runs
 - force small portions to different days (ie avoid same program on same night for 1/2 and 1/4)
-- real query for other data: shutdown, moon phases, etc
+- 
 
 
 

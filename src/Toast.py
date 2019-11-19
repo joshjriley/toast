@@ -18,7 +18,6 @@ class Toast(object):
 
         #member class vars
         self.config = None
-        self.schedule = None
   
 
     def start(self):
@@ -47,7 +46,8 @@ class Toast(object):
         #todo: check if the total proposed hours exceeds semester hours
 
         #do it
-        self.schedule = self.createSchedule()
+        schedule = self.createSchedule()
+        #self.printSchedule(schedule)
 
 
     def loadConfig(self):
@@ -170,20 +170,23 @@ class Toast(object):
 
     def initSchedule(self):
 
-        #create blank schedule for each telescope
-        self.schedules = {}
+        #create template schedule object for each telescope
+        schedule = {}
+        schedule['meta'] = {}
+        schedule['telescopes'] = {}
         for key, tel in self.telescopes.items():
-            self.schedules[key] = {}
-            self.schedules[key]["nights"] = {}
+            schedule['telescopes'][key] = {}
+            schedule['telescopes'][key]["nights"] = {}
             for date in self.datesList:
                 night = {}
                 night['slots'] = []
-                self.schedules[key]['nights'][date] = night
-      
+                schedule['telescopes'][key]['nights'][date] = night
+        return schedule 
 
-    def assignToSchedule(self, tel, date, index, size, ktn, instr):
-        schedule = self.schedules[tel]
-        night = schedule['nights'][date]
+
+    def assignToSchedule(self, schedule, tel, date, index, size, ktn, instr):
+        telsched = schedule['telescopes'][tel]
+        night = telsched['nights'][date]
         data = {
             'index': index,
             'size': size,
@@ -193,19 +196,18 @@ class Toast(object):
         night['slots'].append(data)
 
 
-    def isSlotAvailable(self, tel, date, index, size):
+    def isSlotAvailable(self, schedule, tel, date, index, size):
 
         #see if slot requested overlaps any slot assignments
-        night = self.schedules[tel]['nights'][date]
+        telsched = schedule['telescopes'][tel]
+        night = telsched['nights'][date]
         for slot in night['slots']:
             vStart = slot['index']
             vEnd = vStart + int(slot['size'] / self.config['slotPerc']) - 1
             sStart = index 
             sEnd = sStart + int(size / self.config['slotPerc']) - 1
-
             if (sStart >= vStart and sStart <= vEnd) or (sEnd >= vStart and sEnd <=vEnd):
                 return False
-
         return True
 
 
@@ -282,24 +284,25 @@ class Toast(object):
         gslotPrefFactor = {'P': 10,  'A': 5,  'N': 0,  'X': -20}
 
         score = 0
-        for night in schedule:
+        for telkey, telsched in schedule['telescopes'].items():
+            for night in telsched['nights']:
+                pass
+                # # deduct score based on number instrument switches
+                # numInstrSwitches = night.getNumInstrSwitches()
+                # score += numInstrSwitches * gInstrSwitchesFactor
 
-            # deduct score based on number instrument switches
-            numInstrSwitches = night.getNumInstrSwitches()
-            score += numInstrSwitches * gInstrSwitchesFactor
+                # # for each slot, alter score based on assignment preference [P,A,N,X]
+                # for slot in night:
+                #     pref = self.getAssignmentPref(slot.date, slot.ktn)
+                #     score += gslotPrefFactor[pref]
 
-            # for each slot, alter score based on assignment preference [P,A,N,X]
-            for slot in night:
-                pref = self.getAssignmentPref(slot.date, slot.ktn)
-                score += gslotPrefFactor[pref]
+                # #todo: alter score based on priority RA/DEC list?
 
-            #todo: alter score based on priority RA/DEC list?
+                # #todo: can a block get a size greater or less than requested?
 
-            #todo: can a block get a size greater or less than requested?
+                # #todo: score based on minimal runs for instruments that want runs
 
-            #todo: score based on minimal runs for instruments that want runs
-
-            return score
+        schedule['meta']['score'] = score
 
 
     #######################################################################
@@ -334,7 +337,7 @@ class Toast(object):
         return None
 
 
-    def printSchedule(self, tel=None, format='txt'):
+    def printSchedule(self, schedule, tel=None, format='txt'):
         '''
         Print out a schedule in text or html.
         
@@ -347,17 +350,20 @@ class Toast(object):
             2019-08-02  K2  [     N111     ][     C222     ]
             2019-08-02  K2  [ N123 ][ C123 ][ U123 ][ K123 ]
         '''        
-        print ('Semester: ', self.semester)
-        for schedKey, schedule in self.schedules.items():            
-            schedName = self.telescopes[schedKey]['name']
+        print (f"Semester: {self.semester}")
+        print (f"Schedule score: {schedule['meta']['score']}")
+        for telkey, telsched in schedule['telescopes'].items():
+            if tel and telkey != tel: continue
+
+            schedName = self.telescopes[telkey]['name']
             print (f'\nSchedule for {schedName}:')
             print (f'--------------------------')
 
             for date in self.datesList:
-                night = schedule['nights'][date]
+                night = telsched['nights'][date]
                 print(f"==={date}===")
 
-                if self.isTelShutdown(schedKey, date):
+                if self.isTelShutdown(telkey, date):
                     print(" *** SHUTDOWN ***")
 
                 slots = night['slots']
@@ -408,10 +414,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Start Keck auto-scheduler.")
     parser.add_argument("semester",   type=str,                                            help="Semester.")
     parser.add_argument("--method",   type=str,    dest="method",    default='random',     help="Algorithm method.")
+    parser.add_argument("--runCount", type=int,    dest="runCount",  default=1,            help="Number of times to run.")
     args = parser.parse_args()
 
     #go
-    if   args.method == 'random': toast = ToastRandom(args.semester)
+    if   args.method == 'random': toast = ToastRandom(args.semester, args.runCount)
     elif args.method == '???'   : toast = ToastXXX(args.semester)
     else:
         print (f"Unknown method {args.method}")
@@ -419,6 +426,5 @@ if __name__ == "__main__":
 
     #result
     toast.start()
-    toast.printSchedule()
     
     

@@ -5,9 +5,8 @@ This class contains common functions and variables for all Toast subclasses, so 
 
     semester            str     Semester code  (ie 2019B)
     programs            dict    Collection of approved proposal program objects (main input)
-    schedules           list    List of scheduled observing blocks for each telescope (main output)
+    schedule            dict    List of scheduled observing blocks for each telescope (main output)
     getSemesterDates()          Get start and end dates of semester
-    createDatesList()           Get list of consecutive dates in date range
     getMoonDates()              Get list of moon brightness periods in date range
     getPrograms()               Get list of approved proposal programs in date range
     getTelescopeShutdowns()     Get list of telescope shutdown dates in date range
@@ -60,7 +59,7 @@ NOTE: In lieu of a full OOP approach, we will just define the program data as a 
         {
             "MOSFIRE":
             {
-                "utDate": '2019-08-02,
+                "utDate": '2019-08-02',
                 "rangeDays": 4,
                 "portion": 1.0,
                 "index": 2,
@@ -76,35 +75,6 @@ NOTE: In lieu of a full OOP approach, we will just define the program data as a 
     },
 
 
-# Schedule
-
-A schedule is a consecutive list of dates for a particular telescope (ie K1, K2).  Each date night is filled with a number of blocks that fill all the potential slots in the schedule that night.
-
-NOTE: In lieu of a full OOP approach, we will just define this data as a JSON object.  Here is an example of a few days of scheduled K1:
-
-    'K1': 
-    {
-        'nights': 
-        {
-            '2019-08-01': 
-            {
-                'slots': 
-                [
-                    {'index': 0, 'instr': 'OSIRIS',  'portion': 0.5, 'progId': 'C345'},
-                    {'index': 2, 'instr': 'MOSFIRE', 'portion': 0.5, 'progId': 'N123'},
-                }
-            },
-            '2019-08-02': 
-            {
-                'slots': 
-                [
-                    {'index': 0, 'instr': 'OSIRIS',  'portion': 0.75, 'progId': 'C345'},
-                    {'index': 3, 'instr': 'MOSFIRE', 'portion': 0.25, 'progId': 'N123'},
-                }
-            }
-        }
-    }
-
 
 # Block: An observing period for a program on a particular night
 
@@ -112,10 +82,52 @@ Blocks are discrete schedulable chunks of a program to be slotted into the sched
 
 
     {
-        'instr':   'NIRES',
-        'progId':  'C123',
-        'portion': 0.5,
-        'telNum':  'K1',
-        'num':     3,
+        'tel'    : 'K1',            #dict key for telescope
+        'ktn'    : 'C123',          #program id
+        'instr'  : 'NIRES',         #instrument
+        'size'   : 0.5,             #size as perc of night
+        'num'    : 1,               #number of these block instances to schedule consecutively
+        'moonIndex': 2,             #index to requested moon phase from TAC scheduling
+        'reqDate': '2019-08-22',    #specific date requested from TAC scheduling
+        'reqPortion': '2h'          #specific night portion requested from TAC scheduling
     }
 
+
+
+# Schedule
+
+A schedule encapsulates all the info needed to define an output schedule.  This includes a consecutive list of semester dates for a each telescope (ie K1, K2).  Each date night is filled with a number of blocks of size that fill positional slots in the schedule that night.  A schedule also has a meta object for keeping stats and scores.
+
+NOTE: In lieu of a full OOP approach, we will just define this data as a JSON object.  Here is an example of a few days of scheduled K1:
+
+    {
+        'meta':
+        {
+            'score': 100
+        } ,
+        'telescopes':
+        {
+            'K1': 
+            {
+                'nights': 
+                {
+                    '2019-08-01': 
+                    {
+                        'slots': 
+                        [
+                            {'index': 0, 'size': 0.5, 'instr': 'OSIRIS',  'ktn': 'C345'},
+                            {'index': 2, 'size': 0.5, 'instr': 'MOSFIRE', 'ktn': 'N123'}
+                        }
+                    },
+                    '2019-08-02': 
+                    {
+                        'slots': 
+                        [
+                            {'index': 0, 'size': 0.75, 'instr': 'OSIRIS',  'ktn': 'C345'},
+                            {'index': 3, 'size': 0.25, 'instr': 'MOSFIRE', 'ktn': 'N123'}
+                        }
+                    }
+                }
+            }
+        }
+    }

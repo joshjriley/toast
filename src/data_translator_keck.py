@@ -233,7 +233,7 @@ def formDataToStandard(progData):
                 blocks.append(
                 {
                     'size'      : card['Time'],
-                    'moonSlot'  : card['Moon'],
+                    'moonIndex' : int(card['Slot'][1:])-1,
                     'reqDate'   : card['Date'],
                     'reqPortion': card['Portion'],
                 })

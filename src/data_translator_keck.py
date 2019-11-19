@@ -101,7 +101,7 @@ def queryProgramData(semester, dbConfigFile):
             infoReq = dbc.query('proposals', query, getOne=True)
 
             progInstr['moonPrefs']  = None
-            progInstr['reqPortion'] = None
+            progInstr['reqPortion'] = 0
             if infoReq:
                 if   type == "Classical": 
                     progInstr['moonPrefs']  = infoReq['PAX']
@@ -223,10 +223,10 @@ def formDataToStandard(progData):
         for instr in prog['instruments']:
             progInstr = {
                 'instr'     : instr['instr'],
-                'moonPrefs' : instr['moonPrefs'],
-                'reqPortion': instr['reqPortion'],
-                'appPortion': instr['appPortion'],
-                'appTotal'  : instr['appTotal'],
+                'moonPrefs' : instr['moonPrefs'].split(":") if instr['moonPrefs'] else [],
+                'reqPortion': float(instr['reqPortion']),
+                'appPortion': float(instr['appPortion']),
+                'appTotal'  : float(instr['appTotal']),
             }
             blocks = []
             for card in instr['cards']:
@@ -287,10 +287,10 @@ def saveProgramDataToFile(programs, outfile, compact=False):
             for icount, instr in enumerate(prog['instruments']):
                 txt += "\t\t\t{\n"
                 txt += f'\t\t\t\t"instr": "{instr["instr"]}",\n'
-                txt += f'\t\t\t\t"moonPrefs": "{instr["moonPrefs"]}",\n'
-                txt += f'\t\t\t\t"reqPortion": "{instr["reqPortion"]}",\n'
-                txt += f'\t\t\t\t"appPortion": "{instr["appPortion"]}",\n'
-                txt += f'\t\t\t\t"appTotal": "{instr["appTotal"]}",\n'
+                txt += f'\t\t\t\t"moonPrefs": {json.dumps(instr["moonPrefs"])},\n'
+                txt += f'\t\t\t\t"reqPortion": {instr["reqPortion"]},\n'
+                txt += f'\t\t\t\t"appPortion": {instr["appPortion"]},\n'
+                txt += f'\t\t\t\t"appTotal": {instr["appTotal"]},\n'
                 txt += f'\t\t\t\t"blocks":\n'
                 txt += f'\t\t\t\t[\n'
                 for bcount, block in enumerate(instr['blocks']):

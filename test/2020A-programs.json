@@ -21,10 +21,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "8.0",
+				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 8.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -56,10 +56,10 @@
 		[
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "-:-:-:A:A:-:A:P:A:-:A:P:A:-:A:-:-:-:-:-:-:-:-:-:-:",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["-", "-", "-", "A", "A", "-", "A", "P", "A", "-", "A", "P", "A", "-", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -88,10 +88,10 @@
 		[
 			{
 				"instr": "NIRES",
-				"moonPrefs": "A:P:A:A:A:P:A:A:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["A", "P", "A", "A", "A", "P", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": null},
@@ -100,10 +100,10 @@
 			},
 			{
 				"instr": "NIRES",
-				"moonPrefs": "-:-:-:-:-:-:-:A:-:A:A:A:A:P:A:A:A:P:A:A:A:A:A:-:-:",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "A", "-", "A", "A", "A", "A", "P", "A", "A", "A", "P", "A", "A", "A", "A", "A", "-", "-", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 17, "reqDate": null, "reqPortion": null},
@@ -126,10 +126,10 @@
 		[
 			{
 				"instr": "OSIRIS-NGS",
-				"moonPrefs": ":::::::::A:A:A:A:A:P:A:A:A::::::::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["", "", "", "", "", "", "", "", "", "A", "A", "A", "A", "A", "P", "A", "A", "A", "", "", "", "", "", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 17, "reqDate": null, "reqPortion": null}
@@ -157,10 +157,10 @@
 		[
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 10, "reqDate": null, "reqPortion": null},
@@ -169,10 +169,10 @@
 			},
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -197,10 +197,10 @@
 		[
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "::::::::A:P:P:A:A:A:A:A:A:-::::::::",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["", "", "", "", "", "", "", "", "A", "P", "P", "A", "A", "A", "A", "A", "A", "-", "", "", "", "", "", "", "", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -221,10 +221,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "P:A:P:P:P:A:P:P:P:A:P:P:A:A:-:-:-:-:-:-:-:-:-:-:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "4.0",
+				"moonPrefs": ["P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 4.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 5, "reqDate": null, "reqPortion": null},
@@ -248,10 +248,10 @@
 		[
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "X:X:X:X:X:X:P:P:P:P:X:A:A:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "P", "P", "P", "P", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 8, "reqDate": null, "reqPortion": null}
@@ -259,10 +259,10 @@
 			},
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "-:X:X:X:X:X:P:P:P:P:X:A:A:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "X", "X", "X", "X", "X", "P", "P", "P", "P", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -284,10 +284,10 @@
 		[
 			{
 				"instr": "NIRSPAO-NGS",
-				"moonPrefs": "::::::X:X:A:A:A:A:A:A:A:A:A:A:A:A:A:P:P:P:P:P",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["", "", "", "", "", "", "X", "X", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null},
@@ -310,10 +310,10 @@
 		[
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "::::::::::::::::::X:P:A::A:P:X:",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "X", "P", "A", "", "A", "P", "X", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -341,10 +341,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "-::A:P:A:-:A:P:A:-:A:P:A:::-:-:::-::::-::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["-", "", "A", "P", "A", "-", "A", "P", "A", "-", "A", "P", "A", "", "", "-", "-", "", "", "-", "", "", "", "-", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -353,10 +353,10 @@
 			},
 			{
 				"instr": "KCWI",
-				"moonPrefs": "-:-:-:-:-:-:-:A:A:-:A:P:A:-:A:P:A:-:A:A:-:-:-:A:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "A", "A", "-", "A", "P", "A", "-", "A", "P", "A", "-", "A", "A", "-", "-", "-", "A", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null},
@@ -379,10 +379,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": ":::P::::P::::::::::::::::::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "6.0",
+				"moonPrefs": ["", "", "", "P", "", "", "", "P", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 6.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -411,10 +411,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "-:-:-:-:-:-:-:A:A:A:A:A:P:P:A:-:-:-:-:-:-:-:-:-:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "A", "A", "A", "A", "A", "P", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 13, "reqDate": null, "reqPortion": null},
@@ -442,10 +442,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "X:X:X:A:A:A:A:A:A:P:P:P:P:P:P:P:P:A:A:A:A:A:A:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["X", "X", "X", "A", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 17, "reqDate": null, "reqPortion": null},
@@ -467,10 +467,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "A::A:P:A::::-::::::::::A:P:A:::::",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["A", "", "A", "P", "A", "", "", "", "-", "", "", "", "", "", "", "", "", "", "A", "P", "A", "", "", "", "", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 4, "reqDate": null, "reqPortion": null}
@@ -478,10 +478,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:-:-:A:P:A:-:-:-:-:-:-:-:-:-:-:-:-:-:A:P:A:-",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "A", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "A", "-"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -489,10 +489,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:A:P:A:-:-:-:-:-:-:-:-:-:-:-:-:-",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -500,10 +500,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:A:P:A:-:-:-:-:-:-:-:-:-",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -524,10 +524,10 @@
 		[
 			{
 				"instr": "NIRES",
-				"moonPrefs": "-:-:-:-:-:-:-:::::A:P:P:P:A::::::::::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "", "", "", "", "A", "P", "P", "P", "A", "", "", "", "", "", "", "", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 14, "reqDate": null, "reqPortion": null},
@@ -549,10 +549,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:A:-:A:A:A:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["-", "-", "-", "-", "A", "-", "A", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -560,10 +560,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:A:A:A:-:-:-:-:-:-:-:-:",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -571,10 +571,10 @@
 			},
 			{
 				"instr": "NIRES",
-				"moonPrefs": "A:A:A:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["A", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 2, "reqDate": null, "reqPortion": null}
@@ -582,10 +582,10 @@
 			},
 			{
 				"instr": "NIRES",
-				"moonPrefs": "::::::::A:A:A::A:-:-:-:-:-::::::::",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["", "", "", "", "", "", "", "", "A", "A", "A", "", "A", "-", "-", "-", "-", "-", "", "", "", "", "", "", "", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 10, "reqDate": null, "reqPortion": null}
@@ -609,10 +609,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": ":::::::P::::P:A:::P:A:::P:A:::P:A:",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "2.5",
+				"moonPrefs": ["", "", "", "", "", "", "", "P", "", "", "", "P", "A", "", "", "P", "A", "", "", "P", "A", "", "", "P", "A", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 2.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -639,10 +639,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:A:A:A:P:P:P:P:P:P",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 13, "reqDate": null, "reqPortion": null},
@@ -651,10 +651,10 @@
 			},
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "X:X:X:X:X:X:X:A:A:P:P:P:P:P:P:P:A:A:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "A", "A", "P", "P", "P", "P", "P", "P", "P", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -676,10 +676,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:A:A:A:A:A:P:P:P:P:P:A:A:A:A:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "A", "A", "A", "A", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 17, "reqDate": null, "reqPortion": null},
@@ -702,10 +702,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:P:A:X:A:P:X:X",
-				"reqPortion": "0.75",
-				"appPortion": "0.75",
-				"appTotal": "0.75",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "A", "X", "A", "P", "X", "X"],
+				"reqPortion": 0.75,
+				"appPortion": 0.75,
+				"appTotal": 0.75,
 				"blocks":
 				[
 					{"size": 0.75, "moonIndex": 20, "reqDate": null, "reqPortion": null}
@@ -731,10 +731,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:X:P:P:P:P:P:P",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "X", "P", "P", "P", "P", "P", "P"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 18, "reqDate": null, "reqPortion": null}
@@ -742,10 +742,10 @@
 			},
 			{
 				"instr": "NIRC2-LGS",
-				"moonPrefs": "P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:A:A:A:A:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 14, "reqDate": null, "reqPortion": null}
@@ -767,10 +767,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "::::::::::::A:A:A:X:P:P:X:A:A:A:A:A:P:P",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "A", "A", "A", "X", "P", "P", "X", "A", "A", "A", "A", "A", "P", "P"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 25, "reqDate": null, "reqPortion": null}
@@ -794,10 +794,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:A:A:P:P:P:P:P:P:P:P:P",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "P"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 22, "reqDate": null, "reqPortion": null},
@@ -822,10 +822,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "X:X:X:X:X:X:X:X:P:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 8, "reqDate": null, "reqPortion": null}
@@ -833,10 +833,10 @@
 			},
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "X:X:X:P:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -844,10 +844,10 @@
 			},
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "X:P:X:X:X:X:X:X:X:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.75",
-				"appPortion": "0.75",
-				"appTotal": "0.75",
+				"moonPrefs": ["X", "P", "X", "X", "X", "X", "X", "X", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.75,
+				"appPortion": 0.75,
+				"appTotal": 0.75,
 				"blocks":
 				[
 					{"size": 0.75, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -876,10 +876,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "X:X:X:X:X:X:X:P:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -888,10 +888,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:P:A:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 12, "reqDate": null, "reqPortion": null}
@@ -899,10 +899,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "X:X:X:P:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "X", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -924,10 +924,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:A:A:-:A:P:A:-:A:A:A:-:A:A:A:::::::::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "A", "A", "-", "A", "P", "A", "-", "A", "A", "A", "-", "A", "A", "A", "", "", "", "", "", "", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 10, "reqDate": null, "reqPortion": null}
@@ -935,10 +935,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:A:A:-:A:A:A:-:A:P:A:-:A:A:A:-:A:A:-:-:-:-:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "A", "A", "-", "A", "A", "A", "-", "A", "P", "A", "-", "A", "A", "A", "-", "A", "A", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 19, "reqDate": null, "reqPortion": null}
@@ -960,10 +960,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "P:X:P:P:P:X:P:P:P:X:P:P:P:X:P:P:P:X:P:P:P:X:P:P:P:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "4.0",
+				"moonPrefs": ["P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 4.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -974,10 +974,10 @@
 			},
 			{
 				"instr": "ESI",
-				"moonPrefs": "P:X:P:P:P:X:P:P:P:X:P:P:P:X:P:P:P:X:P:P:P:X:P:P:P:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -1004,10 +1004,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "A:A:A:A:A:A:A:A:A:A:P:P:P:A:A:A:A:A:A:A:A:A:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -1028,10 +1028,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-::A:P:A:::::::::::::::::::::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "", "A", "P", "A", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -1039,10 +1039,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:-:-:A:P:A:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "A", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -1050,10 +1050,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:A:P:A:-:-:-:-:-:-:-:-:-:-:-:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 11, "reqDate": null, "reqPortion": null}
@@ -1061,10 +1061,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:A:P:A:-:-:-:-:-:-:-:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -1072,10 +1072,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:A:P:A:-:-:-:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "A", "-", "-", "-", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 19, "reqDate": null, "reqPortion": null}
@@ -1096,10 +1096,10 @@
 		[
 			{
 				"instr": "ESI",
-				"moonPrefs": "A:X:A:P:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["A", "X", "A", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 2, "reqDate": null, "reqPortion": null}
@@ -1121,10 +1121,10 @@
 		[
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "-:-:-:A:A:A:A:A:A:-:A:A:P:P:P:A:A:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "A", "A", "A", "A", "A", "A", "-", "A", "A", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -1132,10 +1132,10 @@
 			},
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "A:A:A:A:P:P:P:A:A:A:A:A:A:A:A:A:A:A::::::::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["A", "A", "A", "A", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "", "", "", "", "", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 17, "reqDate": null, "reqPortion": null}
@@ -1156,10 +1156,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": ":::::::::::P::::P::::-::::-::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "P", "", "", "", "P", "", "", "", "-", "", "", "", "-", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -1167,10 +1167,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:P:-:-:-:P:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "P", "-", "-", "-", "P", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -1191,10 +1191,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": ":::::::::::::::::::::::::",
-				"reqPortion": "1.0",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -1202,10 +1202,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 20, "reqDate": null, "reqPortion": null}
@@ -1213,10 +1213,10 @@
 			},
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -1237,10 +1237,10 @@
 		[
 			{
 				"instr": "NIRSPAO-NGS",
-				"moonPrefs": ":::::::::::::::::P:P:P::::::",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.5",
+				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "P", "P", "P", "", "", "", "", "", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 17, "reqDate": null, "reqPortion": null},
@@ -1271,10 +1271,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "X:X:X:X:X:X:X:A:A:A:A:A:A:X:X:X:A:A:A:P:P:P:P:A:A:A",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "A", "X", "X", "X", "A", "A", "A", "P", "P", "P", "P", "A", "A", "A"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 19, "reqDate": null, "reqPortion": null}
@@ -1303,10 +1303,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "A:X:A:P:P:X:P:X:X:X:P:P:P:X:A:P:P:X:X:A:A:X:A:A:A:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["A", "X", "A", "P", "P", "X", "P", "X", "X", "X", "P", "P", "P", "X", "A", "P", "P", "X", "X", "A", "A", "X", "A", "A", "A", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -1329,10 +1329,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "A:X:A:P:A:X:A:P:A:X:A:P:A:X:A:A:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -1354,10 +1354,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:A:P:P:P:P:P:P:P:P:P:P",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "4.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 4.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 18, "reqDate": null, "reqPortion": null},
@@ -1390,10 +1390,10 @@
 		[
 			{
 				"instr": "LRISp-ADC",
-				"moonPrefs": "-:-:-:P:-:-::A:-:-:-::-::-:::::::::::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "P", "-", "-", "", "A", "-", "-", "-", "", "-", "", "-", "", "", "", "", "", "", "", "", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -1401,10 +1401,10 @@
 			},
 			{
 				"instr": "LRISp-ADC",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:A:-:-:-:P:-:-:-:-:-:-:-:-:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "-", "-", "-", "P", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -1412,10 +1412,10 @@
 			},
 			{
 				"instr": "LRISp-ADC",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:A:-:-:-:P:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "-", "-", "-", "P", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -1436,10 +1436,10 @@
 		[
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:A:A:X:A:P:A:X:A:A:A:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "X", "A", "P", "A", "X", "A", "A", "A", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 19, "reqDate": null, "reqPortion": null},
@@ -1463,10 +1463,10 @@
 		[
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:A:X:A:P:A:X:A:A:A:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "X", "A", "P", "A", "X", "A", "A", "A", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 19, "reqDate": null, "reqPortion": null},
@@ -1490,10 +1490,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "-:-:A:P:A:-:A:P:A:-:A:A:A:-:-:-:-:-:-:-:-:-:-:-:-:",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "A", "P", "A", "-", "A", "P", "A", "-", "A", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -1514,10 +1514,10 @@
 		[
 			{
 				"instr": "NIRC2-LGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:P:P:X:P:P:P:X:A:A:A:X:A:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "P", "X", "P", "P", "P", "X", "A", "A", "A", "X", "A", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 12, "reqDate": null, "reqPortion": null},
@@ -1543,10 +1543,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 5, "reqDate": null, "reqPortion": null}
@@ -1567,10 +1567,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": ":P:P:A:A:P:P:P:A:A::::::::::::::::",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.5",
+				"moonPrefs": ["", "P", "P", "A", "A", "P", "P", "P", "A", "A", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 2, "reqDate": null, "reqPortion": null},
@@ -1593,10 +1593,10 @@
 		[
 			{
 				"instr": "NIRC2-LGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:A:A:A:A:A:A:P:P:P:P:P:P:P:P",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null}
@@ -1604,10 +1604,10 @@
 			},
 			{
 				"instr": "NIRC2-LGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:A:A:A:A:A:A:P:P:P:P:P:P:P:P",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 21, "reqDate": null, "reqPortion": null}
@@ -1628,10 +1628,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:A:A:A:A:A:A:A:A:P:P:P:P:P:P:P:P:P",
-				"reqPortion": "0.5",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "P"],
+				"reqPortion": 0.5,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null}
@@ -1652,10 +1652,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "P:P:P:A::::::::::::::::::::::",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["P", "P", "P", "A", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -1680,10 +1680,10 @@
 		[
 			{
 				"instr": "NIRES",
-				"moonPrefs": "X:X:X:X:X:X:A:A:A:P:P:P:P:P:P:P:P:A:P:P:A:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "A", "P", "P", "A", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 13, "reqDate": null, "reqPortion": null},
@@ -1692,10 +1692,10 @@
 			},
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "-:-:-:-:-:-:X:X:X:X:X:X:X:X:X:X:A:P:P:P:P:P:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "P", "P", "P", "P", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 17, "reqDate": null, "reqPortion": null}
@@ -1716,10 +1716,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "4.0",
+				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 4.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 10, "reqDate": null, "reqPortion": null},
@@ -1743,10 +1743,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "P:A:X:X:P:A:X:X:P:A:X:A:P:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["P", "A", "X", "X", "P", "A", "X", "X", "P", "A", "X", "A", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 24, "reqDate": null, "reqPortion": null}
@@ -1768,10 +1768,10 @@
 		[
 			{
 				"instr": "NIRC2-LGS",
-				"moonPrefs": "::-:-:-:-:A:P:P:P:P:A:A:-::::::::::::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["", "", "-", "-", "-", "-", "A", "P", "P", "P", "P", "A", "A", "-", "", "", "", "", "", "", "", "", "", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 8, "reqDate": null, "reqPortion": null},
@@ -1780,10 +1780,10 @@
 			},
 			{
 				"instr": "NIRC2-LGS",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:X:-:P:P:P:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "X", "-", "P", "P", "P", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -1811,10 +1811,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "A:X:P:P:P:X:P:P:P:X:P:P:P:X:P:P:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["A", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 4, "reqDate": null, "reqPortion": null}
@@ -1840,10 +1840,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:A:X:X:X:P:X:X:X:A:X:X:X:A:X:X:X:A:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -1852,10 +1852,10 @@
 			},
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:X:X:X:X:A:X:X:X:A:X:X:X:A:X:X:X:P:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 19, "reqDate": null, "reqPortion": null}
@@ -1876,10 +1876,10 @@
 		[
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "X:X:X:A:X:X:X:P:X:X:X:P:X:X:X:A:X:X:X:A:X:X:X:A:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 11, "reqDate": null, "reqPortion": null},
@@ -1901,10 +1901,10 @@
 		[
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "A:A:P:P:P:A:P:P:P:A:P:P:P:A:P:P:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["A", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 1, "reqDate": null, "reqPortion": null},
@@ -1935,10 +1935,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": ":::-:A:P:P:P:P:P:P:P:A:A::::::::::::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["", "", "", "-", "A", "P", "P", "P", "P", "P", "P", "P", "A", "A", "", "", "", "", "", "", "", "", "", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -1959,10 +1959,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "::::::::::::A::::P::::P::::A:",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "A", "", "", "", "P", "", "", "", "P", "", "", "", "A", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 20, "reqDate": null, "reqPortion": null}
@@ -1985,10 +1985,10 @@
 		[
 			{
 				"instr": "ESI",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:A:A:P:P:P:P:P",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "A", "P", "P", "P", "P", "P"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -2015,10 +2015,10 @@
 		[
 			{
 				"instr": "LRISp-ADC",
-				"moonPrefs": ":::::::::::::::::A:P:P:P:P:P:P:A:",
-				"reqPortion": "1.0",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "A", "P", "P", "P", "P", "P", "P", "A", ""],
+				"reqPortion": 1.0,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 19, "reqDate": null, "reqPortion": null}
@@ -2048,10 +2048,10 @@
 		[
 			{
 				"instr": "NIRC2-LGS",
-				"moonPrefs": "A:P:P:P:P:P:P:P:P:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["A", "P", "P", "P", "P", "P", "P", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -2072,10 +2072,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:A:A:A:A:A:P:P:P:P:P",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "4.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 4.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null},
@@ -2101,10 +2101,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "A:X:A:P:A:X:A:P:A:X:A:P:A:X:A:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 12, "reqDate": null, "reqPortion": null},
@@ -2124,10 +2124,10 @@
 		[
 			{
 				"instr": "HIRESb",
-				"moonPrefs": "P:A:P:P:P:A:P:P:P:A:P:P:P:A:P:P:P:A:P:P:P:A:P:P:P:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 14, "reqDate": null, "reqPortion": null}
@@ -2150,10 +2150,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:A:P:A:-",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "A", "-"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": "second half"},
@@ -2179,10 +2179,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": ":::P::::P::::P::::P::::P::::A::",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["", "", "", "P", "", "", "", "P", "", "", "", "P", "", "", "", "P", "", "", "", "P", "", "", "", "A", "", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -2210,10 +2210,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": null},
@@ -2236,10 +2236,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "P:P:P:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:A:A:A:P:P:P:P",
-				"reqPortion": "1.0",
-				"appPortion": "0.5",
-				"appTotal": "1.5",
+				"moonPrefs": ["P", "P", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "P", "P", "P", "P"],
+				"reqPortion": 1.0,
+				"appPortion": 0.5,
+				"appTotal": 1.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 24, "reqDate": null, "reqPortion": null},
@@ -2264,10 +2264,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "A:A:A:A:A:P:P:P:P:P:P:P:P:A:A:A:A:A:A:A:A:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 3, "reqDate": null, "reqPortion": "second half"},
@@ -2291,10 +2291,10 @@
 		[
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:X:X:P:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "X", "X", "P", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 22, "reqDate": "2020-07-13", "reqPortion": "any"}
@@ -2315,10 +2315,10 @@
 		[
 			{
 				"instr": "NIRC2-LGS",
-				"moonPrefs": "A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "0.5",
-				"appTotal": "1.5",
+				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 0.5,
+				"appTotal": 1.5,
 				"blocks":
 				[
 					{"size": 0.75, "moonIndex": 11, "reqDate": null, "reqPortion": "first half"},
@@ -2342,10 +2342,10 @@
 		[
 			{
 				"instr": "NIRSPAO-NGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:A:P:P:P:P:A:A:A:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "P", "P", "P", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 10, "reqDate": null, "reqPortion": null}
@@ -2369,10 +2369,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "A:X:A:P:P:X:A:P:A:X:A:A:A:X:A:A:X:X:A:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["A", "X", "A", "P", "P", "X", "A", "P", "A", "X", "A", "A", "A", "X", "A", "A", "X", "X", "A", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 4, "reqDate": null, "reqPortion": null}
@@ -2395,10 +2395,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "P:P:A:A:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": ["P", "P", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 1, "reqDate": null, "reqPortion": "first quarter"}
@@ -2419,10 +2419,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "A:A:A:A:A:A:P:P:P:A:P:P:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["A", "A", "A", "A", "A", "A", "P", "P", "P", "A", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 8, "reqDate": null, "reqPortion": "first half"}
@@ -2444,10 +2444,10 @@
 		[
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "A:X:A:P:A:X:A:P:A:X:A:P:A:X:A:P:A:X:A:A:A:X:A:A:A:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "A", "A", "X", "A", "A", "A", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -2469,10 +2469,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "X:A:A:P:P:P:P:P:P:P:P:P:P:A:A:A:A:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["X", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 3, "reqDate": null, "reqPortion": "second half"},
@@ -2496,10 +2496,10 @@
 		[
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "X:A:X:A:X:X:A:X:X:A:X:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["X", "A", "X", "A", "X", "X", "A", "X", "X", "A", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 6, "reqDate": "2020-03-14", "reqPortion": "any"},
@@ -2521,10 +2521,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "None",
-				"reqPortion": "0.25",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": [],
+				"reqPortion": 0.25,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 11, "reqDate": "2020-04-25", "reqPortion": "fourth quarter"}
@@ -2551,10 +2551,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "P:A:P:P:P:A:P:P:P:A:P:P:P:A:P:P:P:A:P:P:P:A:P:P:P:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 2, "reqDate": null, "reqPortion": null},
@@ -2577,10 +2577,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:P:X:X:X:A:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 11, "reqDate": null, "reqPortion": null}
@@ -2606,10 +2606,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:A:P:A:X:A:P:A:X:A:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -2630,10 +2630,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:P:P:A:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "P", "A", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 19, "reqDate": null, "reqPortion": "first half"},
@@ -2656,10 +2656,10 @@
 		[
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "None",
-				"reqPortion": "0.25",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": [],
+				"reqPortion": 0.25,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 11, "reqDate": null, "reqPortion": "fourth quarter"}
@@ -2667,10 +2667,10 @@
 			},
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "None",
-				"reqPortion": "0.25",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": [],
+				"reqPortion": 0.25,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 23, "reqDate": null, "reqPortion": "first quarter"}
@@ -2678,10 +2678,10 @@
 			},
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "None",
-				"reqPortion": "0.25",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": [],
+				"reqPortion": 0.25,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 19, "reqDate": null, "reqPortion": "second half"}
@@ -2703,10 +2703,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:X:A:X:A:A:A:X:A:P:A:X:A:P:A:X:A:A:A:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "A", "X", "A", "A", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "A", "A", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -2731,10 +2731,10 @@
 		[
 			{
 				"instr": "NIRC2-LGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:A:A:A:P:P:P:P:P",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "P", "P", "P", "P", "P"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.5,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 25, "reqDate": null, "reqPortion": "any"},
@@ -2756,10 +2756,10 @@
 		[
 			{
 				"instr": "NIRC2-LGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:A:P:P:P:P:P",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "P", "P", "P", "P", "P"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -2780,10 +2780,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "P:X:X:P:P:X:A:A:X:X:P:P:X:X:A:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["P", "X", "X", "P", "P", "X", "A", "A", "X", "X", "P", "P", "X", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 3, "reqDate": null, "reqPortion": "second half"},
@@ -2805,10 +2805,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:A:A:A:X:P:P:P:P:P:P:P:P",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "A", "A", "X", "P", "P", "P", "P", "P", "P", "P", "P"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null}
@@ -2838,10 +2838,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "6.0",
+				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 6.0,
 				"blocks":
 				[
 					{"size": 0.75, "moonIndex": 1, "reqDate": null, "reqPortion": "second half"},
@@ -2876,10 +2876,10 @@
 		[
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "X:X:X:A:X:X:X:A:X:X:X:A:X:X:X:A:X:X:X:A:X:X:X:A:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -2904,10 +2904,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "-:-:-:A:A:-:-:P:P:-:-:X:-:-:P:P:-:-:-:-:X:X:-:-:-:",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "A", "A", "-", "-", "P", "P", "-", "-", "X", "-", "-", "P", "P", "-", "-", "-", "-", "X", "X", "-", "-", "-", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 15, "reqDate": null, "reqPortion": null},
@@ -2937,10 +2937,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "P:X:P:A:P:X:P:A:P:X:P:A:P:X:P:A:P:X:P:A:P:X:P:A:P:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["P", "X", "P", "A", "P", "X", "P", "A", "P", "X", "P", "A", "P", "X", "P", "A", "P", "X", "P", "A", "P", "X", "P", "A", "P", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 24, "reqDate": null, "reqPortion": null}
@@ -2948,10 +2948,10 @@
 			},
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "A:A:A:P:A:A:A:P:A:A:A:P:A:A:A:P:A:A:A:P:A:A:A:P:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["A", "A", "A", "P", "A", "A", "A", "P", "A", "A", "A", "P", "A", "A", "A", "P", "A", "A", "A", "P", "A", "A", "A", "P", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 20, "reqDate": null, "reqPortion": null}
@@ -2959,10 +2959,10 @@
 			},
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -2970,10 +2970,10 @@
 			},
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 25, "reqDate": null, "reqPortion": null}
@@ -3003,10 +3003,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "X:X:X:X:X:X:X:P:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -3029,10 +3029,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "::::::::::::::::::A:A:P:P:A:A:A:",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "A", "A", "P", "P", "A", "A", "A", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 20, "reqDate": null, "reqPortion": null}
@@ -3040,10 +3040,10 @@
 			},
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:A:P:P",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "P"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 24, "reqDate": null, "reqPortion": null}
@@ -3068,10 +3068,10 @@
 		[
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "X:X:X:P:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -3099,10 +3099,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:P:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 11, "reqDate": null, "reqPortion": null}
@@ -3123,10 +3123,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "P:A:X:X:A:A:P:P:P:P:P:A:A:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["P", "A", "X", "X", "A", "A", "P", "P", "P", "P", "P", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 9, "reqDate": null, "reqPortion": null},
@@ -3148,10 +3148,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:X:X:X:X:P:X:X:X:P:X:X:X:A:X:X:X:P:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "2.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 19, "reqDate": null, "reqPortion": null},
@@ -3184,10 +3184,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:X:A:X:A:P:P:X:A:A:A:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "A", "X", "A", "P", "P", "X", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 10, "reqDate": null, "reqPortion": null}
@@ -3208,10 +3208,10 @@
 		[
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "None",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": [],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null},
@@ -3234,10 +3234,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "None",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": [],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": null},
@@ -3260,10 +3260,10 @@
 		[
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "-:::-:-:-:A:P:A:-:A:P:A::A:-::::::::::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["-", "", "", "-", "-", "-", "A", "P", "A", "-", "A", "P", "A", "", "A", "-", "", "", "", "", "", "", "", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 10, "reqDate": null, "reqPortion": null},
@@ -3294,10 +3294,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "12.0",
+				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 12.0,
 				"blocks":
 				[
 					{"size": 0.75, "moonIndex": 22, "reqDate": null, "reqPortion": null},
@@ -3339,10 +3339,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "P:P:P:P:P:P:P:P:P:P:P:P:P:A:A:A:A:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 8, "reqDate": null, "reqPortion": null},
@@ -3367,10 +3367,10 @@
 		[
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:P:P:P:P:P:P:A:A:-:-:-:-:-:-:",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "P", "P", "P", "P", "P", "P", "A", "A", "-", "-", "-", "-", "-", "-", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 13, "reqDate": null, "reqPortion": null},
@@ -3396,10 +3396,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:X:X:X:X:P:X:X:X:P:X:X:X:A:X:X:X:P:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 15, "reqDate": null, "reqPortion": null},
@@ -3431,10 +3431,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:X:A:X:P:P:P:X:A:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "A", "X", "P", "P", "P", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 6, "reqDate": null, "reqPortion": null}
@@ -3464,10 +3464,10 @@
 		[
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "A:A:A:A:A:P:P:P:P:P:P:P:P:A:A:A:A:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -3475,10 +3475,10 @@
 			},
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:A:A:P:P:X:P:P:P:P:P",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "P", "P", "X", "P", "P", "P", "P", "P"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 25, "reqDate": null, "reqPortion": null}
@@ -3500,10 +3500,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "P:P:P:P:P:P:P:A:A:A:A:A:-:-:-:-:-:-:-:-:-:-:-:-:-:",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -3528,10 +3528,10 @@
 		[
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "P:-:P:A:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["P", "-", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 2, "reqDate": null, "reqPortion": null},
@@ -3541,10 +3541,10 @@
 			},
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "P:-:P:A:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["P", "-", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 0, "reqDate": null, "reqPortion": null}
@@ -3566,10 +3566,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "X:X:X:A:X:X:X:P:X:X:X:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -3595,10 +3595,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "X:X:X:P:X:X:X:P:X:X:X:P:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -3625,10 +3625,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "P:P:P:A:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["P", "P", "P", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -3636,10 +3636,10 @@
 			},
 			{
 				"instr": "ESI",
-				"moonPrefs": "X:X:X:X:A:A:P:P:P:A:A:A:A:P:P:P:A:A:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "A", "A", "P", "P", "P", "A", "A", "A", "A", "P", "P", "P", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 13, "reqDate": null, "reqPortion": null},
@@ -3670,10 +3670,10 @@
 		[
 			{
 				"instr": "NIRES",
-				"moonPrefs": "P:P:P:P:A:A:A:A:A:A:A:A:A:P:P:P:A:A:A:P:X:P:P:P:P:A",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.5",
+				"moonPrefs": ["P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A", "P", "P", "P", "A", "A", "A", "P", "X", "P", "P", "P", "P", "A"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 1, "reqDate": null, "reqPortion": null},
@@ -3699,10 +3699,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": ":::P::::P::::P::::P::::A::::A::",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "2.0",
+				"moonPrefs": ["", "", "", "P", "", "", "", "P", "", "", "", "P", "", "", "", "P", "", "", "", "A", "", "", "", "A", "", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -3726,10 +3726,10 @@
 		[
 			{
 				"instr": "ESI",
-				"moonPrefs": "X:X:X:X:A:X:A:P:A:X:A:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "A", "X", "A", "P", "A", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 6, "reqDate": null, "reqPortion": null}
@@ -3737,10 +3737,10 @@
 			},
 			{
 				"instr": "NIRES",
-				"moonPrefs": "X:X:X:X:A:P:P:P:P:P:P:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "A", "P", "P", "P", "P", "P", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 5, "reqDate": null, "reqPortion": null}
@@ -3764,10 +3764,10 @@
 		[
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "X:X:X:X:X:X:X:A:A:X:X:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "A", "A", "X", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -3775,10 +3775,10 @@
 			},
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "P:X:X:P:P:X:X:P:A:X:P:P:X:X:P:P:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["P", "X", "X", "P", "P", "X", "X", "P", "A", "X", "P", "P", "X", "X", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 4, "reqDate": null, "reqPortion": null}
@@ -3806,10 +3806,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:X:X:X:X:P:X:X:X:P:X:X:X:P:X:X:X:A:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -3817,10 +3817,10 @@
 			},
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:A:X:X:X:P:X:X:X:P:X:X:X:P:X:X:X:A:X:X:X:A:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -3847,10 +3847,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:A:A:X:A:P:A:X:A:P:A:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 16, "reqDate": null, "reqPortion": null}
@@ -3858,10 +3858,10 @@
 			},
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:A:A:X:X:A:A:X:X:A:A:X:P:P:X:X:P:P:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "X", "A", "A", "X", "X", "A", "A", "X", "X", "A", "A", "X", "P", "P", "X", "X", "P", "P", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 11, "reqDate": null, "reqPortion": null}
@@ -3882,10 +3882,10 @@
 		[
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "X:X:X:X:X:X:X:P:P:X:A:A:X:X:A:P:A:X:P:A:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "3.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "P", "P", "X", "A", "A", "X", "X", "A", "P", "A", "X", "P", "A", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 3.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 11, "reqDate": null, "reqPortion": null},
@@ -3912,10 +3912,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "None",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": [],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null},
@@ -3937,10 +3937,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:P:-:-:-:-:-:-:-:-:-:-:-:-:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "P", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 11, "reqDate": null, "reqPortion": null}
@@ -3948,10 +3948,10 @@
 			},
 			{
 				"instr": "KCWI",
-				"moonPrefs": ":::P::::A:-:::P:::::::::::::-:",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["", "", "", "P", "", "", "", "A", "-", "", "", "P", "", "", "", "", "", "", "", "", "", "", "", "", "-", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 11, "reqDate": null, "reqPortion": null},
@@ -3976,10 +3976,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "X:X:X:X:X:P:P:P:P:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "P", "P", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 6, "reqDate": null, "reqPortion": null}
@@ -3987,10 +3987,10 @@
 			},
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "X:X:X:X:X:X:P:P:P:P:P:P:P:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "P", "P", "P", "P", "P", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 11, "reqDate": null, "reqPortion": null},
@@ -4013,10 +4013,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": ":::::::P::::::::::::::::::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["", "", "", "", "", "", "", "P", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -4024,10 +4024,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:P:-:-:-:-:-:-:-:-:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "P", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -4048,10 +4048,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:P:P:P",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "P", "P"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 24, "reqDate": null, "reqPortion": null},
@@ -4080,10 +4080,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:X:X:X:X:A:X:X:X:P:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -4105,10 +4105,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "X:X:X:P:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -4116,10 +4116,10 @@
 			},
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "X:X:X:P:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -4149,10 +4149,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "X:X:X:X:X:X:X:A:A:X:A:P:P:X:P:P:P:X:A:A:A:X:A:A:A:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "A", "A", "X", "A", "P", "P", "X", "P", "P", "P", "X", "A", "A", "A", "X", "A", "A", "A", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null},
@@ -4177,10 +4177,10 @@
 		[
 			{
 				"instr": "HIRESb",
-				"moonPrefs": "P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null},
@@ -4191,10 +4191,10 @@
 			},
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "P:P:P:P:P:P:P:P:P:P:P:P:P:A:A:A:A:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 2, "reqDate": null, "reqPortion": null}
@@ -4216,10 +4216,10 @@
 		[
 			{
 				"instr": "ESI",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:X:A:P:A:X:A:P:A:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 19, "reqDate": null, "reqPortion": null},
@@ -4242,10 +4242,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:P:P:P:A:A:A",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "P", "P", "A", "A", "A"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 21, "reqDate": null, "reqPortion": null},
@@ -4267,10 +4267,10 @@
 		[
 			{
 				"instr": "NIRC2-LGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:A:A:A:A:A:P:P:P:P:P:::::P:P:P:P",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "5.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "", "", "", "", "P", "P", "P", "P"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 5.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 24, "reqDate": null, "reqPortion": null},
@@ -4287,10 +4287,10 @@
 			},
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:A:A:A:A:A:P:P:P:P:P:-:-:-:-:P:P:P:P",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "3.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "-", "-", "-", "-", "P", "P", "P", "P"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 13, "reqDate": null, "reqPortion": null},
@@ -4316,10 +4316,10 @@
 		[
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "X:X:A:A:A:X:A:P:P:X:A:A:A:X:A:P:A:X:A:A:A:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "A", "A", "A", "X", "A", "P", "P", "X", "A", "A", "A", "X", "A", "P", "A", "X", "A", "A", "A", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 8, "reqDate": null, "reqPortion": null}
@@ -4327,10 +4327,10 @@
 			},
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "X:X:A:A:A:P:P:P:P:A:A:A:A:A:A:P:P:P:A:A:A:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "A", "A", "A", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "P", "P", "P", "A", "A", "A", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 5, "reqDate": null, "reqPortion": null}
@@ -4351,10 +4351,10 @@
 		[
 			{
 				"instr": "OSIRIS-NGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:P:P:P",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "P", "P"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 25, "reqDate": null, "reqPortion": null},
@@ -4377,10 +4377,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "A:X:X:A:A:X:X:P:A:X:A:P:X:X:A:A:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["A", "X", "X", "A", "A", "X", "X", "P", "A", "X", "A", "P", "X", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 14, "reqDate": null, "reqPortion": null},
@@ -4414,10 +4414,10 @@
 		[
 			{
 				"instr": "NIRSPAO-NGS",
-				"moonPrefs": "A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null},
@@ -4448,10 +4448,10 @@
 		[
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "X:X:X:X:X:X:P:P:P:P:A:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "P", "P", "P", "P", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -4473,10 +4473,10 @@
 		[
 			{
 				"instr": "OSIRIS-NGS",
-				"moonPrefs": ":::::::X:X:X:A:P:P:X:X:X:X:X:A:P:P:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["", "", "", "", "", "", "", "X", "X", "X", "A", "P", "P", "X", "X", "X", "X", "X", "A", "P", "P", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 10, "reqDate": null, "reqPortion": null},
@@ -4500,10 +4500,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:P:P:P:P:P:P:P:P:P:P:A:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -4511,10 +4511,10 @@
 			},
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:P:P:P:P:P:P:P:P:P:P:A:X:X:X:X:X:X",
-				"reqPortion": "0.25",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.25,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -4538,10 +4538,10 @@
 		[
 			{
 				"instr": "NIRC2-LGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:A:P:A:X:X:X:A:P:A:A:P:A:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "A", "X", "X", "X", "A", "P", "A", "A", "P", "A", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 17, "reqDate": null, "reqPortion": null}
@@ -4549,10 +4549,10 @@
 			},
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:P:A:X:X:A:A:X:A:P:P:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "A", "X", "X", "A", "A", "X", "A", "P", "P", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 14, "reqDate": null, "reqPortion": null}
@@ -4560,10 +4560,10 @@
 			},
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:A:P:A:X:X:X:A:P:A:A:P:A:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "A", "X", "X", "X", "A", "P", "A", "A", "P", "A", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 17, "reqDate": null, "reqPortion": null},
@@ -4591,10 +4591,10 @@
 		[
 			{
 				"instr": "ESI",
-				"moonPrefs": "X:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:A:P:A:A:X:A:A:A",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "P", "A", "A", "X", "A", "A", "A"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 23, "reqDate": null, "reqPortion": null},
@@ -4623,10 +4623,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": ":::::::::::::::::::::::P:P:",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "2.0",
+				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "P", "P", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 24, "reqDate": null, "reqPortion": null},
@@ -4656,10 +4656,10 @@
 		[
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "A:X:A:P:A:X:A:P:A:X:A:P:A:X:A:P:A:X:A:P:A:X:A:P:A:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "4.0",
+				"moonPrefs": ["A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 4.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null},
@@ -4692,10 +4692,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "X:X:X:P:X:X:X:P:X:X:X:P:X:X:X:P:X:X:X:A:X:X:X:A:X:",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "A", "X", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -4718,10 +4718,10 @@
 		[
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:P:P:P:P:P:P:P",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "P", "P", "P", "P", "P", "P"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 25, "reqDate": null, "reqPortion": null}
@@ -4729,10 +4729,10 @@
 			},
 			{
 				"instr": "NIRSPAO-NGS",
-				"moonPrefs": "X:X:X:X:X:X:A:P:P:P:P:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "A", "P", "P", "P", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -4740,10 +4740,10 @@
 			},
 			{
 				"instr": "NIRSPEC",
-				"moonPrefs": "P:P:P:A:X:X:X:A:P:P:P:P:P:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["P", "P", "P", "A", "X", "X", "X", "A", "P", "P", "P", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 0, "reqDate": null, "reqPortion": null}
@@ -4764,10 +4764,10 @@
 		[
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "None",
-				"reqPortion": "0.25",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": [],
+				"reqPortion": 0.25,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -4775,10 +4775,10 @@
 			},
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "None",
-				"reqPortion": "0.25",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": [],
+				"reqPortion": 0.25,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -4786,10 +4786,10 @@
 			},
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "None",
-				"reqPortion": "0.25",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": [],
+				"reqPortion": 0.25,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 11, "reqDate": null, "reqPortion": null}
@@ -4797,10 +4797,10 @@
 			},
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "None",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": [],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -4808,10 +4808,10 @@
 			},
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "None",
-				"reqPortion": "0.25",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": [],
+				"reqPortion": 0.25,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -4819,10 +4819,10 @@
 			},
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "None",
-				"reqPortion": "0.25",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": [],
+				"reqPortion": 0.25,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 18, "reqDate": null, "reqPortion": null}
@@ -4830,10 +4830,10 @@
 			},
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "None",
-				"reqPortion": "0.25",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": [],
+				"reqPortion": 0.25,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 20, "reqDate": null, "reqPortion": null}
@@ -4841,10 +4841,10 @@
 			},
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "None",
-				"reqPortion": "0.25",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": [],
+				"reqPortion": 0.25,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -4852,10 +4852,10 @@
 			},
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "None",
-				"reqPortion": "0.25",
-				"appPortion": "0.25",
-				"appTotal": "0.25",
+				"moonPrefs": [],
+				"reqPortion": 0.25,
+				"appPortion": 0.25,
+				"appTotal": 0.25,
 				"blocks":
 				[
 					{"size": 0.25, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -4863,10 +4863,10 @@
 			},
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "None",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": [],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -4895,10 +4895,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "P:P:P:P:P:A:A:A:A:A:A:A:A:A:A:A:A:P:P:P:P:P:P:P:P:P",
-				"reqPortion": "0.25",
-				"appPortion": "0.25",
-				"appTotal": "0.5",
+				"moonPrefs": ["P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "P"],
+				"reqPortion": 0.25,
+				"appPortion": 0.25,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -4919,10 +4919,10 @@
 		[
 			{
 				"instr": "DEIMOS",
-				"moonPrefs": "X:X:X:P:X:X:A:A:X:X:A:X:X:X:P:X:X:P:P:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["X", "X", "X", "P", "X", "X", "A", "A", "X", "X", "A", "X", "X", "X", "P", "X", "X", "P", "P", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -4945,10 +4945,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "X:X:X:X:X:X:P:P:P:P:P:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "2.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "P", "P", "P", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 9, "reqDate": null, "reqPortion": null},
@@ -4959,10 +4959,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "A:X:X:X:X:X:A:P:A:X:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["A", "X", "X", "X", "X", "X", "A", "P", "A", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -4984,10 +4984,10 @@
 		[
 			{
 				"instr": "NIRC2-NGS",
-				"moonPrefs": "P:P:P:A:X:X:X:A:P:P:P:P:A:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "2.0",
+				"moonPrefs": ["P", "P", "P", "A", "X", "X", "X", "A", "P", "P", "P", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 1, "reqDate": null, "reqPortion": null},
@@ -5017,10 +5017,10 @@
 		[
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:A:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 6, "reqDate": null, "reqPortion": null}
@@ -5028,10 +5028,10 @@
 			},
 			{
 				"instr": "OSIRIS-LGS",
-				"moonPrefs": "P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:P:A:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -5054,10 +5054,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "::::::::A:P:P:A:A:::::::::::::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["", "", "", "", "", "", "", "", "A", "P", "P", "A", "A", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null},
@@ -5079,10 +5079,10 @@
 		[
 			{
 				"instr": "ESI",
-				"moonPrefs": "X:X:X:X:A:X:P:P:P:X:A:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["X", "X", "X", "X", "A", "X", "P", "P", "P", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -5103,10 +5103,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "P:P:P:P:P:A:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["P", "P", "P", "P", "P", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -5127,10 +5127,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": "P:X:P:P:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["P", "X", "P", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 2, "reqDate": null, "reqPortion": null}
@@ -5153,10 +5153,10 @@
 		[
 			{
 				"instr": "NIRC2-LGS",
-				"moonPrefs": "X:X:X:X:X:X:X:A:A:P:P:A:A:A:A:A:A:A:A:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "A", "A", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -5177,10 +5177,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": ":::P::::P::::A::::::::::::::",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "0.5",
+				"moonPrefs": ["", "", "", "P", "", "", "", "P", "", "", "", "A", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 0.5,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -5201,10 +5201,10 @@
 		[
 			{
 				"instr": "MOSFIRE",
-				"moonPrefs": "P:P:P:P:P:P:P:A:A:A:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "0.5",
-				"appPortion": "0.5",
-				"appTotal": "1.0",
+				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 0.5,
+				"appPortion": 0.5,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 0.5, "moonIndex": 4, "reqDate": null, "reqPortion": null},
@@ -5226,10 +5226,10 @@
 		[
 			{
 				"instr": "NIRES",
-				"moonPrefs": "P:P:P:A:A:A:P:A:A:P:A:A:A:-:-:-:-:-:-:-:-:-:-:-:-:",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["P", "P", "P", "A", "A", "A", "P", "A", "A", "P", "A", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -5250,10 +5250,10 @@
 		[
 			{
 				"instr": "KCWI",
-				"moonPrefs": ":::::::-:-::-:P:A::A:P:A::-:-::::::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["", "", "", "", "", "", "", "-", "-", "", "-", "P", "A", "", "A", "P", "A", "", "-", "-", "", "", "", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 11, "reqDate": null, "reqPortion": null},
@@ -5262,10 +5262,10 @@
 			},
 			{
 				"instr": "LRIS-ADC",
-				"moonPrefs": "-:-:-:-:-:-:-:-:-:-:-:P:A:-:A:P:A:-:-:-:-:-:-:-:-:-",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "P", "A", "-", "A", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 10, "reqDate": null, "reqPortion": null},
@@ -5289,10 +5289,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "X:X:X:X:P:P:X:X:X:X:X:X:X:X:X:X:X:P:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["X", "X", "X", "X", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 4, "reqDate": null, "reqPortion": null},
@@ -5316,10 +5316,10 @@
 		[
 			{
 				"instr": "ESI",
-				"moonPrefs": "P:X:P:A:A:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "3.0",
+				"moonPrefs": ["P", "X", "P", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 3.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 0, "reqDate": null, "reqPortion": null},
@@ -5349,10 +5349,10 @@
 		[
 			{
 				"instr": "HIRESr",
-				"moonPrefs": "X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:X:A:A:A:A:P:P:P:P",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "2.0",
+				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "P", "P", "P", "P"],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 2.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null},
@@ -5374,10 +5374,10 @@
 		[
 			{
 				"instr": "NIRES",
-				"moonPrefs": "-:-:-:-:-:A:A:P:P:P:P:A:A:-:-:-:-:-:-:-:-:-:-:::",
-				"reqPortion": "1.0",
-				"appPortion": "1.0",
-				"appTotal": "1.0",
+				"moonPrefs": ["-", "-", "-", "-", "-", "A", "A", "P", "P", "P", "P", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "", "", ""],
+				"reqPortion": 1.0,
+				"appPortion": 1.0,
+				"appTotal": 1.0,
 				"blocks":
 				[
 					{"size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null}

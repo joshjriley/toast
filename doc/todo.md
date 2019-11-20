@@ -17,10 +17,12 @@
 
 #todo: framework
 - Implement instrument switch incompatibility (ie LRIS/MOSFIRE)
+- Engineering inputs
 - Deal with multi instrument selection (ie NIRC2+NIRESPEC)
 - real query for other data: shutdown, moon phases, etc
 - Deal with instrument base config info (ie HIRESr and HIRESb are both base HIRES)
 - Warning for reqDate or reqPortion that was not met
+- Warning if assigned to Neutral or X
 
 
 

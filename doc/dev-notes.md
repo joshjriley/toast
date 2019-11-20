@@ -3,10 +3,9 @@
 ## notes:
 - [done] TACs can specify specific dates and/or portion of night and these should be followed if at all possible. (cadence)
 - [done] Consider date-critical observations first (ie cadence and those that were given a date by TAC). 
-- Consider dark time requests first, then grey, then bright. (Since bright requests can obviously use dark time)
+- [done] Consider dark time requests first, then grey, then bright. (Since bright requests can obviously use dark time)
 - For each classical program instrument entry, if the number of "P"s is one or two back-to-back this typically represents a cluster of observations that we should schedule consecutively.  If there are may "P"s spread out, this *may* indicate to spread the program out though typically they will use multiple instrument entries to indicate a different cluster.  We want to minimize observer travel requirements.
 - Reconfig is more important than instrument runs, though runs are nice too.  Reconfig compat chart: https://www2.keck.hawaii.edu/observing/instrumentaccess.html
-- Cadence form input dates are absolutely strict.  
 - concept of "paired nights" where it is requested (special) that two different half-night programs could be scheduled on the same night.  
 - Probably need a pre-definitions file for special cases like 'paired nights' etc.
 - Priority targets is sort of duplicate info b/c they probably did the work in the preferences section.  However, we can use it anyway for weighting the block scoring in case it is needed.

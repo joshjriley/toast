@@ -45,7 +45,7 @@ class ToastRandom(Toast):
 
         #for each block, init slots to try and score each slot
         for block in blocks:
-            print ('block: ', block['ktn'], block['instr'], block['size'], block['order'])
+            #print ('block: ', block['ktn'], block['instr'], block['size'], block['order'])
             self.initBlockSlots(block)
             self.scoreBlockSlots(schedule, block)
             slot = self.pickRandomBlockSlot(block)
@@ -136,7 +136,7 @@ class ToastRandom(Toast):
         for slot in block['slots']:
             # print (f"scoring slot: {slot}")
 
-            #default score of 0
+            #default score of 1
             slot['score'] = 0
 
             #check for block length versus size available length
@@ -171,14 +171,12 @@ class ToastRandom(Toast):
                 # print ("\tBAD PROGRAM DATE")
                 continue
 
-            #add moon preference score
-            if block['progInstr']['moonPrefLookup']:
-                pref = block['progInstr']['moonPrefLookup'][slot['date']]
-                slot['score'] += self.config['moonDatePrefScore'][pref]
-            else:
-                slot['score'] += self.config['moonDatePrefScore']["N"]
+            #moon preference factor
+            if block['progInstr']['moonPrefLookup']: pref = block['progInstr']['moonPrefLookup'][slot['date']]
+            else                                   : pref = "N"
+            slot['score'] += self.config['moonDatePrefScore'][pref]
 
-            #add moon scheduled score
+            #moon scheduled factor
             if slot['date'] in self.moonIndexDates[block['moonIndex']]:
                 slot['score'] += self.config['reqMoonIndexScore']
 
@@ -202,6 +200,10 @@ class ToastRandom(Toast):
         for slot in slots:
             if slot['score'] > 0: slotsFiltered.append(slot)
         slotsSorted = sorted(slotsFiltered, key=lambda k: k['score'], reverse=True)
+
+        #empty?
+        if not slotsSorted:
+            return None
 
         # #keep only those values that are within x% of best value and pick randomly from those
         finalSlots = []

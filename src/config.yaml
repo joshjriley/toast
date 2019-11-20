@@ -22,6 +22,27 @@
 
 
     #######################################################################
+    # SORTING PARAMETERS
+    #######################################################################
+
+    #order score mult if block type is cadence
+    "blockOrderCadenceMult": 1.25,
+
+    #plus or minus adjustment factor to order score (ie 0.10 is +- 10%)
+    "blockOrderRandomMult": 0.10,
+
+    #order score mult by moonIndex type
+    "blockOrderMoonTypeMult":
+    {
+        'D'    : 1.5,
+        'G-DL' : 1.25,
+        'G-DE' : 1.25,
+        'B'    : 1.0
+    },
+
+
+
+    #######################################################################
     # SCORING PARAMETERS
     #######################################################################
     #todo: should we change this to assume a scheduled block is given a perfect score of 1 and scoring only multiplies

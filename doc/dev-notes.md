@@ -1,16 +1,13 @@
 
 
 ## notes:
-- NOTE: We are not loading info from coversheet db tables but rather from post-TAC tables.
-- 
-- TACs can specify specific dates and/or portion of night and these should be followed if at all possible.
-- Consider date-critical observations first (ie cadence and those that were given a date by TAC). 
+- [done] TACs can specify specific dates and/or portion of night and these should be followed if at all possible. (cadence)
+- [done] Consider date-critical observations first (ie cadence and those that were given a date by TAC). 
 - Consider dark time requests first, then grey, then bright. (Since bright requests can obviously use dark time)
-- Always go for "P" and only use "A" if necessary.  Flag for review if we have to use neutral.  "X" must avoid.  This places more emphasis on ordering the blocks.
 - For each classical program instrument entry, if the number of "P"s is one or two back-to-back this typically represents a cluster of observations that we should schedule consecutively.  If there are may "P"s spread out, this *may* indicate to spread the program out though typically they will use multiple instrument entries to indicate a different cluster.  We want to minimize observer travel requirements.
 - Reconfig is more important than instrument runs, though runs are nice too.  Reconfig compat chart: https://www2.keck.hawaii.edu/observing/instrumentaccess.html
 - Cadence form input dates are absolutely strict.  
-- concept of "paired nights" where it is requested (special) that two different hald-night programs could be scheduled on the same night.  
+- concept of "paired nights" where it is requested (special) that two different half-night programs could be scheduled on the same night.  
 - Probably need a pre-definitions file for special cases like 'paired nights' etc.
 - Priority targets is sort of duplicate info b/c they probably did the work in the preferences section.  However, we can use it anyway for weighting the block scoring in case it is needed.
 - "X" in moon phase is an absolute no as is DatesToAvoid.
@@ -59,12 +56,6 @@ http://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1255&context=these
     - Bump up quarter nights to half nights first.
     - Bump up halfs and 3/4 to fulls.
 
-
-# Factors in scoring a schedule
-- number of instrument switches
-- visit is on preferred/acceptable/neutral/bad date
-- visit date and time has priority target visible
-(todo: finish this)
 
 
 

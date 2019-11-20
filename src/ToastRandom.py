@@ -1,5 +1,5 @@
 from Toast import *
-from random import randrange, shuffle, random
+from random import randrange, shuffle, random, uniform
 import math
 import sys
 
@@ -45,7 +45,7 @@ class ToastRandom(Toast):
 
         #for each block, init slots to try and score each slot
         for block in blocks:
-            #print ('block: ', block['ktn'], block['instr'], block['size'])
+            print ('block: ', block['ktn'], block['instr'], block['size'], block['order'])
             self.initBlockSlots(block)
             self.scoreBlockSlots(schedule, block)
             slot = self.pickRandomBlockSlot(block)
@@ -74,37 +74,44 @@ class ToastRandom(Toast):
         for ktn, program in programs.items():
             for progInstr in program['instruments']:
                 for block in progInstr['blocks']:
-                    instr = progInstr['instr']
+
+                    #add info to block data
+                    instr = progInstr['instr']                    
                     block['progInstr'] = progInstr
                     block['instr']     = instr
                     block['ktn']       = ktn
                     block['tel']       = self.instruments[instr]['tel']
                     block['num']       = 1
-                    block['runSize']   = block['size'] * block['num']
+                    block['type']      = program['type'].lower()
+
                     blocks.append(block)
         return blocks
 
 
     def randomSortBlocks(self, blocks):
 
-        #psuedo-randomize blocks in groups by order of size from biggest to smallest
-        #todo: This might result in large runs having a uniquely big size and always going first.  Might want to prevent that.
-        blocksSorted = sorted(blocks, key=lambda k: k['runSize'], reverse=True)
-        lastSize = None
-        blocksFinal = []
-        group = []
-        for i, block in enumerate(blocksSorted):
-            if (lastSize == None) or (lastSize != block['runSize']) or (i == len(blocksSorted)-1):                
-                if i == len(blocksSorted)-1:
-                    group.append(block)
-                if lastSize != None:
-                    shuffle(group)
-                    blocksFinal.extend(group)
-                    group = []
-                lastSize = block['runSize']
-            group.append(block)
+        #score order for blocks
+        for block in blocks:
 
-        return blocksFinal
+            #raw score is size
+            block['order'] = block['size'] * block['num']
+
+            #adjust if cadence
+            if block['type'].lower() == 'cadence': 
+                block['order'] *= self.config['blockOrderCadenceMult']
+
+            #random fluctuations
+            bormRand = uniform(-1*self.config['blockOrderRandomMult'], self.config['blockOrderRandomMult'])
+            block['order'] += block['order'] * bormRand
+
+            #adjust by moonIndex type
+            moonType = self.moonPhases[block['moonIndex']]['type']
+            block['order'] *= self.config['blockOrderMoonTypeMult'][moonType]
+             
+
+        #final sort by order
+        blocksSorted = sorted(blocks, key=lambda k: k['order'], reverse=True)
+        return blocksSorted
 
 
     def initBlockSlots(self, block):

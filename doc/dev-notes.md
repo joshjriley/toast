@@ -1,3 +1,8 @@
+##questions:
+- Besides incompatible setups, are there any instruments that are less desireable to be paired on a particular night?
+- Besides incompatible setups, is it always better to have a split night be the same instrument?  
+- Should we avoid a reverse scenario of too few reconfigs?  In other words if it happens to work out that we can do all the MOSFIRE nights in one chunk of the semester, is that ok, preferred, not ok?
+
 
 
 ## notes:
@@ -13,7 +18,7 @@
 - Engineering can be used as the final blocks filler.  Well unless there are full engineering nights.  Hmm, maybe then put them at the end of each subgroup grouped by size if we know the size of engineering nights.
 - We may end up short in the end by a night or two.  That is ok.  Leave those unscheduled.
 - If you have to use a grey time for a half night, make sure to consider the DE or DL.
-- Full nights sometimes need to be split, but rate.
+- Full nights sometimes need to be split, but rare.
 - Program rankings are independent numerical systems per TAC (letter code?)
 
 
@@ -44,18 +49,6 @@
 
 - Research the "Course Scheduling Problem"
 http://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1255&context=theses
-
-
-# Special considerations:
-- If there are more requests than space in calendar:
-    - Shorten full nights and 3/4 nights to fit in remaining quarter nights.
-    - Shorten full nights to fit in remaining half nights.
-
-- If there is remaining space in calendar:
-    - Bump up quarter nights to half nights first.
-    - Bump up halfs and 3/4 to fulls.
-
-
 
 
 

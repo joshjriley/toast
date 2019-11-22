@@ -16,17 +16,18 @@
 
 
 #todo: framework
-- Implement instrument switch incompatibility (ie LRIS/MOSFIRE)
 - Engineering inputs
-- Deal with multi instrument selection (ie NIRC2+NIRESPEC)
 - real query for other data: shutdown, moon phases, etc
 - Deal with instrument base config info (ie HIRESr and HIRESb are both base HIRES)
 - Warning for reqDate or reqPortion that was not met
 - Warning if assigned to Neutral or X
+- In output, put in rightmost column that notes anything special (matches reqDate, !!NO MATCH reqPortion!!, happiness=0.96)
 
 
 
 # todo: random algorithm
+- Implement reqDate
+- Implement reqPortion
 - Implement runs
 - force small portions to different days (ie avoid same program on same night for 1/2 and 1/4)
 - 

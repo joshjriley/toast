@@ -56,11 +56,11 @@ class db_conn(object):
 
         #see if we already have a connection and if so ping it to keep alive and return it.
         #todo: read about conn.open == False?
-        if database in self.conns and self.conns[database]:
-            print ("DEBUG: Reusing db connection")
-            conn = self.conns[database]
-            conn.ping(reconnect=True)
-            return conn
+        if self.persist:                
+            if database in self.conns and self.conns[database]:
+                conn = self.conns[database]
+                conn.ping(reconnect=True)
+                return conn
 
 
         #get db connect data

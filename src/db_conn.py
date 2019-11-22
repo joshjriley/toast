@@ -87,7 +87,8 @@ class db_conn(object):
             print ('ERROR: ', e)
 
         #save connection
-        self.conns[database] = conn
+        if self.persist:
+            self.conns[database] = conn
 
         #return
         return conn

@@ -2272,8 +2272,8 @@
 				[
 					{"size": 0.5, "moonIndex": 3, "reqDate": null, "reqPortion": "second half"},
 					{"size": 0.5, "moonIndex": 4, "reqDate": null, "reqPortion": "second half"},
-					{"size": 1.0, "moonIndex": 6, "reqDate": null, "reqPortion": "any"},
-					{"size": 1.0, "moonIndex": 8, "reqDate": null, "reqPortion": "any"}
+					{"size": 1.0, "moonIndex": 6, "reqDate": null, "reqPortion": null},
+					{"size": 1.0, "moonIndex": 8, "reqDate": null, "reqPortion": null}
 				]
 			}
 		]
@@ -2297,7 +2297,7 @@
 				"appTotal": 1.0,
 				"blocks":
 				[
-					{"size": 1.0, "moonIndex": 22, "reqDate": "2020-07-13", "reqPortion": "any"}
+					{"size": 1.0, "moonIndex": 22, "reqDate": "2020-07-13", "reqPortion": null}
 				]
 			}
 		]
@@ -2502,8 +2502,8 @@
 				"appTotal": 2.0,
 				"blocks":
 				[
-					{"size": 1.0, "moonIndex": 6, "reqDate": "2020-03-14", "reqPortion": "any"},
-					{"size": 1.0, "moonIndex": 6, "reqDate": "2020-03-15", "reqPortion": "any"}
+					{"size": 1.0, "moonIndex": 6, "reqDate": "2020-03-14", "reqPortion": null},
+					{"size": 1.0, "moonIndex": 6, "reqDate": "2020-03-15", "reqPortion": null}
 				]
 			}
 		]
@@ -2737,7 +2737,7 @@
 				"appTotal": 1.5,
 				"blocks":
 				[
-					{"size": 1.0, "moonIndex": 25, "reqDate": null, "reqPortion": "any"},
+					{"size": 1.0, "moonIndex": 25, "reqDate": null, "reqPortion": null},
 					{"size": 0.5, "moonIndex": 20, "reqDate": null, "reqPortion": "second half"}
 				]
 			}
@@ -3308,12 +3308,12 @@
 					{"size": 0.75, "moonIndex": 11, "reqDate": null, "reqPortion": null},
 					{"size": 0.75, "moonIndex": 9, "reqDate": null, "reqPortion": null},
 					{"size": 0.75, "moonIndex": 7, "reqDate": null, "reqPortion": null},
-					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": "any"},
-					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": "any"},
-					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": "any"},
-					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": "any"},
-					{"size": 0.5, "moonIndex": 5, "reqDate": null, "reqPortion": "any"},
-					{"size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": "any"}
+					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null},
+					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null},
+					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null},
+					{"size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null},
+					{"size": 0.5, "moonIndex": 5, "reqDate": null, "reqPortion": null},
+					{"size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": null}
 				]
 			}
 		]
@@ -4927,7 +4927,7 @@
 				[
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
 					{"size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
-					{"size": 0.75, "moonIndex": 3, "reqDate": null, "reqPortion": "any"}
+					{"size": 0.75, "moonIndex": 3, "reqDate": null, "reqPortion": null}
 				]
 			}
 		]

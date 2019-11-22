@@ -234,6 +234,7 @@ def formDataToStandard(progData):
             }
             blocks = []
             for card in instr['cards']:
+                if card['Portion'] and card['Portion'].lower() == 'any': card['Portion'] = None
                 blocks.append(
                 {
                     'size'      : card['Time'],

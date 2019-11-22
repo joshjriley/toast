@@ -7,7 +7,7 @@
         {
             "server" : "",
             "user"   : "",
-            "pwd "   : "",
+            "pwd"    : "",
             "port"   : 0,
             "type"   : ""
         },

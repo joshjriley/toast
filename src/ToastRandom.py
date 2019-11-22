@@ -96,18 +96,26 @@ class ToastRandom(Toast):
             #raw score is size
             block['order'] = block['size'] * block['num']
 
+            #adjust if requested date
+            if block['reqDate']: 
+                print ('block reqdate', block['ktn'], block['reqDate'])
+                block['order'] += self.config['blockOrderReqDateScore']
+
+            #adjust if requested portion
+            if block['reqPortion']: 
+                block['order'] += self.config['blockOrderReqPortionScore']
+
             #adjust if cadence
             if block['type'].lower() == 'cadence': 
                 block['order'] *= self.config['blockOrderCadenceMult']
-
-            #random fluctuations
-            bormRand = uniform(-1*self.config['blockOrderRandomMult'], self.config['blockOrderRandomMult'])
-            block['order'] += block['order'] * bormRand
 
             #adjust by moonIndex type
             moonType = self.moonPhases[block['moonIndex']]['type']
             block['order'] *= self.config['blockOrderMoonTypeMult'][moonType]
              
+            #random fluctuations (plus/minus perc adjust)
+            bormRand = uniform(-1*self.config['blockOrderRandomMult'], self.config['blockOrderRandomMult'])
+            block['order'] += block['order'] * bormRand
 
         #final sort by order
         blocksSorted = sorted(blocks, key=lambda k: k['order'], reverse=True)
@@ -172,10 +180,8 @@ class ToastRandom(Toast):
                 continue
 
             #check for instr incompatibility
-            schedInstrs = self.getScheduleDateInstrs(schedule, block['tel'], slot['date'])
-            if not self.checkInstrCompat(block['instr'], schedInstrs):
+            if not self.checkInstrCompat(block['instr'], schedule, block['tel'], slot['date']):
                 slot['score'] = 0
-                print ("\tINSTR INCOMPAT: ", block['instr'], schedInstrs)
                 continue
 
             #moon preference factor
@@ -192,6 +198,8 @@ class ToastRandom(Toast):
             slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
 
             #todo: consider if split night, same instrument better than split different instrument
+            if self.isScheduledInstrMatch(block['instr'], schedule, block['tel'], slot['date']):
+                slot['score'] += self.config['scheduledInstrMatchScore']
 
             #todo: consider previous and next night, same instrument is better (ie less reconfigs)
 

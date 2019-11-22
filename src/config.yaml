@@ -42,6 +42,12 @@
     # SORTING PARAMETERS
     #######################################################################
 
+    #order score adjust if block has a specified date (NOTE: most cadence have specified date)
+    "blockOrderReqDateScore": 5,
+
+    #order score adjust if block has a specified portion 
+    "blockOrderReqPortionScore": 2,
+
     #order score mult if block type is cadence
     "blockOrderCadenceMult": 1.25,
 
@@ -78,6 +84,8 @@
 
     #score added for slot match with requested (TAC scheduled) moon phase
     "reqMoonIndexScore": 15,
+
+    "scheduledInstrMatchScore": 5,
 
     #Score multiplier for scheduling a block in the requested date (block['reqDate'])
     "reqDateMult": 1.5,

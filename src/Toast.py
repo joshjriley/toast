@@ -47,7 +47,7 @@ class Toast(object):
 
         #do it
         schedule = self.createSchedule()
-        self.printSchedule(schedule)
+        #self.printSchedule(schedule)
 
 
     def loadConfig(self):
@@ -215,14 +215,28 @@ class Toast(object):
         return instr
 
 
-    def checkInstrCompat(self, instr, schedInstrs):
+    def checkInstrCompat(self, instr, schedule, tel, date):
         #todo: This whole thing is inefficient
         instrBase = self.getInstrBase(instr)
+        schedInstrs = self.getScheduleDateInstrs(schedule, tel, date)
         for schedInstr in schedInstrs:
             schedInstrBase = self.getInstrBase(schedInstr)
             if schedInstrBase in self.config['instrIncompatMatrix'][instrBase]:
+                #print ("\tINSTR INCOMPAT: ", instr, schedInstrs)
                 return False
         return True
+
+
+    def isScheduledInstrMatch(self, instr, schedule, tel, date):
+        #todo: This whole thing is inefficient
+        instrBase = self.getInstrBase(instr)
+        schedInstrs = self.getScheduleDateInstrs(schedule, tel, date)
+        for schedInstr in schedInstrs:
+            schedInstrBase = self.getInstrBase(schedInstr)
+            if instrBase == schedInstrBase:
+                #print ("\tINSTR MATCH: ", instr, schedInstrs)
+                return True
+        return False
 
 
     def isSlotAvailable(self, schedule, tel, date, index, size):

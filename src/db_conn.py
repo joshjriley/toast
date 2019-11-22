@@ -25,24 +25,43 @@ class db_conn(object):
             "type"   : (db type: mysql, postgresql),
         },
     }
+    Inputs:
+    - configFile: Filepath to yaml config file
+    - configKey: Optionally define a config dict key if config is within a larger yaml file.
 
     TODO: improve error/warning reporting and logging
     '''
 
-    def __init__(self, configFile):
+    def __init__(self, configFile, configKey=None, persist=False):
 
+        self.persist = persist
         self.readOnly = 0
         self.VALID_DB_TYPES = ('mysql', 'postgresql')
 
         #parse config file
-        assert os.path.isfile(configFile), f"ERROR: config file '{configFile}'' does not exist.  Exiting."
+        assert os.path.isfile(configFile), f"ERROR: config file '{configFile}' does not exist.  Exiting."
         with open(configFile) as f: self.config = yaml.safe_load(f)
+        if configKey:
+            assert configKey in self.config, f"ERROR: config key '{configKey}' does not exist in config file. Exiting." 
+            self.config = self.config[configKey]
+
+        #keep dict of database connections
+        self.conns = {}
 
 
     def connect(self, database):
         '''
         Connect to the specified database.  
         '''
+
+        #see if we already have a connection and if so ping it to keep alive and return it.
+        #todo: read about conn.open == False?
+        if database in self.conns and self.conns[database]:
+            print ("DEBUG: Reusing db connection")
+            conn = self.conns[database]
+            conn.ping(reconnect=True)
+            return conn
+
 
         #get db connect data
         assert database in self.config, f"ERROR: database '{database}' not defined in config file.  Exiting."
@@ -67,7 +86,23 @@ class db_conn(object):
             print ("ERROR: Could not connect to database.")
             print ('ERROR: ', e)
 
+        #save connection
+        self.conns[database] = conn
+
+        #return
         return conn
+
+
+    def close(self, database=None):
+
+        #close all connections unless they specify one
+        #todo: do we need to track the cursor and close it as well?
+        for key, conn in self.conns.items():
+            if database and key != database: 
+                continue
+            if conn:
+                print ('close: ', database) 
+                conn.close()
 
 
     def query(self, database, query, getOne=False, getColumn=False, getInsert=False):
@@ -123,8 +158,10 @@ class db_conn(object):
             result = False
 
         finally:
-            if cursor: cursor.close()
-            if conn: conn.close()
+            if not self.persist:
+                print('CLOSE?')
+                if cursor: cursor.close()
+                if conn: conn.close()
 
         return result
 

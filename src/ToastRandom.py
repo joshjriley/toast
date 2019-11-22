@@ -41,7 +41,7 @@ class ToastRandom(Toast):
 
         #create blocks from all programs
         blocks = self.createProgramBlocks(self.programs)
-        blocks = self.randomSortBlocks(blocks)
+        blocks = self.sortBlocks(blocks)
 
         #for each block, init slots to try and score each slot
         for block in blocks:
@@ -88,7 +88,7 @@ class ToastRandom(Toast):
         return blocks
 
 
-    def randomSortBlocks(self, blocks):
+    def sortBlocks(self, blocks):
 
         #score order for blocks
         for block in blocks:
@@ -98,7 +98,6 @@ class ToastRandom(Toast):
 
             #adjust if requested date
             if block['reqDate']: 
-                print ('block reqdate', block['ktn'], block['reqDate'])
                 block['order'] += self.config['blockOrderReqDateScore']
 
             #adjust if requested portion
@@ -184,14 +183,22 @@ class ToastRandom(Toast):
                 slot['score'] = 0
                 continue
 
-            #moon preference factor
+            #moon preference factor (progInstr['moonPrefs'])
             if block['progInstr']['moonPrefLookup']: pref = block['progInstr']['moonPrefLookup'][slot['date']]
             else                                   : pref = "N"
             slot['score'] += self.config['moonDatePrefScore'][pref]
 
-            #moon scheduled factor
+            #moon scheduled factor (block['moonIndex'])
             if slot['date'] in self.moonIndexDates[block['moonIndex']]:
                 slot['score'] += self.config['reqMoonIndexScore']
+
+            #requested date factor (block['reqDate'])
+            if block['reqDate'] and block['reqDate'] == slot['date']:
+                slot['score'] += self.config['reqDateIndexScore']
+
+            #requested date portion (block['reqPortion'])
+            if self.isReqPortionMatch(block['reqPortion'], slot['index']):
+                slot['score'] += self.config['reqPortionIndexScore']
 
             #add priority target score
             #todo: not implented

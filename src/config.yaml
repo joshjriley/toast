@@ -52,6 +52,7 @@
     "blockOrderCadenceMult": 1.25,
 
     #plus or minus adjustment factor to order score (ie 0.10 is +- 10%)
+    #NOTE: This can be bumped up to get some very different ordering if scheduling is coming out the same every time
     "blockOrderRandomMult": 0.10,
 
     #order score mult by moonIndex type
@@ -86,6 +87,12 @@
     "reqMoonIndexScore": 15,
 
     "scheduledInstrMatchScore": 5,
+
+    #score added for slot if it matches requested date
+    "reqDateIndexScore": 20,
+
+    #score added for slot if it matches requested portion
+    "reqPortionIndexScore": 10,
 
     #Score multiplier for scheduling a block in the requested date (block['reqDate'])
     "reqDateMult": 1.5,

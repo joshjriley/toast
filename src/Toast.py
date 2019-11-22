@@ -47,7 +47,7 @@ class Toast(object):
 
         #do it
         schedule = self.createSchedule()
-        #self.printSchedule(schedule)
+        self.printSchedule(schedule)
 
 
     def loadConfig(self):
@@ -252,6 +252,16 @@ class Toast(object):
             if (sStart >= vStart and sStart <= vEnd) or (sEnd >= vStart and sEnd <=vEnd):
                 return False
         return True
+
+
+    def isReqPortionMatch(self, reqPortion, slotIndex):
+        if   reqPortion == 'first half'     and slotIndex <= 1: return True
+        elif reqPortion == 'second half'    and slotIndex >= 2: return True
+        elif reqPortion == 'first quarter'  and slotIndex == 0: return True
+        elif reqPortion == 'second quarter' and slotIndex == 1: return True
+        elif reqPortion == 'third quarter'  and slotIndex == 2: return True
+        elif reqPortion == 'fourth quarter' and slotIndex == 3: return True
+        else: return False
 
 
     def createDatesList(self, startDate, endDate):

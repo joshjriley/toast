@@ -147,6 +147,8 @@ class ToastRandom(Toast):
             #default score of 1
             slot['score'] = 0
 
+            #=========== SKIP CHECKS ===============
+
             #check for block length versus size available length
             sizeRemain = 1 - (slot['index'] * self.config['slotPerc'])
             if (block['size'] > sizeRemain):
@@ -184,6 +186,8 @@ class ToastRandom(Toast):
                 slot['score'] = 0
                 continue
 
+            #=========== SCORING ===============
+
             #moon preference factor (progInstr['moonPrefs'])
             if block['progInstr']['moonPrefLookup']: pref = block['progInstr']['moonPrefLookup'][slot['date']]
             else                                   : pref = "N"
@@ -205,11 +209,13 @@ class ToastRandom(Toast):
             #todo: not implented
             slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
 
-            #todo: consider if split night, same instrument better than split different instrument
+            #consider if split night, same instrument better than split different instrument
             if self.isScheduledInstrMatch(block['instr'], schedule, block['tel'], slot['date']):
                 slot['score'] += self.config['scheduledInstrMatchScore']
 
             #todo: consider previous and next night, same instrument is better (ie less reconfigs)
+            numAdjacentInstr = self.getNumAdjacentIntr(block['instr'], schedule, block['tel'], slot['date'])
+            slot['score'] += numAdjacentInstr * self.config['adjacentInstrScore']
 
             # print (f"\tscore = {slot['score']}")
 

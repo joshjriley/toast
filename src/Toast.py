@@ -229,6 +229,8 @@ class Toast(object):
     def getScheduleDateInstrs(self, schedule, tel, date):
         allInstrs = []
         telsched = schedule['telescopes'][tel]
+        if date not in telsched['nights']:
+            return []
         night = telsched['nights'][date]
         for slot in night['slots']:
             instr = slot['instr']
@@ -267,6 +269,28 @@ class Toast(object):
                 #print ("\tINSTR MATCH: ", instr, schedInstrs)
                 return True
         return False
+
+
+    def getNumAdjacentIntr(self, instr, schedule, tel, date):
+        #todo: This whole thing is inefficient
+        #todo: Should we count more than just +/- one day?
+        num = 0
+        instrBase = self.getInstrBase(instr)
+        for delta in range(-1, 2, 2):
+            adjDate = self.getDeltaDate(date, delta)
+            schedInstrs = self.getScheduleDateInstrs(schedule, tel, adjDate)
+            for schedInstr in schedInstrs:
+                schedInstrBase = self.getInstrBase(schedInstr)
+                if instrBase == schedInstrBase:
+                    num += 1
+                    break
+        return num  
+
+
+    def getDeltaDate(self, dateStr, delta):
+        date = dt.strptime(dateStr, "%Y-%m-%d")
+        newdate = date + timedelta(days=delta)
+        return dt.strftime(newdate, "%Y-%m-%d")        
 
 
     def isSlotAvailable(self, schedule, tel, date, index, size):

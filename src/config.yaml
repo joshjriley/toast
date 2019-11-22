@@ -86,6 +86,7 @@
     #score added for slot match with requested (TAC scheduled) moon phase
     "reqMoonIndexScore": 15,
 
+    #score added for slot if same instrument scheduled that night (ie split nights should be same instrument when possible)
     "scheduledInstrMatchScore": 5,
 
     #score added for slot if it matches requested date
@@ -93,6 +94,9 @@
 
     #score added for slot if it matches requested portion
     "reqPortionIndexScore": 10,
+
+    #score added for slot if adjacent date has same instrument scheduled (up to 2x)
+    "adjacentInstrScore": 3,
 
     #Score multiplier for scheduling a block in the requested date (block['reqDate'])
     "reqDateMult": 1.5,

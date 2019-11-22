@@ -21,6 +21,23 @@
     "slotPerc": 0.25,
 
 
+    "instrIncompatMatrix":
+    {
+        "HIRES"  : [],
+        "LRIS"   : ['MOSFIRE'],
+        "MOSFIRE": ['LRIS'],
+        "OSIRIS" : [],
+
+        "DEIMOS" : [          'ESI', 'KCWI', 'NIRSPEC'],
+        "ESI"    : ['DEIMOS',        'KCWI', 'NIRSPEC', 'NIRC2', 'NIRES'],
+        "KCWI"   : ['DEIMOS', 'ESI',         'NIRSPEC'],
+        "NIRC2"  : [          'ESI'],
+        "NIRES"  : [          'ESI'],
+        "NIRSPEC": ['DEIMOS', 'ESI', 'KCWI'],
+        "NIRSPAO": [          'ESI'],
+    },
+
+
     #######################################################################
     # SORTING PARAMETERS
     #######################################################################

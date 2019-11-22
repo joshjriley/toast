@@ -171,6 +171,13 @@ class ToastRandom(Toast):
                 # print ("\tBAD PROGRAM DATE")
                 continue
 
+            #check for instr incompatibility
+            schedInstrs = self.getScheduleDateInstrs(schedule, block['tel'], slot['date'])
+            if not self.checkInstrCompat(block['instr'], schedInstrs):
+                slot['score'] = 0
+                print ("\tINSTR INCOMPAT: ", block['instr'], schedInstrs)
+                continue
+
             #moon preference factor
             if block['progInstr']['moonPrefLookup']: pref = block['progInstr']['moonPrefLookup'][slot['date']]
             else                                   : pref = "N"
@@ -181,7 +188,12 @@ class ToastRandom(Toast):
                 slot['score'] += self.config['reqMoonIndexScore']
 
             #add priority target score
+            #todo: not implented
             slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
+
+            #todo: consider if split night, same instrument better than split different instrument
+
+            #todo: consider previous and next night, same instrument is better (ie less reconfigs)
 
             # print (f"\tscore = {slot['score']}")
 

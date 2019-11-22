@@ -47,7 +47,7 @@ class Toast(object):
 
         #do it
         schedule = self.createSchedule()
-        #self.printSchedule(schedule)
+        self.printSchedule(schedule)
 
 
     def loadConfig(self):
@@ -194,6 +194,35 @@ class Toast(object):
             'instr': instr
         }
         night['slots'].append(data)
+
+
+    def getScheduleDateInstrs(self, schedule, tel, date):
+        allInstrs = []
+        telsched = schedule['telescopes'][tel]
+        night = telsched['nights'][date]
+        for slot in night['slots']:
+            instr = slot['instr']
+            instrs = instr.split('+')
+            allInstrs += instrs
+        return allInstrs
+
+
+    def getInstrBase(self, instr):
+        instr = instr.split('-')[0]
+        #todo: temp: this should be in config, not hardcoded
+        if   'HIRES' in instr: instr = 'HIRES'
+        elif 'LRIS' in instr: instr = 'LRIS'
+        return instr
+
+
+    def checkInstrCompat(self, instr, schedInstrs):
+        #todo: This whole thing is inefficient
+        instrBase = self.getInstrBase(instr)
+        for schedInstr in schedInstrs:
+            schedInstrBase = self.getInstrBase(schedInstr)
+            if schedInstrBase in self.config['instrIncompatMatrix'][instrBase]:
+                return False
+        return True
 
 
     def isSlotAvailable(self, schedule, tel, date, index, size):

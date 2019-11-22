@@ -24,7 +24,7 @@ def jsonConverter(o):
 def queryProgramData(semester, dbConfigFile):
 
     #db connection
-    dbc = db_conn.db_conn(dbConfigFile)
+    dbc = db_conn.db_conn(dbConfigFile, configKey='database', persist=True)
     if not dbc: return False
 
 
@@ -182,6 +182,10 @@ def queryProgramData(semester, dbConfigFile):
         #NOTE: skip if no instruments
         if not prog['instruments']: continue
         programs[ktn] = prog
+
+
+    #close db conn
+    dbc.close()
 
     return programs
 

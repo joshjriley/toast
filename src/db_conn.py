@@ -102,7 +102,6 @@ class db_conn(object):
             if database and key != database: 
                 continue
             if conn:
-                print ('close: ', database) 
                 conn.close()
 
 
@@ -160,7 +159,6 @@ class db_conn(object):
 
         finally:
             if not self.persist:
-                print('CLOSE?')
                 if cursor: cursor.close()
                 if conn: conn.close()
 

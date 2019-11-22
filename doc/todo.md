@@ -16,13 +16,16 @@
 
 
 #todo: framework
+- log module (use debug level and set debug level on command line?)
 - Engineering inputs
 - real query for other data: shutdown, moon phases, etc
 - Deal with instrument base config info (ie HIRESr and HIRESb are both base HIRES)
 - Warning for reqDate or reqPortion that was not met
 - Warning if assigned to Neutral or X
-- In output, put in rightmost column that notes anything special (matches reqDate, !!NO MATCH reqPortion!!, happiness=0.96 (% of max score ))
+- In output, put in rightmost column that notes anything special (matches reqDate, !!NO MATCH reqPortion!!, 
+- block happiness = a % of max score.  max score is hitting all config score params.  though for some blocks certain ones don't apply (ie reqDate) so max is different).  should scoring always be additive?
 - In output, mark empty slots visible
+- In output, compress rows (put date on same line as first)
 
 
 

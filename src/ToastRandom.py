@@ -2,6 +2,7 @@ from Toast import *
 from random import randrange, shuffle, random, uniform
 import math
 import sys
+import logging
 
 
 class ToastRandom(Toast):

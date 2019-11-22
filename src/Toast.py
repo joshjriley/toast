@@ -7,6 +7,12 @@ import pandas
 from random import randrange, shuffle, random
 from ToastRandom import *
 from datetime import datetime as dt, timedelta
+import pathlib
+import time
+
+import logging
+log = logging.getLogger('toast')
+
 
 
 class Toast(object):
@@ -18,6 +24,7 @@ class Toast(object):
 
         #member class vars
         self.config = None
+        self.schedule = None
   
 
     def start(self):
@@ -46,8 +53,31 @@ class Toast(object):
         #todo: check if the total proposed hours exceeds semester hours
 
         #do it
-        schedule = self.createSchedule()
-        self.printSchedule(schedule)
+        self.schedule = self.createSchedule()
+        self.promptMenu()
+        #self.printSchedule(self.schedule)
+
+
+    def promptMenu(self):
+
+        menu = "\n"
+        menu += "------------------------------------------------------------\n"
+        menu += "|                    MENU                                   |\n"
+        menu += "------------------------------------------------------------|\n"
+        menu += "|  s [tel] [start day] [stop day]      Show schedule        |\n"
+        menu += "|  q                                   Quit (or Control-C)  |\n"
+        menu += "-------------------------------------------------------------\n"
+        menu += "> "
+
+        quit = None
+        while quit is None:
+            cmds = input(menu).split()       
+            if not cmds: continue
+            cmd = cmds[0]     
+            if   cmd == 'q'          :  quit = True
+            elif cmd in ['s', 'show']:  self.showSchedule(cmds=cmds)
+            else:
+                log.error(f'Unrecognized command: {cmd}')
 
 
     def loadConfig(self):
@@ -390,7 +420,14 @@ class Toast(object):
         return None
 
 
-    def printSchedule(self, schedule, tel=None, format='txt'):
+    def showSchedule(self, cmds):
+        tel   = cmds[1] if len(cmds) > 1 else None
+        start = cmds[2] if len(cmds) > 2 else None
+        end   = cmds[3] if len(cmds) > 3 else None
+        self.printSchedule(self.schedule, tel=tel, start=start, end=end)
+
+
+    def printSchedule(self, schedule, tel=None, start=None, end=None, format='txt'):
         '''
         Print out a schedule in text or html.
         
@@ -413,16 +450,21 @@ class Toast(object):
             print (f'--------------------------')
 
             for date in self.datesList:
+                if start and date < start: continue
+                if end   and date > end  : continue
+
                 night = telsched['nights'][date]
-                print(f"==={date}===")
+                print(f"\n[{date}]\t", end='')
 
                 if self.isTelShutdown(telkey, date):
-                    print(" *** SHUTDOWN ***")
+                    print("*** SHUTDOWN ***", end='')
 
                 slots = night['slots']
                 slotsSorted = sorted(slots, key=lambda k: k['index'], reverse=False)
-                for slot in slotsSorted:
-                    print(f"{slot['index']}\t{slot['size']}\t{slot['ktn']}\t{slot['instr']}")
+                for i, slot in enumerate(slotsSorted):
+                    if i>0: print ("\n            \t", end='')
+                    print(f"{slot['index']}\t{slot['size']}\t{slot['ktn']}\t{slot['instr']}", end='')
+
 
 
     def getSemesterDates(self, semester):
@@ -452,7 +494,47 @@ class Toast(object):
         return data2
 
 
-    
+
+##-------------------------------------------------------------------------
+## Create logger
+##-------------------------------------------------------------------------
+def create_logger():
+
+    try:
+        ## Create logger object
+        log = logging.getLogger('toast')
+        log.setLevel(logging.DEBUG)
+
+        #create log file and log dir if not exist
+        ymd = dt.utcnow().date().strftime('%Y%m%d')
+        pathlib.Path('logs/').mkdir(parents=True, exist_ok=True)
+
+        #file handler (full debug logging)
+        logFile = f'logs/keck-remote-log-utc-{ymd}.txt'
+        logFileHandler = logging.FileHandler(logFile)
+        logFileHandler.setLevel(logging.DEBUG)
+        logFormat = logging.Formatter('%(asctime)s UT - %(levelname)s: %(message)s')
+        logFormat.converter = time.gmtime
+        logFileHandler.setFormatter(logFormat)
+        log.addHandler(logFileHandler)
+
+        #stream/console handler (info+ only)
+        logConsoleHandler = logging.StreamHandler()
+        logConsoleHandler.setLevel(logging.INFO)
+        logFormat = logging.Formatter(' %(levelname)8s: %(message)s')
+        logFormat.converter = time.gmtime
+        logConsoleHandler.setFormatter(logFormat)
+        
+        log.addHandler(logConsoleHandler)
+
+    except Exception as error:
+        print (str(error))
+        print (f"ERROR: Unable to create logger at {logFile}")
+        print ("Make sure you have write access to this directory.\n")
+        log.info("EXITING APP\n")        
+        sys.exit(1)
+
+
     
 
 ##-------------------------------------------------------------------------
@@ -462,6 +544,11 @@ if __name__ == "__main__":
     '''
     Run in command line mode
     '''
+
+    #create logger first
+    create_logger()
+    log.info(f"Starting TOAST program.")
+
 
     # arg parser
     parser = argparse.ArgumentParser(description="Start Keck auto-scheduler.")

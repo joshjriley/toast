@@ -311,12 +311,12 @@ class Toast(object):
         #see if slot requested overlaps any slot assignments
         telsched = schedule['telescopes'][tel]
         night = telsched['nights'][date]
-        for slot in night['slots']:
+        for slot in night['slots']:            
             vStart = slot['index']
             vEnd = vStart + int(slot['size'] / self.config['slotPerc']) - 1
             sStart = index 
             sEnd = sStart + int(size / self.config['slotPerc']) - 1
-            if (sStart >= vStart and sStart <= vEnd) or (sEnd >= vStart and sEnd <=vEnd):
+            if vEnd >= sStart and sEnd >= vStart:
                 return False
         return True
 
@@ -506,9 +506,9 @@ class Toast(object):
                     print(f"{slot['index']}\t{slot['size']}\t{slot['ktn']}\t{slot['instr']}", end='')
                     percTotal += slot['size']
                 if percTotal < 1.0:
-                    unused = float(1 - percTotal)
+                    unused = 1 - percTotal
                     totalUnused += unused
-                    print (f"\n          \t!!! unused = {unused} {totalUnused} !!!", end='')
+                    print (f"\n          \t!!! unused = {unused} !!!", end='')
             print ("\n")
             print (f"total unused = {totalUnused}")
 
@@ -521,7 +521,6 @@ class Toast(object):
         print (f"Schedule score: {schedule['meta']['score']}")
         for telkey, telsched in schedule['telescopes'].items():
 
-            print ('telkey: ', telkey)
             telName = self.telescopes[telkey]['name']
             totalUnused = 0.0
             for date in self.datesList:
@@ -536,12 +535,8 @@ class Toast(object):
                 percTotal = 0
                 for i, slot in enumerate(slotsSorted):
                     percTotal += slot['size']
-                unused = float(1 - percTotal)
+                unused = 1 - percTotal
                 totalUnused += unused
-                if unused > 0:
-                    print ('test: ', date, unused, type(unused), totalUnused)
-                if unused < 0:
-                    print ('wtf: ', date, unused, totalUnused)
 
             #summary stats
             print (f'Telescope {telName}: Total unused time = {totalUnused} nights')

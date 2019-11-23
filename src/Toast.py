@@ -163,6 +163,7 @@ class Toast(object):
         data = self.convertDictArrayToArrayDict(data, 'tel', 'date')
         return data
 
+
     def isTelShutdown(self, tel, date):
         if tel in self.telShutdowns: 
             shutdownDates = self.telShutdowns[tel]
@@ -186,11 +187,14 @@ class Toast(object):
         data = self.convertDictArrayToArrayDict(data, 'instr', 'date')
         return data
 
-    def isInstrShutdown(self, instr, date):
-        if instr in self.instrShutdowns: 
-            shutdownDates = self.instrShutdowns[instr]
-            if date in shutdownDates:
-                return True
+
+    def isInstrShutdown(self, instrStr, date):
+        instrs = instrStr.split('+')
+        for instr in instrs:
+            if instr in self.instrShutdowns: 
+                shutdownDates = self.instrShutdowns[instr]
+                if date in shutdownDates:
+                    return True
         return False
 
 
@@ -247,44 +251,51 @@ class Toast(object):
         return instr
 
 
-    def checkInstrCompat(self, instr, schedule, tel, date):
+    def checkInstrCompat(self, instrStr, schedule, tel, date):
         #todo: This whole thing is inefficient
-        instrBase = self.getInstrBase(instr)
+        instrs = instrStr.split('+')
         schedInstrs = self.getScheduleDateInstrs(schedule, tel, date)
-        for schedInstr in schedInstrs:
-            schedInstrBase = self.getInstrBase(schedInstr)
-            if schedInstrBase in self.config['instrIncompatMatrix'][instrBase]:
-                #print ("\tINSTR INCOMPAT: ", instr, schedInstrs)
-                return False
+        for instr in instrs:
+            for incompatInstr in self.config['instrIncompatMatrix'][instr]:
+                for schedInstr in schedInstrs:
+                    if incompatInstr in schedInstr:
+                        # print ("\tINSTR INCOMPAT: ", date, instr, schedInstrs)
+                        return False
         return True
 
 
-    def isScheduledInstrMatch(self, instr, schedule, tel, date):
+    def isScheduledInstrMatch(self, instrStr, schedule, tel, date):
         #todo: This whole thing is inefficient
-        instrBase = self.getInstrBase(instr)
-        schedInstrs = self.getScheduleDateInstrs(schedule, tel, date)
-        for schedInstr in schedInstrs:
-            schedInstrBase = self.getInstrBase(schedInstr)
-            if instrBase == schedInstrBase:
-                #print ("\tINSTR MATCH: ", instr, schedInstrs)
-                return True
+        instrs = instrStr.split('+')
+        for instr in instrs:
+            schedInstrs = self.getScheduleDateInstrs(schedule, tel, date)
+            for schedInstr in schedInstrs:
+                if instr == schedInstr:
+                    # print ("\tINSTR MATCH: ", instr, schedInstrs)
+                    return True
         return False
 
 
-    def getNumAdjacentIntr(self, instr, schedule, tel, date):
+    def getNumAdjacentInstrDates(self, instrStr, schedule, tel, date):
         #todo: This whole thing is inefficient
         #todo: Should we count more than just +/- one day?
-        num = 0
-        instrBase = self.getInstrBase(instr)
-        for delta in range(-1, 2, 2):
-            adjDate = self.getDeltaDate(date, delta)
-            schedInstrs = self.getScheduleDateInstrs(schedule, tel, adjDate)
-            for schedInstr in schedInstrs:
-                schedInstrBase = self.getInstrBase(schedInstr)
-                if instrBase == schedInstrBase:
-                    num += 1
-                    break
-        return num  
+        numExact = 0
+        numBase  = 0
+        instrs = instrStr.split('+')
+        for instr in instrs:
+            instrBase = self.getInstrBase(instr)
+            for delta in range(-1, 2, 2):
+                yesBase  = 0
+                yesExact = 0
+                adjDate = self.getDeltaDate(date, delta)
+                schedInstrs = self.getScheduleDateInstrs(schedule, tel, adjDate)
+                for schedInstr in schedInstrs:
+                    schedInstrBase = self.getInstrBase(schedInstr)
+                    if instrBase == schedInstrBase: yesBase = 1
+                    if instr     == schedInstr    : yesExact = 1
+                if yesBase:  numBase += 1
+                if yesExact: numExact += 1
+        return numExact, numBase  
 
 
     def getDeltaDate(self, dateStr, delta):

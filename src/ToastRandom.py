@@ -76,14 +76,14 @@ class ToastRandom(Toast):
             for progInstr in program['instruments']:
                 for block in progInstr['blocks']:
 
-                    #add info to block data
+                    #add extra info to block data
                     instr = progInstr['instr']                    
                     block['progInstr'] = progInstr
                     block['instr']     = instr
                     block['ktn']       = ktn
                     block['tel']       = self.instruments[instr]['tel']
-                    block['num']       = 1
                     block['type']      = program['type'].lower()
+                    block['num']       = 1
 
                     blocks.append(block)
         return blocks
@@ -205,17 +205,19 @@ class ToastRandom(Toast):
             if self.isReqPortionMatch(block['reqPortion'], slot['index']):
                 slot['score'] += self.config['reqPortionIndexScore']
 
-            #add priority target score
-            #todo: not implented
-            slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
-
             #consider if split night, same instrument better than split different instrument
             if self.isScheduledInstrMatch(block['instr'], schedule, block['tel'], slot['date']):
                 slot['score'] += self.config['scheduledInstrMatchScore']
 
             #todo: consider previous and next night, same instrument is better (ie less reconfigs)
-            numAdjacentInstr = self.getNumAdjacentIntr(block['instr'], schedule, block['tel'], slot['date'])
-            slot['score'] += numAdjacentInstr * self.config['adjacentInstrScore']
+            numAdjExact, numAdjBase = self.getNumAdjacentInstrDates(block['instr'], schedule, block['tel'], slot['date'])
+            slot['score'] += numAdjExact * self.config['adjExactInstrScore']
+            slot['score'] += numAdjBase  * self.config['adjBaseInstrScore']
+
+            #add priority target score
+            #todo: not implented
+            slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
+
 
             # print (f"\tscore = {slot['score']}")
 

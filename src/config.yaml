@@ -20,21 +20,28 @@
     #todo: these could go in each telescopes
     "slotPerc": 0.25,
 
-
+    #For each instrument, an array of instruments that cannot be scheduled on same night
+    #NOTE: instr list is considered wildcard match on each (ie LRIS = *LRIS*)
     "instrIncompatMatrix":
     {
-        "HIRES"  : [],
-        "LRIS"   : ['MOSFIRE'],
-        "MOSFIRE": ['LRIS'],
-        "OSIRIS" : [],
+        "HIRESb"      : ["HIRESr"],
+        "HIRESr"      : ["HIRESb"],
+        "LRIS-ADC"    : ["LRISp-ADC", MOSFIRE'],
+        "LRISp-ADC"   : ["LRIS-ADC"],
+        "MOSFIRE"     : ['LRIS'],
+        "OSIRIS-LGS"  : [],
+        "OSIRIS-NGS"  : [],
 
-        "DEIMOS" : [          'ESI', 'KCWI', 'NIRSPEC'],
-        "ESI"    : ['DEIMOS',        'KCWI', 'NIRSPEC', 'NIRC2', 'NIRES'],
-        "KCWI"   : ['DEIMOS', 'ESI',         'NIRSPEC'],
-        "NIRC2"  : [          'ESI'],
-        "NIRES"  : [          'ESI'],
-        "NIRSPEC": ['DEIMOS', 'ESI', 'KCWI'],
-        "NIRSPAO": [          'ESI'],
+        "DEIMOS"      : [          'ESI', 'KCWI', 'NIRSPEC'],
+        "ESI"         : ['DEIMOS',        'KCWI', 'NIRSPAO', NIRSPEC', 'NIRC2', 'NIRES'],
+        "ESI-ifu"     : ['DEIMOS',        'KCWI', 'NIRSPAO', NIRSPEC', 'NIRC2', 'NIRES'],
+        "KCWI"        : ['DEIMOS', 'ESI',         'NIRSPEC'],
+        "NIRC2-LGS"   : [          'ESI'],
+        "NIRC2-NGS"   : [          'ESI'],
+        "NIRES"       : [          'ESI'],
+        "NIRSPAO-LGS" : [          'ESI'],
+        "NIRSPAO-NGS" : [          'ESI'],
+        "NIRSPEC"     : ['DEIMOS', 'ESI', 'KCWI'],
     },
 
 
@@ -95,8 +102,10 @@
     #score added for slot if it matches requested portion
     "reqPortionIndexScore": 10,
 
-    #score added for slot if adjacent date has same instrument scheduled (up to 2x)
-    "adjacentInstrScore": 3,
+    #score added for slot if adjacent date has same instrument scheduled (up to 2x) 
+    #(NOTE: This helps produce instr runs, but it is in addition to specific instr adjacent score (ie HIRESr vs HIRESb))
+    "adjExactInstrScore": 4,
+    "adjBaseInstrScore": 2,
 
     #Score multiplier for scheduling a block in the requested date (block['reqDate'])
     "reqDateMult": 1.5,

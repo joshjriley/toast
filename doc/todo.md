@@ -28,7 +28,9 @@
 
 
 # todo: random algorithm
-- Implement runs
+- Implement runs (ie progInstr blocks with adjacent moonIndex)
+- Consider laser runs?
+- Consider same program adjacency?
 - force small portions to different days (ie avoid same program on same night for 1/2 and 1/4)
 - avoid half nights straddling middle of night?
 

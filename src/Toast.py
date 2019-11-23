@@ -64,7 +64,8 @@ class Toast(object):
         menu += "------------------------------------------------------------\n"
         menu += "|                    MENU                                   |\n"
         menu += "------------------------------------------------------------|\n"
-        menu += "|  s [tel] [start day] [stop day]      Show schedule        |\n"
+        menu += "|  show [tel] [start day] [stop day]   Show schedule        |\n"
+        menu += "|  stats                               Show stats           |\n"
         menu += "|  q                                   Quit (or Control-C)  |\n"
         menu += "-------------------------------------------------------------\n"
         menu += "> "
@@ -74,8 +75,9 @@ class Toast(object):
             cmds = input(menu).split()       
             if not cmds: continue
             cmd = cmds[0]     
-            if   cmd == 'q'          :  quit = True
-            elif cmd in ['s', 'show']:  self.showSchedule(cmds=cmds)
+            if   cmd == 'q'     :  quit = True
+            elif cmd == 'show'  :  self.showSchedule(cmds=cmds)
+            elif cmd == 'stats' :  self.printStats(self.schedule)
             else:
                 log.error(f'Unrecognized command: {cmd}')
 
@@ -476,7 +478,7 @@ class Toast(object):
             2019-08-02  K2  [ N123 ][ C123 ][ U123 ][ K123 ]
         '''        
         print (f"Semester: {self.semester}")
-        print (f"Schedule score: {schedule['meta']['score']}")
+        totalUnused = 0.0
         for telkey, telsched in schedule['telescopes'].items():
             if tel and telkey != tel: continue
 
@@ -493,12 +495,56 @@ class Toast(object):
 
                 if self.isTelShutdown(telkey, date):
                     print("*** SHUTDOWN ***", end='')
+                    continue
 
                 slots = night['slots']
                 slotsSorted = sorted(slots, key=lambda k: k['index'], reverse=False)
+
+                percTotal = 0
                 for i, slot in enumerate(slotsSorted):
                     if i>0: print ("\n            \t", end='')
                     print(f"{slot['index']}\t{slot['size']}\t{slot['ktn']}\t{slot['instr']}", end='')
+                    percTotal += slot['size']
+                if percTotal < 1.0:
+                    unused = float(1 - percTotal)
+                    totalUnused += unused
+                    print (f"\n          \t!!! unused = {unused} {totalUnused} !!!", end='')
+            print ("\n")
+            print (f"total unused = {totalUnused}")
+
+
+    def printStats(self, schedule):
+        '''
+        Print out stats on schedule
+        '''        
+        print (f"Semester: {self.semester}")
+        print (f"Schedule score: {schedule['meta']['score']}")
+        for telkey, telsched in schedule['telescopes'].items():
+
+            print ('telkey: ', telkey)
+            telName = self.telescopes[telkey]['name']
+            totalUnused = 0.0
+            for date in self.datesList:
+
+                if self.isTelShutdown(telkey, date):
+                    continue
+
+                night = telsched['nights'][date]
+                slots = night['slots']
+                slotsSorted = sorted(slots, key=lambda k: k['index'], reverse=False)
+
+                percTotal = 0
+                for i, slot in enumerate(slotsSorted):
+                    percTotal += slot['size']
+                unused = float(1 - percTotal)
+                totalUnused += unused
+                if unused > 0:
+                    print ('test: ', date, unused, type(unused), totalUnused)
+                if unused < 0:
+                    print ('wtf: ', date, unused, totalUnused)
+
+            #summary stats
+            print (f'Telescope {telName}: Total unused time = {totalUnused} nights')
 
 
 

@@ -150,6 +150,7 @@ class ToastRandom(Toast):
             #=========== SKIP CHECKS ===============
 
             #check for block length versus size available length
+#todo: either this is allowing overbooking
             sizeRemain = 1 - (slot['index'] * self.config['slotPerc'])
             if (block['size'] > sizeRemain):
                 # print ("\tTOO LONG")
@@ -169,6 +170,7 @@ class ToastRandom(Toast):
                 continue
 
             #check for assigned
+#todo: OR THIS IS allowing overbooking
             if not self.isSlotAvailable(schedule, block['tel'], slot['date'], slot['index'], block['size']):
                 slot['score'] = 0
                 # print ("\tOVERLAP")

@@ -16,6 +16,7 @@
 
 
 #todo: framework
+- locked/scheduled dates
 - Engineering inputs
 - Warning for reqDate or reqPortion that was not met
 - Warning if assigned to Neutral or X

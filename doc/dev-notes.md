@@ -3,6 +3,7 @@
 - Besides incompatible setups, is it always better to have a split night be the same instrument?  
 - Should we avoid a reverse scenario of too few reconfigs?  In other words if it happens to work out that we can do all the MOSFIRE nights in one chunk of the semester, is that ok, preferred, not ok?
 - If we have extra time, should we assume we should prefer to fill nights completely instead of lots of empty half nights?  This could be a final sched scoring factor.
+- Should Laser be grouped together?
 
 
 

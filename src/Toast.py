@@ -216,20 +216,24 @@ class Toast(object):
             for date in self.datesList:
                 night = {}
                 night['slots'] = []
+                for i in range(0, self.numSlots):
+                    night['slots'].append(None)
                 schedule['telescopes'][key]['nights'][date] = night
         return schedule 
 
 
-    def assignBlockToSchedule(self, schedule, tel, date, index, size, ktn, instr):
+    def assignBlockToSchedule(self, schedule, tel, date, index, block):
         telsched = schedule['telescopes'][tel]
         night = telsched['nights'][date]
-        data = {
-            'index': index,
-            'size': size,
-            'ktn': ktn,
-            'instr': instr
-        }
-        night['slots'].append(data)
+        night['slots'][index] = block
+
+        # data = {
+        #     'index': index,
+        #     'size' : block['size'],
+        #     'ktn'  : block['ktn'],
+        #     'instr': block['instr']
+        # }
+        # night['slots'].append(data)
 
 
     def getScheduleDateInstrs(self, schedule, tel, date):
@@ -239,6 +243,7 @@ class Toast(object):
             return []
         night = telsched['nights'][date]
         for slot in night['slots']:
+            if slot == None: continue
             instr = slot['instr']
             instrs = instr.split('+')
             allInstrs += instrs
@@ -311,7 +316,8 @@ class Toast(object):
         #see if slot requested overlaps any slot assignments
         telsched = schedule['telescopes'][tel]
         night = telsched['nights'][date]
-        for slot in night['slots']:            
+        for slot in night['slots']:
+            if slot == None: continue                        
             vStart = slot['index']
             vEnd = vStart + int(slot['size'] / self.config['slotPerc']) - 1
             sStart = index 
@@ -393,6 +399,25 @@ class Toast(object):
                 self.moonIndexDates[index][daystr] = 1
 
 
+    def getMoonPrefStrictness(self, moonPrefs):
+        '''
+        How strict is the moonPrefs in terms of number of days we have to work with?
+        Returns fraction from 0.0. to 1.0.
+        '''
+        if not moonPrefs: return 0
+        max = 0
+        total = 0
+        for i, pref in enumerate(moonPrefs):
+            numDays = len(self.moonIndexDates[i])
+            if   pref == 'P': total += numDays
+            elif pref == 'A': total += numDays * 2
+            max += numDays * 2
+        if total == 0: return 0 #no prefs
+        strict = 1 - (total / max)
+        strict *= strict #apply exponential decay
+        return strict
+
+
     #######################################################################
     # UTILITY FUNCTIONS
     #######################################################################
@@ -428,6 +453,7 @@ class Toast(object):
     def getDistinctNightInstrs(self, slots):
         instrs = []
         for slot in slots:
+            if slot == None: continue
             if slot['instr'] in instrs: continue
             instrs.append(slot['instr'])
         return instrs
@@ -473,11 +499,9 @@ class Toast(object):
                     print("*** SHUTDOWN ***", end='')
                     continue
 
-                slots = night['slots']
-                slotsSorted = sorted(slots, key=lambda k: k['index'], reverse=False)
-
                 percTotal = 0
-                for i, slot in enumerate(slotsSorted):
+                for i, slot in enumerate(night['slots']):
+                    if slot == None: continue
                     if i>0: print ("\n            \t", end='')
                     print(f"{slot['index']}\t{slot['size']}\t{slot['ktn']}\t{slot['instr']}", end='')
                     percTotal += slot['size']
@@ -500,16 +524,13 @@ class Toast(object):
             telName = self.telescopes[telkey]['name']
             totalUnused = 0.0
             for date in self.datesList:
-
                 if self.isTelShutdown(telkey, date):
                     continue
 
                 night = telsched['nights'][date]
-                slots = night['slots']
-                slotsSorted = sorted(slots, key=lambda k: k['index'], reverse=False)
-
                 percTotal = 0
-                for i, slot in enumerate(slotsSorted):
+                for i, slot in enumerate(night['slots']):
+                    if slot == None: continue
                     percTotal += slot['size']
                 unused = 1 - percTotal
                 totalUnused += unused

@@ -4,7 +4,8 @@
 - Should we avoid a reverse scenario of too few reconfigs?  In other words if it happens to work out that we can do all the MOSFIRE nights in one chunk of the semester, is that ok, preferred, not ok?
 - If we have extra time, should we assume we should prefer to fill nights completely instead of lots of empty half nights?  This could be a final sched scoring factor.
 - Should Laser be grouped together?
-- Are some reconfigs worse than others?
+- Are some reconfigs worse than others?  ie HIRESr vs HIRESb, MOSFIRE vs LRIS, LRISp vs LRIS?
+- See 2020A_C247.  MoonIndex is on an X.  Are these switched?  There are more like this though?
 
 
 

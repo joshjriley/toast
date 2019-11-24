@@ -55,21 +55,25 @@
     #order score adjust if block has a specified portion 
     'blockOrderReqPortionScore': 2,
 
+    #order score adjust by moonIndex type
+    'blockOrderMoonTypeScore':
+    {
+        'D'    : 3,
+        'G-DL' : 1,
+        'G-DE' : 1,
+        'B'    : 0
+    },
+
+    #order score adjust by how strict the moon preferences are
+    #ie if moonPrefs has one 'P', then all 5 points are had.  If 2 'P's, then 5/2, and so on
+    'blockOrderMoonPrefStrictScore': 5,
+
     #order score mult if block type is cadence
     'blockOrderCadenceMult': 1.25,
 
     #plus or minus adjustment factor to order score (ie 0.10 is +- 10%)
     #NOTE: This can be bumped up to get some very different ordering if scheduling is coming out the same every time
     'blockOrderRandomMult': 0.10,
-
-    #order score mult by moonIndex type
-    'blockOrderMoonTypeMult':
-    {
-        'D'    : 1.5,
-        'G-DL' : 1.25,
-        'G-DE' : 1.25,
-        'B'    : 1.0
-    },
 
 
 
@@ -130,7 +134,7 @@
     # Penalized score based on how many times we switch instruments the next night, ie reconfigs.
     'schedReconfigPenalty': -4,
 
-    'schedMoonPrefScore': {'P': 10,  'A': 5,  'N': 0,  'X': -20},
+    'schedMoonPrefScore': {'P': 4,  'A': 2,  'N': 0,  'X': -10},
 
 
 }

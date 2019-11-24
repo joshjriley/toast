@@ -46,21 +46,21 @@ class ToastRandom(Toast):
 
         #for each block, init slots to try and score each slot
         for block in blocks:
-            #print ('block: ', block['ktn'], block['instr'], block['size'], block['order'])
+            print ('block: ', block['ktn'], block['instr'], block['size'], block['order'], block['type'])
             self.initBlockSlots(block)
             self.scoreBlockSlots(schedule, block)
             slot = self.pickRandomBlockSlot(block)
             if slot == None: 
                 print (f"WARNING: No valid slots found for block program {block['ktn']}, instr {block['instr']}")
                 continue
+            block['index'] = slot['index']
+            block['date']  = slot['date']
             self.assignBlockToSchedule(
                 schedule,
                 block['tel'], 
                 slot['date'], 
-                slot['index'], 
-                block['size'], 
-                block['ktn'],
-                block['instr']
+                slot['index'],
+                block 
             )
 
         return schedule
@@ -90,6 +90,11 @@ class ToastRandom(Toast):
 
 
     def sortBlocks(self, blocks):
+        '''
+        Sort blocks by those that are more important and/or harder to schedule first.
+        '''
+        ## todo: bump up order of blocks that have just a few Ps and As
+        ## (ignore empty array and all Neutrals)
 
         #score order for blocks
         for block in blocks:
@@ -105,14 +110,18 @@ class ToastRandom(Toast):
             if block['reqPortion']: 
                 block['order'] += self.config['blockOrderReqPortionScore']
 
+            #adjust by moonIndex type
+            moonType = self.moonPhases[block['moonIndex']]['type']
+            block['order'] += self.config['blockOrderMoonTypeScore'][moonType]
+             
+            #adjust by moonprefs strictness
+            moonPrefStrict = self.getMoonPrefStrictness(block['progInstr']['moonPrefs'])
+            block['order'] += moonPrefStrict * self.config['blockOrderMoonPrefStrictScore']
+
             #adjust if cadence
             if block['type'].lower() == 'cadence': 
                 block['order'] *= self.config['blockOrderCadenceMult']
 
-            #adjust by moonIndex type
-            moonType = self.moonPhases[block['moonIndex']]['type']
-            block['order'] *= self.config['blockOrderMoonTypeMult'][moonType]
-             
             #random fluctuations (plus/minus perc adjust)
             bormRand = uniform(-1*self.config['blockOrderRandomMult'], self.config['blockOrderRandomMult'])
             block['order'] += block['order'] * bormRand
@@ -266,9 +275,14 @@ class ToastRandom(Toast):
         print (score)
         score += self.getReconfigScore(schedule)
         print (score)
+        score += self.getMoonPrefScore(schedule)
+        print (score)
 
-        # todo: for each slot, alter score based on assignment preference [P,A,N,X]
-        # score += self.getMoonPrefScore(schedule)
+        # todo: score if we hit reqMoonIndex
+
+        # todo: score if we hit reqDate
+
+        # todo: score if we hit reqPortion
 
         # todo: alter score based on priority RA/DEC list?
 
@@ -291,6 +305,7 @@ class ToastRandom(Toast):
             for date, night in telsched['nights'].items():
                 lastInstr = None
                 for slot in night['slots']:
+                    if slot == None: continue
                     if lastInstr != None and lastInstr != slot['instr']:
                         count += 1
                     lastInstr = slot['instr']
@@ -317,18 +332,21 @@ class ToastRandom(Toast):
         return score
 
 
-    # def getMoonPrefScore(self, schedule):
-    #     '''
-    #     Penalized score based on how many times we switch instruments during a night, for each night.
-    #     NOTE: This does not count changing instruments the next night, ie reconfigs.
-    #     '''
-    #     score = 0
-    #     for telkey, telsched in schedule['telescopes'].items():
-    #         for date, night in telsched['nights'].items():
-    #             for slot in night['slots']:
-    #                 pref = ???
-    #                 score += self.config['schedMoonPrefScore'][pref]
-    #     return score
+    def getMoonPrefScore(self, schedule):
+        '''
+        Penalized score based on how many times we switch instruments during a night, for each night.
+        NOTE: This does not count changing instruments the next night, ie reconfigs.
+        '''
+        score = 0
+        for telkey, telsched in schedule['telescopes'].items():
+            for date, night in telsched['nights'].items():
+                for slot in night['slots']:
+                    if slot == None: continue
+                    if not slot['progInstr']['moonPrefLookup']: continue
+                    pref = slot['progInstr']['moonPrefLookup'][date]
+                    print (date, slot['ktn'], slot['index'], pref)
+                    score += self.config['schedMoonPrefScore'][pref]
+        return score
 
 
 

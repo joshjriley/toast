@@ -37,16 +37,16 @@ class ToastRandom(Toast):
 
     def createScheduleRandom(self):
 
-        #init a schedule object
+        #init a blank schedule object
         schedule = self.initSchedule()
 
-        #create blocks from all programs
+        #create blocks from all programs and sort by difficulty/importance
         blocks = self.createProgramBlocks(self.programs)
         blocks = self.sortBlocks(blocks)
 
-        #for each block, init slots to try and score each slot
+        #for each block, score every possible slot, sort, and pick one from the best to schedule
         for block in blocks:
-            print ('block: ', block['ktn'], block['instr'], block['size'], block['order'], block['type'])
+            #print ('block: ', block['ktn'], block['instr'], block['size'], block['order'], block['type'])
             self.initBlockSlots(block)
             self.scoreBlockSlots(schedule, block)
             slot = self.pickRandomBlockSlot(block)
@@ -195,7 +195,7 @@ class ToastRandom(Toast):
                 slot['score'] = 0
                 continue
 
-            #=========== SCORING ===============
+            #=========== SLOT SCORING ===============
 
             #moon preference factor (progInstr['moonPrefs'])
             if block['progInstr']['moonPrefLookup']: pref = block['progInstr']['moonPrefLookup'][slot['date']]
@@ -218,15 +218,13 @@ class ToastRandom(Toast):
             if self.isScheduledInstrMatch(block['instr'], schedule, block['tel'], slot['date']):
                 slot['score'] += self.config['scheduledInstrMatchScore']
 
-            #todo: consider previous and next night, same instrument is better (ie less reconfigs)
+            #consider previous and next night, same instrument is better (ie less reconfigs)
             numAdjExact, numAdjBase = self.getNumAdjacentInstrDates(block['instr'], schedule, block['tel'], slot['date'])
             slot['score'] += numAdjExact * self.config['adjExactInstrScore']
             slot['score'] += numAdjBase  * self.config['adjBaseInstrScore']
 
-            #add priority target score
-            #todo: not implented
-            slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
-
+            #todo: add priority target score
+            #slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
 
             # print (f"\tscore = {slot['score']}")
 
@@ -277,12 +275,12 @@ class ToastRandom(Toast):
         print (score)
         score += self.getMoonPrefScore(schedule)
         print (score)
-
-        # todo: score if we hit reqMoonIndex
-
-        # todo: score if we hit reqDate
-
-        # todo: score if we hit reqPortion
+        score += self.getMoonIndexScore(schedule)
+        print (score)
+        score += self.getReqDateScore(schedule)
+        print (score)
+        score += self.getReqPortionScore(schedule)
+        print (score)
 
         # todo: alter score based on priority RA/DEC list?
 
@@ -304,11 +302,11 @@ class ToastRandom(Toast):
         for telkey, telsched in schedule['telescopes'].items():
             for date, night in telsched['nights'].items():
                 lastInstr = None
-                for slot in night['slots']:
-                    if slot == None: continue
-                    if lastInstr != None and lastInstr != slot['instr']:
+                for block in night['slots']:
+                    if block == None: continue
+                    if lastInstr != None and lastInstr != block['instr']:
                         count += 1
-                    lastInstr = slot['instr']
+                    lastInstr = block['instr']
         score = count * self.config['schedInstrSwitchPenalty']
         return score
 
@@ -334,20 +332,59 @@ class ToastRandom(Toast):
 
     def getMoonPrefScore(self, schedule):
         '''
-        Penalized score based on how many times we switch instruments during a night, for each night.
-        NOTE: This does not count changing instruments the next night, ie reconfigs.
+        Sched score based on which moon pref we obtained for block.
         '''
         score = 0
         for telkey, telsched in schedule['telescopes'].items():
             for date, night in telsched['nights'].items():
-                for slot in night['slots']:
-                    if slot == None: continue
-                    if not slot['progInstr']['moonPrefLookup']: continue
-                    pref = slot['progInstr']['moonPrefLookup'][date]
-                    print (date, slot['ktn'], slot['index'], pref)
+                for block in night['slots']:
+                    if block == None: continue
+                    if not block['progInstr']['moonPrefLookup']: continue
+                    pref = block['progInstr']['moonPrefLookup'][date]
+                    # print (date, block['ktn'], block['index'], pref)
                     score += self.config['schedMoonPrefScore'][pref]
         return score
 
 
+    def getMoonIndexScore(self, schedule):
+        '''
+        Score based on whether we hit requested moonIndex
+        '''
+        score = 0
+        for telkey, telsched in schedule['telescopes'].items():
+            for date, night in telsched['nights'].items():
+                for block in night['slots']:
+                    if block == None: continue
+                    if date in self.moonIndexDates[block['moonIndex']]:
+                        score += self.config['schedMoonIndexScore']
+        return score
+
+
+    def getReqDateScore(self, schedule):
+        '''
+        Penalty score based on whether or not we hit requested date
+        '''
+        score = 0
+        for telkey, telsched in schedule['telescopes'].items():
+            for date, night in telsched['nights'].items():
+                for block in night['slots']:
+                    if block == None: continue
+                    if block['reqDate'] and date != block['reqDate']:
+                        score += self.config['schedReqDatePenalty']
+        return score
+
+
+    def getReqPortionScore(self, schedule):
+        '''
+        Penalty score based on whether or not we hit requested portion
+        '''
+        score = 0
+        for telkey, telsched in schedule['telescopes'].items():
+            for date, night in telsched['nights'].items():
+                for block in night['slots']:
+                    if block == None: continue
+                    if block['reqPortion'] and not self.isReqPortionMatch(block['reqPortion'], block['index']):
+                        score += self.config['schedReqPortionPenalty']
+        return score
 
 

@@ -9,6 +9,7 @@ from ToastRandom import *
 from datetime import datetime as dt, timedelta
 import pathlib
 import time
+import math
 
 import logging
 log = logging.getLogger('toast')
@@ -227,14 +228,6 @@ class Toast(object):
         night = telsched['nights'][date]
         night['slots'][index] = block
 
-        # data = {
-        #     'index': index,
-        #     'size' : block['size'],
-        #     'ktn'  : block['ktn'],
-        #     'instr': block['instr']
-        # }
-        # night['slots'].append(data)
-
 
     def getScheduleDateInstrs(self, schedule, tel, date):
         allInstrs = []
@@ -242,9 +235,9 @@ class Toast(object):
         if date not in telsched['nights']:
             return []
         night = telsched['nights'][date]
-        for slot in night['slots']:
-            if slot == None: continue
-            instr = slot['instr']
+        for block in night['slots']:
+            if block == None: continue
+            instr = block['instr']
             instrs = instr.split('+')
             allInstrs += instrs
         return allInstrs
@@ -316,10 +309,10 @@ class Toast(object):
         #see if slot requested overlaps any slot assignments
         telsched = schedule['telescopes'][tel]
         night = telsched['nights'][date]
-        for slot in night['slots']:
-            if slot == None: continue                        
-            vStart = slot['index']
-            vEnd = vStart + int(slot['size'] / self.config['slotPerc']) - 1
+        for block in night['slots']:
+            if block == None: continue                        
+            vStart = block['index']
+            vEnd = vStart + int(block['size'] / self.config['slotPerc']) - 1
             sStart = index 
             sEnd = sStart + int(size / self.config['slotPerc']) - 1
             if vEnd >= sStart and sEnd >= vStart:
@@ -414,7 +407,7 @@ class Toast(object):
             max += numDays * 2
         if total == 0: return 0 #no prefs
         strict = 1 - (total / max)
-        strict *= strict #apply exponential decay
+        strict = math.pow(strict, 2.5) #apply exponential decay
         return strict
 
 
@@ -452,10 +445,10 @@ class Toast(object):
 
     def getDistinctNightInstrs(self, slots):
         instrs = []
-        for slot in slots:
-            if slot == None: continue
-            if slot['instr'] in instrs: continue
-            instrs.append(slot['instr'])
+        for block in slots:
+            if block == None: continue
+            if block['instr'] in instrs: continue
+            instrs.append(block['instr'])
         return instrs
 
 
@@ -500,11 +493,11 @@ class Toast(object):
                     continue
 
                 percTotal = 0
-                for i, slot in enumerate(night['slots']):
-                    if slot == None: continue
+                for i, block in enumerate(night['slots']):
+                    if block == None: continue
                     if i>0: print ("\n            \t", end='')
-                    print(f"{slot['index']}\t{slot['size']}\t{slot['ktn']}\t{slot['instr']}", end='')
-                    percTotal += slot['size']
+                    print(f"{block['index']}\t{block['size']}\t{block['ktn']}\t{block['instr']}", end='')
+                    percTotal += block['size']
                 if percTotal < 1.0:
                     unused = 1 - percTotal
                     totalUnused += unused
@@ -529,9 +522,9 @@ class Toast(object):
 
                 night = telsched['nights'][date]
                 percTotal = 0
-                for i, slot in enumerate(night['slots']):
-                    if slot == None: continue
-                    percTotal += slot['size']
+                for i, block in enumerate(night['slots']):
+                    if block == None: continue
+                    percTotal += block['size']
                 unused = 1 - percTotal
                 totalUnused += unused
 

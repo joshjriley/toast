@@ -220,7 +220,7 @@ class Toast(object):
         return schedule 
 
 
-    def assignToSchedule(self, schedule, tel, date, index, size, ktn, instr):
+    def assignBlockToSchedule(self, schedule, tel, date, index, size, ktn, instr):
         telsched = schedule['telescopes'][tel]
         night = telsched['nights'][date]
         data = {
@@ -394,38 +394,6 @@ class Toast(object):
 
 
     #######################################################################
-    # SCORING FUNCTIONS
-    #######################################################################
-      
-    def scoreSchedule(self, schedule):
-
-        #TODO: finish this psuedocode
-        gInstrSwitchesFactor = -1.5
-        gslotPrefFactor = {'P': 10,  'A': 5,  'N': 0,  'X': -20}
-
-        score = 0
-        for telkey, telsched in schedule['telescopes'].items():
-            for night in telsched['nights']:
-                pass
-                # # deduct score based on number instrument switches
-                # numInstrSwitches = night.getNumInstrSwitches()
-                # score += numInstrSwitches * gInstrSwitchesFactor
-
-                # # for each slot, alter score based on assignment preference [P,A,N,X]
-                # for slot in night:
-                #     pref = self.getAssignmentPref(slot.date, slot.ktn)
-                #     score += gslotPrefFactor[pref]
-
-                # #todo: alter score based on priority RA/DEC list?
-
-                # #todo: can a block get a size greater or less than requested?
-
-                # #todo: score based on minimal runs for instruments that want runs
-
-        schedule['meta']['score'] = score
-
-
-    #######################################################################
     # UTILITY FUNCTIONS
     #######################################################################
 
@@ -455,6 +423,14 @@ class Toast(object):
 
         #should not get here
         return None
+
+
+    def getDistinctNightInstrs(self, slots):
+        instrs = []
+        for slot in slots:
+            if slot['instr'] in instrs: continue
+            instrs.append(slot['instr'])
+        return instrs
 
 
     def showSchedule(self, cmds):

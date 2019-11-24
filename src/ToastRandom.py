@@ -19,7 +19,7 @@ class ToastRandom(Toast):
     def createSchedule(self):
 
         #todo: Loop and create X number of schedules and take the one that scores best.
-        bestScore = 0
+        bestScore = None
         bestSchedule = None
         for i in range(0, self.runCount):
     
@@ -27,7 +27,7 @@ class ToastRandom(Toast):
             self.scoreSchedule(schedule)
             print (f"sched {i}: score = {schedule['meta']['score']}")
 
-            if schedule['meta']['score'] >= bestScore:
+            if bestScore == None or schedule['meta']['score'] >= bestScore:
                 bestScore = schedule['meta']['score']
                 bestSchedule = schedule
 
@@ -53,7 +53,7 @@ class ToastRandom(Toast):
             if slot == None: 
                 print (f"WARNING: No valid slots found for block program {block['ktn']}, instr {block['instr']}")
                 continue
-            self.assignToSchedule(
+            self.assignBlockToSchedule(
                 schedule,
                 block['tel'], 
                 slot['date'], 
@@ -255,10 +255,80 @@ class ToastRandom(Toast):
         return randItem
 
 
+    #######################################################################
+    # SCORING FUNCTIONS
+    #######################################################################
+      
+    def scoreSchedule(self, schedule):
+
+        score = 0
+        score += self.getInstrSwitchScore(schedule)
+        print (score)
+        score += self.getReconfigScore(schedule)
+        print (score)
+
+        # todo: for each slot, alter score based on assignment preference [P,A,N,X]
+        # score += self.getMoonPrefScore(schedule)
+
+        # todo: alter score based on priority RA/DEC list?
+
+        # todo: can a block get a size greater or less than requested?
+
+        # todo: score based on minimal runs for instruments that want runs
+
+        # todo: should we check for unassigned blocks?
+
+        schedule['meta']['score'] = score
 
 
+    def getInstrSwitchScore(self, schedule):
+        '''
+        Penalized score based on how many times we switch instruments during a night, for each night.
+        NOTE: This does not count changing instruments the next night, ie reconfigs.
+        '''
+        count = 0
+        for telkey, telsched in schedule['telescopes'].items():
+            for date, night in telsched['nights'].items():
+                lastInstr = None
+                for slot in night['slots']:
+                    if lastInstr != None and lastInstr != slot['instr']:
+                        count += 1
+                    lastInstr = slot['instr']
+        score = count * self.config['schedInstrSwitchPenalty']
+        return score
 
 
+    def getReconfigScore(self, schedule):
+        '''
+        Penalized score based on how many times we switch instruments the next night, ie reconfigs.
+        NOTE: Only certain instrument changes require reconfig
+        '''
+        count = 0
+        prevInstrs = []
+        for telkey, telsched in schedule['telescopes'].items():
+            for date, night in telsched['nights'].items():
+                curInstrs = self.getDistinctNightInstrs(night['slots'])
+                for curInstr in curInstrs:
+                    for prevInstr in prevInstrs:
+                        if curInstr in self.config['instrIncompatMatrix'][prevInstr]:
+                            count += 1
+                prevInstrs = curInstrs
+        score = count * self.config['schedReconfigPenalty']
+        return score
+
+
+    # def getMoonPrefScore(self, schedule):
+    #     '''
+    #     Penalized score based on how many times we switch instruments during a night, for each night.
+    #     NOTE: This does not count changing instruments the next night, ie reconfigs.
+    #     '''
+    #     score = 0
+    #     for telkey, telsched in schedule['telescopes'].items():
+    #         for date, night in telsched['nights'].items():
+    #             for slot in night['slots']:
+    #                 pref = ???
+    #                 score += self.config['schedMoonPrefScore'][pref]
+    #     return score
 
 
 

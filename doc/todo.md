@@ -11,11 +11,8 @@
 
 
 
-#todo: proposal translator tool
-- Implement classes for: Program, ProgInstr, Block
-
-
 #todo: framework
+- run a pre-report that flags programs with conflicting moonPrefs and moonIndex/reqDate info?
 - locked/scheduled dates
 - Engineering inputs
 - Warning for reqDate or reqPortion that was not met
@@ -29,9 +26,9 @@
 
 
 # todo: random algorithm
-- Implement runs (ie progInstr blocks with adjacent moonIndex)
+- Implement runs attempts (ie progInstr blocks with adjacent moonIndex)
 - Consider laser runs?
-- Consider same program adjacency?
+- Consider same program adjacency desireable?
 - force small portions to different days (ie avoid same program on same night for 1/2 and 1/4)
 - avoid half nights straddling middle of night?
 

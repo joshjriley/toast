@@ -41,11 +41,11 @@ class ToastRandom(Toast):
         schedule = self.initSchedule()
 
         #create blocks from all programs and sort by difficulty/importance
-        blocks = self.createProgramBlocks(self.programs)
-        blocks = self.sortBlocks(blocks)
+        self.createProgramBlocks()
+        self.sortBlocks()
 
         #for each block, score every possible slot, sort, and pick one from the best to schedule
-        for block in blocks:
+        for block in self.blocks:
             #print ('block: ', block['ktn'], block['instr'], block['size'], block['order'], block['type'])
             self.initBlockSlots(block)
             self.scoreBlockSlots(schedule, block)
@@ -53,8 +53,6 @@ class ToastRandom(Toast):
             if slot == None: 
                 print (f"WARNING: No valid slots found for block program {block['ktn']}, instr {block['instr']}")
                 continue
-            block['index'] = slot['index']
-            block['date']  = slot['date']
             self.assignBlockToSchedule(
                 schedule,
                 block['tel'], 
@@ -66,38 +64,32 @@ class ToastRandom(Toast):
         return schedule
 
 
-    def createProgramBlocks(self, programs):
-
-        #For each program, get all schedulable blocks
+    def createProgramBlocks(self):
+        '''
+        For each program, get all schedulable blocks and add extra info to them for indexing, scoring, etc
+        '''
         #todo: for instruments that prefer runs, use 'num' to group together consecutive blocks
-        #todo: use pointers or indexes to parent program
-        blocks = []
-        for ktn, program in programs.items():
+        self.blocks = []
+        for ktn, program in self.programs.items():
             for progInstr in program['instruments']:
                 for block in progInstr['blocks']:
-
-                    #add extra info to block data
                     instr = progInstr['instr']                    
-                    block['progInstr'] = progInstr
-                    block['instr']     = instr
-                    block['ktn']       = ktn
-                    block['tel']       = self.instruments[instr]['tel']
-                    block['type']      = program['type'].lower()
-                    block['num']       = 1
+                    block['progInstr']  = progInstr
+                    block['instr']      = instr
+                    block['ktn']        = ktn
+                    block['tel']        = self.instruments[instr]['tel']
+                    block['type']       = program['type'].lower()
+                    block['num']        = 1
+                    block['schedIndex'] = None
+                    block['schedDate']  = None
+                    self.blocks.append(block)
 
-                    blocks.append(block)
-        return blocks
 
-
-    def sortBlocks(self, blocks):
+    def sortBlocks(self):
         '''
-        Sort blocks by those that are more important and/or harder to schedule first.
+        Score and sort blocks based on size, importance, difficulty, etc.
         '''
-        ## todo: bump up order of blocks that have just a few Ps and As
-        ## (ignore empty array and all Neutrals)
-
-        #score order for blocks
-        for block in blocks:
+        for block in self.blocks:
 
             #raw score is size
             block['order'] = block['size'] * block['num']
@@ -127,8 +119,8 @@ class ToastRandom(Toast):
             block['order'] += block['order'] * bormRand
 
         #final sort by order
-        blocksSorted = sorted(blocks, key=lambda k: k['order'], reverse=True)
-        return blocksSorted
+        blocksSorted = sorted(self.blocks, key=lambda k: k['order'], reverse=True)
+        self.block = blocksSorted
 
 
     def initBlockSlots(self, block):
@@ -161,33 +153,28 @@ class ToastRandom(Toast):
             #check for block length versus size available length
             sizeRemain = 1 - (slot['index'] * self.config['slotPerc'])
             if (block['size'] > sizeRemain):
-                # print ("\tTOO LONG")
                 slot['score'] = 0
                 continue
 
             #check for telescope shutdowns
             if self.isTelShutdown(block['tel'], slot['date']):
-                # print (f"\tTELESCOPE SHUTDOWN: {block['tel']}, {slot['date']}")
                 slot['score'] = 0
                 continue
 
             #check for instrument unavailability
             if self.isInstrShutdown(block['instr'], slot['date']):
-                # print (f"\tINSTRUMENT UNAVAILABLE: {block['instr']} {slot['date']}")
                 slot['score'] = 0
                 continue
 
             #check for assigned
             if not self.isSlotAvailable(schedule, block['tel'], slot['date'], slot['index'], block['size']):
                 slot['score'] = 0
-                # print ("\tOVERLAP")
                 continue
 
             #check for program dates to avoid
             prog = self.programs[block['ktn']]
             if slot['date'] in prog['datesToAvoid']:
                 slot['score'] = 0
-                # print ("\tBAD PROGRAM DATE")
                 continue
 
             #check for instr incompatibility
@@ -223,9 +210,22 @@ class ToastRandom(Toast):
             slot['score'] += numAdjExact * self.config['adjExactInstrScore']
             slot['score'] += numAdjBase  * self.config['adjBaseInstrScore']
 
+            #score added for slot if it fills beginning or end slots
+            #todo: more should be added if it fits perfectly to complete night
+            if self.config['slotPerc'] < block['size'] < 1.0:
+                if (slot['index'] == 0) or (slot['index']*self.config['slotPerc'] + block['size'] == 1.0):
+                    slot['score'] += self.config['outerSlotScore']
+
+            #score added if other slots are filled already on this date
+            numBlocks = self.getNumBlocksScheduledOnDate(schedule, block['tel'], slot['date'])
+            if numBlocks > 0: slot['score'] += self.config['avoidEmptyDatesScore']
+
+
             #todo: add priority target score
             #slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
 
+            if slot['score'] <= 0:
+                print ('neg slot: ', slot)
             # print (f"\tscore = {slot['score']}")
 
 
@@ -282,11 +282,9 @@ class ToastRandom(Toast):
         score += self.getReqPortionScore(schedule)
         print (score)
 
-        # todo: alter score based on priority RA/DEC list?
+        # todo: score based on priority RA/DEC targets are visible during date/portion
 
         # todo: can a block get a size greater or less than requested?
-
-        # todo: score based on minimal runs for instruments that want runs
 
         # todo: should we check for unassigned blocks?
 
@@ -341,7 +339,6 @@ class ToastRandom(Toast):
                     if block == None: continue
                     if not block['progInstr']['moonPrefLookup']: continue
                     pref = block['progInstr']['moonPrefLookup'][date]
-                    # print (date, block['ktn'], block['index'], pref)
                     score += self.config['schedMoonPrefScore'][pref]
         return score
 
@@ -383,7 +380,7 @@ class ToastRandom(Toast):
             for date, night in telsched['nights'].items():
                 for block in night['slots']:
                     if block == None: continue
-                    if block['reqPortion'] and not self.isReqPortionMatch(block['reqPortion'], block['index']):
+                    if block['reqPortion'] and not self.isReqPortionMatch(block['reqPortion'], block['schedIndex']):
                         score += self.config['schedReqPortionPenalty']
         return score
 

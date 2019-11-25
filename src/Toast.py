@@ -224,6 +224,11 @@ class Toast(object):
 
 
     def assignBlockToSchedule(self, schedule, tel, date, index, block):
+        #mark block with scheduled info
+        block['schedDate']  = date
+        block['schedIndex'] = index
+
+        #add block to schedule object
         telsched = schedule['telescopes'][tel]
         night = telsched['nights'][date]
         night['slots'][index] = block
@@ -304,6 +309,16 @@ class Toast(object):
         return dt.strftime(newdate, "%Y-%m-%d")        
 
 
+    def getNumBlocksScheduledOnDate(self, schedule, tel, date):
+        count = 0
+        telsched = schedule['telescopes'][tel]
+        night = telsched['nights'][date]
+        for block in night['slots']:
+            if block == None: continue                        
+            count += 1
+        return count
+        
+
     def isSlotAvailable(self, schedule, tel, date, index, size):
 
         #see if slot requested overlaps any slot assignments
@@ -311,7 +326,7 @@ class Toast(object):
         night = telsched['nights'][date]
         for block in night['slots']:
             if block == None: continue                        
-            vStart = block['index']
+            vStart = block['schedIndex']
             vEnd = vStart + int(block['size'] / self.config['slotPerc']) - 1
             sStart = index 
             sEnd = sStart + int(size / self.config['slotPerc']) - 1
@@ -496,7 +511,7 @@ class Toast(object):
                 for i, block in enumerate(night['slots']):
                     if block == None: continue
                     if i>0: print ("\n            \t", end='')
-                    print(f"{block['index']}\t{block['size']}\t{block['ktn']}\t{block['instr']}", end='')
+                    print(f"{block['schedIndex']}\t{block['size']}\t{block['ktn']}\t{block['instr']}", end='')
                     percTotal += block['size']
                 if percTotal < 1.0:
                     unused = 1 - percTotal

@@ -224,6 +224,8 @@ class ToastRandom(Toast):
             #todo: add priority target score
             #slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
 
+            #todo: add random fluctuations here?
+
             if slot['score'] <= 0:
                 print ('neg slot: ', slot)
             # print (f"\tscore = {slot['score']}")
@@ -270,17 +272,11 @@ class ToastRandom(Toast):
 
         score = 0
         score += self.getInstrSwitchScore(schedule)
-        print (score)
         score += self.getReconfigScore(schedule)
-        print (score)
         score += self.getMoonPrefScore(schedule)
-        print (score)
         score += self.getMoonIndexScore(schedule)
-        print (score)
         score += self.getReqDateScore(schedule)
-        print (score)
         score += self.getReqPortionScore(schedule)
-        print (score)
 
         # todo: score based on priority RA/DEC targets are visible during date/portion
 

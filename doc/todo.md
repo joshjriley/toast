@@ -11,12 +11,15 @@
 
 
 
+
 #todo: framework
+- perhaps move a bunch of the input data into 2020A-telescopes.json, like shutdowns, instruments, etc.  The assumption is there would be some other translator that would create this file in this format.
 - run a pre-report that flags programs with conflicting moonPrefs and moonIndex/reqDate info?
 - locked/scheduled dates
-- Engineering inputs
+- Engineering inputs (ie segex) (put in 2020A-programs.json or separate file?)
 - Warning for reqDate or reqPortion that was not met
 - Warning if assigned to Neutral or X
+- Warning if moon phase index position not met (show +/- index)
 - block happiness = a % of max score.  max score is hitting all config score params.  though for some blocks certain ones don't apply (ie reqDate) so max is different).  should scoring always be additive?
 - In output, put in rightmost column that notes anything special, warnings, etc (matches reqDate, !!NO MATCH reqPortion!!, 
 - In output, mark empty slots visible
@@ -28,9 +31,11 @@
 # todo: random algorithm
 - Implement runs attempts (ie progInstr blocks with adjacent moonIndex)
 - Consider laser runs?
-- Consider same program adjacency desireable?
+- Consider same program night adjacency desireable?
 - force small portions to different days (ie avoid same program on same night for 1/2 and 1/4)
-- avoid half nights straddling middle of night?
+- Rule: Avoid 3-way or 4-way splits with 2 or more programs
+- Engineering pref is to have a few each month preferably during bright time.  Should we allow some seeding of Engineering nights and avoid adjacency?
+- Program ranking per institution
 
 
 
@@ -47,4 +52,9 @@
 
 
 #misc
+- Consider data input for 3/4, 1/4 bundled pairs?  Or just have scheduler set this manually?
+- Consider last day of previous semester (for runs, reconfigs etc)
+- Carolyn requests an export of priority targets to starlist (k1 and k2 starlist files)
+- Export to spreadsheet format that resembles Carolyn's starting point
 - Consider a sequential approach instead of random?
+

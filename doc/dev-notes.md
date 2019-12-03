@@ -1,11 +1,20 @@
-##questions:
-- Besides incompatible setups, are there any instruments that are less desireable to be paired on a particular night?
-- Besides incompatible setups, is it always better to have a split night be the same instrument?  
-- Should we avoid a reverse scenario of too few reconfigs?  In other words if it happens to work out that we can do all the MOSFIRE nights in one chunk of the semester, is that ok, preferred, not ok?
-- If we have extra time, should we assume we should prefer to fill nights completely instead of lots of empty half nights?  This could be a final sched scoring factor.
-- Should Laser be grouped together?
-- Are some reconfigs worse than others?  ie HIRESr vs HIRESb, MOSFIRE vs LRIS, LRISp vs LRIS?
-- See 2020A_C247.  MoonIndex is on an X.  Are these switched?  There are more like this though?
+##NEW Questions:
+- Q: 
+
+
+##Old Questions:
+- Q: Besides incompatible setups, are there any instruments that are less desireable to be paired on a particular night?  
+  A: No
+- Q: Besides incompatible setups, is it always better to have a split night be the same instrument?  
+  A: Just slightly so.
+- Q: Should we avoid a reverse scenario of too few reconfigs?  In other words if it happens to work out that we can do all the MOSFIRE nights in one chunk of the semester, is that ok, preferred, not ok?  
+  A: That is ok.
+- Q: If we have extra time, should we assume we should prefer to fill nights completely instead of lots of empty half nights?  This could be a final sched scoring factor.
+  A: yes
+- Q: Should Laser be grouped together?  
+  A: not really
+- Q: Are some reconfigs worse than others?  ie HIRESr vs HIRESb, MOSFIRE vs LRIS, LRISp vs LRIS?
+  A: yes, NIRSPAO-NIRSPEC reconfig is worse.  Minimize nirspao runs.  Don't put NIRSPEC and NIRSPAO adjacent to each other.  Can't go from hiresb to hiresr on adjacent nights, but not vice versa.  At least one night.
 
 
 
@@ -24,6 +33,8 @@
 - If you have to use a grey time for a half night, make sure to consider the DE or DL.
 - Full nights sometimes need to be split, but rare.
 - Program rankings are independent numerical systems per TAC (letter code?)
+- 2020A_U207 requsted full night but split card into 4 quarters (for some reason i think to match them with another program), but since it was ESI and that is super restrictive, we gave them 1 full night in the end
+- See 2020A_C247.  MoonIndex is on an X.  Are these switched?  There are more like this though?
 
 
 

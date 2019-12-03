@@ -20,7 +20,7 @@ class db_conn(object):
         {
             "server" : (server name/ip),
             "user"   : (db username),
-            "pwd "   : (db password,
+            "pwd"    : (db password,
             "port"   : (db server port),
             "type"   : (db type: mysql, postgresql),
         },
@@ -78,7 +78,7 @@ class db_conn(object):
         #connect
         try:
             if  type == 'mysql': 
-                conn = pymysql.connect(user=user, password=pwd, host=server, database=database)
+                conn = pymysql.connect(user=user, password=pwd, host=server, database=database, autocommit=true)
             elif type == 'postgresql': 
                 conn = psycopg2.connect(user=user, password=pwd, host=server, port=port, database=database)
         except Exception as e:

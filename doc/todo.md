@@ -13,7 +13,10 @@
 
 
 #todo: framework
-- run a pre-report that flags programs with conflicting moonPrefs and moonIndex/reqDate info?
+- Optimize getinstrbase
+- Deal with instrument base config info (ie HIRESr and HIRESb are both base HIRES)
+- NIRSPAO-NIRSPEC reconfig is worse than others.  Minimize NIRSPAO runs.  
+- Instruction: Block directives, progInstr directives, program directives
 - locked/scheduled dates (use 'schedDate', 'schedIndex')
 - Warning for reqDate or reqPortion that was not met
 - Warning if assigned to Neutral or X
@@ -22,13 +25,10 @@
 - In output, put in rightmost column that notes anything special, warnings, etc (matches reqDate, !!NO MATCH reqPortion!!, 
 - In output, mark empty slots visible
 - real query for other data: shutdowns, moon phases, etc
-- Deal with instrument base config info (ie HIRESr and HIRESb are both base HIRES)
-- NIRSPAO-NIRSPEC reconfig is worse than others.  Minimize NIRSPAO runs.  
-- Rule: Don't put NIRSPEC and NIRSPAO adjacent to each other (they need min one day for reconfig).  
-- Rule: Can't go from hiresb to hiresr on adjacent nights (needs one day for reconfig).  HIRESr to HIRESb is ok.
 
 
 # todo: random algorithm
+- Fix getReconfigScore. It really needs to define instrument positions and track state changes, for instance MOSFIRE switch to LRIS days later is still a reconfig.
 - Implement runs attempts (ie progInstr blocks with adjacent moonIndex)
 - Consider laser runs?
 - Consider same program night adjacency desireable?
@@ -52,6 +52,8 @@
 
 
 #misc
+- Kinda need a ToastKeck class that is for Keck specific scoring.
+- run a pre-report that flags programs with conflicting moonPrefs and moonIndex/reqDate info?
 - Consider data input for 3/4, 1/4 bundled pairs?  Or just have scheduler set this manually?
 - Consider last day of previous semester (for runs, reconfigs etc)
 - Carolyn requests an export of priority targets to starlist (k1 and k2 starlist files)

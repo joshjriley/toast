@@ -21,14 +21,16 @@
     #todo: these could go in each telescopes
     'slotPerc': 0.25,
 
-    #For each instrument, an array of instruments that cannot be scheduled on same night
-    #NOTE: instr list is considered wildcard match on each (ie LRIS = *LRIS*)
-    'instrIncompatMatrix':
+    #For each instrument, an array of instruments that cannot be scheduled on same night. 
+    #NOTE: This also defines when a reconfig was necessary when comparing a scheduled night with previous night.
+    #NOTE: Entries should mirror each other for both incompat instr pairs.
+    #NOTE: instr list can contain specific instrument name or instrument base name to catch all (ie LRISp-ADC or LRIS)
+    'instrSplitIncompat':
     {
         'HIRESb'      : ['HIRESr'],
         'HIRESr'      : ['HIRESb'],
         'LRIS-ADC'    : ['LRISp-ADC', 'MOSFIRE'],
-        'LRISp-ADC'   : ['LRIS-ADC'],
+        'LRISp-ADC'   : ['LRIS-ADC',  'MOSFIRE'],
         'MOSFIRE'     : ['LRIS'],
         'OSIRIS-LGS'  : [],
         'OSIRIS-NGS'  : [],
@@ -43,6 +45,30 @@
         'NIRSPAO-LGS' : [          'ESI'],
         'NIRSPAO-NGS' : [          'ESI'],
         'NIRSPEC'     : ['DEIMOS', 'ESI', 'KCWI'],
+    },
+
+    #For each instrument, an array of instruments that cannot be scheduled on next night
+    #NOTE: instr list can contain specific instrument name or instrument base name to catch all (ie LRISp-ADC or LRIS)
+    'instrReconfigIncompat':
+    {
+        'HIRESb'      : ['HIRESr'],
+        'HIRESr'      : [], #NOTE: HIRESr to HIRESb is ok but not vice versa
+        'LRIS-ADC'    : [],
+        'LRISp-ADC'   : [],
+        'MOSFIRE'     : [],
+        'OSIRIS-LGS'  : [],
+        'OSIRIS-NGS'  : [],
+
+        'DEIMOS'      : [],
+        'ESI'         : [],
+        'ESI-ifu'     : [],
+        'KCWI'        : [],
+        'NIRC2-LGS'   : [],
+        'NIRC2-NGS'   : [],
+        'NIRES'       : [],
+        'NIRSPAO-LGS' : ['NIRSPEC'],
+        'NIRSPAO-NGS' : ['NIRSPEC'],
+        'NIRSPEC'     : ['NIRSPAO'],
     },
 
 

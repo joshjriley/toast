@@ -282,11 +282,11 @@ class Toast(object):
         instrs = instrStr.split('+')
         schedInstrs = self.getScheduleDateInstrs(schedule, tel, date)
         for instr in instrs:
-            for incompatInstr in self.config['instrIncompatMatrix'][instr]:
-                for schedInstr in schedInstrs:
-                    if incompatInstr in schedInstr:
-                        # print ("\tINSTR INCOMPAT: ", date, instr, schedInstrs)
-                        return False
+            if instr not in self.config['instrSplitIncompat']: continue
+            for schedInstr in schedInstrs:
+                schedInstrBase = self.getInstrBase(schedInstr)
+                if schedInstr     in self.config['instrSplitIncompat'][instr]: return False
+                if schedInstrBase in self.config['instrSplitIncompat'][instr]: return False
         return True
 
 
@@ -322,6 +322,39 @@ class Toast(object):
                 if yesBase:  numBase += 1
                 if yesExact: numExact += 1
         return numExact, numBase  
+
+
+    def checkReconfigCompat(self, instrStr, schedule, tel, date):
+        '''
+        Look for instrument reconfigs that are incompatible.  
+        In other words, instruments that cannot follow another instrument the next night.  
+        Typically, the assumption is at least one extra day is needed for some reconfigs.
+        '''
+        #todo: This whole thing is inefficient
+        nextDate = self.getDeltaDate(date, 1)
+        prevDate = self.getDeltaDate(date, -1)
+
+        instrs = instrStr.split('+')
+        for instr in instrs:
+            instrBase = self.getInstrBase(instr)
+
+            #look at next day for scheduled instruments that can't follow instr
+            schedInstrs = self.getScheduleDateInstrs(schedule, tel, nextDate)
+            for schedInstr in schedInstrs:
+                schedInstrBase = self.getInstrBase(schedInstr)
+                if instr not in self.config['instrReconfigIncompat']: continue
+                if schedInstr     in self.config['instrReconfigIncompat'][instr]: return False
+                if schedInstrBase in self.config['instrReconfigIncompat'][instr]: return False
+
+            #look at previous day for scheduled instruments that can't have instr follow them
+            schedInstrs = self.getScheduleDateInstrs(schedule, tel, prevDate)
+            for schedInstr in schedInstrs:
+                schedInstrBase = self.getInstrBase(schedInstr)
+                if schedInstr not in self.config['instrReconfigIncompat']: continue
+                if instr     in self.config['instrReconfigIncompat'][schedInstr]: return False
+                if instrBase in self.config['instrReconfigIncompat'][schedInstr]: return False
+
+        return True
 
 
     def getDeltaDate(self, dateStr, delta):

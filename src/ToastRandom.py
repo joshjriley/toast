@@ -187,6 +187,11 @@ class ToastRandom(Toast):
                 slot['score'] = 0
                 continue
 
+            #check for adjacent reconfig incompatibilities
+            if not self.checkReconfigCompat(block['instr'], schedule, block['tel'], slot['date']):
+                slot['score'] = 0
+                continue
+
             #=========== SLOT SCORING ===============
 
             #moon preference factor (progInstr['moonPrefs'])
@@ -229,10 +234,9 @@ class ToastRandom(Toast):
             #todo: add priority target score
             #slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
 
-            #todo: add random fluctuations here?
+            #todo: add random fluctuations here or keep pickRandomBlockSlot thing?
 
-            if slot['score'] <= 0:
-                print ('neg slot: ', slot)
+            assert slot['score'] > 0, f'ERROR: Slot score must be positive: {block}, {slot}'
             # print (f"\tscore = {slot['score']}")
 
 
@@ -295,7 +299,7 @@ class ToastRandom(Toast):
         # todo: can a block get a size greater or less than requested?
 
         # check for unassigned blocks
-        score += self.getUnassignedBlockPenalty(schedule)
+        score += self.getUnassignedBlockScore(schedule)
         print ('score8: ', score)
 
         schedule['meta']['score'] = score
@@ -322,17 +326,24 @@ class ToastRandom(Toast):
     def getReconfigScore(self, schedule):
         '''
         Penalized score based on how many times we switch instruments the next night, ie reconfigs.
-        NOTE: Only certain instrument changes require reconfig
+        NOTE: Only certain instrument changes require reconfig as defined in config['instrSplitIncompat']
         '''
+        #todo: This is not quite accurate.  We really need to define instrument positions and track state changes
+        #for instance MOSFIRE switch to LRIS days later is still a reconfig.
         count = 0
         prevInstrs = []
         for telkey, telsched in schedule['telescopes'].items():
             for date, night in telsched['nights'].items():
                 curInstrs = self.getDistinctNightInstrs(night['slots'])
                 for curInstr in curInstrs:
+                    if curInstr not in self.config['instrSplitIncompat']: continue
                     for prevInstr in prevInstrs:
-                        if prevInstr not in self.config['instrIncompatMatrix']: continue
-                        if curInstr in self.config['instrIncompatMatrix'][prevInstr]:
+                        prevInstrBase = self.getInstrBase(prevInstr)
+                        if prevInstr in self.config['instrSplitIncompat'][curInstr]:
+                            print (f': test: reconfig on {date}: {prevInstr} to {curInstr}')
+                            count += 1
+                        elif prevInstrBase in self.config['instrSplitIncompat'][curInstr]:
+                            print (f': test2: reconfig on {date}: {prevInstrBase} to {curInstr}')
                             count += 1
                 prevInstrs = curInstrs
         score = count * self.config['schedReconfigPenalty']
@@ -402,7 +413,7 @@ class ToastRandom(Toast):
         return score
 
 
-    def getUnassignedBlockPenalty(self, schedule):
+    def getUnassignedBlockScore(self, schedule):
         '''
         Penalty score for orphaned blocks
         '''

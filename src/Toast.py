@@ -42,6 +42,7 @@ class Toast(object):
         self.moonPhases     = self.getMoonPhases()
         self.telShutdowns   = self.getTelescopeShutdowns()
         self.instrShutdowns = self.getInstrumentShutdowns()
+        self.engineering    = self.getEngineering()
         self.programs       = self.getPrograms(self.semester)
 
         #perform data conversion optimizations
@@ -138,6 +139,19 @@ class Toast(object):
         return data
 
 
+    def getEngineering(self):
+
+        data = None
+        if 'engineeringFile' in self.config: 
+            fp = self.config['engineeringFile']
+            assert os.path.isfile(fp), f"ERROR: getEngineering: file '{fp}'' does not exist.  Exiting."
+            with open(fp) as f: data = yaml.safe_load(f)        
+        else:
+            #todo: optional query.  Note: No such table yet.
+            assert False, "ERROR: getEngineering: DB retrieve not implemented!"
+        return data
+
+
     def getPrograms(self, semester):
 
         data = None
@@ -221,6 +235,13 @@ class Toast(object):
                     night['slots'].append(None)
                 schedule['telescopes'][key]['nights'][date] = night
         return schedule 
+
+
+    def scheduleEngineering(self, schedule):
+
+        for eng in self.engineering:
+            eng['progInstr'] = None
+            self.assignBlockToSchedule(schedule, eng['tel'], eng['date'], eng['index'], eng)
 
 
     def assignBlockToSchedule(self, schedule, tel, date, index, block):

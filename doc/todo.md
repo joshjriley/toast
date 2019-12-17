@@ -13,10 +13,8 @@
 
 
 #todo: framework
-- perhaps move a bunch of the input data into 2020A-telescopes.json, like shutdowns, instruments, etc.  The assumption is there would be some other translator that would create this file in this format.
 - run a pre-report that flags programs with conflicting moonPrefs and moonIndex/reqDate info?
-- locked/scheduled dates
-- Engineering inputs (ie segex) (put in 2020A-programs.json or separate file?)
+- locked/scheduled dates (use 'schedDate', 'schedIndex')
 - Warning for reqDate or reqPortion that was not met
 - Warning if assigned to Neutral or X
 - Warning if moon phase index position not met (show +/- index)
@@ -25,7 +23,9 @@
 - In output, mark empty slots visible
 - real query for other data: shutdowns, moon phases, etc
 - Deal with instrument base config info (ie HIRESr and HIRESb are both base HIRES)
-
+- NIRSPAO-NIRSPEC reconfig is worse than others.  Minimize NIRSPAO runs.  
+- Rule: Don't put NIRSPEC and NIRSPAO adjacent to each other (they need min one day for reconfig).  
+- Rule: Can't go from hiresb to hiresr on adjacent nights (needs one day for reconfig).  HIRESr to HIRESb is ok.
 
 
 # todo: random algorithm
@@ -57,4 +57,5 @@
 - Carolyn requests an export of priority targets to starlist (k1 and k2 starlist files)
 - Export to spreadsheet format that resembles Carolyn's starting point
 - Consider a sequential approach instead of random?
+- perhaps move a bunch of the input data into 2020A-telescopes.json, like shutdowns, instruments, etc.  The assumption is there would be some other translator that would create this file in this format.
 

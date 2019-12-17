@@ -7,6 +7,7 @@
     'moonPhasesFile'     : '../test/2020A-moon-phases.json',
     'telShutdownsFile'   : '../test/2020A-tel-shutdowns.json',
     'instrShutdownsFile' : '../test/2020A-instr-shutdowns.json',
+    'engineeringFile'    : '../test/2020A-engineering.json',
     'programsFile'       : '../test/2020A-programs.json',
 
 
@@ -98,7 +99,7 @@
     'reqMoonIndexScore': 15,
 
     #score added for slot if same instrument scheduled that night (ie split nights should be same instrument when possible)
-    'scheduledInstrMatchScore': 5,
+    'scheduledInstrMatchScore': 2,
 
     #score added for slot if it matches requested date
     'reqDateIndexScore': 20,

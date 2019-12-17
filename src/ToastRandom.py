@@ -39,6 +39,7 @@ class ToastRandom(Toast):
 
         #init a blank schedule object
         schedule = self.initSchedule()
+        self.scheduleEngineering(schedule)
 
         #create blocks from all programs and sort by difficulty/importance
         self.createProgramBlocks()
@@ -317,6 +318,7 @@ class ToastRandom(Toast):
                 curInstrs = self.getDistinctNightInstrs(night['slots'])
                 for curInstr in curInstrs:
                     for prevInstr in prevInstrs:
+                        if prevInstr not in self.config['instrIncompatMatrix']: continue
                         if curInstr in self.config['instrIncompatMatrix'][prevInstr]:
                             count += 1
                 prevInstrs = curInstrs
@@ -333,6 +335,7 @@ class ToastRandom(Toast):
             for date, night in telsched['nights'].items():
                 for block in night['slots']:
                     if block == None: continue
+                    if not block['progInstr']: continue
                     if not block['progInstr']['moonPrefLookup']: continue
                     pref = block['progInstr']['moonPrefLookup'][date]
                     score += self.config['schedMoonPrefScore'][pref]
@@ -348,6 +351,7 @@ class ToastRandom(Toast):
             for date, night in telsched['nights'].items():
                 for block in night['slots']:
                     if block == None: continue
+                    if 'moonIndex' not in block: continue
                     if date in self.moonIndexDates[block['moonIndex']]:
                         score += self.config['schedMoonIndexScore']
         return score
@@ -362,7 +366,8 @@ class ToastRandom(Toast):
             for date, night in telsched['nights'].items():
                 for block in night['slots']:
                     if block == None: continue
-                    if block['reqDate'] and date != block['reqDate']:
+                    if 'reqDate' not in block: continue
+                    if date != block['reqDate']:
                         score += self.config['schedReqDatePenalty']
         return score
 
@@ -376,6 +381,7 @@ class ToastRandom(Toast):
             for date, night in telsched['nights'].items():
                 for block in night['slots']:
                     if block == None: continue
+                    if 'reqPortion' not in block: continue
                     if block['reqPortion'] and not self.isReqPortionMatch(block['reqPortion'], block['schedIndex']):
                         score += self.config['schedReqPortionPenalty']
         return score

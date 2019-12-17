@@ -338,12 +338,11 @@ class ToastRandom(Toast):
                 for curInstr in curInstrs:
                     if curInstr not in self.config['instrSplitIncompat']: continue
                     for prevInstr in prevInstrs:
-                        prevInstrBase = self.getInstrBase(prevInstr)
+                        prevInstrBase = self.instruments[prevInstr]['base'] if prevInstr in self.instruments else None
+                        print ('test: ', prevInstr, prevInstrBase)
                         if prevInstr in self.config['instrSplitIncompat'][curInstr]:
-                            print (f': test: reconfig on {date}: {prevInstr} to {curInstr}')
                             count += 1
                         elif prevInstrBase in self.config['instrSplitIncompat'][curInstr]:
-                            print (f': test2: reconfig on {date}: {prevInstrBase} to {curInstr}')
                             count += 1
                 prevInstrs = curInstrs
         score = count * self.config['schedReconfigPenalty']

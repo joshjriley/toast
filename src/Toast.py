@@ -10,6 +10,7 @@ from datetime import datetime as dt, timedelta
 import pathlib
 import time
 import math
+import re
 
 import logging
 log = logging.getLogger('toast')
@@ -48,6 +49,7 @@ class Toast(object):
         #perform data conversion optimizations
         self.createMoonIndexDates()
         self.createMoonPrefLookups()
+        self.createInstrBaseNames()
 
         #create new blank schedule
         self.initSchedule()
@@ -269,12 +271,17 @@ class Toast(object):
         return allInstrs
 
 
-    def getInstrBase(self, instr):
-        instr = instr.split('-')[0]
-        #todo: temp: this should be in config, not hardcoded
-        if   'HIRES' in instr: instr = 'HIRES'
-        elif 'LRIS' in instr: instr = 'LRIS'
-        return instr
+    def createInstrBaseNames(self):
+        '''
+        Get first set of all capital letters and numbers from beginning of string and store in instruments dict
+        ie: LRISp-ADC = LRIS, HIRESr = HIRES
+        '''        
+        pattern = '^[A-Z0-9]*'
+        for key, instr in self.instruments.items():
+            instr['base'] = key
+            match = re.search(pattern, key)
+            if match and match[0]: 
+                instr['base'] = match[0]
 
 
     def checkInstrCompat(self, instrStr, schedule, tel, date):
@@ -284,7 +291,7 @@ class Toast(object):
         for instr in instrs:
             if instr not in self.config['instrSplitIncompat']: continue
             for schedInstr in schedInstrs:
-                schedInstrBase = self.getInstrBase(schedInstr)
+                schedInstrBase = self.instruments[schedInstr]['base'] if schedInstr in self.instruments else None
                 if schedInstr     in self.config['instrSplitIncompat'][instr]: return False
                 if schedInstrBase in self.config['instrSplitIncompat'][instr]: return False
         return True
@@ -309,14 +316,14 @@ class Toast(object):
         numBase  = 0
         instrs = instrStr.split('+')
         for instr in instrs:
-            instrBase = self.getInstrBase(instr)
+            instrBase = self.instruments[instr]['base'] if instr in self.instruments else None
             for delta in range(-1, 2, 2):
                 yesBase  = 0
                 yesExact = 0
                 adjDate = self.getDeltaDate(date, delta)
                 schedInstrs = self.getScheduleDateInstrs(schedule, tel, adjDate)
                 for schedInstr in schedInstrs:
-                    schedInstrBase = self.getInstrBase(schedInstr)
+                    schedInstrBase = self.instruments[schedInstr]['base'] if schedInstr in self.instruments else None
                     if instrBase == schedInstrBase: yesBase = 1
                     if instr     == schedInstr    : yesExact = 1
                 if yesBase:  numBase += 1
@@ -336,12 +343,12 @@ class Toast(object):
 
         instrs = instrStr.split('+')
         for instr in instrs:
-            instrBase = self.getInstrBase(instr)
+            instrBase = self.instruments[instr]['base'] if instr in self.instruments else None
 
             #look at next day for scheduled instruments that can't follow instr
             schedInstrs = self.getScheduleDateInstrs(schedule, tel, nextDate)
             for schedInstr in schedInstrs:
-                schedInstrBase = self.getInstrBase(schedInstr)
+                schedInstrBase = self.instruments[schedInstr]['base'] if schedInstr in self.instruments else None
                 if instr not in self.config['instrReconfigIncompat']: continue
                 if schedInstr     in self.config['instrReconfigIncompat'][instr]: return False
                 if schedInstrBase in self.config['instrReconfigIncompat'][instr]: return False
@@ -349,7 +356,7 @@ class Toast(object):
             #look at previous day for scheduled instruments that can't have instr follow them
             schedInstrs = self.getScheduleDateInstrs(schedule, tel, prevDate)
             for schedInstr in schedInstrs:
-                schedInstrBase = self.getInstrBase(schedInstr)
+                schedInstrBase = self.instruments[schedInstr]['base'] if schedInstr in self.instruments else None
                 if schedInstr not in self.config['instrReconfigIncompat']: continue
                 if instr     in self.config['instrReconfigIncompat'][schedInstr]: return False
                 if instrBase in self.config['instrReconfigIncompat'][schedInstr]: return False

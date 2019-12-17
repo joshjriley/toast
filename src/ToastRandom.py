@@ -119,9 +119,13 @@ class ToastRandom(Toast):
             bormRand = uniform(-1*self.config['blockOrderRandomMult'], self.config['blockOrderRandomMult'])
             block['order'] += block['order'] * bormRand
 
+            #adjust if admin directive
+            if 'adminBlockOrderMult' in block['progInstr']:
+                block['order'] *= block['progInstr']['adminBlockOrderMult']
+
         #final sort by order
         blocksSorted = sorted(self.blocks, key=lambda k: k['order'], reverse=True)
-        self.block = blocksSorted
+        self.blocks = blocksSorted
 
 
     def initBlockSlots(self, block):
@@ -272,18 +276,27 @@ class ToastRandom(Toast):
     def scoreSchedule(self, schedule):
 
         score = 0
+        print ('score1: ', score)
         score += self.getInstrSwitchScore(schedule)
+        print ('score2: ', score)
         score += self.getReconfigScore(schedule)
+        print ('score3: ', score)
         score += self.getMoonPrefScore(schedule)
+        print ('score4: ', score)
         score += self.getMoonIndexScore(schedule)
+        print ('score5: ', score)
         score += self.getReqDateScore(schedule)
+        print ('score6: ', score)
         score += self.getReqPortionScore(schedule)
+        print ('score7: ', score)
 
         # todo: score based on priority RA/DEC targets are visible during date/portion
 
         # todo: can a block get a size greater or less than requested?
 
-        # todo: should we check for unassigned blocks?
+        # check for unassigned blocks
+        score += self.getUnassignedBlockPenalty(schedule)
+        print ('score8: ', score)
 
         schedule['meta']['score'] = score
 
@@ -367,6 +380,7 @@ class ToastRandom(Toast):
                 for block in night['slots']:
                     if block == None: continue
                     if 'reqDate' not in block: continue
+                    if not block['reqDate']: continue
                     if date != block['reqDate']:
                         score += self.config['schedReqDatePenalty']
         return score
@@ -382,8 +396,20 @@ class ToastRandom(Toast):
                 for block in night['slots']:
                     if block == None: continue
                     if 'reqPortion' not in block: continue
-                    if block['reqPortion'] and not self.isReqPortionMatch(block['reqPortion'], block['schedIndex']):
+                    if not block['reqPortion']: continue
+                    if not self.isReqPortionMatch(block['reqPortion'], block['schedIndex']):
                         score += self.config['schedReqPortionPenalty']
+        return score
+
+
+    def getUnassignedBlockPenalty(self, schedule):
+        '''
+        Penalty score for orphaned blocks
+        '''
+        score = 0
+        for block in self.blocks:
+            if 'schedDate' not in block or not block['schedDate']:
+                score += self.config['schedOrphanBlockPenalty']
         return score
 
 

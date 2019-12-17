@@ -77,7 +77,6 @@
     'blockOrderRandomMult': 0.20,
 
 
-
     #######################################################################
     # SLOT SCORING PARAMETERS
     #######################################################################
@@ -114,11 +113,11 @@
 
     #score added for slot if it fills beginning or end slots
     #NOTE: This prevents 0.5 size from sitting in middle of night
-    'outerSlotScore': 5,
+    'outerSlotScore': 4,
 
     #score added if other slots are filled already on this date
     #NOTE: This promotes filling unused slots. Probably want to keep this number small.
-    'avoidEmptyDatesScore': 2,
+    'avoidEmptyDatesScore': 5,
 
     #Slot score percentage difference from top slot score value for it to be considered for pool of random slots to choose from.
     # value from 0 to 1.0 where 0.0 means keep only the top scoring slots, 0.20 means choose from top 20% of values, and 1.0 means chose randomly from all slots
@@ -144,6 +143,8 @@
     'schedReqDatePenalty': -10,
 
     'schedReqPortionPenalty': -8,
+
+    'schedOrphanBlockPenalty': -100,
 
 
 }

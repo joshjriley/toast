@@ -222,7 +222,11 @@ class Toast(object):
 
         #create template schedule object for each telescope
         schedule = {}
+
         schedule['meta'] = {}
+        schedule['meta']['unscheduledBlocks'] = []
+        schedule['meta']['score'] = 0
+
         schedule['telescopes'] = {}
         for key, tel in self.telescopes.items():
             schedule['telescopes'][key] = {}
@@ -233,6 +237,7 @@ class Toast(object):
                 for i in range(0, self.numSlots):
                     night['slots'].append(None)
                 schedule['telescopes'][key]['nights'][date] = night
+
         return schedule 
 
 
@@ -546,6 +551,7 @@ class Toast(object):
             2019-08-02  K2  [ N123 ][ C123 ][ U123 ][ K123 ]
         '''        
         print (f"Semester: {self.semester}")
+
         totalUnused = 0.0
         for telkey, telsched in schedule['telescopes'].items():
             if tel and telkey != tel: continue
@@ -566,17 +572,30 @@ class Toast(object):
                     continue
 
                 percTotal = 0
+                num = 0
                 for i, block in enumerate(night['slots']):
                     if block == None: continue
-                    if i>0: print ("\n            \t", end='')
-                    print(f"{block['schedIndex']}\t{block['size']}\t{block['ktn']}\t{block['instr']}", end='')
+                    if num>0: print ("\n            \t", end='')
+                    print(f"{block['schedIndex']}\t{block['size']}\t{block['ktn']}", end='')
+                    print(f"\t{block['instr'].ljust(12)}", end='')
+                    print(f"\t{block['warnSchedDate']}", end='')
+                    print(f"\t{block['warnReqDate']}", end='')
+                    print(f"\t{block['warnReqPortion']}", end='')
                     percTotal += block['size']
+                    num += 1
                 if percTotal < 1.0:
                     unused = 1 - percTotal
                     totalUnused += unused
                     print (f"\n          \t!!! unused = {unused} !!!", end='')
             print ("\n")
             print (f"total unused = {totalUnused}")
+
+        if schedule['meta']['unscheduledBlocks']:
+            print ("********************************************")
+            print ("*** WARNING: Unscheduled program blocks! ***")
+            print ("********************************************")
+            for block in schedule['meta']['unscheduledBlocks']:
+                print (f"\t!!! {block['ktn']}, instr {block['instr']}")
 
 
     def printStats(self, schedule):

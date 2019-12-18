@@ -24,6 +24,7 @@ class ToastRandom(Toast):
         for i in range(0, self.runCount):
     
             schedule = self.createScheduleRandom()
+            self.markScheduleWarnings(schedule)
             self.scoreSchedule(schedule)
             print (f"sched {i}: score = {schedule['meta']['score']}")
 
@@ -31,13 +32,13 @@ class ToastRandom(Toast):
                 bestScore = schedule['meta']['score']
                 bestSchedule = schedule
 
-        #todo: should we store all schedules in an array or keep a running top 10%?
+        #todo: should we store all schedules in an array or keep a running top N?
         return bestSchedule
 
 
     def createScheduleRandom(self):
 
-        #init a blank schedule object
+        #init a blank schedule object and pre-schedule fixed things
         schedule = self.initSchedule()
         self.scheduleEngineering(schedule)
 
@@ -52,6 +53,7 @@ class ToastRandom(Toast):
             self.scoreBlockSlots(schedule, block)
             slot = self.pickRandomBlockSlot(block)
             if slot == None: 
+                schedule['meta']['unscheduledBlocks'].append(block)
                 print (f"WARNING: No valid slots found for block program {block['ktn']}, instr {block['instr']}")
                 continue
             self.assignBlockToSchedule(
@@ -292,6 +294,30 @@ class ToastRandom(Toast):
 
 
     #######################################################################
+    # MARK WARN FUNCTIONS
+    #######################################################################
+
+    def markScheduleWarnings(self, schedule):
+
+        for block in self.blocks:
+
+            block['warnSchedDate'] = 0
+            if 'schedDate' not in block or not block['schedDate']:
+                block['warnSchedDate'] = 1
+
+            block['warnReqDate'] = 0
+            if 'reqDate' in block and block['reqDate']:
+                if block['schedDate'] != block['reqDate']:
+                    block['warnReqDate'] = 1
+
+            block['warnReqPortion'] = 0
+            if 'reqPortion' in block and block['reqPortion']:
+                if not self.isReqPortionMatch(block['reqPortion'], block['schedIndex']):
+                    block['warnReqPortion'] = 1
+
+
+
+    #######################################################################
     # SCORING FUNCTIONS
     #######################################################################
       
@@ -402,14 +428,9 @@ class ToastRandom(Toast):
         Penalty score based on whether or not we hit requested date
         '''
         score = 0
-        for telkey, telsched in schedule['telescopes'].items():
-            for date, night in telsched['nights'].items():
-                for block in night['slots']:
-                    if block == None: continue
-                    if 'reqDate' not in block: continue
-                    if not block['reqDate']: continue
-                    if date != block['reqDate']:
-                        score += self.config['schedReqDatePenalty']
+        for block in self.blocks:
+            if block['warnReqDate']:
+                score += self.config['schedReqDatePenalty']
         return score
 
 
@@ -418,14 +439,9 @@ class ToastRandom(Toast):
         Penalty score based on whether or not we hit requested portion
         '''
         score = 0
-        for telkey, telsched in schedule['telescopes'].items():
-            for date, night in telsched['nights'].items():
-                for block in night['slots']:
-                    if block == None: continue
-                    if 'reqPortion' not in block: continue
-                    if not block['reqPortion']: continue
-                    if not self.isReqPortionMatch(block['reqPortion'], block['schedIndex']):
-                        score += self.config['schedReqPortionPenalty']
+        for block in self.blocks:
+            if block['warnReqPortion']:
+                score += self.config['schedReqPortionPenalty']
         return score
 
 
@@ -435,7 +451,7 @@ class ToastRandom(Toast):
         '''
         score = 0
         for block in self.blocks:
-            if 'schedDate' not in block or not block['schedDate']:
+            if block['warnSchedDate']:
                 score += self.config['schedOrphanBlockPenalty']
         return score
 

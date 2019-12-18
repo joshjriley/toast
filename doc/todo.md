@@ -13,15 +13,17 @@
 
 
 #todo: framework
-- Save/write out scheduled program
+- TODO: engineering not in blocks list (change json to have schedDate and schedIndex?)
+- classes: Block, Schedule
+- Should we just schedule shutdowns as blocks?  How would these show up on schedule?  As engineering anyway? see Principal 4289
 
 - Warning for reqDate or reqPortion that was not met
-- Warning if assigned to Neutral or X
+- Warning if assigned to Neutral or X (show "N", "X")
 - Warning if moon phase index position not met (show +/- index)
 - block happiness = a % of max score.  max score is hitting all config score params.  though for some blocks certain ones don't apply (ie reqDate) so max is different).  should scoring always be additive?
-- In output, put in rightmost column that notes anything special, warnings, etc (matches reqDate, !!NO MATCH reqPortion!!, 
-- In output, mark empty slots visible
+- In output, put in rightmost column that notes anything special, warnings, etc  
 
+- Save/write out scheduled program
 - real query for other data: shutdowns, moon phases, etc
 
 
@@ -51,6 +53,7 @@
 
 
 #misc
+- config var to keep top N schedules in memory.  menu option to switch to sched N.
 - Kinda need a ToastKeck class that is for Keck specific scoring.
 - run a pre-report that flags programs with conflicting moonPrefs and moonIndex/reqDate info?
 - Consider data input for 3/4, 1/4 bundled pairs?  Or just have scheduler set this manually?

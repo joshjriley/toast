@@ -81,8 +81,8 @@ class ToastRandom(Toast):
                     block['tel']        = self.instruments[instr]['tel']
                     block['type']       = program['type'].lower()
                     block['num']        = 1
-                    block['schedIndex'] = None
-                    block['schedDate']  = None
+                    block['schedIndex'] = block['schedIndex'] if 'schedIndex' in block else None
+                    block['schedDate']  = block['schedDate']  if 'schedDate'  in block else None
                     self.blocks.append(block)
 
 
@@ -90,7 +90,13 @@ class ToastRandom(Toast):
         '''
         Score and sort blocks based on size, importance, difficulty, etc.
         '''
+        bmax = 0
         for block in self.blocks:
+
+            #see if fixed order directive
+            if 'orderScore' in block: 
+                block['order'] = block['orderScore']
+                continue
 
             #raw score is size
             block['order'] = block['size'] * block['num']
@@ -119,9 +125,12 @@ class ToastRandom(Toast):
             bormRand = uniform(-1*self.config['blockOrderRandomMult'], self.config['blockOrderRandomMult'])
             block['order'] += block['order'] * bormRand
 
-            #adjust if admin directive
-            if 'adminBlockOrderMult' in block['progInstr']:
-                block['order'] *= block['progInstr']['adminBlockOrderMult']
+            #keep track of max
+            if block['order'] > bmax: bmax = block['order']
+
+        #if any blocks are fixed scheduled, bump those to the top
+        for block in self.blocks:
+            if block['schedDate']: block['order'] += bmax
 
         #final sort by order
         blocksSorted = sorted(self.blocks, key=lambda k: k['order'], reverse=True)
@@ -192,6 +201,16 @@ class ToastRandom(Toast):
                 slot['score'] = 0
                 continue
 
+            #check if fixed scheduled date
+            if block['schedDate'] and slot['date'] != block['schedDate']:
+                slot['score'] = 0
+                continue
+
+            #check if fixed scheduled slot index
+            if block['schedIndex'] and slot['index'] != block['schedIndex']:
+                slot['score'] = 0
+                continue
+
             #=========== SLOT SCORING ===============
 
             #moon preference factor (progInstr['moonPrefs'])
@@ -229,7 +248,6 @@ class ToastRandom(Toast):
             #score added if other slots are filled already on this date
             numBlocks = self.getNumBlocksScheduledOnDate(schedule, block['tel'], slot['date'])
             if numBlocks > 0: slot['score'] += self.config['avoidEmptyDatesScore']
-
 
             #todo: add priority target score
             #slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
@@ -339,7 +357,6 @@ class ToastRandom(Toast):
                     if curInstr not in self.config['instrSplitIncompat']: continue
                     for prevInstr in prevInstrs:
                         prevInstrBase = self.instruments[prevInstr]['base'] if prevInstr in self.instruments else None
-                        print ('test: ', prevInstr, prevInstrBase)
                         if prevInstr in self.config['instrSplitIncompat'][curInstr]:
                             count += 1
                         elif prevInstrBase in self.config['instrSplitIncompat'][curInstr]:

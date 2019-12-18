@@ -51,9 +51,6 @@ class Toast(object):
         self.createMoonPrefLookups()
         self.createInstrBaseNames()
 
-        #create new blank schedule
-        self.initSchedule()
-        
         #todo: check if the total proposed hours exceeds semester hours
 
         #do it

@@ -13,23 +13,22 @@
 
 
 #todo: framework
-- Optimize getinstrbase
-- Deal with instrument base config info (ie HIRESr and HIRESb are both base HIRES)
-- NIRSPAO-NIRSPEC reconfig is worse than others.  Minimize NIRSPAO runs.  
-- Instruction: Block directives, progInstr directives, program directives
-- locked/scheduled dates (use 'schedDate', 'schedIndex')
+- Save/write out scheduled program
+
 - Warning for reqDate or reqPortion that was not met
 - Warning if assigned to Neutral or X
 - Warning if moon phase index position not met (show +/- index)
 - block happiness = a % of max score.  max score is hitting all config score params.  though for some blocks certain ones don't apply (ie reqDate) so max is different).  should scoring always be additive?
 - In output, put in rightmost column that notes anything special, warnings, etc (matches reqDate, !!NO MATCH reqPortion!!, 
 - In output, mark empty slots visible
+
 - real query for other data: shutdowns, moon phases, etc
 
 
 # todo: random algorithm
 - Fix getReconfigScore. It really needs to define instrument positions and track state changes, for instance MOSFIRE switch to LRIS days later is still a reconfig.
 - Implement runs attempts (ie progInstr blocks with adjacent moonIndex)
+- NIRSPAO-NIRSPEC reconfig is worse than others.  Minimize NIRSPAO runs.  
 - Consider laser runs?
 - Consider same program night adjacency desireable?
 - force small portions to different days (ie avoid same program on same night for 1/2 and 1/4)

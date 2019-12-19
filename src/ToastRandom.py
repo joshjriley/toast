@@ -116,7 +116,8 @@ class ToastRandom(Toast):
 
             #raw score is size
             #todo: use block['num']?
-            block['order'] = block['size']
+            #todo: how can we apply exponential?
+            block['order'] += block['size'] * self.config['blockOrderSizeMult']
 
             #adjust if requested date
             if block['reqDate']: 
@@ -192,11 +193,6 @@ class ToastRandom(Toast):
             #check for block length versus size available length
             sizeRemain = 1 - (slot['index'] * self.config['slotPerc'])
             if (block['size'] > sizeRemain):
-                slot['score'] = 0
-                continue
-
-            #check for telescope shutdowns
-            if self.isTelShutdown(block['tel'], slot['date']):
                 slot['score'] = 0
                 continue
 

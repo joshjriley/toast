@@ -11,5 +11,7 @@
 
     {"tel": "2", "schedDate": "2020-06-30", "instr": "PCS", "ktn": "2020A_ENG", "schedIndex": 0, "size": 1.0, "type": "Segment Exchange"},
     {"tel": "2", "schedDate": "2020-07-01", "instr": "PCS", "ktn": "2020A_ENG", "schedIndex": 0, "size": 1.0, "type": "Segment Exchange"},
-    {"tel": "2", "schedDate": "2020-07-02", "instr": "PCS", "ktn": "2020A_ENG", "schedIndex": 0, "size": 0.5, "type": "Seg Exch"}
+    {"tel": "2", "schedDate": "2020-07-02", "instr": "PCS", "ktn": "2020A_ENG", "schedIndex": 0, "size": 0.5, "type": "Seg Exch"},
+
+    {"tel": "2", "schedDate": "2020-07-29", "instr": "",    "ktn": "2020A_ENG", "schedIndex": 0, "size": 1.0, "type": "SHUTDOWN"}
 ]

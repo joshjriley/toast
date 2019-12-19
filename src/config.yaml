@@ -5,7 +5,6 @@
     'telescopesFile'     : '../test/2020A-telescopes.json',
     'instrumentsFile'    : '../test/2020A-instruments.json',
     'moonPhasesFile'     : '../test/2020A-moon-phases.json',
-    'telShutdownsFile'   : '../test/2020A-tel-shutdowns.json',
     'instrShutdownsFile' : '../test/2020A-instr-shutdowns.json',
     'engineeringFile'    : '../test/2020A-engineering.json',
     'programsFile'       : '../test/2020A-programs.json',
@@ -75,6 +74,9 @@
     #######################################################################
     # SORTING PARAMETERS
     #######################################################################
+
+    #order score multiplier adjust based on size of block (NOTE: size is always a fraction ie 0.25, 0.5, 0.75, 1.0)
+    'blockOrderSizeMult': 10,
 
     #order score adjust if block has a specified date (NOTE: most cadence have specified date)
     'blockOrderReqDateScore': 5,

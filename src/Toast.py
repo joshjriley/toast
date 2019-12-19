@@ -42,7 +42,6 @@ class Toast(object):
         self.telescopes     = self.getTelescopes()
         self.instruments    = self.getInstruments()
         self.moonPhases     = self.getMoonPhases()
-        self.telShutdowns   = self.getTelescopeShutdowns()
         self.instrShutdowns = self.getInstrumentShutdowns()
         self.engineering    = self.getEngineering()
         self.programs       = self.getPrograms(self.semester)
@@ -163,30 +162,6 @@ class Toast(object):
             #todo: optional query.  Note: No such table yet.
             assert False, "ERROR: getPrograms: DB retrieve not implemented!"
         return data
-
-
-    def getTelescopeShutdowns(self):
-
-        data = None
-        if self.config['telShutdownsFile']: 
-            fp = self.config['telShutdownsFile']
-            assert os.path.isfile(fp), f"ERROR: getTelescopeShutdowns: file '{fp}'' does not exist.  Exiting."
-            with open(fp) as f: data = yaml.safe_load(f)        
-        else:
-            #todo: optional query.  Note: No such table yet.
-            assert False, "ERROR: getTelescopeShutdowns: DB retrieve not implemented!"
-
-        #convert to dict indexed by keys
-        data = self.convertDictArrayToArrayDict(data, 'tel', 'date')
-        return data
-
-
-    def isTelShutdown(self, tel, date):
-        if tel in self.telShutdowns: 
-            shutdownDates = self.telShutdowns[tel]
-            if date in shutdownDates:
-                return True
-        return False
 
 
     def getInstrumentShutdowns(self):
@@ -593,10 +568,6 @@ class Toast(object):
                 night = telsched['nights'][date]
                 print(f"\n[{date}]\t", end='')
 
-                if self.isTelShutdown(telkey, date):
-                    print("*** SHUTDOWN ***", end='')
-                    continue
-
                 percTotal = 0
                 num = 0
                 for i, block in enumerate(night['slots']):
@@ -604,6 +575,7 @@ class Toast(object):
                     if num>0: print ("\n            \t", end='')
                     print(f"{block['schedIndex']}\t{block['size']}\t{block['ktn']}", end='')
                     print(f"\t{block['instr'].ljust(12)}", end='')
+                    print(f"\t{block['type'][:10].ljust(10)}", end='')
                     print(f"\t{block['warnSchedDate']}", end='')
                     print(f"\t{block['warnReqDate']}", end='')
                     print(f"\t{block['warnReqPortion']}", end='')

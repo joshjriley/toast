@@ -75,11 +75,12 @@
     # SORTING PARAMETERS
     #######################################################################
 
-    #order score multiplier adjust based on size of block (NOTE: size is always a fraction ie 0.25, 0.5, 0.75, 1.0)
+    #order score and multiplier adjust based on size of block (NOTE: size is always a fraction ie 0.25, 0.5, 0.75, 1.0)
+    'blockOrderSizeScore': 1.5,
     'blockOrderSizeMult': 10,
 
     #order score adjust if block has a specified date (NOTE: most cadence have specified date)
-    'blockOrderReqDateScore': 5,
+    'blockOrderReqDateScore': 8,
 
     #order score adjust if block has a specified portion 
     'blockOrderReqPortionScore': 2,
@@ -95,10 +96,10 @@
 
     #order score adjust by how strict the moon preferences are
     #ie if moonPrefs has one 'P', then all 5 points are had.  If 2 'P's, then 5/2, and so on
-    'blockOrderMoonPrefStrictScore': 5,
+    'blockOrderMoonPrefStrictScore': 8,
 
-    #order score mult if block type is cadence
-    'blockOrderCadenceMult': 1.25,
+    #order score adjust if block type is cadence
+    'blockOrderCadenceScore': 5,
 
     #plus or minus adjustment factor to order score (ie 0.10 is +- 10%)
     #NOTE: This can be bumped up to get some very different ordering if scheduling is coming out the same every time
@@ -116,9 +117,9 @@
     # NOTE: A small non-zero score is given to X to differentiate it from slots that are absolutely not allowed.
     'moonDatePrefScore':
     {
-        'P': 10,
-        'A': 5,
-        'N': 2,
+        'P': 12,
+        'A': 6,
+        'N': 3,
         'X': 0.1
     },
 
@@ -149,8 +150,11 @@
 
     #Slot score percentage difference from top slot score value for it to be considered for pool of random slots to choose from.
     # value from 0 to 1.0 where 0.0 means keep only the top scoring slots, 0.20 means choose from top 20% of values, and 1.0 means chose randomly from all slots
-    'slotScoreTopPerc': 0.25,
+    'slotScoreTopPerc': 0.05,
 
+    #plus or minus adjustment factor to score (ie 0.10 is +- 10%)
+    #NOTE: This can be bumped up to get some very different scoring if scheduling is coming out the same every time
+    'slotScoreRandomMult': 0.05,
 
 
 
@@ -159,18 +163,18 @@
     #######################################################################
 
     # Penalized score based on how many times we switch instruments during a night, for each night.
-    'schedInstrSwitchPenalty': -1,
+    'schedInstrSwitchPenalty': -2,
 
     # Penalized score based on how many times we switch instruments the next night, ie reconfigs.
     'schedReconfigPenalty': -4,
 
-    'schedMoonPrefScore': {'P': 4,  'A': 2,  'N': 0,  'X': -10},
+    'schedMoonPrefScore': {'P': 3,  'A': 1,  'N': -2,  'X': -15},
 
-    'schedMoonIndexScore': 4,
+    'schedMoonIndexScore': 2,
 
-    'schedReqDatePenalty': -10,
+    'schedReqDatePenalty': -30,
 
-    'schedReqPortionPenalty': -8,
+    'schedReqPortionPenalty': -15,
 
     'schedOrphanBlockPenalty': -100,
 

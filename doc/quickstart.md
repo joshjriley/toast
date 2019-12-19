@@ -1,4 +1,21 @@
 ## Setup config.yaml
+todo
+
+
+## Retrieve data
+todo
+
+
+## Define telescope shutdowns and engineering blocks
+todo
+
+
+## Define instrument shutdowns
+todo
+
+
+## Define moon phases
+todo
 
 
 ## Scheduling Directives
@@ -17,3 +34,4 @@ KTN entries :
 - "orderScore": Fixed order score for pre-ordering which blocks to schedule first.
 
 
+## Run TOAST

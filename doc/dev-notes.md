@@ -1,5 +1,5 @@
 ##NEW Questions:
-- Q: 
+- Q: If a card is slotted on an 'X' moon pref, what is more important?  To follow the suggested slot or find a non-X moon pref?  Or manually fix it for them?
 
 
 ##Old Questions:

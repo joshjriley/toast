@@ -47,6 +47,7 @@ class Toast(object):
         self.programs       = self.getPrograms(self.semester)
 
         #perform data conversion optimizations
+        self.createMoonDatesIndex()
         self.createMoonIndexDates()
         self.createMoonPrefLookups()
         self.createInstrBaseNames()
@@ -443,32 +444,35 @@ class Toast(object):
                 progInstr['moonPrefLookup'] = {}
                 if not progInstr['moonPrefs']: continue
                 for index, mp in enumerate(self.moonPhases):
-                    start = dt.strptime(mp['start'], "%Y-%m-%d")
-                    end   = dt.strptime(mp['end'],   "%Y-%m-%d")
-                    delta = end - start
-                    for i in range(delta.days + 1):
-                        day = start + timedelta(days=i)
-                        daystr = day.strftime('%Y-%m-%d')
+                    dates = self.createDatesList(mp['start'], mp['end'])
+                    for date in dates:
                         val = progInstr['moonPrefs'][index]
                         if val not in self.config['moonDatePrefScore']:
                             val = "N"
-                        progInstr['moonPrefLookup'][daystr] = val
+                        progInstr['moonPrefLookup'][date] = val
 
 
     def createMoonIndexDates(self):
         '''
-        For each moon phase date range, create a hash of dates in that range for easier lookup
+        For each moon phase date range, create a hash of dates in that range for faster lookup
+        '''
+        self.moonDatesIndex = {}
+        for index, mp in enumerate(self.moonPhases):
+            dates = self.createDatesList(mp['start'], mp['end'])
+            for date in dates:
+                self.moonDatesIndex[date] = index
+
+
+    def createMoonDatesIndex(self):
+        '''
+        For each moon phase date, create a hash of their moon index for faster lookup
         '''
         self.moonIndexDates = {}
         for index, mp in enumerate(self.moonPhases):
             self.moonIndexDates[index] = {}
-            start = dt.strptime(mp['start'], "%Y-%m-%d")
-            end   = dt.strptime(mp['end'],   "%Y-%m-%d")
-            delta = end - start
-            for i in range(delta.days + 1):
-                day = start + timedelta(days=i)
-                daystr = day.strftime('%Y-%m-%d')
-                self.moonIndexDates[index][daystr] = 1
+            dates = self.createDatesList(mp['start'], mp['end'])
+            for date in dates:
+                self.moonIndexDates[index][date] = 1
 
 
     def getMoonPrefStrictness(self, moonPrefs):
@@ -558,12 +562,19 @@ class Toast(object):
             if tel and telkey != tel: continue
 
             schedName = self.telescopes[telkey]['name']
-            print (f'\nSchedule for {schedName}:')
-            print (f'--------------------------')
+            print (f'\n\n============================')
+            print (f' Schedule for {schedName}:')
+            print (f'============================')
 
+            prevMoonIndex = None
             for date in self.datesList:
                 if start and date < start: continue
                 if end   and date > end  : continue
+
+                moonIndex = self.moonDatesIndex[date]
+                if moonIndex != prevMoonIndex:
+                    print(f"\n---------- Moon Index {moonIndex} ----------", end='')
+                prevMoonIndex = moonIndex
 
                 night = telsched['nights'][date]
                 print(f"\n[{date}]\t", end='')
@@ -579,6 +590,8 @@ class Toast(object):
                     print(f"\t{block['warnSchedDate']}", end='')
                     print(f"\t{block['warnReqDate']}", end='')
                     print(f"\t{block['warnReqPortion']}", end='')
+                    print(f"\t{block['warnMoonIndexDelta']}", end='')
+                    print(f"\t{block['warnMoonPref']}", end='')
                     percTotal += block['size']
                     num += 1
                 if percTotal < 1.0:
@@ -622,7 +635,6 @@ class Toast(object):
             print (f'Telescope {telName}: Total unused time = {totalUnused} nights')
 
 
-
     def getSemesterDates(self, semester):
         #return '2020-02-01', '2020-02-03'
         year = int(semester[0:4])
@@ -630,7 +642,6 @@ class Toast(object):
         semEnd   = f'{year}-07-31' if ('A' in semester) else f'{year+1}-01-31'
         return semStart, semEnd
     
-
 
     def convertDictArrayToDict(self, data, pKey):
         data2 = {}
@@ -648,6 +659,7 @@ class Toast(object):
                 data2[d[key1]] = []
             data2[d[key1]].append(d[key2])
         return data2
+
 
     def convertDateRangeToDictArray(self, data, startKey, endKey):
         data2 = []

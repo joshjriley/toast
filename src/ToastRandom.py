@@ -109,6 +109,8 @@ class ToastRandom(Toast):
         bmax = 0
         for block in self.blocks:
 
+            block['order'] = 0
+
             #see if fixed order directive already defined
             if block['orderScore']: 
                 block['order'] = block['orderScore']
@@ -117,7 +119,7 @@ class ToastRandom(Toast):
             #raw score is size
             #todo: use block['num']?
             #todo: how can we apply exponential?
-            block['order'] += block['size'] * self.config['blockOrderSizeMult']
+            block['order'] += block['size'] * self.config['blockOrderSizeMult'] * self.config['blockOrderSizeScore']
 
             #adjust if requested date
             if block['reqDate']: 
@@ -139,7 +141,7 @@ class ToastRandom(Toast):
 
             #adjust if cadence
             if block['type'].lower() == 'cadence': 
-                block['order'] *= self.config['blockOrderCadenceMult']
+                block['order'] += self.config['blockOrderCadenceScore']
 
             #random fluctuations (plus/minus perc adjust)
             bormRand = uniform(-1*self.config['blockOrderRandomMult'], self.config['blockOrderRandomMult'])
@@ -266,7 +268,9 @@ class ToastRandom(Toast):
             #todo: add priority target score
             #slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
 
-            #todo: add random fluctuations here or keep pickRandomBlockSlot thing?
+            #random fluctuations (plus/minus perc adjust)
+            bormRand = uniform(-1*self.config['slotScoreRandomMult'], self.config['slotScoreRandomMult'])
+            slot['score'] += slot['score'] * bormRand
 
 
     def getTargetScore(self, date, ktn, index, size):
@@ -288,18 +292,21 @@ class ToastRandom(Toast):
         if not slotsSorted:
             return None
 
-        # #keep only those values that are within x% of best value and pick randomly from those
-        finalSlots = []
-        max = slotsSorted[0]['score']
-        for slot in slotsSorted:
-            perc = slot['score'] / max
-            if perc < (1 - self.config['slotScoreTopPerc']): continue
-            finalSlots.append(slot)
+#todo: trying just using random fluctuation
+        return slotsSorted[0]
 
-        #pick weighted random item
-        #todo: add variable to apply exponential to weighting
-        randItem = Toast.getListItemByWeightedRandom(finalSlots, 'score')
-        return randItem
+        # # #keep only those values that are within x% of best value and pick randomly from those
+        # finalSlots = []
+        # max = slotsSorted[0]['score']
+        # for slot in slotsSorted:
+        #     perc = slot['score'] / max
+        #     if perc < (1 - self.config['slotScoreTopPerc']): continue
+        #     finalSlots.append(slot)
+
+        # #pick weighted random item
+        # #todo: add variable to apply exponential to weighting
+        # randItem = Toast.getListItemByWeightedRandom(finalSlots, 'score')
+        # return randItem
 
 
     #######################################################################
@@ -310,21 +317,39 @@ class ToastRandom(Toast):
 
         for block in self.blocks:
 
-            block['warnSchedDate'] = 0
+            #not scheduled?
+            block['warnSchedDate'] = ''
             if 'schedDate' not in block or not block['schedDate']:
                 block['warnSchedDate'] = 1
 
-            block['warnReqDate'] = 0
+            #not scheduled on requested date?
+            block['warnReqDate'] = ''
             if 'reqDate' in block and block['reqDate']:
                 if block['schedDate'] != block['reqDate']:
                     block['warnReqDate'] = 1
 
-            block['warnReqPortion'] = 0
+            #not scheduled on requested portion of night
+            block['warnReqPortion'] = ''
             if 'reqPortion' in block and block['reqPortion']:
                 if not self.isReqPortionMatch(block['reqPortion'], block['schedIndex']):
                     block['warnReqPortion'] = 1
 
+            #not scheduled on requested moon phase index?
+            block['warnMoonIndexDelta'] = ''
+            if block['moonIndex'] != None and block['schedDate']:
+                schedMoonIndex = self.moonDatesIndex[block['schedDate']]
+                diff = schedMoonIndex - block['moonIndex']
+                block['warnMoonIndexDelta'] = diff
 
+            #not scheduled on a preferred or acceptable date?
+            #NOTE: we only warn for Neutral if they had preferences.
+            block['warnMoonPref'] = ''
+            if block['schedDate'] and block['progInstr'] and block['progInstr']['moonPrefLookup']:
+                schedPref = block['progInstr']['moonPrefLookup'][block['schedDate']]
+                if schedPref not in ('A', 'P'): 
+                    hasPrefs = True if set(block['progInstr']['moonPrefs']).intersection(set(['A', 'P'])) else False
+                    if schedPref == 'X' or hasPrefs: 
+                        block['warnMoonPref'] = schedPref
 
     #######################################################################
     # SCORING FUNCTIONS

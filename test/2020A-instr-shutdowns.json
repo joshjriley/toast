@@ -1,4 +1,7 @@
 [
-    {"date" : "2020-02-09", "instr" : "MOSFIRE"},
-    {"date" : "2020-02-08", "instr" : "NIRSPEC"},
+    {"instr": "OSIRIS-LGS",  "startDate": "2020-02-01", "endDate": "2020-04-14"},
+    {"instr": "OSIRIS-NGS",  "startDate": "2020-02-01", "endDate": "2020-03-16"},
+    {"instr": "NIRSPEC",     "startDate": "2020-02-01", "endDate": "2020-03-12"},
+    {"instr": "NIRSPAO-LGS", "startDate": "2020-02-01", "endDate": "2020-03-12"},
+    {"instr": "NIRSPAO-NGS", "startDate": "2020-02-01", "endDate": "2020-03-12"}
 ]

@@ -201,6 +201,7 @@ class Toast(object):
             assert False, "ERROR: getInstrumentShutdowns: DB retrieve not implemented!"
 
         #convert to dict indexed by keys
+        data = self.convertDateRangeToDictArray(data, 'startDate', 'endDate')
         data = self.convertDictArrayToArrayDict(data, 'instr', 'date')
         return data
 
@@ -674,6 +675,20 @@ class Toast(object):
             if d[key1] not in data2: 
                 data2[d[key1]] = []
             data2[d[key1]].append(d[key2])
+        return data2
+
+    def convertDateRangeToDictArray(self, data, startKey, endKey):
+        data2 = []
+        for d in data:
+            startDate = d[startKey]
+            endDate   = d[endKey]
+            dates = self.createDatesList(startDate, endDate)
+            for date in dates:
+                obj = d.copy()
+                obj['date'] = date
+                del obj[startKey]
+                del obj[endKey]
+                data2.append(obj)
         return data2
 
 

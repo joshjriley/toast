@@ -13,7 +13,6 @@
 
 
 #todo: framework
-- TODO: engineering not in blocks list (change json to have schedDate and schedIndex?)
 - classes: Block, Schedule
 - Should we just schedule shutdowns as blocks?  How would these show up on schedule?  As engineering anyway? see Principal 4289
 

@@ -5,12 +5,13 @@ import json
 import argparse
 import pandas
 from random import randrange, shuffle, random
-from ToastRandom import *
 from datetime import datetime as dt, timedelta
 import pathlib
 import time
 import math
 import re
+
+from ToastRandom import *
 
 import logging
 log = logging.getLogger('toast')
@@ -241,11 +242,35 @@ class Toast(object):
         return schedule 
 
 
-    def scheduleEngineering(self, schedule):
+    def initBlock(self):
+        block = {
+            'size': None,        # fractional size of night (ie 0.25, 0.5, 0.75, 1.0)
+            'moonIndex': None,   # index to moon phase date range as defined in config "moonPhaseFile"
+            'reqDate': None,     # requested date to schedule
+            'reqPortion': None,  # requested portion of night to schedule ("first half", "second quarter")
 
-        for eng in self.engineering:
-            eng['progInstr'] = None
-            self.assignBlockToSchedule(schedule, eng['tel'], eng['date'], eng['index'], eng)
+            'tel': None,         # telescope key (ie "1", "2")
+            'ktn': None,         # KTN, aka semid (ie "2019A_N123")
+            'type': None,        # "Classical", "Cadence", ???
+            'instr': None,       # instrument name
+
+            'progInstr': None,   # pointer to program instrument object
+
+            'schedDate': None,   # actual scheduled date by this program
+            'schedIndex': None,  # actual scheduled index position to fraction of the night (ie 0, 1, 2, 3) 
+
+            'num': None,         # special var used for defining runs of blocks.  not used yet
+
+            'order': None,       # calculated block order score for sorting blocks
+            'orderScore': None,  # admin override for calculated block order score
+
+            'slots': None,       # temp array of slot data and slot scoring for picking slot in schedule
+
+            'warnSchedDate': 0,  # set to 1 if block did not get scheduled
+            'warnReqDate': 0,    # set to 1 if scheduled date does not equal requested date
+            'warnReqPortion': 0, # set to 1 if scheduled portion does not equal requested portion
+        }
+        return block
 
 
     def assignBlockToSchedule(self, schedule, tel, date, index, block):

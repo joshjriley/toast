@@ -335,11 +335,10 @@ class ToastRandom(Toast):
                     block['warnReqPortion'] = 1
 
             #not scheduled on requested moon phase index?
-            block['warnMoonIndexDelta'] = ''
+            block['warnMoonIndex'] = ''
             if block['moonIndex'] != None and block['schedDate']:
                 schedMoonIndex = self.moonDatesIndex[block['schedDate']]
-                diff = schedMoonIndex - block['moonIndex']
-                block['warnMoonIndexDelta'] = diff
+                block['warnMoonIndex'] = block['moonIndex'] if (schedMoonIndex != block['moonIndex']) else ''
 
             #not scheduled on a preferred or acceptable date?
             #NOTE: we only warn for Neutral if they had preferences.
@@ -350,6 +349,7 @@ class ToastRandom(Toast):
                     hasPrefs = True if set(block['progInstr']['moonPrefs']).intersection(set(['A', 'P'])) else False
                     if schedPref == 'X' or hasPrefs: 
                         block['warnMoonPref'] = schedPref
+
 
     #######################################################################
     # SCORING FUNCTIONS

@@ -13,6 +13,8 @@
 
 
 #todo: framework
+- option to run one of the telescopes only
+- give line ids to schedule output and provide swap command?
 - switch to scoring model where we score each block independently.  block happiness = a % of max score.  max score is hitting all config score params.  though for some blocks certain ones don't apply (ie reqDate) so max is different).  should scoring always be additive?
 - In output, put in rightmost column that notes anything special, warnings, etc  
 - Save/write out scheduled program

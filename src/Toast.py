@@ -242,10 +242,6 @@ class Toast(object):
             'orderScore': None,  # admin override for calculated block order score
 
             'slots': None,       # temp array of slot data and slot scoring for picking slot in schedule
-
-            'warnSchedDate': 0,  # set to 1 if block did not get scheduled
-            'warnReqDate': 0,    # set to 1 if scheduled date does not equal requested date
-            'warnReqPortion': 0, # set to 1 if scheduled portion does not equal requested portion
         }
         return block
 
@@ -590,7 +586,7 @@ class Toast(object):
                     print(f"\t{block['warnSchedDate']}", end='')
                     print(f"\t{block['warnReqDate']}", end='')
                     print(f"\t{block['warnReqPortion']}", end='')
-                    print(f"\t{block['warnMoonIndexDelta']}", end='')
+                    print(f"\t{block['warnMoonIndex']}", end='')
                     print(f"\t{block['warnMoonPref']}", end='')
                     percTotal += block['size']
                     num += 1
@@ -620,8 +616,6 @@ class Toast(object):
             telName = self.telescopes[telkey]['name']
             totalUnused = 0.0
             for date in self.datesList:
-                if self.isTelShutdown(telkey, date):
-                    continue
 
                 night = telsched['nights'][date]
                 percTotal = 0

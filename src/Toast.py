@@ -561,7 +561,7 @@ class Toast(object):
             print (f'\n\n============================')
             print (f' Schedule for {schedName}:')
             print (f'============================')
-
+            print (f'{"Date".ljust(11)}\tIdx\tSize\t{"KTN".ljust(9)}\t{"Instr".ljust(11)}\t{"Type".ljust(10)}\tScDt?\tRqDt?\tRqPt?\tMnIdx?\tMnPrf?')
             prevMoonIndex = None
             for date in self.datesList:
                 if start and date < start: continue

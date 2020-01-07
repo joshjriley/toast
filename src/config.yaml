@@ -103,7 +103,11 @@
 
     #plus or minus adjustment factor to order score (ie 0.10 is +- 10%)
     #NOTE: This can be bumped up to get some very different ordering if scheduling is coming out the same every time
-    'blockOrderRandomMult': 0.20,
+    'blockOrderRandomScoreMult': 0.05,
+
+    #plus or minus adjustment factor to order position (ie 0.10 is +- 10%)
+    #NOTE: This can be bumped up to get some very different ordering if scheduling is coming out the same every time
+    'blockOrderRandomIndexMult': 0.05,
 
 
     #######################################################################

@@ -1,4 +1,4 @@
-from random import randrange, shuffle, random, uniform
+from random import randrange, shuffle, random, uniform, randint
 import math
 import sys
 import logging
@@ -106,7 +106,6 @@ class ToastRandom(Toast):
         '''
         Score and sort blocks based on size, importance, difficulty, etc.
         '''
-        bmax = 0
         for block in self.blocks:
 
             block['order'] = 0
@@ -144,18 +143,33 @@ class ToastRandom(Toast):
                 block['order'] += self.config['blockOrderCadenceScore']
 
             #random fluctuations (plus/minus perc adjust)
-            bormRand = uniform(-1*self.config['blockOrderRandomMult'], self.config['blockOrderRandomMult'])
+            bormRand = uniform(-1*self.config['blockOrderRandomScoreMult'], self.config['blockOrderRandomScoreMult'])
             block['order'] += block['order'] * bormRand
 
-            #keep track of max
-            if block['order'] > bmax: bmax = block['order']
+        #sort by order
+        blocksSorted = sorted(self.blocks, key=lambda k: k['order'], reverse=True)
+
+        #random index fluctuations (more effective at moving things stuck with high or low scores)
+        num = len(blocksSorted)
+        if self.config['blockOrderRandomScoreMult']:
+            rng = int(num * self.config['blockOrderRandomScoreMult'])
+            for idx in range(0, num):                
+                block = blocksSorted.pop(idx)
+                newidx = idx + randint(-1*rng, rng)
+                if   newidx < 0   : newidx = 0
+                elif newidx >= num: newidx = num-1
+                blocksSorted.insert(newidx, block)
 
         #if any blocks are fixed scheduled, bump those to the top
-        for block in self.blocks:
-            if block['schedDate']: block['order'] += bmax + 1
+        num = len(blocksSorted)
+        for idx in range(0, num):                
+            block = blocksSorted[idx]
+            if block['schedDate']: 
+                block = blocksSorted.pop(idx)
+                blocksSorted.insert(0, block)
+                print(f'to top: {block["ktn"]}, idx {idx}')
 
-        #final sort by order
-        blocksSorted = sorted(self.blocks, key=lambda k: k['order'], reverse=True)
+        #re-assign final results
         self.blocks = blocksSorted
 
 

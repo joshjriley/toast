@@ -38,7 +38,6 @@
 
 
 
-
 ## misc
 - look into "Job Shop Problem"
 - find Airmass calc api or python code

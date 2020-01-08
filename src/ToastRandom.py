@@ -167,7 +167,6 @@ class ToastRandom(Toast):
             if block['schedDate']: 
                 block = blocksSorted.pop(idx)
                 blocksSorted.insert(0, block)
-                print(f'to top: {block["ktn"]}, idx {idx}')
 
         #re-assign final results
         self.blocks = blocksSorted

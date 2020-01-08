@@ -68,6 +68,7 @@ class Toast(object):
         menu += "------------------------------------------------------------|\n"
         menu += "|  show [tel] [start day] [stop day]   Show schedule        |\n"
         menu += "|  stats                               Show stats           |\n"
+        menu += "|  export [filename]                   Export to csv        |\n"
         menu += "|  q                                   Quit (or Control-C)  |\n"
         menu += "-------------------------------------------------------------\n"
         menu += "> "
@@ -77,9 +78,18 @@ class Toast(object):
             cmds = input(menu).split()       
             if not cmds: continue
             cmd = cmds[0]     
-            if   cmd == 'q'     :  quit = True
-            elif cmd == 'show'  :  self.showSchedule(cmds=cmds)
-            elif cmd == 'stats' :  self.printStats(self.schedule)
+            if   cmd == 'q':  
+                quit = True
+            elif cmd == 'show':  
+                tel   = cmds[1] if len(cmds) > 1 else None
+                start = cmds[2] if len(cmds) > 2 else None
+                end   = cmds[3] if len(cmds) > 3 else None
+                self.printSchedule(self.schedule, tel=tel, start=start, end=end)
+            elif cmd == 'stats':  
+                self.printStats(self.schedule)
+            elif cmd == 'export':  
+                outFilepath = cmds[1] if len(cmds) > 1 else None
+                self.exportSchedule(self.schedule, outFilepath)
             else:
                 log.error(f'Unrecognized command: {cmd}')
 
@@ -531,11 +541,55 @@ class Toast(object):
         return instrs
 
 
-    def showSchedule(self, cmds):
-        tel   = cmds[1] if len(cmds) > 1 else None
-        start = cmds[2] if len(cmds) > 2 else None
-        end   = cmds[3] if len(cmds) > 3 else None
-        self.printSchedule(self.schedule, tel=tel, start=start, end=end)
+    def exportSchedule(self, schedule, tel=None):
+        '''
+        Writes out schedule to specific format required by Keck scheduler (cjordan)
+        #TODO: Finish this later once we figure out how the new process will work
+        '''
+
+        #loop telescopes
+        for telkey, telsched in schedule['telescopes'].items():
+            if tel and telkey != tel: continue
+
+            #create output file
+            timestamp = dt.now().strftime('%Y-%m-%d-%H-%M-%S')
+            outFilepath = f'./sched_worksheet_{telkey}_{timestamp}.csv'
+            file = open(outFilepath, 'w')
+
+            #loop moon phase dates
+            for index, mp in enumerate(self.moonPhases):
+                dates = self.createDatesList(mp['start'], mp['end'])
+
+                #section header
+                file.write("Date\tDay\tDark%\tMoon@Mid\tLST@mid")
+                file.write("\tPI Last\tPI First\tInstrument\tInstitution\tKTN\t#ngt\tPeriod\tDates to Avoid\tCard Date\tCard Portion")
+                file.write("\tScheduler Notes\tTarget\tPAX\tSpecial Requests\n")
+
+                #date moon info and blocks
+                for date in dates:
+
+                    #moon info
+                    file.write(date)
+                    file.write("\t" + dt.strptime(date, '%Y-%m-%d').strftime('%a').upper())
+                    file.write("\t" + mp['type'])
+                    file.write("\t" + '?')
+                    file.write("\t" + '?')
+                    file.write("\t" + "?")
+                    file.write("\n")
+
+                    night = telsched['nights'][date]
+                    for i, block in enumerate(night['slots']):
+                        if block == None: continue
+                        file.write("\t\t\t\t\t")
+                        file.write(f"\t{block['schedIndex']}")
+                        file.write(f"\t{block['size']}")
+                        file.write(f"\t{block['ktn']}")
+                        file.write(f"\t{block['instr']}")
+                        file.write(f"\t{block['type']}")
+                        file.write("\n")
+
+            file.close() 
+               
 
 
     def printSchedule(self, schedule, tel=None, start=None, end=None, format='txt'):

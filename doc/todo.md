@@ -13,11 +13,13 @@
 
 
 #todo: framework
-- option to run one of the telescopes only
+- export to carolyn special spreadsheet
+- save, load 
 - give line ids to schedule output and provide swap command?
-- switch to scoring model where we score each block independently.  block happiness = a % of max score.  max score is hitting all config score params.  though for some blocks certain ones don't apply (ie reqDate) so max is different).  should scoring always be additive?
-- In output, put in rightmost column that notes anything special, warnings, etc  
 - Save/write out scheduled program
+- In output, put in rightmost column that notes anything special, warnings, etc  
+- option to run one of the telescopes only
+- switch to scoring model where we score each block independently.  block happiness = a % of max score.  max score is hitting all config score params.  though for some blocks certain ones don't apply (ie reqDate) so max is different).  should scoring always be additive?
 - real query for other data: shutdowns, moon phases, etc (see proposals.InstrumentUnavailable)
 - classes: Block, Schedule
 
@@ -49,6 +51,7 @@
 
 
 #misc
+- If we really need %dark, moon@midnight etc in export, then we need data from http://ucolick.org/calendar/keckcal2011-20/index.html also available from Carolyn's spreadsheet (https://www.keck.hawaii.edu/twiki/bin/view/Main/ProposalCoverSheetNewSemester)
 - allow random fluctuation of config scoring params?
 - config var to keep top N schedules in memory.  menu option to switch to sched N.
 - Kinda need a ToastKeck class that is for Keck specific scoring.

@@ -246,7 +246,7 @@ class Scheduler(object):
             'num': None,         # special var used for defining runs of blocks.  not used yet
 
             'order': None,       # calculated block order score for sorting blocks
-            'orderScore': None,  # admin override for calculated block order score
+            'orderMult': None,   # admin multiplier for calculated block order score
 
             'slots': None,       # temp array of slot data and slot scoring for picking slot in schedule
         }
@@ -612,7 +612,7 @@ class Scheduler(object):
             print (f'\n\n============================')
             print (f' Schedule for {schedName}:')
             print (f'============================')
-            print (f'{"Date".ljust(11)}\tIdx\tSize\t{"KTN".ljust(9)}\t{"Instr".ljust(11)}\t{"Type".ljust(10)}\tScDt?\tRqDt?\tRqPt?\tMnIdx?\tMnPrf?')
+            print (f'{"Date".ljust(11)}\tIdx\tSize\t{"KTN".ljust(9)}\t{"Instr".ljust(11)}\t{"Type".ljust(10)}\tScDt?\tRqDt?\tRqPt?\tMnIdx?\tMnPrf?\tScore')
             prevMoonIndex = None
             for date in self.datesList:
                 if start and date < start: continue
@@ -639,6 +639,7 @@ class Scheduler(object):
                     print(f"\t{block['warnReqPortion']}", end='')
                     print(f"\t{block['warnMoonIndex']}", end='')
                     print(f"\t{block['warnMoonPref']}", end='')
+                    print(f"\t{block['score']}", end='')
                     percTotal += block['size']
                     num += 1
                 if percTotal < 1.0:

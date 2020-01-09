@@ -99,7 +99,7 @@
     'blockOrderMoonPrefStrictScore': 8,
 
     #order score adjust if block type is cadence
-    'blockOrderCadenceScore': 5,
+    'blockOrderCadenceScore': 10,
 
     #plus or minus adjustment factor to order score (ie 0.10 is +- 10%)
     #NOTE: This can be bumped up to get some very different ordering if scheduling is coming out the same every time
@@ -124,7 +124,7 @@
         'P': 12,
         'A': 6,
         'N': 3,
-        'X': 0.1
+        'X': 0.0
     },
 
     #score added for slot match with requested (TAC scheduled) moon phase
@@ -154,11 +154,11 @@
 
     #Slot score percentage difference from top slot score value for it to be considered for pool of random slots to choose from.
     # value from 0 to 1.0 where 0.0 means keep only the top scoring slots, 0.20 means choose from top 20% of values, and 1.0 means chose randomly from all slots
-    'slotScoreTopPerc': 0.05,
+    'slotScoreTopPerc': 0.03,
 
     #plus or minus adjustment factor to score (ie 0.10 is +- 10%)
     #NOTE: This can be bumped up to get some very different scoring if scheduling is coming out the same every time
-    'slotScoreRandomMult': 0.05,
+    'slotScoreRandomMult': 0.00,
 
 
 

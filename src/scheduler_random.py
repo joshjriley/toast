@@ -50,13 +50,13 @@ class SchedulerRandom(Scheduler):
 
         #for each block, score every possible slot, sort, and pick one from the best to schedule
         for block in self.blocks:
-            # print ('block: ', block['ktn'], block['instr'], block['size'], block['order'], block['type'])
+            #print ('block: ', block['ktn'], block['instr'], block['size'], block['order'], block['type'])
             self.initBlockSlots(block)
             self.scoreBlockSlots(schedule, block)
             slot = self.pickRandomBlockSlot(block)
             if slot == None: 
                 schedule['meta']['unscheduledBlocks'].append(block)
-                print (f"WARNING: No valid slots found for block program {block['ktn']}, instr {block['instr']}")
+                print (f"WARNING: No valid slots found for block program {block['ktn']}, instr {block['instr']} (mi: {block['moonIndex']})")
                 continue
             self.assignBlockToSchedule(
                 schedule,
@@ -74,7 +74,7 @@ class SchedulerRandom(Scheduler):
         For each program, create all schedulable blocks and add extra info to them for indexing, scoring, etc
         '''
         #todo: for instruments that prefer runs, use 'num' to group together consecutive blocks
-        self.blocks = []
+        blocks = []
         for ktn, program in self.programs.items():
             for progInstr in program['instruments']:
                 for blockData in progInstr['blocks']:
@@ -93,7 +93,7 @@ class SchedulerRandom(Scheduler):
                     block['num']       = 1
 
                     #add to list
-                    self.blocks.append(block)
+                    blocks.append(block)
 
         #add engineering blocks
         #note: engineering data should have schedDate and schedIndex defined
@@ -101,7 +101,9 @@ class SchedulerRandom(Scheduler):
             block = self.initBlock()
             for key, data in eng.items():
                 block[key] = data
-            self.blocks.append(block)
+            blocks.append(block)
+
+        self.blocks = blocks
 
 
     def sortBlocks(self):
@@ -111,11 +113,6 @@ class SchedulerRandom(Scheduler):
         for block in self.blocks:
 
             block['order'] = 0
-
-            #see if fixed order directive already defined
-            if block['orderScore']: 
-                block['order'] = block['orderScore']
-                continue
 
             #raw score is size
             #todo: use block['num']?
@@ -143,6 +140,10 @@ class SchedulerRandom(Scheduler):
             #adjust if cadence
             if block['type'].lower() == 'cadence': 
                 block['order'] += self.config['blockOrderCadenceScore']
+
+            #see if fixed order multiplier defined
+            if block['orderMult']: 
+                block['order'] *= block['orderMult']
 
             #random fluctuations (plus/minus perc adjust)
             bormRand = uniform(-1*self.config['blockOrderRandomScoreMult'], self.config['blockOrderRandomScoreMult'])
@@ -246,6 +247,10 @@ class SchedulerRandom(Scheduler):
             if block['progInstr']:
                 if block['progInstr']['moonPrefLookup']: pref = block['progInstr']['moonPrefLookup'][slot['date']]
                 else                                   : pref = "N"
+                #todo: testing this hard X rule out
+                if pref == 'X':
+                    slot['score'] = 0
+                    continue
                 slot['score'] += self.config['moonDatePrefScore'][pref]
 
             #moon scheduled factor (block['moonIndex'])
@@ -307,21 +312,21 @@ class SchedulerRandom(Scheduler):
         if not slotsSorted:
             return None
 
-#todo: trying just using random fluctuation
-        return slotsSorted[0]
+#todo: trying just using ordering and random score fluctuation
+#        return slotsSorted[0]
 
-        # # #keep only those values that are within x% of best value and pick randomly from those
-        # finalSlots = []
-        # max = slotsSorted[0]['score']
-        # for slot in slotsSorted:
-        #     perc = slot['score'] / max
-        #     if perc < (1 - self.config['slotScoreTopPerc']): continue
-        #     finalSlots.append(slot)
+        # #keep only those values that are within x% of best value and pick randomly from those
+        finalSlots = []
+        max = slotsSorted[0]['score']
+        for slot in slotsSorted:
+            perc = slot['score'] / max
+            if perc < (1 - self.config['slotScoreTopPerc']): continue
+            finalSlots.append(slot)
 
-        # #pick weighted random item
-        # #todo: add variable to apply exponential to weighting
-        # randItem = Toast.getListItemByWeightedRandom(finalSlots, 'score')
-        # return randItem
+        #pick weighted random item
+        #todo: add variable to apply exponential to weighting
+        randItem = Scheduler.getListItemByWeightedRandom(finalSlots, 'score')
+        return randItem
 
 
     #######################################################################
@@ -372,28 +377,48 @@ class SchedulerRandom(Scheduler):
       
     def scoreSchedule(self, schedule):
 
+        #overall sched score
         score = 0
-        print ('score1: ', score)
+
+        #block specific scoring
+        for block in self.blocks:
+
+            #init all block scores to zero
+            block['score'] = 0
+
+            #Penalty score based on whether or not we hit requested date
+            if block['warnReqDate']:
+                block['score'] += self.config['schedReqDatePenalty']
+
+            #Penalty score based on whether or not we hit requested portion
+            if block['warnReqPortion']:
+                block['score'] += self.config['schedReqPortionPenalty']
+
+            #Penalty score for orphaned blocks
+            if block['warnSchedDate']:
+                block['score'] += self.config['schedOrphanBlockPenalty']
+
+            #Score based on which moon pref we obtained for block
+            if block['progInstr'] and block['progInstr']['moonPrefLookup'] and block['schedDate']:
+                date = block['schedDate']
+                pref = block['progInstr']['moonPrefLookup'][date]
+                block['score'] += self.config['schedMoonPrefScore'][pref]
+
+            #Score based on whether we hit requested moonIndex
+            if 'moonIndex' in block and block['moonIndex'] != None and block['schedDate']:
+                date = block['schedDate']
+                if date in self.moonIndexDates[block['moonIndex']]:
+                    block['score'] += self.config['schedMoonIndexScore']
+
+            score += block['score']
+
+        #schedule specific scoring
         score += self.getInstrSwitchScore(schedule)
-        print ('score2: ', score)
         score += self.getReconfigScore(schedule)
-        print ('score3: ', score)
-        score += self.getMoonPrefScore(schedule)
-        print ('score4: ', score)
-        score += self.getMoonIndexScore(schedule)
-        print ('score5: ', score)
-        score += self.getReqDateScore(schedule)
-        print ('score6: ', score)
-        score += self.getReqPortionScore(schedule)
-        print ('score7: ', score)
 
         # todo: score based on priority RA/DEC targets are visible during date/portion
 
         # todo: can a block get a size greater or less than requested?
-
-        # check for unassigned blocks
-        score += self.getUnassignedBlockScore(schedule)
-        print ('score8: ', score)
 
         schedule['meta']['score'] = score
 
@@ -441,68 +466,5 @@ class SchedulerRandom(Scheduler):
         return score
 
 
-    def getMoonPrefScore(self, schedule):
-        '''
-        Sched score based on which moon pref we obtained for block.
-        '''
-        score = 0
-        for telkey, telsched in schedule['telescopes'].items():
-            for date, night in telsched['nights'].items():
-                for block in night['slots']:
-                    if block == None: continue
-                    if not block['progInstr']: continue
-                    if not block['progInstr']['moonPrefLookup']: continue
-                    pref = block['progInstr']['moonPrefLookup'][date]
-                    score += self.config['schedMoonPrefScore'][pref]
-        return score
-
-
-    def getMoonIndexScore(self, schedule):
-        '''
-        Score based on whether we hit requested moonIndex
-        '''
-        score = 0
-        for telkey, telsched in schedule['telescopes'].items():
-            for date, night in telsched['nights'].items():
-                for block in night['slots']:
-                    if block == None: continue
-                    if 'moonIndex' not in block: continue
-                    if block['moonIndex'] == None: continue
-                    if date in self.moonIndexDates[block['moonIndex']]:
-                        score += self.config['schedMoonIndexScore']
-        return score
-
-
-    def getReqDateScore(self, schedule):
-        '''
-        Penalty score based on whether or not we hit requested date
-        '''
-        score = 0
-        for block in self.blocks:
-            if block['warnReqDate']:
-                score += self.config['schedReqDatePenalty']
-        return score
-
-
-    def getReqPortionScore(self, schedule):
-        '''
-        Penalty score based on whether or not we hit requested portion
-        '''
-        score = 0
-        for block in self.blocks:
-            if block['warnReqPortion']:
-                score += self.config['schedReqPortionPenalty']
-        return score
-
-
-    def getUnassignedBlockScore(self, schedule):
-        '''
-        Penalty score for orphaned blocks
-        '''
-        score = 0
-        for block in self.blocks:
-            if block['warnSchedDate']:
-                score += self.config['schedOrphanBlockPenalty']
-        return score
 
 

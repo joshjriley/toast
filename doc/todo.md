@@ -26,6 +26,7 @@
 
 
 # todo: random algorithm
+- IDEA: After each run, look at each block's score in relation to others and bump up order if it didn't find a slot or scored poorly.
 - Fix getReconfigScore. It really needs to define instrument positions and track state changes, for instance MOSFIRE switch to LRIS days later is still a reconfig.
 - Implement runs attempts (ie progInstr blocks with adjacent moonIndex)
 - NIRSPAO-NIRSPEC reconfig is worse than others.  Minimize NIRSPAO runs.  

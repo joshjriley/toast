@@ -1,12 +1,14 @@
 from random import randrange, shuffle, random, uniform, randint
 import math
 import sys
+
 import logging
+log = logging.getLogger('toast')
 
-from Toast import *
+from scheduler import Scheduler
 
 
-class ToastRandom(Toast):
+class SchedulerRandom(Scheduler):
 
     def __init__(self, semester, runCount):
 

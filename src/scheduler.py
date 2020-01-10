@@ -66,6 +66,8 @@ class Scheduler(object):
         menu += "|  show [tel] [start day] [stop day]   Show schedule        |\n"
         menu += "|  stats                               Show stats           |\n"
         menu += "|  export [filename]                   Export to csv        |\n"
+        menu += "|  conflicts                           Check conflicts      |\n"
+        menu += "|  orderadjusts                        Show order adjusts   |\n"
         menu += "|  q                                   Quit (or Control-C)  |\n"
         menu += "-------------------------------------------------------------\n"
         menu += "> "
@@ -87,6 +89,8 @@ class Scheduler(object):
             elif cmd == 'export':  
                 outFilepath = cmds[1] if len(cmds) > 1 else None
                 self.exportSchedule(self.schedule, outFilepath)
+            elif cmd == 'conflicts':  
+                self.checkConflicts()
             else:
                 log.error(f'Unrecognized command: {cmd}')
 
@@ -500,6 +504,52 @@ class Scheduler(object):
     #######################################################################
     # UTILITY FUNCTIONS
     #######################################################################
+
+    def checkConflicts(self):
+
+        #look for blocks with schedDate or moonPref on 'X' moon pref
+        print("\n=== Requested Moon Index vs Moon Prefs conflicts ===")
+        for ktn, program in self.programs.items():
+            for progInstr in program['instruments']:
+                for block in progInstr['blocks']:
+
+                    if progInstr['moonPrefs']:
+
+                        if block['reqDate']:
+                            pref = progInstr['moonPrefLookup'][block['reqDate']]
+                            if pref == 'X':
+                                print (f"reqDate {block['reqDate']} is pref 'X': ", ktn, progInstr['instr'], block['id'] )
+
+
+                        mi = block['moonIndex']
+                        pref = progInstr['moonPrefs'][mi]
+                        if pref == 'X':
+                            print (f"moonIndex '{mi}' is pref 'X': ", ktn, progInstr['instr'], block['id'] )
+
+        #see if any moon periods are over-requested
+        for tel, t in self.telescopes.items():
+            print(f'\n=== Moon Phase Request %: Telescope {tel} ===')
+
+            for mp in self.moonPhases: 
+                mp['reqNights'+tel] = 0
+                dates = self.createDatesList(mp['start'], mp['end'])
+                mp['totalNights'+tel] = len(dates)
+
+            for ktn, program in self.programs.items():
+                for progInstr in program['instruments']:
+                    if tel != self.instruments[progInstr['instr']]['tel']: continue
+                    for block in progInstr['blocks']:
+                        mi = block['moonIndex']
+                        self.moonPhases[mi]['reqNights'+tel] += block['size']
+
+            for mi, mp in enumerate(self.moonPhases): 
+                mp['reqPerc'+tel] = mp['reqNights'+tel] / mp['totalNights'+tel]
+                print (f"{mp['start'].ljust(10)}\t{mp['end'].ljust(10)}\t{mp['type'].ljust(4)}", end='')
+                print (f"\t{mp['reqNights'+tel]}", end='')
+                print (f"\t{mp['totalNights'+tel]}", end='')
+                print (f"\t{round(100*mp['reqPerc'+tel])}%")
+
+
 
     def getListItemByWeightedRandom(theList, key):
         '''

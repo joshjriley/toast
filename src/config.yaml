@@ -109,6 +109,13 @@
     #NOTE: This can be bumped up to get some very different ordering if scheduling is coming out the same every time
     'blockOrderRandomIndexMult': 0.05,
 
+    #Order score adjustment for problematic blocks that could not be scheduled or were scheduled poorly
+    #NOTE: This is a small learning feedback.  Set to 0 to turn off.
+    'blockOrderProblemLearnScore': 1.0,
+
+    #Max block order score adjustment over time
+    'blockOrderProblemLearnMax': 30.0,
+
 
     #######################################################################
     # SLOT SCORING PARAMETERS

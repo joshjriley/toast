@@ -1,6 +1,7 @@
 from random import randrange, shuffle, random, uniform, randint
 import math
 import sys
+import numpy as np
 
 import logging
 log = logging.getLogger('toast')
@@ -21,6 +22,9 @@ class SchedulerRandom(Scheduler):
 
     def createSchedule(self):
 
+        #class var init
+        self.blockOrderLearnAdjusts = {}
+
         #todo: Loop and create X number of schedules and take the one that scores best.
         bestScore = None
         bestSchedule = None
@@ -34,6 +38,8 @@ class SchedulerRandom(Scheduler):
             if bestScore == None or schedule['meta']['score'] >= bestScore:
                 bestScore = schedule['meta']['score']
                 bestSchedule = schedule
+
+            self.makeOrderAdjustments()
 
         #todo: should we store all schedules in an array or keep a running top N?
         return bestSchedule
@@ -144,6 +150,12 @@ class SchedulerRandom(Scheduler):
             #see if fixed order multiplier defined
             if block['orderMult']: 
                 block['order'] *= block['orderMult']
+
+            #see if fixed order multiplier defined
+            if 'id' in block and block['id'] in self.blockOrderLearnAdjusts:
+                adjust = self.blockOrderLearnAdjusts[block['id']]
+                if adjust > 0: 
+                    block['order'] += adjust
 
             #random fluctuations (plus/minus perc adjust)
             bormRand = uniform(-1*self.config['blockOrderRandomScoreMult'], self.config['blockOrderRandomScoreMult'])
@@ -381,6 +393,8 @@ class SchedulerRandom(Scheduler):
         score = 0
 
         #block specific scoring
+        # todo: score based blocks on priority RA/DEC targets are visible during date/portion
+        # todo: can a block get a size greater or less than requested?
         for block in self.blocks:
 
             #init all block scores to zero
@@ -415,10 +429,6 @@ class SchedulerRandom(Scheduler):
         #schedule specific scoring
         score += self.getInstrSwitchScore(schedule)
         score += self.getReconfigScore(schedule)
-
-        # todo: score based on priority RA/DEC targets are visible during date/portion
-
-        # todo: can a block get a size greater or less than requested?
 
         schedule['meta']['score'] = score
 
@@ -466,5 +476,42 @@ class SchedulerRandom(Scheduler):
         return score
 
 
+    def makeOrderAdjustments(self):
+        '''
+        Look for blocks that scored poorly and make a modest adjustment to order score.
+        '''
 
+        #get mean and min of block scores
+        scores = np.array([k['score'] for k in self.blocks])
+        mean = scores.mean()
+        std  = scores.std()
+        mini = scores.min()
+
+        #3 levels of adjustment amounts
+        mini1 = (mean - mini) / 4 * -1
+        mini2 = (mean - mini) / 4 * -2
+        mini3 = (mean - mini) / 4 * -3
+        print (mean, std, mini1, mini2, mini3)
+
+        #make adjustment based on score
+        for block in self.blocks:
+            if 'id' not in block: continue
+            bid = block['id']
+
+            adjust = 0
+            if   (block['score'] < (mean - std*3)): adjust = 1.0 * self.config['blockOrderProblemLearnScore']
+            elif (block['score'] < (mean - std*2)): adjust = 0.5 * self.config['blockOrderProblemLearnScore']
+            elif (block['score'] < (mean - std*1)): adjust = 0.2 * self.config['blockOrderProblemLearnScore']
+            elif (block['score'] < (mean - std*0)): adjust = 0.1 * self.config['blockOrderProblemLearnScore']
+
+            if bid not in self.blockOrderLearnAdjusts: 
+                self.blockOrderLearnAdjusts[bid] = 0
+
+            #increase or decay
+            if adjust > 0: self.blockOrderLearnAdjusts[bid] += adjust
+            else         : self.blockOrderLearnAdjusts[bid] *= 0.80
+
+            #clip
+            maxi = self.config['blockOrderProblemLearnMax']
+            self.blockOrderLearnAdjusts[bid] = np.clip(self.blockOrderLearnAdjusts[bid], 0, maxi)
 

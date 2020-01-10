@@ -161,7 +161,7 @@ def queryProgramData(semester, dbConfigFile):
             progInstr['cards'] = []
             for num, cardNum in enumerate(cardNums):
 
-                query =  f"select CardNum, Slot, Moon, Time, Date, Portion from TACschedule "
+                query =  f"select Id, CardNum, Slot, Moon, Time, Date, Portion from TACschedule "
                 query += f" where KTN='{ktn}' "
                 query += f" and ProposalId='{infoTac[typeCol]}' "
                 query += f" and CardNum={cardNum} "
@@ -237,6 +237,7 @@ def formDataToStandard(progData):
                 if card['Portion'] and card['Portion'].lower() == 'any': card['Portion'] = None
                 blocks.append(
                 {
+                    'id'        : card['Id'],
                     'size'      : card['Time'],
                     'moonIndex' : int(card['Slot'][1:])-1,
                     'reqDate'   : card['Date'],

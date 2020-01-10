@@ -226,6 +226,13 @@ class SchedulerRandom(Scheduler):
                 slot['score'] = 0
                 continue
 
+            #check for program dates to avoid
+            if block['ktn'] in self.programs:
+                prog = self.programs[block['ktn']]
+                if slot['date'] in prog['datesToAvoid']:
+                    slot['score'] = 0
+                    continue
+
             #check for instrument unavailability
             if self.isInstrShutdown(block['instr'], slot['date']):
                 slot['score'] = 0
@@ -235,13 +242,6 @@ class SchedulerRandom(Scheduler):
             if not self.isSlotAvailable(schedule, block['tel'], slot['date'], slot['index'], block['size']):
                 slot['score'] = 0
                 continue
-
-            #check for program dates to avoid
-            if block['ktn'] in self.programs:
-                prog = self.programs[block['ktn']]
-                if slot['date'] in prog['datesToAvoid']:
-                    slot['score'] = 0
-                    continue
 
             #check for instr incompatibility
             if not self.checkInstrCompat(block['instr'], schedule, block['tel'], slot['date']):
@@ -290,6 +290,10 @@ class SchedulerRandom(Scheduler):
             #consider previous and next night, same program is better (ie create runs)
             numAdjPrograms = self.getNumAdjacentPrograms(block['ktn'], schedule, block['tel'], slot['date'])
             slot['score'] += numAdjPrograms * self.config['adjProgramScore']
+
+            #penalty for same program same night
+            numSamePrograms = self.getNumSameProgramsOnDate(block['ktn'], schedule, block['tel'], slot['date'])
+            slot['score'] += numSamePrograms * self.config['sameProgramPenalty']
 
             #score added for slot if it fills beginning or end slots
             #todo: more should be added if it fits perfectly to complete night
@@ -386,6 +390,12 @@ class SchedulerRandom(Scheduler):
                     hasPrefs = True if set(block['progInstr']['moonPrefs']).intersection(set(['A', 'P'])) else False
                     if schedPref == 'X' or hasPrefs: 
                         block['warnMoonPref'] = schedPref
+
+            #same program scheduled same night
+            block['warnProgramDup'] = ''
+            num = self.getNumSameProgramsOnDate(block['ktn'], schedule, block['tel'], block['schedDate'])
+            if num > 1:
+                block['warnProgramDup'] = 1
 
 
     #######################################################################

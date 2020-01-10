@@ -235,6 +235,7 @@ class Scheduler(object):
 
     def initBlock(self):
         block = {
+            'id': 0,             # database id
             'size': None,        # fractional size of night (ie 0.25, 0.5, 0.75, 1.0)
             'moonIndex': None,   # index to moon phase date range as defined in config "moonPhaseFile"
             'reqDate': None,     # requested date to schedule
@@ -370,6 +371,17 @@ class Scheduler(object):
                 if block['ktn'] == ktn: 
                     num += 1
                     break
+        return num
+
+
+    def getNumSameProgramsOnDate(self, ktn, schedule, tel, date):
+        '''
+        Look for same program, same date
+        '''
+        num = 0
+        blocks = self.getScheduleDateBlocks(schedule, tel, date)
+        for block in blocks:
+            if block['ktn'] == ktn: num += 1
         return num
 
 
@@ -707,7 +719,8 @@ class Scheduler(object):
             print (f'\n\n============================')
             print (f' Schedule for {schedName}:')
             print (f'============================')
-            print (f'{"Date".ljust(11)}\tIdx\tSize\t{"KTN".ljust(9)}\t{"Instr".ljust(11)}\t{"Type".ljust(11)}\t{"Id".ljust(7)}\tScDt?\tRqDt?\tRqPt?\tMnIdx?\tMnPrf?\tScore')
+            print (f'{"Date".ljust(11)}\tIdx\tSize\t{"KTN".ljust(9)}\t{"Instr".ljust(11)}\t{"Type".ljust(11)}\t', end='')
+            print (f'{"Id".ljust(5)}\tScDt?\tRqDt?\tRqPt?\tMnIdx?\tMnPrf?\tDup?\tScore')
             prevMoonIndex = None
             for date in self.datesList:
                 if start and date < start: continue
@@ -727,15 +740,18 @@ class Scheduler(object):
                     if block == None: continue
                     bid = block['id'] if 'id' in block else ''
                     if num>0: print ("\n            \t", end='')
-                    print(f"{block['schedIndex']}\t{block['size']}\t{block['ktn']}", end='')
+                    print(f"{block['schedIndex']}", end='')
+                    print(f"\t{block['size']}", end='')
+                    print(f"\t{block['ktn']}", end='')
                     print(f"\t{block['instr'].ljust(12)}", end='')
                     print(f"\t{block['type'][:11].ljust(10)}", end='')
-                    print(f"\t[id{bid}]", end='')
+                    print(f"\t[{bid}]", end='')
                     print(f"\t{block['warnSchedDate']}", end='')
                     print(f"\t{block['warnReqDate']}", end='')
                     print(f"\t{block['warnReqPortion']}", end='')
                     print(f"\t{block['warnMoonIndex']}", end='')
                     print(f"\t{block['warnMoonPref']}", end='')
+                    print(f"\t{block['warnProgramDup']}", end='')
                     print(f"\t{block['score']}", end='')
                     percTotal += block['size']
                     num += 1

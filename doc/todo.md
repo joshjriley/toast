@@ -26,6 +26,7 @@
 
 
 # todo: random algorithm
+- When picking a slot, cascade down in groups. See if any moonIndex work.  If not, see if any 'P' work and so on.  Or can we achieve this with our weighting?
 - IDEA: After each run, look at each block's score in relation to others and bump up order if it didn't find a slot or scored poorly.
 - Fix getReconfigScore. It really needs to define instrument positions and track state changes, for instance MOSFIRE switch to LRIS days later is still a reconfig.
 - Implement runs attempts (ie progInstr blocks with adjacent moonIndex)

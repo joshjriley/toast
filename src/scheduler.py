@@ -3,7 +3,7 @@ import sys
 import yaml
 import json
 import argparse
-import pandas
+import pandas as pd
 from random import randrange, shuffle, random
 from datetime import datetime as dt, timedelta
 import pathlib
@@ -39,6 +39,7 @@ class Scheduler(object):
         self.telescopes     = self.getTelescopes()
         self.instruments    = self.getInstruments()
         self.moonPhases     = self.getMoonPhases()
+        self.nightPhases    = self.getNightPhases()
         self.instrShutdowns = self.getInstrumentShutdowns()
         self.engineering    = self.getEngineering()
         self.programs       = self.getPrograms(self.semester)
@@ -91,6 +92,8 @@ class Scheduler(object):
                 self.exportSchedule(self.schedule, outFilepath)
             elif cmd == 'conflicts':  
                 self.checkConflicts()
+            elif cmd == 'orderadjusts':  
+                self.printOrderAdjusts()
             else:
                 log.error(f'Unrecognized command: {cmd}')
 
@@ -421,7 +424,7 @@ class Scheduler(object):
 
         startDate = startDate.replace('-','')
         endDate   = endDate.replace('-','')
-        dates = [d.strftime('%Y-%m-%d') for d in pandas.date_range(startDate, endDate)]
+        dates = [d.strftime('%Y-%m-%d') for d in pd.date_range(startDate, endDate)]
         return dates
 
 
@@ -499,6 +502,20 @@ class Scheduler(object):
         strict = 1 - (total / max)
         strict = math.pow(strict, 2.5) #apply exponential decay
         return strict
+
+
+    def getNightPhases(self):
+        #TODO: NOTE: This data file comes from Keck scheduler (aka Carolyn) which is reformatted from 
+        #UCO page: http://ucolick.org/calendar/keckcal2011-20/index.html
+        if self.config['nightPhasesFile']: 
+            fp = self.config['nightPhasesFile']
+            assert os.path.isfile(fp), f"ERROR: getNightPhases: file '{fp}'' does not exist.  Exiting."
+            data = pd.read_csv(fp)        
+            return data
+        else:
+            #todo: optional query.  Note: No such table yet.
+            assert False, "ERROR: getMoonPhases: DB retrieve not implemented!"
+
 
 
     #######################################################################

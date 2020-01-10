@@ -308,6 +308,7 @@ class SchedulerRandom(Scheduler):
     def getTargetScore(self, date, ktn, index, size):
 
         #todo: find out how well this date time range overlaps with all priority targets' airmass and give score
+        #note: use lst@midnight 
         return 0
 
 
@@ -491,7 +492,6 @@ class SchedulerRandom(Scheduler):
         mini1 = (mean - mini) / 4 * -1
         mini2 = (mean - mini) / 4 * -2
         mini3 = (mean - mini) / 4 * -3
-        print (mean, std, mini1, mini2, mini3)
 
         #make adjustment based on score
         for block in self.blocks:
@@ -514,4 +514,20 @@ class SchedulerRandom(Scheduler):
             #clip
             maxi = self.config['blockOrderProblemLearnMax']
             self.blockOrderLearnAdjusts[bid] = np.clip(self.blockOrderLearnAdjusts[bid], 0, maxi)
+
+
+    def printOrderAdjusts(self):
+
+        data = []
+        for block in self.blocks:
+            if 'id' not in block: continue
+            if block['id'] not in self.blockOrderLearnAdjusts: continue
+            adjust = self.blockOrderLearnAdjusts[block['id']]
+            data.append({'block':block, 'adjust':adjust})
+
+        for d in sorted(data, key = lambda i: i['adjust']):
+            block = d['block']
+            print (f"{round(d['adjust'], 1)}\t{block['id']}\t{block['ktn']}\t{block['instr']}\t")
+
+
 

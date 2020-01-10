@@ -152,6 +152,10 @@
     'adjExactInstrScore': 4,
     'adjBaseInstrScore': 2,
 
+    #score added for slot if adjacent date has same program scheduled (up to 2x) 
+    #(NOTE: This helps produce program runs)
+    'adjProgramScore': 2,
+
     #score added for slot if it fills beginning or end slots
     #NOTE: This prevents 0.5 size from sitting in middle of night
     'outerSlotScore': 4,

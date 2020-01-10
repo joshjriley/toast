@@ -285,6 +285,18 @@ class Scheduler(object):
         return allInstrs
 
 
+    def getScheduleDateBlocks(self, schedule, tel, date):
+        telsched = schedule['telescopes'][tel]
+        if date not in telsched['nights']:
+            return []
+        night = telsched['nights'][date]
+        blocks = []
+        for block in night['slots']:
+            if block == None: continue
+            blocks.append(block)
+        return blocks
+
+
     def createInstrBaseNames(self):
         '''
         Get first set of all capital letters and numbers from beginning of string and store in instruments dict
@@ -343,6 +355,22 @@ class Scheduler(object):
                 if yesBase:  numBase += 1
                 if yesExact: numExact += 1
         return numExact, numBase  
+
+
+    def getNumAdjacentPrograms(self, ktn, schedule, tel, date):
+        '''
+        Look for same program on adjacent days.  Return 0, 1, or 2.
+        '''
+        num  = 0
+        for delta in range(-1, 2, 2):
+            yes = 0
+            adjDate = self.getDeltaDate(date, delta)
+            blocks = self.getScheduleDateBlocks(schedule, tel, adjDate)
+            for block in blocks:
+                if block['ktn'] == ktn: 
+                    num += 1
+                    break
+        return num
 
 
     def checkReconfigCompat(self, instrStr, schedule, tel, date):
@@ -679,7 +707,7 @@ class Scheduler(object):
             print (f'\n\n============================')
             print (f' Schedule for {schedName}:')
             print (f'============================')
-            print (f'{"Date".ljust(11)}\tIdx\tSize\t{"KTN".ljust(9)}\t{"Instr".ljust(11)}\t{"Type".ljust(10)}\tScDt?\tRqDt?\tRqPt?\tMnIdx?\tMnPrf?\tScore')
+            print (f'{"Date".ljust(11)}\tIdx\tSize\t{"KTN".ljust(9)}\t{"Instr".ljust(11)}\t{"Type".ljust(11)}\t{"Id".ljust(7)}\tScDt?\tRqDt?\tRqPt?\tMnIdx?\tMnPrf?\tScore')
             prevMoonIndex = None
             for date in self.datesList:
                 if start and date < start: continue
@@ -697,10 +725,12 @@ class Scheduler(object):
                 num = 0
                 for i, block in enumerate(night['slots']):
                     if block == None: continue
+                    bid = block['id'] if 'id' in block else ''
                     if num>0: print ("\n            \t", end='')
                     print(f"{block['schedIndex']}\t{block['size']}\t{block['ktn']}", end='')
                     print(f"\t{block['instr'].ljust(12)}", end='')
-                    print(f"\t{block['type'][:10].ljust(10)}", end='')
+                    print(f"\t{block['type'][:11].ljust(10)}", end='')
+                    print(f"\t[id{bid}]", end='')
                     print(f"\t{block['warnSchedDate']}", end='')
                     print(f"\t{block['warnReqDate']}", end='')
                     print(f"\t{block['warnReqPortion']}", end='')
@@ -717,11 +747,11 @@ class Scheduler(object):
             print (f"total unused = {totalUnused}")
 
         if schedule['meta']['unscheduledBlocks']:
-            print ("********************************************")
+            print ("\n********************************************")
             print ("*** WARNING: Unscheduled program blocks! ***")
             print ("********************************************")
             for block in schedule['meta']['unscheduledBlocks']:
-                print (f"\t!!! {block['ktn']}, instr {block['instr']}")
+                print (f"\t{''.ljust(16)}{block['size']}\t{block['ktn']}\t{block['instr'].ljust(12)}\t{block['type'][:11].ljust(10)}\t[id{block['id']}]\t")
 
 
     def printStats(self, schedule):

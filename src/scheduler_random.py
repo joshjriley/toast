@@ -287,6 +287,10 @@ class SchedulerRandom(Scheduler):
             slot['score'] += numAdjExact * self.config['adjExactInstrScore']
             slot['score'] += numAdjBase  * self.config['adjBaseInstrScore']
 
+            #consider previous and next night, same program is better (ie create runs)
+            numAdjPrograms = self.getNumAdjacentPrograms(block['ktn'], schedule, block['tel'], slot['date'])
+            slot['score'] += numAdjPrograms * self.config['adjProgramScore']
+
             #score added for slot if it fills beginning or end slots
             #todo: more should be added if it fits perfectly to complete night
             if self.config['slotPerc'] < block['size'] < 1.0:

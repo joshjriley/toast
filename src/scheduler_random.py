@@ -392,10 +392,10 @@ class SchedulerRandom(Scheduler):
                         block['warnMoonPref'] = schedPref
 
             #same program scheduled same night
-            block['warnProgramDup'] = ''
+            block['warnSameProgram'] = ''
             num = self.getNumSameProgramsOnDate(block['ktn'], schedule, block['tel'], block['schedDate'])
             if num > 1:
-                block['warnProgramDup'] = 1
+                block['warnSameProgram'] = 1
 
 
     #######################################################################
@@ -427,6 +427,10 @@ class SchedulerRandom(Scheduler):
             if block['warnSchedDate']:
                 block['score'] += self.config['schedOrphanBlockPenalty']
 
+            #Penalty score for orphaned blocks
+            if block['warnSameProgram']:
+                block['score'] += self.config['schedSameProgramPenalty']
+
             #Score based on which moon pref we obtained for block
             if block['progInstr'] and block['progInstr']['moonPrefLookup'] and block['schedDate']:
                 date = block['schedDate']
@@ -442,6 +446,7 @@ class SchedulerRandom(Scheduler):
             score += block['score']
 
         #schedule specific scoring
+        #todo: can we make these part of block scoring?
         score += self.getInstrSwitchScore(schedule)
         score += self.getReconfigScore(schedule)
 

@@ -751,7 +751,7 @@ class Scheduler(object):
                     print(f"\t{block['warnReqPortion']}", end='')
                     print(f"\t{block['warnMoonIndex']}", end='')
                     print(f"\t{block['warnMoonPref']}", end='')
-                    print(f"\t{block['warnProgramDup']}", end='')
+                    print(f"\t{block['warnSameProgram']}", end='')
                     print(f"\t{block['score']}", end='')
                     percTotal += block['size']
                     num += 1

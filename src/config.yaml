@@ -157,7 +157,7 @@
     'adjProgramScore': 2,
 
     #penalty added for slot if same program same night
-    'sameProgramPenalty': -2,
+    'sameProgramPenalty': -4,
 
     #score added for slot if it fills beginning or end slots
     #NOTE: This prevents 0.5 size from sitting in middle of night
@@ -196,6 +196,8 @@
     'schedReqPortionPenalty': -15,
 
     'schedOrphanBlockPenalty': -100,
+
+    'schedSameProgramPenalty': -2,
 
 
 }

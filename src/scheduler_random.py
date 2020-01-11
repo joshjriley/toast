@@ -61,7 +61,6 @@ class SchedulerRandom(Scheduler):
             self.scoreBlockSlots(schedule, block)
             slot = self.pickRandomBlockSlot(block)
             if slot == None: 
-                schedule['meta']['unscheduledBlocks'].append(block)
                 print (f"WARNING: No valid slots found for block program {block['ktn']}, instr {block['instr']} (mi: {block['moonIndex']})")
                 continue
             self.assignBlockToSchedule(
@@ -212,7 +211,7 @@ class SchedulerRandom(Scheduler):
             #default score of 1
             slot['score'] = 0
 
-            #=========== SKIP CHECKS ===============
+            #=========== FIXED PRE_SCHEDULED ===============
 
             #check if fixed scheduled date (and fixed scheduled slot)
             if block['schedDate']:
@@ -220,36 +219,9 @@ class SchedulerRandom(Scheduler):
                 if slot['index'] == block['schedIndex']: slot['score'] += 1
                 continue
 
-            #check for block length versus size available length
-            sizeRemain = 1 - (slot['index'] * self.config['slotPerc'])
-            if (block['size'] > sizeRemain):
-                slot['score'] = 0
-                continue
+            #=========== SKIP CHECKS ===============
 
-            #check for program dates to avoid
-            if block['ktn'] in self.programs:
-                prog = self.programs[block['ktn']]
-                if slot['date'] in prog['datesToAvoid']:
-                    slot['score'] = 0
-                    continue
-
-            #check for instrument unavailability
-            if self.isInstrShutdown(block['instr'], slot['date']):
-                slot['score'] = 0
-                continue
-
-            #check for assigned
-            if not self.isSlotAvailable(schedule, block['tel'], slot['date'], slot['index'], block['size']):
-                slot['score'] = 0
-                continue
-
-            #check for instr incompatibility
-            if not self.checkInstrCompat(block['instr'], schedule, block['tel'], slot['date']):
-                slot['score'] = 0
-                continue
-
-            #check for adjacent reconfig incompatibilities
-            if not self.checkReconfigCompat(block['instr'], schedule, block['tel'], slot['date']):
+            if not self.isSlotValid(schedule, block, slot['date'], slot['index'], verbose=False):
                 slot['score'] = 0
                 continue
 
@@ -356,6 +328,7 @@ class SchedulerRandom(Scheduler):
 
     def markScheduleWarnings(self, schedule):
 
+        #check warnings for all blocks
         for block in self.blocks:
 
             #not scheduled?
@@ -371,7 +344,7 @@ class SchedulerRandom(Scheduler):
 
             #not scheduled on requested portion of night
             block['warnReqPortion'] = ''
-            if 'reqPortion' in block and block['reqPortion']:
+            if 'reqPortion' in block and block['reqPortion'] and block['schedIndex'] != None:
                 if not self.isReqPortionMatch(block['reqPortion'], block['schedIndex']):
                     block['warnReqPortion'] = 1
 
@@ -396,6 +369,13 @@ class SchedulerRandom(Scheduler):
             num = self.getNumSameProgramsOnDate(block['ktn'], schedule, block['tel'], block['schedDate'])
             if num > 1:
                 block['warnSameProgram'] = 1
+
+
+        #store list of unscheduled blocks
+        schedule['unscheduledBlocks'] = []
+        for block in self.blocks:
+            if 'schedDate' not in block or not block['schedDate']:
+                schedule['unscheduledBlocks'].append(block)
 
 
     #######################################################################

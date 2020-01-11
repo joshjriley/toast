@@ -69,6 +69,8 @@ class Scheduler(object):
         menu += "|  export [filename]                   Export to csv        |\n"
         menu += "|  conflicts                           Check conflicts      |\n"
         menu += "|  orderadjusts                        Show order adjusts   |\n"
+        menu += "|  move   [blockId] [date] [index]     Move block           |\n"
+        menu += "|  remove [blockId]                    Remove block         |\n"
         menu += "|  q                                   Quit (or Control-C)  |\n"
         menu += "-------------------------------------------------------------\n"
         menu += "> "
@@ -94,6 +96,14 @@ class Scheduler(object):
                 self.checkConflicts()
             elif cmd == 'orderadjusts':  
                 self.printOrderAdjusts()
+            elif cmd == 'move':  
+                bid   = int(cmds[1]) if len(cmds) > 1 else None
+                date  = cmds[2]      if len(cmds) > 2 else None
+                index = int(cmds[3]) if len(cmds) > 3 else None
+                self.moveScheduleBlock(self.schedule, bid, date, index)
+            elif cmd == 'remove':  
+                bid   = int(cmds[1]) if len(cmds) > 1 else None
+                self.removeScheduleBlock(self.schedule, bid)
             else:
                 log.error(f'Unrecognized command: {cmd}')
 
@@ -216,8 +226,9 @@ class Scheduler(object):
         schedule = {}
 
         schedule['meta'] = {}
-        schedule['meta']['unscheduledBlocks'] = []
         schedule['meta']['score'] = 0
+
+        schedule['unscheduledBlocks'] = []
 
         schedule['telescopes'] = {}
         for key, tel in self.telescopes.items():
@@ -262,14 +273,113 @@ class Scheduler(object):
 
 
     def assignBlockToSchedule(self, schedule, tel, date, index, block):
+
+        #get slot and make sure it is empty
+        telsched = schedule['telescopes'][tel]
+        night = telsched['nights'][date]
+        if night['slots'][index] != None:
+            print (f"ERROR: slot {index} on date {date} is already assigned")
+            return False
+
+        #add block to schedule object
+        night['slots'][index] = block
+
         #mark block with scheduled info
         block['schedDate']  = date
         block['schedIndex'] = index
 
-        #add block to schedule object
-        telsched = schedule['telescopes'][tel]
-        night = telsched['nights'][date]
-        night['slots'][index] = block
+
+
+    def removeScheduleBlock(self, schedule, blockId):
+        #find block
+        block, slots, slotIdx = self.findScheduleBlockById(schedule, blockId)
+        if not block:
+            print (f"ERROR: block id {blockId} not found in schedule!")
+            return False
+
+        #clear
+        block['schedDate']  = None
+        block['schedIndex'] = None
+        slots[slotIdx] = None
+
+        #re-analyze schedule
+        self.markScheduleWarnings(schedule)
+        self.scoreSchedule(schedule)
+
+
+    def moveScheduleBlock(self, schedule, blockId, date, index):
+        #find block
+        block, slots, slotIdx = self.findScheduleBlockById(schedule, blockId)
+        if not block:
+            for b in schedule['unscheduledBlocks']:
+                if b['id'] == blockId:
+                    block = b
+                    break
+        if not block:
+            print (f"ERROR: block id {blockId} not found!")
+            return False
+
+        #valid move?
+        if not self.isSlotValid(schedule, block, date, index, verbose=True):
+            print (f"ERROR: block id {blockId} could nt be assigned to date {date}, slot index {index}!")
+            return False
+
+        #assign
+        self.assignBlockToSchedule(schedule, block['tel'], date, index, block)
+
+        #re-analyze schedule
+#
+#TODO: Is it incorrect to call these at this point since self.blocks could be from another run?
+#
+        self.markScheduleWarnings(schedule)
+        self.scoreSchedule(schedule)
+
+
+    def isSlotValid(self, schedule, block, date, slotIndex, verbose=False):
+
+        #check for block length versus size available length
+        sizeRemain = 1 - (slotIndex * self.config['slotPerc'])
+        if (block['size'] > sizeRemain): 
+            if verbose: print(f"ERROR: block size {block['size']} too big for slot index {slotIndex}")
+            return False
+
+        #check for program dates to avoid
+        if block['ktn'] in self.programs:
+            prog = self.programs[block['ktn']]
+            if date in prog['datesToAvoid']:
+                if verbose: print(f"ERROR: date {date} is marked as program date to avoid.")
+                return False
+
+        #check for instrument unavailability
+        if self.isInstrShutdown(block['instr'], date):
+            if verbose: print(f"ERROR: date {date} is marked as instrument {block['instr']} shutdown.")
+            return False
+
+        #check for assigned
+        if not self.isSlotAvailable(schedule, block['tel'], date, slotIndex, block['size']):
+            if verbose: print(f"ERROR: block overlaps existing assignment for slot index {slotIndex}")
+            return False
+
+        #check for instr incompatibility
+        if not self.checkInstrCompat(block['instr'], schedule, block['tel'], date):
+            if verbose: print(f"ERROR: incompatable instrument {block['instr']} on date {date}")
+            return False
+
+        #check for adjacent reconfig incompatibilities
+        if not self.checkReconfigCompat(block['instr'], schedule, block['tel'], date):
+            if verbose: print(f"ERROR: incompatable reconfig for instrument {block['instr']} on date {date}")
+            return False
+
+        return True
+
+
+    def findScheduleBlockById(self, schedule, blockId):
+        for tel, telsched in schedule['telescopes'].items():
+            for date, night in telsched['nights'].items():
+                for slotIdx, block in enumerate(night['slots']):
+                    if block and block['id'] == blockId:
+                        return block, night['slots'], slotIdx
+        return False, False, False
 
 
     def getScheduleDateInstrs(self, schedule, tel, date):
@@ -762,11 +872,11 @@ class Scheduler(object):
             print ("\n")
             print (f"total unused = {totalUnused}")
 
-        if schedule['meta']['unscheduledBlocks']:
+        if schedule['unscheduledBlocks']:
             print ("\n********************************************")
             print ("*** WARNING: Unscheduled program blocks! ***")
             print ("********************************************")
-            for block in schedule['meta']['unscheduledBlocks']:
+            for block in schedule['unscheduledBlocks']:
                 print (f"\t{''.ljust(16)}{block['size']}\t{block['ktn']}\t{block['instr'].ljust(12)}\t{block['type'][:11].ljust(10)}\t[id{block['id']}]\t")
 
 

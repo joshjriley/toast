@@ -76,8 +76,11 @@ class Scheduler(object):
         menu += "> "
 
         quit = None
+        autoHelp = True
         while quit is None:
-            cmds = input(menu).split()       
+            prompt = menu if autoHelp else "\n> "
+            autoHelp = False
+            cmds = input(prompt).split()       
             if not cmds: continue
             cmd = cmds[0]     
             if   cmd == 'q':  
@@ -106,6 +109,7 @@ class Scheduler(object):
                 self.removeScheduleBlock(self.schedule, bid)
             else:
                 log.error(f'Unrecognized command: {cmd}')
+                autoHelp = True
 
 
     def loadConfig(self):

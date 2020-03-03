@@ -71,6 +71,7 @@ class Scheduler(object):
         menu += "|  orderadjusts                        Show order adjusts   |\n"
         menu += "|  move   [blockId] [date] [index]     Move block           |\n"
         menu += "|  remove [blockId]                    Remove block         |\n"
+        menu += "|  swap   [blockId1] [blockId2]        Swap two blocks      |\n"
         menu += "|  q                                   Quit (or Control-C)  |\n"
         menu += "-------------------------------------------------------------\n"
         menu += "> "
@@ -107,6 +108,10 @@ class Scheduler(object):
             elif cmd == 'remove':  
                 bid   = int(cmds[1]) if len(cmds) > 1 else None
                 self.removeScheduleBlock(self.schedule, bid)
+            elif cmd == 'swap':  
+                bid1 = int(cmds[1]) if len(cmds) > 1 else None
+                bid2 = int(cmds[2]) if len(cmds) > 2 else None
+                self.swapScheduleBlocks(self.schedule, bid1, bid2)
             else:
                 log.error(f'Unrecognized command: {cmd}')
                 autoHelp = True
@@ -228,7 +233,7 @@ class Scheduler(object):
 
         #create template schedule object for each telescope
         schedule = {}
-        
+
         schedule['meta'] = {}
         schedule['meta']['score'] = 0
 
@@ -298,16 +303,14 @@ class Scheduler(object):
     def removeScheduleBlock(self, schedule, blockId):
         #find block
         block, slots, slotIdx = self.findScheduleBlockById(schedule, blockId)
-        print ('found: ', block['id'], block['ktn'], block['schedDate'], block['schedIndex'])
-        print ('slots: ', slots, slotIdx)
         if not block:
-            print (f"ERROR: block id {blockId} not found in schedule!")
+            print (f"ERROR: block id {blockId} not found!")
             return False
 
         #clear
         block['schedDate']  = None
         block['schedIndex'] = None
-        slots[slotIdx] = None
+        if slotIdx != None: slots[slotIdx] = None
 
         #re-analyze schedule
         self.markScheduleWarnings(schedule)
@@ -317,11 +320,6 @@ class Scheduler(object):
     def moveScheduleBlock(self, schedule, blockId, date, index):
         #find block
         block, slots, slotIdx = self.findScheduleBlockById(schedule, blockId)
-        if not block:
-            for b in schedule['unscheduledBlocks']:
-                if b['id'] == blockId:
-                    block = b
-                    break
         if not block:
             print (f"ERROR: block id {blockId} not found!")
             return False
@@ -335,10 +333,55 @@ class Scheduler(object):
         self.assignBlockToSchedule(schedule, block['tel'], date, index, block)
 
         #re-analyze schedule
-#
-#TODO: Is it incorrect to call these at this point since self.blocks could be from another run?  YES
-#TODO: Store blocks in schedule.blocks instead of self.blocks
-#
+        self.markScheduleWarnings(schedule)
+        self.scoreSchedule(schedule)
+
+
+    def swapScheduleBlocks(self, schedule, blockId1, blockId2):
+
+        #make sure both exist
+        block1, slots1, slotIdx1 = self.findScheduleBlockById(schedule, blockId1)
+        block2, slots2, slotIdx2 = self.findScheduleBlockById(schedule, blockId2)
+        if not block1 or not block2:
+            if not block1: print (f"ERROR: block id {blockId1} not found!")
+            if not block2: print (f"ERROR: block id {blockId2} not found!")
+            return False
+
+        print ("test1: ", block1['id'], slotIdx1)
+        print ("test2: ", block2['id'], slotIdx2)
+
+        #if anything goes wrong we will return them to orig slots
+        err = False
+        date1 = block1['schedDate']
+        date2 = block2['schedDate']
+
+        #remove them
+        self.removeScheduleBlock(schedule, blockId1)
+        self.removeScheduleBlock(schedule, blockId2)
+
+        #move to other block position
+        if slotIdx2 != None:
+            print('testa: ', block1['id'], date2, slotIdx2)
+            if not self.isSlotValid(schedule, block1, date2, slotIdx2, verbose=True):
+                print (f"ERROR: block id {blockId1} could not be assigned to date {date2}, slot index {slotIdx2}!")
+                err = True
+        if slotIdx1 != None:
+            print('testb: ', block2['id'], date1, slotIdx1)
+            if not self.isSlotValid(schedule, block2, date1, slotIdx1, verbose=True):
+                print (f"ERROR: block id {blockId2} could not be assigned to date {date1}, slot index {slotIdx1}!")
+                err = True
+
+        #err?
+        #todo: case when orig in unscheduled?
+        if err:
+            if slotIdx1 != None: self.assignBlockToSchedule(schedule, block1['tel'], date1, slotIdx1, block1)
+            if slotIdx2 != None: self.assignBlockToSchedule(schedule, block2['tel'], date2, slotIdx2, block2)
+        else:
+            if slotIdx2 != None: self.assignBlockToSchedule(schedule, block2['tel'], date2, slotIdx2, block1)
+            if slotIdx1 != None: self.assignBlockToSchedule(schedule, block1['tel'], date1, slotIdx1, block2)
+
+
+        #re-analyze schedule
         self.markScheduleWarnings(schedule)
         self.scoreSchedule(schedule)
 
@@ -365,7 +408,7 @@ class Scheduler(object):
 
         #check for assigned
         if not self.isSlotAvailable(schedule, block['tel'], date, slotIndex, block['size']):
-            if verbose: print(f"ERROR: block overlaps existing assignment for slot index {slotIndex}")
+            if verbose: print(f"ERROR: block id {block['id']} overlaps existing assignment for slot index {slotIndex}")
             return False
 
         #check for instr incompatibility
@@ -382,11 +425,17 @@ class Scheduler(object):
 
 
     def findScheduleBlockById(self, schedule, blockId):
+        #find as scheduled block
         for tel, telsched in schedule['telescopes'].items():
             for date, night in telsched['nights'].items():
                 for slotIdx, block in enumerate(night['slots']):
                     if block and block['id'] == blockId:
                         return block, night['slots'], slotIdx
+        #find as unscheduled block
+        for b in schedule['unscheduledBlocks']:
+            if b['id'] == blockId:
+                return b, None, None
+        #unfound
         return False, False, False
 
 

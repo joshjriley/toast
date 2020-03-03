@@ -1,33 +1,25 @@
 # todo: high level
 - [DONE] Keck proposal data translator tool
-- [jr] TOAST Framework
-- [jr] Random algorithm logic
-- Schedule scoring
-- Airmass/target scoring
-- Schedule GUI display
+- [DONE] TOAST Framework
+- [DONE] Algorithm logic
+- [DONE] Schedule scoring
+- Export to spreadsheet format (Carolyn)
 - Save schedule to file and/or db
 - Integration with larger TAC web tools
 - Optimize for speed
+- Schedule GUI display
 
 
 
 
-#todo: framework
-- export to carolyn special spreadsheet
-- save, load 
-- give line ids to schedule output and provide swap command?
+#todo: details
+- Cadence has a range.  we need to factor that in for date options
+- swap command?
 - Save/write out scheduled program
-- In output, put in rightmost column that notes anything special, warnings, etc  
-- option to run one of the telescopes only
-- switch to scoring model where we score each block independently.  block happiness = a % of max score.  max score is hitting all config score params.  though for some blocks certain ones don't apply (ie reqDate) so max is different).  should scoring always be additive?
+- target/airmass scoring (use lst@midnight data)
 - real query for other data: shutdowns, moon phases, etc (see proposals.InstrumentUnavailable)
-- classes: Block, Schedule
-
-
-
-# todo: random algorithm
-- When picking a slot, cascade down in groups. See if any moonIndex work.  If not, see if any 'P' work and so on.  Or can we achieve this with our weighting?
-- IDEA: After each run, look at each block's score in relation to others and bump up order if it didn't find a slot or scored poorly.
+- classes: Block, Schedule?
+- IDEA: When picking a slot, cascade down in groups. See if any moonIndex work.  If not, see if any 'P' work and so on.  Or can we achieve this with our weighting?
 - Fix getReconfigScore. It really needs to define instrument positions and track state changes, for instance MOSFIRE switch to LRIS days later is still a reconfig.
 - Implement runs attempts (ie progInstr blocks with adjacent moonIndex)
 - NIRSPAO-NIRSPEC reconfig is worse than others.  Minimize NIRSPAO runs.  
@@ -37,12 +29,18 @@
 - Rule: Avoid 3-way or 4-way splits with 2 or more programs
 - Engineering pref is to have a few each month preferably during bright time.  Should we allow some seeding of Engineering nights and avoid adjacency?
 - Program ranking per institution
+- option to run one of the telescopes only
 
 
 
 # questions: 
-- The "Cadence" form seems like a misnomer since it is really only for selecting exact dates.  Should it say "Cadence/Exact Dates"?
-- Whats up with Subaru instrument selects?
+- Q: How do you know whether to clump program blocks into runs or to spread them out?
+- Q: If a card is slotted on an 'X' moon pref, what is more important?  To follow the suggested slot or find a non-X moon pref?  Or manually fix it for them?
+- Q: Would you give a program a date that is "P" or "A" but not requested moonIndex if it meant you could save a reconfig?
+- Q: Whats up with Subaru instrument selects?
+
+
+
 
 
 # coversheet form changes needed:

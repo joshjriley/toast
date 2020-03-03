@@ -1,7 +1,3 @@
-##NEW Questions:
-- Q: If a card is slotted on an 'X' moon pref, what is more important?  To follow the suggested slot or find a non-X moon pref?  Or manually fix it for them?
-
-
 ##Old Questions:
 - Q: Besides incompatible setups, are there any instruments that are less desireable to be paired on a particular night?  
   A: No
@@ -140,6 +136,18 @@ Inputs:
 ##misc
 program runs: It is preferred to schedule same program blocks back-to-back
 instrument runs: Some instruments prefer to be scheduled in runs
+
+
+##commanding examples:
+(If warnings exists, ask for confirmation)
+
+> move [blockId] [date] [slotIndex]
+
+> swap [blockId] [date] [slotIndex] [blockId2] [date] [slotIndex]
+
+> remove [blockId] [date]
+
+
 
 
 

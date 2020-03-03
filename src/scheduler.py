@@ -311,6 +311,7 @@ class Scheduler(object):
         block['schedDate']  = None
         block['schedIndex'] = None
         if slotIdx != None: slots[slotIdx] = None
+        print(f"Removed block {blockId} from scheduled blocks.")
 
         #re-analyze schedule
         self.markScheduleWarnings(schedule)
@@ -331,6 +332,7 @@ class Scheduler(object):
 
         #assign
         self.assignBlockToSchedule(schedule, block['tel'], date, index, block)
+        print(f"Moved block {blockId} to {date} slot {index}")
 
         #re-analyze schedule
         self.markScheduleWarnings(schedule)
@@ -347,9 +349,6 @@ class Scheduler(object):
             if not block2: print (f"ERROR: block id {blockId2} not found!")
             return False
 
-        print ("test1: ", block1['id'], slotIdx1)
-        print ("test2: ", block2['id'], slotIdx2)
-
         #if anything goes wrong we will return them to orig slots
         err = False
         date1 = block1['schedDate']
@@ -361,12 +360,10 @@ class Scheduler(object):
 
         #move to other block position
         if slotIdx2 != None:
-            print('testa: ', block1['id'], date2, slotIdx2)
             if not self.isSlotValid(schedule, block1, date2, slotIdx2, verbose=True):
                 print (f"ERROR: block id {blockId1} could not be assigned to date {date2}, slot index {slotIdx2}!")
                 err = True
         if slotIdx1 != None:
-            print('testb: ', block2['id'], date1, slotIdx1)
             if not self.isSlotValid(schedule, block2, date1, slotIdx1, verbose=True):
                 print (f"ERROR: block id {blockId2} could not be assigned to date {date1}, slot index {slotIdx1}!")
                 err = True
@@ -376,10 +373,12 @@ class Scheduler(object):
         if err:
             if slotIdx1 != None: self.assignBlockToSchedule(schedule, block1['tel'], date1, slotIdx1, block1)
             if slotIdx2 != None: self.assignBlockToSchedule(schedule, block2['tel'], date2, slotIdx2, block2)
+            print("Reverting actions")
         else:
             if slotIdx2 != None: self.assignBlockToSchedule(schedule, block2['tel'], date2, slotIdx2, block1)
             if slotIdx1 != None: self.assignBlockToSchedule(schedule, block1['tel'], date1, slotIdx1, block2)
-
+            print(f"Swapped block {blockId1} to {date2} slot {slotIdx2}")
+            print(f"Swapped block {blockId2} to {date1} slot {slotIdx1}")
 
         #re-analyze schedule
         self.markScheduleWarnings(schedule)

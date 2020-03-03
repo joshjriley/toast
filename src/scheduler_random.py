@@ -39,7 +39,7 @@ class SchedulerRandom(Scheduler):
                 bestScore = schedule['meta']['score']
                 bestSchedule = schedule
 
-            self.makeOrderAdjustments()
+            self.makeOrderAdjustments(schedule['blocks'])
 
         #todo: should we store all schedules in an array or keep a running top N?
         return bestSchedule
@@ -51,11 +51,11 @@ class SchedulerRandom(Scheduler):
         schedule = self.initSchedule()
 
         #create blocks from all programs and sort by difficulty/importance
-        self.createProgramBlocks()
-        self.sortBlocks()
+        schedule['blocks'] = self.createProgramBlocks()
+        schedule['blocks'] = self.sortBlocks(schedule['blocks'])
 
         #for each block, score every possible slot, sort, and pick one from the best to schedule
-        for block in self.blocks:
+        for block in schedule['blocks']:
             #print ('block: ', block['ktn'], block['instr'], block['size'], block['order'], block['type'])
             self.initBlockSlots(block)
             self.scoreBlockSlots(schedule, block)
@@ -108,14 +108,14 @@ class SchedulerRandom(Scheduler):
                 block[key] = data
             blocks.append(block)
 
-        self.blocks = blocks
+        return blocks
 
 
-    def sortBlocks(self):
+    def sortBlocks(self, blocks):
         '''
         Score and sort blocks based on size, importance, difficulty, etc.
         '''
-        for block in self.blocks:
+        for block in blocks:
 
             block['order'] = 0
 
@@ -161,7 +161,7 @@ class SchedulerRandom(Scheduler):
             block['order'] += block['order'] * bormRand
 
         #sort by order
-        blocksSorted = sorted(self.blocks, key=lambda k: k['order'], reverse=True)
+        blocksSorted = sorted(blocks, key=lambda k: k['order'], reverse=True)
 
         #random index fluctuations (more effective at moving things stuck with high or low scores)
         num = len(blocksSorted)
@@ -183,7 +183,7 @@ class SchedulerRandom(Scheduler):
                 blocksSorted.insert(0, block)
 
         #re-assign final results
-        self.blocks = blocksSorted
+        return blocksSorted
 
 
     def initBlockSlots(self, block):
@@ -329,7 +329,7 @@ class SchedulerRandom(Scheduler):
     def markScheduleWarnings(self, schedule):
 
         #check warnings for all blocks
-        for block in self.blocks:
+        for block in schedule['blocks']:
 
             #not scheduled?
             block['warnSchedDate'] = ''
@@ -373,7 +373,7 @@ class SchedulerRandom(Scheduler):
 
         #store list of unscheduled blocks
         schedule['unscheduledBlocks'] = []
-        for block in self.blocks:
+        for block in schedule['blocks']:
             if 'schedDate' not in block or not block['schedDate']:
                 schedule['unscheduledBlocks'].append(block)
 
@@ -390,7 +390,7 @@ class SchedulerRandom(Scheduler):
         #block specific scoring
         # todo: score based blocks on priority RA/DEC targets are visible during date/portion
         # todo: can a block get a size greater or less than requested?
-        for block in self.blocks:
+        for block in schedule['blocks']:
 
             #init all block scores to zero
             block['score'] = 0
@@ -476,13 +476,13 @@ class SchedulerRandom(Scheduler):
         return score
 
 
-    def makeOrderAdjustments(self):
+    def makeOrderAdjustments(self, blocks):
         '''
         Look for blocks that scored poorly and make a modest adjustment to order score.
         '''
 
         #get mean and min of block scores
-        scores = np.array([k['score'] for k in self.blocks])
+        scores = np.array([k['score'] for k in blocks])
         mean = scores.mean()
         std  = scores.std()
         mini = scores.min()
@@ -493,7 +493,7 @@ class SchedulerRandom(Scheduler):
         mini3 = (mean - mini) / 4 * -3
 
         #make adjustment based on score
-        for block in self.blocks:
+        for block in blocks:
             if 'id' not in block: continue
             bid = block['id']
 
@@ -515,10 +515,10 @@ class SchedulerRandom(Scheduler):
             self.blockOrderLearnAdjusts[bid] = np.clip(self.blockOrderLearnAdjusts[bid], 0, maxi)
 
 
-    def printOrderAdjusts(self):
+    def printOrderAdjusts(self, schedule):
 
         data = []
-        for block in self.blocks:
+        for block in schedule['blocks']:
             if 'id' not in block: continue
             if block['id'] not in self.blockOrderLearnAdjusts: continue
             adjust = self.blockOrderLearnAdjusts[block['id']]

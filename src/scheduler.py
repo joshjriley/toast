@@ -98,7 +98,7 @@ class Scheduler(object):
             elif cmd == 'conflicts':  
                 self.checkConflicts()
             elif cmd == 'orderadjusts':  
-                self.printOrderAdjusts()
+                self.printOrderAdjusts(self.schedule)
             elif cmd == 'move':  
                 bid   = int(cmds[1]) if len(cmds) > 1 else None
                 date  = cmds[2]      if len(cmds) > 2 else None
@@ -228,10 +228,11 @@ class Scheduler(object):
 
         #create template schedule object for each telescope
         schedule = {}
-
+        
         schedule['meta'] = {}
         schedule['meta']['score'] = 0
 
+        schedule['blocks'] = []
         schedule['unscheduledBlocks'] = []
 
         schedule['telescopes'] = {}
@@ -297,6 +298,8 @@ class Scheduler(object):
     def removeScheduleBlock(self, schedule, blockId):
         #find block
         block, slots, slotIdx = self.findScheduleBlockById(schedule, blockId)
+        print ('found: ', block['id'], block['ktn'], block['schedDate'], block['schedIndex'])
+        print ('slots: ', slots, slotIdx)
         if not block:
             print (f"ERROR: block id {blockId} not found in schedule!")
             return False
@@ -325,7 +328,7 @@ class Scheduler(object):
 
         #valid move?
         if not self.isSlotValid(schedule, block, date, index, verbose=True):
-            print (f"ERROR: block id {blockId} could nt be assigned to date {date}, slot index {index}!")
+            print (f"ERROR: block id {blockId} could not be assigned to date {date}, slot index {index}!")
             return False
 
         #assign
@@ -333,7 +336,8 @@ class Scheduler(object):
 
         #re-analyze schedule
 #
-#TODO: Is it incorrect to call these at this point since self.blocks could be from another run?
+#TODO: Is it incorrect to call these at this point since self.blocks could be from another run?  YES
+#TODO: Store blocks in schedule.blocks instead of self.blocks
 #
         self.markScheduleWarnings(schedule)
         self.scoreSchedule(schedule)

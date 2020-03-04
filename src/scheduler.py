@@ -74,7 +74,7 @@ class Scheduler(object):
         menu += "|  move       [blockId] [date] [index] Move block               |\n"
         menu += "|  remove     [blockId]                Remove block             |\n"
         menu += "|  swap       [blockId1] [blockId2]    Swap two blocks          |\n"
-        menu += "|  export [filename]                   Export to csv            |\n"
+        menu += "|  export [folder] [tel]               Export to csv            |\n"
         menu += "|  q                                   Quit (or Control-C)      |\n"
         menu += "-----------------------------------------------------------------\n"
         menu += "> "
@@ -97,8 +97,9 @@ class Scheduler(object):
             elif cmd == 'stats':  
                 self.printStats(self.schedule)
             elif cmd == 'export':  
-                outFilepath = cmds[1] if len(cmds) > 1 else None
-                self.exportSchedule(self.schedule, outFilepath)
+                folder = cmds[1] if len(cmds) > 1 else None
+                tel    = cmds[2] if len(cmds) > 2 else None
+                self.exportSchedule(self.schedule, folder, tel)
             elif cmd == 'conflicts':  
                 self.checkConflicts()
             elif cmd == 'orderadjusts':  
@@ -818,57 +819,60 @@ class Scheduler(object):
         return instrs
 
 
-    def exportSchedule(self, schedule, outFilepath=None, tel=None):
+    def exportSchedule(self, schedule, outFolder=None, tel=None):
         '''
         Writes out schedule to specific format required by Keck scheduler (cjordan)
         #TODO: Finish this later once we figure out how the new process will work
         '''
 
-        #loop telescopes
-        for telkey, telsched in schedule['telescopes'].items():
-            if tel and telkey != tel: continue
+        try:
+            #loop telescopes
+            for telkey, telsched in schedule['telescopes'].items():
+                if tel and telkey != tel: continue
 
-            #create output file
-            timestamp = dt.now().strftime('%Y-%m-%d-%H-%M-%S')
-            outFilepath = f'./sched_worksheet_{telkey}_{timestamp}.csv'
-            print(f"Writing to {outFilepath}")
-            file = open(outFilepath, 'w')
+                #create output file
+                timestamp = dt.now().strftime('%Y-%m-%d-%H-%M-%S')
+                outFilepath = f'sched_worksheet_{telkey}_{timestamp}.csv'
+                if outFolder: outFilepath = outFolder + '/' + outFilepath
+                print(f"Writing to {outFilepath}")
+                file = open(outFilepath, 'w')
 
-            #loop moon phase dates
-            for index, mp in enumerate(self.moonPhases):
-                dates = self.createDatesList(mp['start'], mp['end'])
+                #loop moon phase dates
+                for index, mp in enumerate(self.moonPhases):
+                    dates = self.createDatesList(mp['start'], mp['end'])
 
-                #section header
-                file.write("Date\tDay\tDark%\tMoon@Mid\tLST@mid")
-                file.write("\tPI Last\tPI First\tInstrument\tInstitution\tKTN\t#ngt\tPeriod\tDates to Avoid\tCard Date\tCard Portion")
-                file.write("\tScheduler Notes\tTarget\tPAX\tSpecial Requests\n")
+                    #section header
+                    file.write("Date\tDay\tDark%\tMoon@Mid\tLST@mid")
+                    file.write("\tPI Last\tPI First\tInstrument\tInstitution\tKTN\t#ngt\tPeriod\tDates to Avoid\tCard Date\tCard Portion")
+                    file.write("\tScheduler Notes\tTarget\tPAX\tSpecial Requests\n")
 
-                #date moon info and blocks
-                for date in dates:
+                    #date moon info and blocks
+                    for date in dates:
 
-                    #moon info
-                    file.write(date)
-                    file.write("\t" + dt.strptime(date, '%Y-%m-%d').strftime('%a').upper())
-                    file.write("\t" + mp['type'])
-                    file.write("\t" + '?')
-                    file.write("\t" + '?')
-                    file.write("\t" + "?")
-                    file.write("\n")
-
-                    night = telsched['nights'][date]
-                    for i, block in enumerate(night['slots']):
-                        if block == None: continue
-                        print (f"...writing block {block['id']}")
-                        file.write("\t\t\t\t\t")
-                        file.write(f"\t{block['schedIndex']}")
-                        file.write(f"\t{block['size']}")
-                        file.write(f"\t{block['ktn']}")
-                        file.write(f"\t{block['instr']}")
-                        file.write(f"\t{block['type']}")
+                        #moon info
+                        file.write(date)
+                        file.write("\t" + dt.strptime(date, '%Y-%m-%d').strftime('%a').upper())
+                        file.write("\t" + mp['type'])
+                        file.write("\t" + '?')
+                        file.write("\t" + '?')
+                        file.write("\t" + "?")
                         file.write("\n")
 
-            file.close() 
-               
+                        night = telsched['nights'][date]
+                        for i, block in enumerate(night['slots']):
+                            if block == None: continue
+                            print (f"...writing block {block['id']}")
+                            file.write("\t\t\t\t\t")
+                            file.write(f"\t{block['schedIndex']}")
+                            file.write(f"\t{block['size']}")
+                            file.write(f"\t{block['ktn']}")
+                            file.write(f"\t{block['instr']}")
+                            file.write(f"\t{block['type']}")
+                            file.write("\n")
+
+                file.close() 
+        except Exception as e:
+            print("ERROR: ", str(e))               
 
 
     def printSchedule(self, schedule, tel=None, start=None, end=None, format='txt'):

@@ -60,20 +60,23 @@ class Scheduler(object):
 
     def promptMenu(self):
 
+#todo: call this base menu from child and add in child functions there
         menu = "\n"
-        menu += "------------------------------------------------------------\n"
-        menu += "|                    MENU                                   |\n"
-        menu += "------------------------------------------------------------|\n"
-        menu += "|  show [tel] [start day] [stop day]   Show schedule        |\n"
-        menu += "|  stats                               Show stats           |\n"
-        menu += "|  export [filename]                   Export to csv        |\n"
-        menu += "|  conflicts                           Check conflicts      |\n"
-        menu += "|  orderadjusts                        Show order adjusts   |\n"
-        menu += "|  move   [blockId] [date] [index]     Move block           |\n"
-        menu += "|  remove [blockId]                    Remove block         |\n"
-        menu += "|  swap   [blockId1] [blockId2]        Swap two blocks      |\n"
-        menu += "|  q                                   Quit (or Control-C)  |\n"
-        menu += "-------------------------------------------------------------\n"
+        menu += "----------------------------------------------------------------\n"
+        menu += "|                    MENU                                       |\n"
+        menu += "----------------------------------------------------------------|\n"
+        menu += "|  show [tel] [start day] [stop day]   Show schedule            |\n"
+        menu += "|  stats                               Show stats               |\n"
+        menu += "|  conflicts                           Check conflicts          |\n"
+        menu += "|  blockorders  [tel]                  Show block orders        |\n"
+        menu += "|  orderadjusts [tel]                  Show block order adjusts |\n"
+        menu += "|  slotscores [blockId] [topN]         Show topN slot scores    |\n"
+        menu += "|  move       [blockId] [date] [index] Move block               |\n"
+        menu += "|  remove     [blockId]                Remove block             |\n"
+        menu += "|  swap       [blockId1] [blockId2]    Swap two blocks          |\n"
+        menu += "|  export [filename]                   Export to csv            |\n"
+        menu += "|  q                                   Quit (or Control-C)      |\n"
+        menu += "-----------------------------------------------------------------\n"
         menu += "> "
 
         quit = None
@@ -99,7 +102,11 @@ class Scheduler(object):
             elif cmd == 'conflicts':  
                 self.checkConflicts()
             elif cmd == 'orderadjusts':  
-                self.printOrderAdjusts(self.schedule)
+                tel   = cmds[1] if len(cmds) > 1 else None
+                self.printOrderAdjusts(self.schedule, tel)
+            elif cmd == 'blockorders':  
+                tel   = cmds[1] if len(cmds) > 1 else None
+                self.showBlockOrders(self.schedule, tel)
             elif cmd == 'move':  
                 bid   = int(cmds[1]) if len(cmds) > 1 else None
                 date  = cmds[2]      if len(cmds) > 2 else None
@@ -112,6 +119,10 @@ class Scheduler(object):
                 bid1 = int(cmds[1]) if len(cmds) > 1 else None
                 bid2 = int(cmds[2]) if len(cmds) > 2 else None
                 self.swapScheduleBlocks(self.schedule, bid1, bid2)
+            elif cmd == 'slotscores':  
+                bid   = int(cmds[1]) if len(cmds) > 1 else None
+                topn  = int(cmds[2]) if len(cmds) > 2 else None
+                self.showBlockSlotScores(self.schedule, bid, topn)
             else:
                 log.error(f'Unrecognized command: {cmd}')
                 autoHelp = True
@@ -288,10 +299,11 @@ class Scheduler(object):
         telsched = schedule['telescopes'][tel]
         night = telsched['nights'][date]
         if night['slots'][index] != None:
-            print (f"ERROR: slot {index} on date {date} is already assigned")
+            print (f"ERROR: Cannot assign block {block['id']} to slot {index} on date {date}.  Already assigned to block {night['slots'][index]['id']}")
             return False
 
         #add block to schedule object
+        #print (f"Assigning block {block['id']} to slot {index} on date {date}.")
         night['slots'][index] = block
 
         #mark block with scheduled info
@@ -301,6 +313,7 @@ class Scheduler(object):
 
 
     def removeScheduleBlock(self, schedule, blockId):
+
         #find block
         block, slots, slotIdx = self.findScheduleBlockById(schedule, blockId)
         if not block:
@@ -319,6 +332,7 @@ class Scheduler(object):
 
 
     def moveScheduleBlock(self, schedule, blockId, date, index):
+
         #find block
         block, slots, slotIdx = self.findScheduleBlockById(schedule, blockId)
         if not block:
@@ -327,7 +341,8 @@ class Scheduler(object):
 
         #valid move?
         if not self.isSlotValid(schedule, block, date, index, verbose=True):
-            print (f"ERROR: block id {blockId} could not be assigned to date {date}, slot index {index}!")
+            return False
+        if not self.isSlotAvailable(schedule, block['tel'], date, index, block['size'], verbose=True):
             return False
 
         #assign
@@ -341,6 +356,7 @@ class Scheduler(object):
 
     def swapScheduleBlocks(self, schedule, blockId1, blockId2):
 
+#todo: test recent changes
         #make sure both exist
         block1, slots1, slotIdx1 = self.findScheduleBlockById(schedule, blockId1)
         block2, slots2, slotIdx2 = self.findScheduleBlockById(schedule, blockId2)
@@ -349,36 +365,27 @@ class Scheduler(object):
             if not block2: print (f"ERROR: block id {blockId2} not found!")
             return False
 
-        #if anything goes wrong we will return them to orig slots
-        err = False
-        date1 = block1['schedDate']
-        date2 = block2['schedDate']
+        #check for valid swap
+        if slotIdx2 != None:
+            if not self.isSlotValid(schedule, block1, date2, slotIdx2, verbose=True):
+                return False
+            if not self.isSlotAvailable(schedule, block2['tel'], date2, slotIdx2, block1['size'], verbose=True):
+                return False
+        if slotIdx1 != None:
+            if not self.isSlotValid(schedule, block2, date1, slotIdx1, verbose=True):
+                return False
+            if not self.isSlotAvailable(schedule, block1['tel'], date1, slotIdx1, block2['size'], verbose=True):
+                return False
 
         #remove them
         self.removeScheduleBlock(schedule, blockId1)
         self.removeScheduleBlock(schedule, blockId2)
 
-        #move to other block position
-        if slotIdx2 != None:
-            if not self.isSlotValid(schedule, block1, date2, slotIdx2, verbose=True):
-                print (f"ERROR: block id {blockId1} could not be assigned to date {date2}, slot index {slotIdx2}!")
-                err = True
-        if slotIdx1 != None:
-            if not self.isSlotValid(schedule, block2, date1, slotIdx1, verbose=True):
-                print (f"ERROR: block id {blockId2} could not be assigned to date {date1}, slot index {slotIdx1}!")
-                err = True
-
-        #err?
-        #todo: case when orig in unscheduled?
-        if err:
-            if slotIdx1 != None: self.assignBlockToSchedule(schedule, block1['tel'], date1, slotIdx1, block1)
-            if slotIdx2 != None: self.assignBlockToSchedule(schedule, block2['tel'], date2, slotIdx2, block2)
-            print("Reverting actions")
-        else:
-            if slotIdx2 != None: self.assignBlockToSchedule(schedule, block2['tel'], date2, slotIdx2, block1)
-            if slotIdx1 != None: self.assignBlockToSchedule(schedule, block1['tel'], date1, slotIdx1, block2)
-            print(f"Swapped block {blockId1} to {date2} slot {slotIdx2}")
-            print(f"Swapped block {blockId2} to {date1} slot {slotIdx1}")
+        #now move
+        if slotIdx2 != None: self.assignBlockToSchedule(schedule, block2['tel'], date2, slotIdx2, block1)
+        if slotIdx1 != None: self.assignBlockToSchedule(schedule, block1['tel'], date1, slotIdx1, block2)
+        print(f"Swapped block {blockId1} to {date2} slot {slotIdx2}")
+        print(f"Swapped block {blockId2} to {date1} slot {slotIdx1}")
 
         #re-analyze schedule
         self.markScheduleWarnings(schedule)
@@ -403,11 +410,6 @@ class Scheduler(object):
         #check for instrument unavailability
         if self.isInstrShutdown(block['instr'], date):
             if verbose: print(f"ERROR: date {date} is marked as instrument {block['instr']} shutdown.")
-            return False
-
-        #check for assigned
-        if not self.isSlotAvailable(schedule, block['tel'], date, slotIndex, block['size']):
-            if verbose: print(f"ERROR: block id {block['id']} overlaps existing assignment for slot index {slotIndex}")
             return False
 
         #check for instr incompatibility
@@ -600,7 +602,7 @@ class Scheduler(object):
         return count
         
 
-    def isSlotAvailable(self, schedule, tel, date, index, size):
+    def isSlotAvailable(self, schedule, tel, date, index, size, verbose=False):
 
         #see if slot requested overlaps any slot assignments
         telsched = schedule['telescopes'][tel]
@@ -612,6 +614,7 @@ class Scheduler(object):
             sStart = index 
             sEnd = sStart + int(size / self.config['slotPerc']) - 1
             if vEnd >= sStart and sEnd >= vStart:
+                if verbose: print(f"ERROR: overlapping assignment for size {size} on {date} at slot index {index}")
                 return False
         return True
 
@@ -783,6 +786,7 @@ class Scheduler(object):
         #print ('getListItemByWeightedRandom', theList)
 
         #get total sum of values we are weighting so we can calc proper rand percs
+#todo: Add in ability to weight higher in list even more 
         sum = 0
         for item in theList:
             sum += item[key]
@@ -811,7 +815,7 @@ class Scheduler(object):
         return instrs
 
 
-    def exportSchedule(self, schedule, tel=None):
+    def exportSchedule(self, schedule, outFilepath=None, tel=None):
         '''
         Writes out schedule to specific format required by Keck scheduler (cjordan)
         #TODO: Finish this later once we figure out how the new process will work
@@ -824,6 +828,7 @@ class Scheduler(object):
             #create output file
             timestamp = dt.now().strftime('%Y-%m-%d-%H-%M-%S')
             outFilepath = f'./sched_worksheet_{telkey}_{timestamp}.csv'
+            print(f"Writing to {outFilepath}")
             file = open(outFilepath, 'w')
 
             #loop moon phase dates
@@ -850,6 +855,7 @@ class Scheduler(object):
                     night = telsched['nights'][date]
                     for i, block in enumerate(night['slots']):
                         if block == None: continue
+                        print (f"...writing block {block['id']}")
                         file.write("\t\t\t\t\t")
                         file.write(f"\t{block['schedIndex']}")
                         file.write(f"\t{block['size']}")
@@ -933,7 +939,7 @@ class Scheduler(object):
             print ("*** WARNING: Unscheduled program blocks! ***")
             print ("********************************************")
             for block in schedule['unscheduledBlocks']:
-                print (f"\t{''.ljust(16)}{block['size']}\t{block['ktn']}\t{block['instr'].ljust(12)}\t{block['type'][:11].ljust(10)}\t[id{block['id']}]\t")
+                print (f"\t{''.ljust(16)}{block['size']}\t{block['ktn']}\t{block['instr'].ljust(12)}\t{block['type'][:11].ljust(10)}\t[{block['id']}]\t")
 
 
     def printStats(self, schedule):

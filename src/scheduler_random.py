@@ -56,7 +56,7 @@ class SchedulerRandom(Scheduler):
 
         #for each block, score every possible slot, sort, and pick one from the best to schedule
         for block in schedule['blocks']:
-            #print ('block: ', block['ktn'], block['instr'], block['size'], block['order'], block['type'])
+            #print ('block: ', block['ktn'], block['instr'], block['size'], round(block['order'],1), block['type'])
             self.initBlockSlots(block)
             self.scoreBlockSlots(schedule, block)
             slot = self.pickRandomBlockSlot(block)
@@ -202,87 +202,88 @@ class SchedulerRandom(Scheduler):
 
     def scoreBlockSlots(self, schedule, block):
         
-        #todo: should we prevent small sizes on the same program from being scheduled on the same night? 
-
-        #For each slot, score it from 0 to 1 based on several factors
+        #Score each slot (raw score ignores whether slot is available; useful for manual swapping later on)
         for slot in block['slots']:
-            # print (f"scoring slot: {slot}")
+            slot['score'] = self.scoreBlockSlot(schedule, block, slot)
 
-            #default score of 1
-            slot['score'] = 0
 
-            #=========== FIXED PRE_SCHEDULED ===============
+    def scoreBlockSlot(self, schedule, block, slot):
 
-            #check if fixed scheduled date (and fixed scheduled slot)
-            if block['schedDate']:
-                if slot['date']  == block['schedDate'] : slot['score'] += 1
-                if slot['index'] == block['schedIndex']: slot['score'] += 1
-                continue
+        #default score zero is unschedulable
+        score = 0
 
-            #=========== SKIP CHECKS ===============
+        #check slot unavailable
+        if not self.isSlotAvailable(schedule, block['tel'], slot['date'], slot['index'], block['size']):
+            return 0
 
-            if not self.isSlotValid(schedule, block, slot['date'], slot['index'], verbose=False):
-                slot['score'] = 0
-                continue
+        #check if totally invalid
+        if not self.isSlotValid(schedule, block, slot['date'], slot['index'], verbose=False):
+            return 0
 
-            #=========== SLOT SCORING ===============
+        #PRE-SCHEDULED: check if fixed scheduled date or slot. Skip all others so their score is zero.
+        if block['schedDate']:
+            if slot['date']  == block['schedDate'] : score += 100
+            if slot['index'] == block['schedIndex']: score += 10
+            return score
 
-            #moon preference factor (progInstr['moonPrefs'])
-            if block['progInstr']:
-                if block['progInstr']['moonPrefLookup']: pref = block['progInstr']['moonPrefLookup'][slot['date']]
-                else                                   : pref = "N"
-                #todo: testing this hard X rule out
-                if pref == 'X':
-                    slot['score'] = 0
-                    continue
-                slot['score'] += self.config['moonDatePrefScore'][pref]
+        #moon preference factor (progInstr['moonPrefs'])
+        #NOTE: unspecified defaults to Neutral
+        if block['progInstr']:
+            if block['progInstr']['moonPrefLookup']: pref = block['progInstr']['moonPrefLookup'][slot['date']]
+            else                                   : pref = "N"
+#todo: testing this hard X rule out
+            if pref == 'X':
+                return 0
+            score += self.config['moonDatePrefScore'][pref]
 
-            #moon scheduled factor (block['moonIndex'])
-            if block['moonIndex'] != None:
-                if slot['date'] in self.moonIndexDates[block['moonIndex']]:
-                    slot['score'] += self.config['reqMoonIndexScore']
+        #moon scheduled factor (block['moonIndex'])
+        if block['moonIndex'] != None:
+            if slot['date'] in self.moonIndexDates[block['moonIndex']]:
+                score += self.config['reqMoonIndexScore']
 
-            #requested date factor (block['reqDate'])
-            if block['reqDate'] and block['reqDate'] == slot['date']:
-                slot['score'] += self.config['reqDateIndexScore']
+        #requested date factor (block['reqDate'])
+        if block['reqDate'] and block['reqDate'] == slot['date']:
+            score += self.config['reqDateIndexScore']
 
-            #requested date portion (block['reqPortion'])
-            if self.isReqPortionMatch(block['reqPortion'], slot['index']):
-                slot['score'] += self.config['reqPortionIndexScore']
+        #requested date portion (block['reqPortion'])
+        if self.isReqPortionMatch(block['reqPortion'], slot['index']):
+            score += self.config['reqPortionIndexScore']
 
-            #consider if split night, same instrument better than split different instrument
-            if self.isScheduledInstrMatch(block['instr'], schedule, block['tel'], slot['date']):
-                slot['score'] += self.config['scheduledInstrMatchScore']
+        #consider if split night, same instrument better than split different instrument
+        if self.isScheduledInstrMatch(block['instr'], schedule, block['tel'], slot['date']):
+            score += self.config['scheduledInstrMatchScore']
 
-            #consider previous and next night, same instrument is better (ie less reconfigs)
-            numAdjExact, numAdjBase = self.getNumAdjacentInstrDates(block['instr'], schedule, block['tel'], slot['date'])
-            slot['score'] += numAdjExact * self.config['adjExactInstrScore']
-            slot['score'] += numAdjBase  * self.config['adjBaseInstrScore']
+        #consider previous and next night, same instrument is better (ie less reconfigs)
+        numAdjExact, numAdjBase = self.getNumAdjacentInstrDates(block['instr'], schedule, block['tel'], slot['date'])
+        score += numAdjExact * self.config['adjExactInstrScore']
+        score += numAdjBase  * self.config['adjBaseInstrScore']
 
-            #consider previous and next night, same program is better (ie create runs)
-            numAdjPrograms = self.getNumAdjacentPrograms(block['ktn'], schedule, block['tel'], slot['date'])
-            slot['score'] += numAdjPrograms * self.config['adjProgramScore']
+        #consider previous and next night, same program is better (ie create runs)
+        numAdjPrograms = self.getNumAdjacentPrograms(block['ktn'], schedule, block['tel'], slot['date'])
+        score += numAdjPrograms * self.config['adjProgramScore']
 
-            #penalty for same program same night
-            numSamePrograms = self.getNumSameProgramsOnDate(block['ktn'], schedule, block['tel'], slot['date'])
-            slot['score'] += numSamePrograms * self.config['sameProgramPenalty']
+        #penalty for same program same night
+        numSamePrograms = self.getNumSameProgramsOnDate(block['ktn'], schedule, block['tel'], slot['date'])
+        score += numSamePrograms * self.config['sameProgramPenalty']
 
-            #score added for slot if it fills beginning or end slots
-            #todo: more should be added if it fits perfectly to complete night
-            if self.config['slotPerc'] < block['size'] < 1.0:
-                if (slot['index'] == 0) or (slot['index']*self.config['slotPerc'] + block['size'] == 1.0):
-                    slot['score'] += self.config['outerSlotScore']
+        #score added for slot if it fills beginning or end slots
+        #todo: more should be added if it fits perfectly to complete night
+        if self.config['slotPerc'] < block['size'] < 1.0:
+            if (slot['index'] == 0) or (slot['index']*self.config['slotPerc'] + block['size'] == 1.0):
+                score += self.config['outerSlotScore']
 
-            #score added if other slots are filled already on this date
-            numBlocks = self.getNumBlocksScheduledOnDate(schedule, block['tel'], slot['date'])
-            if numBlocks > 0: slot['score'] += self.config['avoidEmptyDatesScore']
+        #score added if other slots are filled already on this date
+        numBlocks = self.getNumBlocksScheduledOnDate(schedule, block['tel'], slot['date'])
+        if numBlocks > 0: score += self.config['avoidEmptyDatesScore']
 
-            #todo: add priority target score
-            #slot['score'] += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
+        #todo: add priority target score
+        #score += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
 
-            #random fluctuations (plus/minus perc adjust)
-            bormRand = uniform(-1*self.config['slotScoreRandomMult'], self.config['slotScoreRandomMult'])
-            slot['score'] += slot['score'] * bormRand
+        #random fluctuations (plus/minus perc adjust)
+        bormRand = uniform(-1*self.config['slotScoreRandomMult'], self.config['slotScoreRandomMult'])
+        score += score * bormRand
+
+        return score
 
 
     def getTargetScore(self, date, ktn, index, size):
@@ -515,10 +516,11 @@ class SchedulerRandom(Scheduler):
             self.blockOrderLearnAdjusts[bid] = np.clip(self.blockOrderLearnAdjusts[bid], 0, maxi)
 
 
-    def printOrderAdjusts(self, schedule):
+    def printOrderAdjusts(self, schedule, tel=None):
 
         data = []
         for block in schedule['blocks']:
+            if tel and block['tel'] != tel: continue
             if 'id' not in block: continue
             if block['id'] not in self.blockOrderLearnAdjusts: continue
             adjust = self.blockOrderLearnAdjusts[block['id']]
@@ -528,5 +530,35 @@ class SchedulerRandom(Scheduler):
             block = d['block']
             print (f"{round(d['adjust'], 1)}\t{block['id']}\t{block['ktn']}\t{block['instr']}\t")
 
+
+    def showBlockOrders(self, schedule, tel=None):
+
+        print(f"id\tscore\tsize\ttype")
+        for block in schedule['blocks']:
+            print (f"{block['id']}\t{block['order']:.2f}\t{block['size']}\t{block['type']}")
+
+
+    def showBlockSlotScores(self, schedule, blockId, topN):
+
+#todo: do a slot['postscore'] that considers current state of schedule (some scoring functions won't work as assumed!)
+
+        # #NOTE: rawscore used as list driver 
+        # #find block
+        # block, slots, slotIdx = self.findScheduleBlockById(schedule, blockId)
+        # if not block:
+        #     print (f"ERROR: block id {blockId} not found!")
+        #     return False
+
+        # #Filter out scores zero or less and order slots by score
+        # slots = block['slots']
+        # slotsSorted = sorted(slots, key=lambda k: k['rawscore'], reverse=True)
+
+        # max = slotsSorted[0]['rawscore']
+        # print(f"\n(* = not within {self.config['slotScoreTopPerc']} slotScoreTopPerc)")
+        # print(f"date\t\tindex\tscore\tused")
+        # for i, slot in enumerate(slotsSorted):
+        #     if topN and i >= topN: continue
+        #     avail = 'x' if slot['score'] <= 0 else ''
+        #     print (f"{slot['date']}\t{slot['index']}\t{slot['rawscore']}\t{avail}")
 
 

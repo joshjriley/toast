@@ -13,9 +13,12 @@
 
 
 #todo: details
-- Cadence has a range.  we need to factor that in for date options
-- swap command?
-- Save/write out scheduled program
+- find best swap by searching for dates that are acceptable and showing score of each of those programs for that date/index 
+!- force small portions to different days for same ktn (ie avoid same program on same night for 1/2 and 1/4) (ie dup col in show report) (we do this in scoreBlockSlot but not working well)
+!- Consider same program night adjacency desireable? similar to runs?
+!- Cadence has a range.  we need to factor that in for date options
+!- Save/write out scheduled program (is export broken?)
+!- Add institution balancing during block ordering step (group by inst in multiple arrays and then reform into large array)
 - target/airmass scoring (use lst@midnight data)
 - real query for other data: shutdowns, moon phases, etc (see proposals.InstrumentUnavailable)
 - classes: Block, Schedule?
@@ -24,8 +27,6 @@
 - Implement runs attempts (ie progInstr blocks with adjacent moonIndex)
 - NIRSPAO-NIRSPEC reconfig is worse than others.  Minimize NIRSPAO runs.  
 - Consider laser runs?
-- Consider same program night adjacency desireable? similar to runs?
-- force small portions to different days for same ktn (ie avoid same program on same night for 1/2 and 1/4)
 - Rule: Avoid 3-way or 4-way splits with 2 or more programs
 - Engineering pref is to have a few each month preferably during bright time.  Should we allow some seeding of Engineering nights and avoid adjacency?
 - Program ranking per institution

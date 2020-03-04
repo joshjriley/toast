@@ -539,7 +539,7 @@ class SchedulerRandom(Scheduler):
 
 
     def showBlockSlotScores(self, schedule, blockId, topN):
-
+        pass
 #todo: do a slot['postscore'] that considers current state of schedule (some scoring functions won't work as assumed!)
 
         # #NOTE: rawscore used as list driver 

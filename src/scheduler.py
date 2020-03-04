@@ -342,10 +342,11 @@ class Scheduler(object):
         #valid move?
         if not self.isSlotValid(schedule, block, date, index, verbose=True):
             return False
-        if not self.isSlotAvailable(schedule, block['tel'], date, index, block['size'], verbose=True):
+        if not self.isSlotAvailable(schedule, block['tel'], date, index, block['size'], skipId=block['id'], verbose=True):
             return False
 
-        #assign
+        #remove and assign
+        self.removeScheduleBlock(schedule, blockId)
         self.assignBlockToSchedule(schedule, block['tel'], date, index, block)
         print(f"Moved block {blockId} to {date} slot {index}")
 
@@ -356,7 +357,6 @@ class Scheduler(object):
 
     def swapScheduleBlocks(self, schedule, blockId1, blockId2):
 
-#todo: test recent changes
         #make sure both exist
         block1, slots1, slotIdx1 = self.findScheduleBlockById(schedule, blockId1)
         block2, slots2, slotIdx2 = self.findScheduleBlockById(schedule, blockId2)
@@ -366,15 +366,17 @@ class Scheduler(object):
             return False
 
         #check for valid swap
+        date1 = block1['schedDate']
+        date2 = block2['schedDate']
         if slotIdx2 != None:
             if not self.isSlotValid(schedule, block1, date2, slotIdx2, verbose=True):
                 return False
-            if not self.isSlotAvailable(schedule, block2['tel'], date2, slotIdx2, block1['size'], verbose=True):
+            if not self.isSlotAvailable(schedule, block2['tel'], date2, slotIdx2, block1['size'], skipId=block2['id'], verbose=True):
                 return False
         if slotIdx1 != None:
             if not self.isSlotValid(schedule, block2, date1, slotIdx1, verbose=True):
                 return False
-            if not self.isSlotAvailable(schedule, block1['tel'], date1, slotIdx1, block2['size'], verbose=True):
+            if not self.isSlotAvailable(schedule, block1['tel'], date1, slotIdx1, block2['size'], skipId=block1['id'], verbose=True):
                 return False
 
         #remove them
@@ -602,13 +604,14 @@ class Scheduler(object):
         return count
         
 
-    def isSlotAvailable(self, schedule, tel, date, index, size, verbose=False):
+    def isSlotAvailable(self, schedule, tel, date, index, size, skipId=None, verbose=False):
 
         #see if slot requested overlaps any slot assignments
         telsched = schedule['telescopes'][tel]
         night = telsched['nights'][date]
         for block in night['slots']:
-            if block == None: continue                        
+            if block == None: continue  
+            if skipId == block['id']: continue                      
             vStart = block['schedIndex']
             vEnd = vStart + int(block['size'] / self.config['slotPerc']) - 1
             sStart = index 

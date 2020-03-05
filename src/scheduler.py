@@ -95,6 +95,11 @@ class Scheduler(object):
                 start = cmds[2] if len(cmds) > 2 else None
                 end   = cmds[3] if len(cmds) > 3 else None
                 self.printSchedule(self.schedule, tel=tel, start=start, end=end)
+            elif cmd == 'showmoon':  
+                tel   = cmds[1] if len(cmds) > 1 else None
+                start = cmds[2] if len(cmds) > 2 else None
+                end   = cmds[3] if len(cmds) > 3 else None
+                self.printSchedule(self.schedule, tel=tel, moonStart=start, moonEnd=end)
             elif cmd == 'stats':  
                 self.printStats(self.schedule)
             elif cmd == 'export':  
@@ -402,7 +407,7 @@ class Scheduler(object):
     def showBestSwaps(self, schedule, blockId):
         #todo: we need to test this better and look closely at scoreBlockSlot.  
         #todo: do we need to fully remove block and clear schedDate/schedIndex?
-        
+
         #find block
         block1, slots1, slotIdx1 = self.findScheduleBlockById(schedule, blockId)
         if not block1:
@@ -670,6 +675,7 @@ class Scheduler(object):
 
 
     def isReqPortionMatch(self, reqPortion, slotIndex):
+        # deal with 3/4 size better (or arbitrary would be which half is it more in)
         if   reqPortion == 'first half'     and slotIndex <= 1: return True
         elif reqPortion == 'second half'    and slotIndex >= 2: return True
         elif reqPortion == 'first quarter'  and slotIndex == 0: return True
@@ -921,7 +927,7 @@ class Scheduler(object):
             print("ERROR: ", str(e))               
 
 
-    def printSchedule(self, schedule, tel=None, start=None, end=None, format='txt'):
+    def printSchedule(self, schedule, tel=None, start=None, end=None, moonStart=None, moonEnd=None, format='txt'):
         '''
         Print out a schedule in text or html.
         
@@ -952,6 +958,8 @@ class Scheduler(object):
                 if end   and date > end  : continue
 
                 moonIndex = self.moonDatesIndex[date]
+                if moonStart != None and moonIndex < moonStart: continue
+                if moonEnd   != None and moonIndex > moonEnd: continue
                 if moonIndex != prevMoonIndex:
                     print(f"\n---------- Moon Index {moonIndex} ----------", end='')
                 prevMoonIndex = moonIndex

@@ -675,15 +675,28 @@ class Scheduler(object):
         return True
 
 
-    def isReqPortionMatch(self, reqPortion, slotIndex):
-        # deal with 3/4 size better (or arbitrary would be which half is it more in)
-        if   reqPortion == 'first half'     and slotIndex <= 1: return True
-        elif reqPortion == 'second half'    and slotIndex >= 2: return True
-        elif reqPortion == 'first quarter'  and slotIndex == 0: return True
-        elif reqPortion == 'second quarter' and slotIndex == 1: return True
-        elif reqPortion == 'third quarter'  and slotIndex == 2: return True
-        elif reqPortion == 'fourth quarter' and slotIndex == 3: return True
-        else: return False
+    def isReqPortionMatch(self, reqPortion, slotIndex, size):
+        #todo: would like to generalize this but without sacrificing speed
+
+        #special case for size=0.75
+        if 0.5 < size < 1.0:
+            if   reqPortion == 'first half'     and slotIndex == 0: return True
+            elif reqPortion == 'second half'    and slotIndex == 1: return True
+            elif reqPortion == 'first quarter'  and slotIndex == 0: return True
+            elif reqPortion == 'second quarter' and slotIndex == 0: return True
+            elif reqPortion == 'third quarter'  and slotIndex == 1: return True
+            elif reqPortion == 'fourth quarter' and slotIndex == 1: return True
+            else: return False
+
+        #all others are straightforward
+        else:
+            if   reqPortion == 'first half'     and slotIndex == 0: return True
+            elif reqPortion == 'second half'    and slotIndex == 2: return True
+            elif reqPortion == 'first quarter'  and slotIndex == 0: return True
+            elif reqPortion == 'second quarter' and slotIndex == 1: return True
+            elif reqPortion == 'third quarter'  and slotIndex == 2: return True
+            elif reqPortion == 'fourth quarter' and slotIndex == 3: return True
+            else: return False
 
 
     def createDatesList(self, startDate, endDate):

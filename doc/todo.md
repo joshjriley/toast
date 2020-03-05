@@ -13,12 +13,10 @@
 
 
 #todo: details
-!- find best swap by searching for dates that are acceptable and showing score of each of those programs for that date/index 
 !- RqPt not handling 0.75 correctly?  index=1 is second half
 !- RqPt should say 1h, 2q etc
 !- RqDt should say mm-dd
 !- Save/load scheduled program 
-!- Show sched by moon index (showmoon [idx] [tel])
 !- force small portions to different days for same ktn (ie avoid same program on same night for 1/2 and 1/4) (ie dup col in show report) (we do this in scoreBlockSlot but not working well)
 !- Consider same program night adjacency desireable? similar to runs? 
 !- Cadence has a range.  we need to factor that in for date options
@@ -37,6 +35,7 @@
 - Program ranking per institution
 - option to run one of the telescopes only
 - check if the total proposed hours exceeds semester hours
+- instead of or additionally, have random movement of order by position instead of score randomness.
 
 
 

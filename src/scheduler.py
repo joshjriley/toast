@@ -62,22 +62,23 @@ class Scheduler(object):
 
 #todo: call this base menu from child and add in child functions there
         menu = "\n"
-        menu += "----------------------------------------------------------------\n"
-        menu += "|                    MENU                                       |\n"
-        menu += "----------------------------------------------------------------|\n"
-        menu += "|  show [tel] [start day] [stop day]   Show schedule            |\n"
-        menu += "|  stats                               Show stats               |\n"
-        menu += "|  conflicts                           Check conflicts          |\n"
-        menu += "|  blockorders  [tel]                  Show block orders        |\n"
-        menu += "|  orderadjusts [tel]                  Show block order adjusts |\n"
-        menu += "|  slotscores [blockId] [topN]         Show topN slot scores    |\n"
-        menu += "|  findswap   [blockId]                Find best swap options   |\n"
-        menu += "|  move       [blockId] [date] [index] Move block               |\n"
-        menu += "|  remove     [blockId]                Remove block             |\n"
-        menu += "|  swap       [blockId1] [blockId2]    Swap two blocks          |\n"
-        menu += "|  export [folder] [tel]               Export to csv            |\n"
-        menu += "|  q                                   Quit (or Control-C)      |\n"
-        menu += "-----------------------------------------------------------------\n"
+        menu += "-------------------------------------------------------------------------\n"
+        menu += "|                            MENU                                        \n"
+        menu += "-------------------------------------------------------------------------\n"
+        menu += "|  show     [tel] [start] [end]        Show schedule by date        \n"
+        menu += "|  showmoon [tel] [start] [end]        Show schedule by moon index  \n"
+        menu += "|  stats                               Show stats                \n"
+        menu += "|  conflicts                           Check conflicts           \n"
+        menu += "|  blockorders  [tel]                  Show block orders         \n"
+        menu += "|  orderadjusts [tel]                  Show block order adjusts  \n"
+        menu += "|  slotscores [blockId] [topN]         Show topN slot scores     \n"
+        menu += "|  findswap   [blockId]                Find best swap options    \n"
+        menu += "|  move       [blockId] [date] [index] Move block                \n"
+        menu += "|  remove     [blockId]                Remove block              \n"
+        menu += "|  swap       [blockId1] [blockId2]    Swap two blocks           \n"
+        menu += "|  export [folder] [tel]               Export to csv             \n"
+        menu += "|  q                                   Quit (or Control-C)       \n"
+        menu += "-------------------------------------------------------------------------\n"
         menu += "> "
 
         quit = None
@@ -958,8 +959,8 @@ class Scheduler(object):
                 if end   and date > end  : continue
 
                 moonIndex = self.moonDatesIndex[date]
-                if moonStart != None and moonIndex < moonStart: continue
-                if moonEnd   != None and moonIndex > moonEnd: continue
+                if moonStart != None and int(moonIndex) < int(moonStart): continue
+                if moonEnd   != None and int(moonIndex) > int(moonEnd): continue
                 if moonIndex != prevMoonIndex:
                     print(f"\n---------- Moon Index {moonIndex} ----------", end='')
                 prevMoonIndex = moonIndex

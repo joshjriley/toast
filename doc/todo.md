@@ -13,12 +13,17 @@
 
 
 #todo: details
-- find best swap by searching for dates that are acceptable and showing score of each of those programs for that date/index 
+!- find best swap by searching for dates that are acceptable and showing score of each of those programs for that date/index 
+!- RqPt not handling 0.75 correctly?  index=1 is second half
+!- RqPt should say 1h, 2q etc
+!- RqDt should say mm-dd
+!- Save/load scheduled program 
+!- Show sched by moon index (showmoon [idx] [tel])
 !- force small portions to different days for same ktn (ie avoid same program on same night for 1/2 and 1/4) (ie dup col in show report) (we do this in scoreBlockSlot but not working well)
-!- Consider same program night adjacency desireable? similar to runs?
+!- Consider same program night adjacency desireable? similar to runs? 
 !- Cadence has a range.  we need to factor that in for date options
-!- Save/write out scheduled program (is export broken?)
 !- Add institution balancing during block ordering step (group by inst in multiple arrays and then reform into large array)
+!- Add in DateSpecific
 - target/airmass scoring (use lst@midnight data)
 - real query for other data: shutdowns, moon phases, etc (see proposals.InstrumentUnavailable)
 - classes: Block, Schedule?
@@ -31,6 +36,7 @@
 - Engineering pref is to have a few each month preferably during bright time.  Should we allow some seeding of Engineering nights and avoid adjacency?
 - Program ranking per institution
 - option to run one of the telescopes only
+- check if the total proposed hours exceeds semester hours
 
 
 

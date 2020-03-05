@@ -71,6 +71,7 @@ class Scheduler(object):
         menu += "|  blockorders  [tel]                  Show block orders        |\n"
         menu += "|  orderadjusts [tel]                  Show block order adjusts |\n"
         menu += "|  slotscores [blockId] [topN]         Show topN slot scores    |\n"
+        menu += "|  findswap   [blockId]                Find best swap options   |\n"
         menu += "|  move       [blockId] [date] [index] Move block               |\n"
         menu += "|  remove     [blockId]                Remove block             |\n"
         menu += "|  swap       [blockId1] [blockId2]    Swap two blocks          |\n"
@@ -124,6 +125,9 @@ class Scheduler(object):
                 bid   = int(cmds[1]) if len(cmds) > 1 else None
                 topn  = int(cmds[2]) if len(cmds) > 2 else None
                 self.showBlockSlotScores(self.schedule, bid, topn)
+            elif cmd == 'findswap':  
+                bid   = int(cmds[1]) if len(cmds) > 1 else None
+                self.showBestSwaps(self.schedule, bid)
             else:
                 log.error(f'Unrecognized command: {cmd}')
                 autoHelp = True
@@ -393,6 +397,48 @@ class Scheduler(object):
         #re-analyze schedule
         self.markScheduleWarnings(schedule)
         self.scoreSchedule(schedule)
+
+
+    def showBestSwaps(self, schedule, blockId):
+        #todo: we need to test this better and look closely at scoreBlockSlot.  
+        #todo: do we need to fully remove block and clear schedDate/schedIndex?
+        
+        #find block
+        block1, slots1, slotIdx1 = self.findScheduleBlockById(schedule, blockId)
+        if not block1:
+            print (f"ERROR: block id {blockId} not found!")
+            return False
+
+        #look at every slot and score both ways
+        data = []
+        tel = block1['tel']
+        telsched = schedule['telescopes'][tel]
+        for date2, night in telsched['nights'].items():
+            for slotIdx2, block2 in enumerate(night['slots']):
+                if not block2: continue
+                if block1['id'] == block2['id']: continue
+
+                #remove block2 from slot, score block1 in it, put block2 back
+                night['slots'][slotIdx2] = None
+                score1 = self.scoreBlockSlot(schedule, block1, date2, slotIdx2)
+                night['slots'][slotIdx2] = block2
+
+                #remove block1 from slot, score block2 in it, put block1 back
+                slots1[slotIdx1] = None
+                score2 = self.scoreBlockSlot(schedule, block2, block1['schedDate'], block1['schedIndex'], skipId=block1['id'])
+                slots1[slotIdx1] = block1
+
+                #store scores and info for sorting
+                data.append({'id':block2['id'], 'score1':score1, 'score2':score2, 'scoresum': score1+score2, 'date':block2['schedDate'], 'index':block2['schedIndex']})
+
+        #sort
+        dataSort1 = sorted(data, key=lambda k: k['scoresum'], reverse=True)
+
+        #show top 40
+        max = 40
+        for i, d in enumerate(dataSort1):
+            print(f"{d['id']}\t{d['scoresum']}\t{d['score1']}\t{d['score2']}\t{d['date']}\t{d['index']}")
+            if i > max: break
 
 
     def isSlotValid(self, schedule, block, date, slotIndex, verbose=False):

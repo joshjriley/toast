@@ -248,7 +248,7 @@ class SchedulerRandom(Scheduler):
             score += self.config['reqDateIndexScore']
 
         #requested date portion (block['reqPortion'])
-        if self.isReqPortionMatch(block['reqPortion'], index):
+        if self.isReqPortionMatch(block['reqPortion'], index, block['size']):
             score += self.config['reqPortionIndexScore']
 
         #consider if split night, same instrument better than split different instrument
@@ -343,13 +343,13 @@ class SchedulerRandom(Scheduler):
             block['warnReqDate'] = ''
             if 'reqDate' in block and block['reqDate']:
                 if block['schedDate'] != block['reqDate']:
-                    block['warnReqDate'] = 1
+                    block['warnReqDate'] = block['reqDate']
 
             #not scheduled on requested portion of night
             block['warnReqPortion'] = ''
             if 'reqPortion' in block and block['reqPortion'] and block['schedIndex'] != None:
-                if not self.isReqPortionMatch(block['reqPortion'], block['schedIndex']):
-                    block['warnReqPortion'] = 1
+                if not self.isReqPortionMatch(block['reqPortion'], block['schedIndex'], block['size']):
+                    block['warnReqPortion'] = block['reqPortion']
 
             #not scheduled on requested moon phase index?
             block['warnMoonIndex'] = ''

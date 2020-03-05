@@ -699,6 +699,16 @@ class Scheduler(object):
             else: return False
 
 
+    def convertReqPortionStr(self, reqPortion):
+        if   reqPortion == 'first half'     : return '1h'
+        elif reqPortion == 'second half'    : return '2h'
+        elif reqPortion == 'first quarter'  : return '1q'
+        elif reqPortion == 'second quarter' : return '2q'
+        elif reqPortion == 'third quarter'  : return '3q'
+        elif reqPortion == 'fourth quarter' : return '4q'
+        else                                : return reqPortion
+
+
     def createDatesList(self, startDate, endDate):
 
         startDate = startDate.replace('-','')
@@ -994,8 +1004,8 @@ class Scheduler(object):
                     print(f"\t{block['type'][:11].ljust(10)}", end='')
                     print(f"\t[{bid}]", end='')
                     print(f"\t{block['warnSchedDate']}", end='')
-                    print(f"\t{block['warnReqDate']}", end='')
-                    print(f"\t{block['warnReqPortion']}", end='')
+                    print(f"\t{block['warnReqDate'][5:]}", end='')
+                    print(f"\t{self.convertReqPortionStr(block['warnReqPortion'])}", end='')
                     print(f"\t{block['warnMoonIndex']}", end='')
                     print(f"\t{block['warnMoonPref']}", end='')
                     print(f"\t{block['warnSameProgram']}", end='')

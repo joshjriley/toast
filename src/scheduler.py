@@ -61,82 +61,85 @@ class Scheduler(object):
     def promptMenu(self):
 
 #todo: call this base menu from child and add in child functions there
-        menu = "\n"
-        menu += "-------------------------------------------------------------------------\n"
-        menu += "|                            MENU                                        \n"
-        menu += "-------------------------------------------------------------------------\n"
-        menu += "|  show     [tel] [start] [end]        Show schedule by date        \n"
-        menu += "|  showmoon [tel] [start] [end]        Show schedule by moon index  \n"
-        menu += "|  stats                               Show stats                \n"
-        menu += "|  conflicts                           Check conflicts           \n"
-        menu += "|  blockorders  [tel]                  Show block orders         \n"
-        menu += "|  orderadjusts [tel]                  Show block order adjusts  \n"
-        menu += "|  slotscores [blockId] [topN]         Show topN slot scores     \n"
-        menu += "|  findswap   [blockId]                Find best swap options    \n"
-        menu += "|  move       [blockId] [date] [index] Move block                \n"
-        menu += "|  remove     [blockId]                Remove block              \n"
-        menu += "|  swap       [blockId1] [blockId2]    Swap two blocks           \n"
-        menu += "|  export [folder] [tel]               Export to csv             \n"
-        menu += "|  q                                   Quit (or Control-C)       \n"
-        menu += "-------------------------------------------------------------------------\n"
-        menu += "> "
+        try:
+            menu = "\n"
+            menu += "-------------------------------------------------------------------------\n"
+            menu += "|                            MENU                                        \n"
+            menu += "-------------------------------------------------------------------------\n"
+            menu += "|  show     [tel] [start] [end]        Show schedule by date        \n"
+            menu += "|  showmoon [tel] [start] [end]        Show schedule by moon index  \n"
+            menu += "|  stats                               Show stats                \n"
+            menu += "|  conflicts                           Check conflicts           \n"
+            menu += "|  blockorders  [tel]                  Show block orders         \n"
+            menu += "|  orderadjusts [tel]                  Show block order adjusts  \n"
+            menu += "|  slotscores [blockId] [topN]         Show topN slot scores     \n"
+            menu += "|  findswap   [blockId]                Find best swap options    \n"
+            menu += "|  move       [blockId] [date] [index] Move block                \n"
+            menu += "|  remove     [blockId]                Remove block              \n"
+            menu += "|  swap       [blockId1] [blockId2]    Swap two blocks           \n"
+            menu += "|  export [folder] [tel]               Export to csv             \n"
+            menu += "|  q                                   Quit (or Control-C)       \n"
+            menu += "-------------------------------------------------------------------------\n"
+            menu += "> "
 
-        quit = None
-        autoHelp = True
-        while quit is None:
-            prompt = menu if autoHelp else "\n> "
-            autoHelp = False
-            cmds = input(prompt).split()       
-            if not cmds: continue
-            cmd = cmds[0]     
-            if   cmd == 'q':  
-                quit = True
-            elif cmd == 'show':  
-                tel   = cmds[1] if len(cmds) > 1 else None
-                start = cmds[2] if len(cmds) > 2 else None
-                end   = cmds[3] if len(cmds) > 3 else None
-                self.printSchedule(self.schedule, tel=tel, start=start, end=end)
-            elif cmd == 'showmoon':  
-                tel   = cmds[1] if len(cmds) > 1 else None
-                start = cmds[2] if len(cmds) > 2 else None
-                end   = cmds[3] if len(cmds) > 3 else None
-                self.printSchedule(self.schedule, tel=tel, moonStart=start, moonEnd=end)
-            elif cmd == 'stats':  
-                self.printStats(self.schedule)
-            elif cmd == 'export':  
-                folder = cmds[1] if len(cmds) > 1 else None
-                tel    = cmds[2] if len(cmds) > 2 else None
-                self.exportSchedule(self.schedule, folder, tel)
-            elif cmd == 'conflicts':  
-                self.checkConflicts()
-            elif cmd == 'orderadjusts':  
-                tel   = cmds[1] if len(cmds) > 1 else None
-                self.printOrderAdjusts(self.schedule, tel)
-            elif cmd == 'blockorders':  
-                tel   = cmds[1] if len(cmds) > 1 else None
-                self.showBlockOrders(self.schedule, tel)
-            elif cmd == 'move':  
-                bid   = int(cmds[1]) if len(cmds) > 1 else None
-                date  = cmds[2]      if len(cmds) > 2 else None
-                index = int(cmds[3]) if len(cmds) > 3 else None
-                self.moveScheduleBlock(self.schedule, bid, date, index)
-            elif cmd == 'remove':  
-                bid   = int(cmds[1]) if len(cmds) > 1 else None
-                self.removeScheduleBlock(self.schedule, bid)
-            elif cmd == 'swap':  
-                bid1 = int(cmds[1]) if len(cmds) > 1 else None
-                bid2 = int(cmds[2]) if len(cmds) > 2 else None
-                self.swapScheduleBlocks(self.schedule, bid1, bid2)
-            elif cmd == 'slotscores':  
-                bid   = int(cmds[1]) if len(cmds) > 1 else None
-                topn  = int(cmds[2]) if len(cmds) > 2 else None
-                self.showBlockSlotScores(self.schedule, bid, topn)
-            elif cmd == 'findswap':  
-                bid   = int(cmds[1]) if len(cmds) > 1 else None
-                self.showBestSwaps(self.schedule, bid)
-            else:
-                log.error(f'Unrecognized command: {cmd}')
-                autoHelp = True
+            quit = None
+            autoHelp = True
+            while quit is None:
+                prompt = menu if autoHelp else "\n> "
+                autoHelp = False
+                cmds = input(prompt).split()       
+                if not cmds: continue
+                cmd = cmds[0]     
+                if   cmd == 'q':  
+                    quit = True
+                elif cmd == 'show':  
+                    tel   = cmds[1] if len(cmds) > 1 else None
+                    start = cmds[2] if len(cmds) > 2 else None
+                    end   = cmds[3] if len(cmds) > 3 else None
+                    self.printSchedule(self.schedule, tel=tel, start=start, end=end)
+                elif cmd == 'showmoon':  
+                    tel   = cmds[1] if len(cmds) > 1 else None
+                    start = cmds[2] if len(cmds) > 2 else None
+                    end   = cmds[3] if len(cmds) > 3 else None
+                    self.printSchedule(self.schedule, tel=tel, moonStart=start, moonEnd=end)
+                elif cmd == 'stats':  
+                    self.printStats(self.schedule)
+                elif cmd == 'export':  
+                    folder = cmds[1] if len(cmds) > 1 else None
+                    tel    = cmds[2] if len(cmds) > 2 else None
+                    self.exportSchedule(self.schedule, folder, tel)
+                elif cmd == 'conflicts':  
+                    self.checkConflicts()
+                elif cmd == 'orderadjusts':  
+                    tel   = cmds[1] if len(cmds) > 1 else None
+                    self.printOrderAdjusts(self.schedule, tel)
+                elif cmd == 'blockorders':  
+                    tel   = cmds[1] if len(cmds) > 1 else None
+                    self.showBlockOrders(self.schedule, tel)
+                elif cmd == 'move':  
+                    bid   = int(cmds[1]) if len(cmds) > 1 else None
+                    date  = cmds[2]      if len(cmds) > 2 else None
+                    index = int(cmds[3]) if len(cmds) > 3 else None
+                    self.moveScheduleBlock(self.schedule, bid, date, index)
+                elif cmd == 'remove':  
+                    bid   = int(cmds[1]) if len(cmds) > 1 else None
+                    self.removeScheduleBlock(self.schedule, bid)
+                elif cmd == 'swap':  
+                    bid1 = int(cmds[1]) if len(cmds) > 1 else None
+                    bid2 = int(cmds[2]) if len(cmds) > 2 else None
+                    self.swapScheduleBlocks(self.schedule, bid1, bid2)
+                elif cmd == 'slotscores':  
+                    bid   = int(cmds[1]) if len(cmds) > 1 else None
+                    topn  = int(cmds[2]) if len(cmds) > 2 else None
+                    self.showBlockSlotScores(self.schedule, bid, topn)
+                elif cmd == 'findswap':  
+                    bid   = int(cmds[1]) if len(cmds) > 1 else None
+                    self.showBestSwaps(self.schedule, bid)
+                else:
+                    log.error(f'Unrecognized command: {cmd}')
+                    autoHelp = True
+        except Exception as e:
+            print("\n***** ERROR: ", str(e))
 
 
     def loadConfig(self):

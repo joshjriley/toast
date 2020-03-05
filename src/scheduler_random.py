@@ -204,32 +204,34 @@ class SchedulerRandom(Scheduler):
         
         #Score each slot (raw score ignores whether slot is available; useful for manual swapping later on)
         for slot in block['slots']:
-            slot['score'] = self.scoreBlockSlot(schedule, block, slot)
+
+            slot['score'] = 0
+
+            #PRE-SCHEDULED: check if fixed scheduled date or slot. Skip all others so their score is zero.
+            if block['schedDate']:
+                if slot['date']  == block['schedDate'] : slot['score'] += 100
+                if slot['index'] == block['schedIndex']: slot['score'] += 100
+            else:
+                slot['score'] = self.scoreBlockSlot(schedule, block, slot['date'], slot['index'])
 
 
-    def scoreBlockSlot(self, schedule, block, slot):
+    def scoreBlockSlot(self, schedule, block, date, index, skipId=None):
 
         #default score zero is unschedulable
         score = 0
 
         #check slot unavailable
-        if not self.isSlotAvailable(schedule, block['tel'], slot['date'], slot['index'], block['size']):
+        if not self.isSlotAvailable(schedule, block['tel'], date, index, block['size'], skipId=skipId):
             return 0
 
         #check if totally invalid
-        if not self.isSlotValid(schedule, block, slot['date'], slot['index'], verbose=False):
+        if not self.isSlotValid(schedule, block, date, index, verbose=False):
             return 0
-
-        #PRE-SCHEDULED: check if fixed scheduled date or slot. Skip all others so their score is zero.
-        if block['schedDate']:
-            if slot['date']  == block['schedDate'] : score += 100
-            if slot['index'] == block['schedIndex']: score += 10
-            return score
 
         #moon preference factor (progInstr['moonPrefs'])
         #NOTE: unspecified defaults to Neutral
         if block['progInstr']:
-            if block['progInstr']['moonPrefLookup']: pref = block['progInstr']['moonPrefLookup'][slot['date']]
+            if block['progInstr']['moonPrefLookup']: pref = block['progInstr']['moonPrefLookup'][date]
             else                                   : pref = "N"
 #todo: testing this hard X rule out
             if pref == 'X':
@@ -238,46 +240,46 @@ class SchedulerRandom(Scheduler):
 
         #moon scheduled factor (block['moonIndex'])
         if block['moonIndex'] != None:
-            if slot['date'] in self.moonIndexDates[block['moonIndex']]:
+            if date in self.moonIndexDates[block['moonIndex']]:
                 score += self.config['reqMoonIndexScore']
 
         #requested date factor (block['reqDate'])
-        if block['reqDate'] and block['reqDate'] == slot['date']:
+        if block['reqDate'] and block['reqDate'] == date:
             score += self.config['reqDateIndexScore']
 
         #requested date portion (block['reqPortion'])
-        if self.isReqPortionMatch(block['reqPortion'], slot['index']):
+        if self.isReqPortionMatch(block['reqPortion'], index, block['size']):
             score += self.config['reqPortionIndexScore']
 
         #consider if split night, same instrument better than split different instrument
-        if self.isScheduledInstrMatch(block['instr'], schedule, block['tel'], slot['date']):
+        if self.isScheduledInstrMatch(block['instr'], schedule, block['tel'], date):
             score += self.config['scheduledInstrMatchScore']
 
         #consider previous and next night, same instrument is better (ie less reconfigs)
-        numAdjExact, numAdjBase = self.getNumAdjacentInstrDates(block['instr'], schedule, block['tel'], slot['date'])
+        numAdjExact, numAdjBase = self.getNumAdjacentInstrDates(block['instr'], schedule, block['tel'], date)
         score += numAdjExact * self.config['adjExactInstrScore']
         score += numAdjBase  * self.config['adjBaseInstrScore']
 
         #consider previous and next night, same program is better (ie create runs)
-        numAdjPrograms = self.getNumAdjacentPrograms(block['ktn'], schedule, block['tel'], slot['date'])
+        numAdjPrograms = self.getNumAdjacentPrograms(block['ktn'], schedule, block['tel'], date)
         score += numAdjPrograms * self.config['adjProgramScore']
 
         #penalty for same program same night
-        numSamePrograms = self.getNumSameProgramsOnDate(block['ktn'], schedule, block['tel'], slot['date'])
+        numSamePrograms = self.getNumSameProgramsOnDate(block['ktn'], schedule, block['tel'], date)
         score += numSamePrograms * self.config['sameProgramPenalty']
 
         #score added for slot if it fills beginning or end slots
         #todo: more should be added if it fits perfectly to complete night
         if self.config['slotPerc'] < block['size'] < 1.0:
-            if (slot['index'] == 0) or (slot['index']*self.config['slotPerc'] + block['size'] == 1.0):
+            if (index == 0) or (index*self.config['slotPerc'] + block['size'] == 1.0):
                 score += self.config['outerSlotScore']
 
         #score added if other slots are filled already on this date
-        numBlocks = self.getNumBlocksScheduledOnDate(schedule, block['tel'], slot['date'])
+        numBlocks = self.getNumBlocksScheduledOnDate(schedule, block['tel'], date)
         if numBlocks > 0: score += self.config['avoidEmptyDatesScore']
 
         #todo: add priority target score
-        #score += self.getTargetScore(slot['date'], block['ktn'], slot['index'], block['size'])
+        #score += self.getTargetScore(date, block['ktn'], index, block['size'])
 
         #random fluctuations (plus/minus perc adjust)
         bormRand = uniform(-1*self.config['slotScoreRandomMult'], self.config['slotScoreRandomMult'])
@@ -341,13 +343,13 @@ class SchedulerRandom(Scheduler):
             block['warnReqDate'] = ''
             if 'reqDate' in block and block['reqDate']:
                 if block['schedDate'] != block['reqDate']:
-                    block['warnReqDate'] = 1
+                    block['warnReqDate'] = block['reqDate']
 
             #not scheduled on requested portion of night
             block['warnReqPortion'] = ''
             if 'reqPortion' in block and block['reqPortion'] and block['schedIndex'] != None:
-                if not self.isReqPortionMatch(block['reqPortion'], block['schedIndex']):
-                    block['warnReqPortion'] = 1
+                if not self.isReqPortionMatch(block['reqPortion'], block['schedIndex'], block['size']):
+                    block['warnReqPortion'] = block['reqPortion']
 
             #not scheduled on requested moon phase index?
             block['warnMoonIndex'] = ''

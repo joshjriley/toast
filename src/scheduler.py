@@ -62,21 +62,23 @@ class Scheduler(object):
 
 #todo: call this base menu from child and add in child functions there
         menu = "\n"
-        menu += "----------------------------------------------------------------\n"
-        menu += "|                    MENU                                       |\n"
-        menu += "----------------------------------------------------------------|\n"
-        menu += "|  show [tel] [start day] [stop day]   Show schedule            |\n"
-        menu += "|  stats                               Show stats               |\n"
-        menu += "|  conflicts                           Check conflicts          |\n"
-        menu += "|  blockorders  [tel]                  Show block orders        |\n"
-        menu += "|  orderadjusts [tel]                  Show block order adjusts |\n"
-        menu += "|  slotscores [blockId] [topN]         Show topN slot scores    |\n"
-        menu += "|  move       [blockId] [date] [index] Move block               |\n"
-        menu += "|  remove     [blockId]                Remove block             |\n"
-        menu += "|  swap       [blockId1] [blockId2]    Swap two blocks          |\n"
-        menu += "|  export [folder] [tel]               Export to csv            |\n"
-        menu += "|  q                                   Quit (or Control-C)      |\n"
-        menu += "-----------------------------------------------------------------\n"
+        menu += "-------------------------------------------------------------------------\n"
+        menu += "|                            MENU                                        \n"
+        menu += "-------------------------------------------------------------------------\n"
+        menu += "|  show     [tel] [start] [end]        Show schedule by date        \n"
+        menu += "|  showmoon [tel] [start] [end]        Show schedule by moon index  \n"
+        menu += "|  stats                               Show stats                \n"
+        menu += "|  conflicts                           Check conflicts           \n"
+        menu += "|  blockorders  [tel]                  Show block orders         \n"
+        menu += "|  orderadjusts [tel]                  Show block order adjusts  \n"
+        menu += "|  slotscores [blockId] [topN]         Show topN slot scores     \n"
+        menu += "|  findswap   [blockId]                Find best swap options    \n"
+        menu += "|  move       [blockId] [date] [index] Move block                \n"
+        menu += "|  remove     [blockId]                Remove block              \n"
+        menu += "|  swap       [blockId1] [blockId2]    Swap two blocks           \n"
+        menu += "|  export [folder] [tel]               Export to csv             \n"
+        menu += "|  q                                   Quit (or Control-C)       \n"
+        menu += "-------------------------------------------------------------------------\n"
         menu += "> "
 
         quit = None
@@ -94,6 +96,11 @@ class Scheduler(object):
                 start = cmds[2] if len(cmds) > 2 else None
                 end   = cmds[3] if len(cmds) > 3 else None
                 self.printSchedule(self.schedule, tel=tel, start=start, end=end)
+            elif cmd == 'showmoon':  
+                tel   = cmds[1] if len(cmds) > 1 else None
+                start = cmds[2] if len(cmds) > 2 else None
+                end   = cmds[3] if len(cmds) > 3 else None
+                self.printSchedule(self.schedule, tel=tel, moonStart=start, moonEnd=end)
             elif cmd == 'stats':  
                 self.printStats(self.schedule)
             elif cmd == 'export':  
@@ -124,6 +131,9 @@ class Scheduler(object):
                 bid   = int(cmds[1]) if len(cmds) > 1 else None
                 topn  = int(cmds[2]) if len(cmds) > 2 else None
                 self.showBlockSlotScores(self.schedule, bid, topn)
+            elif cmd == 'findswap':  
+                bid   = int(cmds[1]) if len(cmds) > 1 else None
+                self.showBestSwaps(self.schedule, bid)
             else:
                 log.error(f'Unrecognized command: {cmd}')
                 autoHelp = True
@@ -395,6 +405,48 @@ class Scheduler(object):
         self.scoreSchedule(schedule)
 
 
+    def showBestSwaps(self, schedule, blockId):
+        #todo: we need to test this better and look closely at scoreBlockSlot.  
+        #todo: do we need to fully remove block and clear schedDate/schedIndex?
+
+        #find block
+        block1, slots1, slotIdx1 = self.findScheduleBlockById(schedule, blockId)
+        if not block1:
+            print (f"ERROR: block id {blockId} not found!")
+            return False
+
+        #look at every slot and score both ways
+        data = []
+        tel = block1['tel']
+        telsched = schedule['telescopes'][tel]
+        for date2, night in telsched['nights'].items():
+            for slotIdx2, block2 in enumerate(night['slots']):
+                if not block2: continue
+                if block1['id'] == block2['id']: continue
+
+                #remove block2 from slot, score block1 in it, put block2 back
+                night['slots'][slotIdx2] = None
+                score1 = self.scoreBlockSlot(schedule, block1, date2, slotIdx2)
+                night['slots'][slotIdx2] = block2
+
+                #remove block1 from slot, score block2 in it, put block1 back
+                slots1[slotIdx1] = None
+                score2 = self.scoreBlockSlot(schedule, block2, block1['schedDate'], block1['schedIndex'], skipId=block1['id'])
+                slots1[slotIdx1] = block1
+
+                #store scores and info for sorting
+                data.append({'id':block2['id'], 'score1':score1, 'score2':score2, 'scoresum': score1+score2, 'date':block2['schedDate'], 'index':block2['schedIndex']})
+
+        #sort
+        dataSort1 = sorted(data, key=lambda k: k['scoresum'], reverse=True)
+
+        #show top 40
+        max = 40
+        for i, d in enumerate(dataSort1):
+            print(f"{d['id']}\t{d['scoresum']}\t{d['score1']}\t{d['score2']}\t{d['date']}\t{d['index']}")
+            if i > max: break
+
+
     def isSlotValid(self, schedule, block, date, slotIndex, verbose=False):
 
         #check for block length versus size available length
@@ -623,14 +675,38 @@ class Scheduler(object):
         return True
 
 
-    def isReqPortionMatch(self, reqPortion, slotIndex):
-        if   reqPortion == 'first half'     and slotIndex <= 1: return True
-        elif reqPortion == 'second half'    and slotIndex >= 2: return True
-        elif reqPortion == 'first quarter'  and slotIndex == 0: return True
-        elif reqPortion == 'second quarter' and slotIndex == 1: return True
-        elif reqPortion == 'third quarter'  and slotIndex == 2: return True
-        elif reqPortion == 'fourth quarter' and slotIndex == 3: return True
-        else: return False
+    def isReqPortionMatch(self, reqPortion, slotIndex, size):
+        #todo: would like to generalize this but without sacrificing speed
+
+        #special case for size=0.75
+        if 0.5 < size < 1.0:
+            if   reqPortion == 'first half'     and slotIndex == 0: return True
+            elif reqPortion == 'second half'    and slotIndex == 1: return True
+            elif reqPortion == 'first quarter'  and slotIndex == 0: return True
+            elif reqPortion == 'second quarter' and slotIndex == 0: return True
+            elif reqPortion == 'third quarter'  and slotIndex == 1: return True
+            elif reqPortion == 'fourth quarter' and slotIndex == 1: return True
+            else: return False
+
+        #all others are straightforward
+        else:
+            if   reqPortion == 'first half'     and slotIndex == 0: return True
+            elif reqPortion == 'second half'    and slotIndex == 2: return True
+            elif reqPortion == 'first quarter'  and slotIndex == 0: return True
+            elif reqPortion == 'second quarter' and slotIndex == 1: return True
+            elif reqPortion == 'third quarter'  and slotIndex == 2: return True
+            elif reqPortion == 'fourth quarter' and slotIndex == 3: return True
+            else: return False
+
+
+    def convertReqPortionStr(self, reqPortion):
+        if   reqPortion == 'first half'     : return '1h'
+        elif reqPortion == 'second half'    : return '2h'
+        elif reqPortion == 'first quarter'  : return '1q'
+        elif reqPortion == 'second quarter' : return '2q'
+        elif reqPortion == 'third quarter'  : return '3q'
+        elif reqPortion == 'fourth quarter' : return '4q'
+        else                                : return reqPortion
 
 
     def createDatesList(self, startDate, endDate):
@@ -875,7 +951,7 @@ class Scheduler(object):
             print("ERROR: ", str(e))               
 
 
-    def printSchedule(self, schedule, tel=None, start=None, end=None, format='txt'):
+    def printSchedule(self, schedule, tel=None, start=None, end=None, moonStart=None, moonEnd=None, format='txt'):
         '''
         Print out a schedule in text or html.
         
@@ -906,6 +982,8 @@ class Scheduler(object):
                 if end   and date > end  : continue
 
                 moonIndex = self.moonDatesIndex[date]
+                if moonStart != None and int(moonIndex) < int(moonStart): continue
+                if moonEnd   != None and int(moonIndex) > int(moonEnd): continue
                 if moonIndex != prevMoonIndex:
                     print(f"\n---------- Moon Index {moonIndex} ----------", end='')
                 prevMoonIndex = moonIndex
@@ -926,8 +1004,8 @@ class Scheduler(object):
                     print(f"\t{block['type'][:11].ljust(10)}", end='')
                     print(f"\t[{bid}]", end='')
                     print(f"\t{block['warnSchedDate']}", end='')
-                    print(f"\t{block['warnReqDate']}", end='')
-                    print(f"\t{block['warnReqPortion']}", end='')
+                    print(f"\t{block['warnReqDate'][5:]}", end='')
+                    print(f"\t{self.convertReqPortionStr(block['warnReqPortion'])}", end='')
                     print(f"\t{block['warnMoonIndex']}", end='')
                     print(f"\t{block['warnMoonPref']}", end='')
                     print(f"\t{block['warnSameProgram']}", end='')

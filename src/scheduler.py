@@ -68,6 +68,7 @@ class Scheduler(object):
             menu += "-------------------------------------------------------------------------\n"
             menu += "|  show     [tel] [start] [end]        Show schedule by date        \n"
             menu += "|  showmoon [tel] [start] [end]        Show schedule by moon index  \n"
+            menu += "|  showprog [progId]                   Show schedule by program code  \n"
             menu += "|  stats                               Show stats                \n"
             menu += "|  conflicts                           Check conflicts           \n"
             menu += "|  blockorders  [tel]                  Show block orders         \n"
@@ -102,6 +103,9 @@ class Scheduler(object):
                     start = cmds[2] if len(cmds) > 2 else None
                     end   = cmds[3] if len(cmds) > 3 else None
                     self.printSchedule(self.schedule, tel=tel, moonStart=start, moonEnd=end)
+                elif cmd == 'showprog':  
+                    prog   = cmds[1] if len(cmds) > 1 else None
+                    self.printSchedule(self.schedule, prog=prog)
                 elif cmd == 'stats':  
                     self.printStats(self.schedule)
                 elif cmd == 'export':  
@@ -954,7 +958,7 @@ class Scheduler(object):
             print("ERROR: ", str(e))               
 
 
-    def printSchedule(self, schedule, tel=None, start=None, end=None, moonStart=None, moonEnd=None, format='txt'):
+    def printSchedule(self, schedule, tel=None, start=None, end=None, moonStart=None, moonEnd=None, prog=None, format='txt'):
         '''
         Print out a schedule in text or html.
         
@@ -998,6 +1002,8 @@ class Scheduler(object):
                 num = 0
                 for i, block in enumerate(night['slots']):
                     if block == None: continue
+                    if prog and prog not in block['ktn']: continue
+
                     bid = block['id'] if 'id' in block else ''
                     if num>0: print ("\n            \t", end='')
                     print(f"{block['schedIndex']}", end='')
@@ -1015,9 +1021,9 @@ class Scheduler(object):
                     print(f"\t{block['score']}", end='')
                     percTotal += block['size']
                     num += 1
-                if percTotal < 1.0:
+                if percTotal < 1.0 and not prog:
                     unused = 1 - percTotal
-                    totalUnused += unused
+                    totalUnused += unused                    
                     print (f"\n          \t!!! unused = {unused} !!!", end='')
             print ("\n")
             print (f"total unused = {totalUnused}")

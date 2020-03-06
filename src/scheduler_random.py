@@ -358,6 +358,8 @@ class SchedulerRandom(Scheduler):
                 block['warnMoonIndex'] = block['moonIndex'] if (schedMoonIndex != block['moonIndex']) else ''
 
             #not scheduled on a preferred date?
+#todo: this doesn't handle when has 'A' prefs but no 'P' prefs, and assigned is X or N
+#todo: create hasPrefsA and hasPrefsP
             block['warnMoonPref'] = ''
             if block['schedDate'] and block['progInstr'] and block['progInstr']['moonPrefLookup']:
                 schedPref = block['progInstr']['moonPrefLookup'][block['schedDate']]

@@ -915,7 +915,7 @@ class Scheduler(object):
 
                 #create output file
                 timestamp = dt.now().strftime('%Y-%m-%d-%H-%M-%S')
-                outFilepath = f'sched_worksheet_{telkey}_{timestamp}.csv'
+                outFilepath = f'sched_worksheet_{telkey}_{timestamp}.txt'
                 if outFolder: outFilepath = outFolder + '/' + outFilepath
                 print(f"Writing to {outFilepath}")
                 file = open(outFilepath, 'w')
@@ -925,33 +925,46 @@ class Scheduler(object):
                     dates = self.createDatesList(mp['start'], mp['end'])
 
                     #section header
-                    file.write("Date\tDay\tDark%\tMoon@Mid\tLST@mid")
-                    file.write("\tPI Last\tPI First\tInstrument\tInstitution\tKTN\t#ngt\tPeriod\tDates to Avoid\tCard Date\tCard Portion")
+                    file.write("\n")
+                    file.write(f"Phase {index}")
+                    file.write("\tDate (HST)\tDay\tDark%\tMoon@Mid\tLST@mid")
+                    file.write("\tPI Last\tPI First\tInstrument\tInstitution\tKTN\tType\tSize\tPhase Req\tDates to Avoid\tCard Date\tCard Portion")
                     file.write("\tScheduler Notes\tTarget\tPAX\tSpecial Requests\n")
 
                     #date moon info and blocks
                     for date in dates:
 
                         #moon info
-                        file.write(date)
+                        file.write("\n")
+                        file.write(f"\t{date}")
                         file.write("\t" + dt.strptime(date, '%Y-%m-%d').strftime('%a').upper())
                         file.write("\t" + mp['type'])
                         file.write("\t" + '?')
-                        file.write("\t" + '?')
                         file.write("\t" + "?")
-                        file.write("\n")
 
                         night = telsched['nights'][date]
+                        count = 0
                         for i, block in enumerate(night['slots']):
                             if block == None: continue
-                            print (f"...writing block {block['id']}")
-                            file.write("\t\t\t\t\t")
-                            file.write(f"\t{block['schedIndex']}")
-                            file.write(f"\t{block['size']}")
-                            file.write(f"\t{block['ktn']}")
+
+                            if count > 0: file.write("\t\t\t\t\t")
+                            count += 1
+
+                            file.write(f"\t??last??")                   #todo
+                            file.write(f"\t??first??")                  #todo
                             file.write(f"\t{block['instr']}")
+                            file.write(f"\t??inst??")                   #todo
+                            file.write(f"\t{block['ktn']}")
                             file.write(f"\t{block['type']}")
+                            file.write(f"\t{block['size']}")
+                            file.write(f"\tmp{block['moonIndex']}")     #todo: convert to readable str
+                            file.write(f"\t??avoid??")                   #todo
+                            file.write(f"\t{block['reqDate']}")     
+                            file.write(f"\t{block['reqPortion']}")
+
                             file.write("\n")
+
+                    file.write("\n")
 
                 file.close() 
         except Exception as e:

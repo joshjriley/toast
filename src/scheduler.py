@@ -1005,6 +1005,8 @@ class Scheduler(object):
                     if prog and prog not in block['ktn']: continue
 
                     bid = block['id'] if 'id' in block else ''
+                    warnMoonPref = 'a' if block['warnMoonPref'] == 'A' else block['warnMoonPref']
+
                     if num>0: print ("\n            \t", end='')
                     print(f"{block['schedIndex']}", end='')
                     print(f"\t{block['size']}", end='')
@@ -1016,7 +1018,7 @@ class Scheduler(object):
                     print(f"\t{block['warnReqDate'][5:]}", end='')
                     print(f"\t{self.convertReqPortionStr(block['warnReqPortion'])}", end='')
                     print(f"\t{block['warnMoonIndex']}", end='')
-                    print(f"\t{block['warnMoonPref']}", end='')
+                    print(f"\t{warnMoonPref}", end='')
                     print(f"\t{block['warnSameProgram']}", end='')
                     print(f"\t{block['score']}", end='')
                     percTotal += block['size']

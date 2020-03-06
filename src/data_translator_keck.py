@@ -274,8 +274,7 @@ def saveProgramDataToFile(programs, outfile, compact=False):
         for pcount, (i, prog) in enumerate(programs.items()):
             txt += f'\t"{prog["ktn"]}": \n'
             txt += "\t{\n"
-            txt += f'\t\t"ktn": "{prog["ktn"]}",\n'
-            txt += f'\t\t"type": "{prog["type"]}",\n'
+            txt += f'\t\t"ktn": "{prog["ktn"]}", "type": "{prog["type"]}",\n'
             txt += f'\t\t"datesToAvoid": {json.dumps(prog["datesToAvoid"], default=jsonConverter)},\n'
 
             if len(prog['priorityTargets']) == 0:
@@ -294,9 +293,7 @@ def saveProgramDataToFile(programs, outfile, compact=False):
                 txt += "\t\t\t{\n"
                 txt += f'\t\t\t\t"instr": "{instr["instr"]}",\n'
                 txt += f'\t\t\t\t"moonPrefs": {json.dumps(instr["moonPrefs"])},\n'
-                txt += f'\t\t\t\t"reqPortion": {instr["reqPortion"]},\n'
-                txt += f'\t\t\t\t"appPortion": {instr["appPortion"]},\n'
-                txt += f'\t\t\t\t"appTotal": {instr["appTotal"]},\n'
+                txt += f'\t\t\t\t"reqPortion": {instr["reqPortion"]}, appPortion": {instr["appPortion"]}, appTotal": {instr["appTotal"]},\n'
                 txt += f'\t\t\t\t"blocks":\n'
                 txt += f'\t\t\t\t[\n'
                 for bcount, block in enumerate(instr['blocks']):

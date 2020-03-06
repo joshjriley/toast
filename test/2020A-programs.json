@@ -1,8 +1,7 @@
 {
 	"2020A_C003": 
 	{
-		"ktn": "2020A_C003",
-		"type": "Classical",
+		"ktn": "2020A_C003", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -22,9 +21,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 8.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 8.0,
 				"blocks":
 				[
 					{"id": 3657, "size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -41,8 +38,7 @@
 	},
 	"2020A_C157": 
 	{
-		"ktn": "2020A_C157",
-		"type": "Classical",
+		"ktn": "2020A_C157", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -57,9 +53,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["-", "-", "-", "A", "A", "-", "A", "P", "A", "-", "A", "P", "A", "-", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3750, "size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -71,8 +65,7 @@
 	},
 	"2020A_C165": 
 	{
-		"ktn": "2020A_C165",
-		"type": "Classical",
+		"ktn": "2020A_C165", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -89,9 +82,7 @@
 			{
 				"instr": "NIRES",
 				"moonPrefs": ["A", "P", "A", "A", "A", "P", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3753, "size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": null},
@@ -101,9 +92,7 @@
 			{
 				"instr": "NIRES",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "A", "-", "A", "A", "A", "A", "P", "A", "A", "A", "P", "A", "A", "A", "A", "A", "-", "-", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3755, "size": 1.0, "moonIndex": 17, "reqDate": null, "reqPortion": null},
@@ -114,8 +103,7 @@
 	},
 	"2020A_C177": 
 	{
-		"ktn": "2020A_C177",
-		"type": "Classical",
+		"ktn": "2020A_C177", "type": "Classical",
 		"datesToAvoid": ["2020-05-01", "2020-05-02", "2020-05-03", "2020-05-04", "2020-05-05", "2020-05-06", "2020-05-07"],
 		"priorityTargets":
 		[
@@ -127,9 +115,7 @@
 			{
 				"instr": "OSIRIS-NGS",
 				"moonPrefs": ["", "", "", "", "", "", "", "", "", "A", "A", "A", "A", "A", "P", "A", "A", "A", "", "", "", "", "", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3665, "size": 1.0, "moonIndex": 17, "reqDate": null, "reqPortion": null}
@@ -139,8 +125,7 @@
 	},
 	"2020A_C197": 
 	{
-		"ktn": "2020A_C197",
-		"type": "Classical",
+		"ktn": "2020A_C197", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -158,9 +143,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3758, "size": 0.5, "moonIndex": 10, "reqDate": null, "reqPortion": null},
@@ -170,9 +153,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3760, "size": 0.5, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -182,8 +163,7 @@
 	},
 	"2020A_C198": 
 	{
-		"ktn": "2020A_C198",
-		"type": "Classical",
+		"ktn": "2020A_C198", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -198,9 +178,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": ["", "", "", "", "", "", "", "", "A", "P", "P", "A", "A", "A", "A", "A", "A", "-", "", "", "", "", "", "", "", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3819, "size": 0.5, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -210,8 +188,7 @@
 	},
 	"2020A_C206": 
 	{
-		"ktn": "2020A_C206",
-		"type": "Classical",
+		"ktn": "2020A_C206", "type": "Classical",
 		"datesToAvoid": ["2020-02-08", "2020-02-09", "2020-02-10", "2020-02-11", "2020-02-12", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-04-03", "2020-04-04", "2020-04-05", "2020-04-06", "2020-04-07"],
 		"priorityTargets":
 		[
@@ -222,9 +199,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 4.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 4.0,
 				"blocks":
 				[
 					{"id": 3666, "size": 1.0, "moonIndex": 5, "reqDate": null, "reqPortion": null},
@@ -237,8 +212,7 @@
 	},
 	"2020A_C221": 
 	{
-		"ktn": "2020A_C221",
-		"type": "Classical",
+		"ktn": "2020A_C221", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -249,9 +223,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "P", "P", "P", "P", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3761, "size": 1.0, "moonIndex": 8, "reqDate": null, "reqPortion": null}
@@ -260,9 +232,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": ["-", "X", "X", "X", "X", "X", "P", "P", "P", "P", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3762, "size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -272,8 +242,7 @@
 	},
 	"2020A_C226": 
 	{
-		"ktn": "2020A_C226",
-		"type": "Classical",
+		"ktn": "2020A_C226", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -285,9 +254,7 @@
 			{
 				"instr": "NIRSPAO-NGS",
 				"moonPrefs": ["", "", "", "", "", "", "X", "X", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3763, "size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null},
@@ -299,8 +266,7 @@
 	},
 	"2020A_C230": 
 	{
-		"ktn": "2020A_C230",
-		"type": "Classical",
+		"ktn": "2020A_C230", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -311,9 +277,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "X", "P", "A", "", "A", "P", "X", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3766, "size": 1.0, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -323,8 +287,7 @@
 	},
 	"2020A_C231": 
 	{
-		"ktn": "2020A_C231",
-		"type": "Classical",
+		"ktn": "2020A_C231", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -342,9 +305,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["-", "", "A", "P", "A", "-", "A", "P", "A", "-", "A", "P", "A", "", "", "-", "-", "", "", "-", "", "", "", "-", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3767, "size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -354,9 +315,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "A", "A", "-", "A", "P", "A", "-", "A", "P", "A", "-", "A", "A", "-", "-", "-", "A", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3769, "size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null},
@@ -368,8 +327,7 @@
 	},
 	"2020A_C232": 
 	{
-		"ktn": "2020A_C232",
-		"type": "Classical",
+		"ktn": "2020A_C232", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -380,9 +338,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["", "", "", "P", "", "", "", "P", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 6.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 6.0,
 				"blocks":
 				[
 					{"id": 3772, "size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -397,8 +353,7 @@
 	},
 	"2020A_C234": 
 	{
-		"ktn": "2020A_C234",
-		"type": "Classical",
+		"ktn": "2020A_C234", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -412,9 +367,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "A", "A", "A", "A", "A", "P", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3673, "size": 1.0, "moonIndex": 13, "reqDate": null, "reqPortion": null},
@@ -426,8 +379,7 @@
 	},
 	"2020A_C235": 
 	{
-		"ktn": "2020A_C235",
-		"type": "Classical",
+		"ktn": "2020A_C235", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -443,9 +395,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["X", "X", "X", "A", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3676, "size": 1.0, "moonIndex": 17, "reqDate": null, "reqPortion": null},
@@ -456,8 +406,7 @@
 	},
 	"2020A_C236": 
 	{
-		"ktn": "2020A_C236",
-		"type": "Classical",
+		"ktn": "2020A_C236", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -468,9 +417,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["A", "", "A", "P", "A", "", "", "", "-", "", "", "", "", "", "", "", "", "", "A", "P", "A", "", "", "", "", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3678, "size": 0.5, "moonIndex": 4, "reqDate": null, "reqPortion": null}
@@ -479,9 +426,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "A", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "A", "-"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3683, "size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -490,9 +435,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3742, "size": 0.5, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -501,9 +444,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3684, "size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -513,8 +454,7 @@
 	},
 	"2020A_C240": 
 	{
-		"ktn": "2020A_C240",
-		"type": "Classical",
+		"ktn": "2020A_C240", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -525,9 +465,7 @@
 			{
 				"instr": "NIRES",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "", "", "", "", "A", "P", "P", "P", "A", "", "", "", "", "", "", "", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3778, "size": 1.0, "moonIndex": 14, "reqDate": null, "reqPortion": null},
@@ -538,8 +476,7 @@
 	},
 	"2020A_C241": 
 	{
-		"ktn": "2020A_C241",
-		"type": "Classical",
+		"ktn": "2020A_C241", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -550,9 +487,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "A", "-", "A", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3685, "size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -561,9 +496,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3686, "size": 0.5, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -572,9 +505,7 @@
 			{
 				"instr": "NIRES",
 				"moonPrefs": ["A", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3780, "size": 0.5, "moonIndex": 2, "reqDate": null, "reqPortion": null}
@@ -583,9 +514,7 @@
 			{
 				"instr": "NIRES",
 				"moonPrefs": ["", "", "", "", "", "", "", "", "A", "A", "A", "", "A", "-", "-", "-", "-", "-", "", "", "", "", "", "", "", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3781, "size": 0.5, "moonIndex": 10, "reqDate": null, "reqPortion": null}
@@ -595,8 +524,7 @@
 	},
 	"2020A_C244": 
 	{
-		"ktn": "2020A_C244",
-		"type": "Classical",
+		"ktn": "2020A_C244", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -610,9 +538,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["", "", "", "", "", "", "", "P", "", "", "", "P", "A", "", "", "P", "A", "", "", "P", "A", "", "", "P", "A", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 2.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 2.5,
 				"blocks":
 				[
 					{"id": 3687, "size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -626,8 +552,7 @@
 	},
 	"2020A_C247": 
 	{
-		"ktn": "2020A_C247",
-		"type": "Classical",
+		"ktn": "2020A_C247", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -640,9 +565,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3787, "size": 1.0, "moonIndex": 13, "reqDate": null, "reqPortion": null},
@@ -652,9 +575,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "A", "A", "P", "P", "P", "P", "P", "P", "P", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3788, "size": 1.0, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -664,8 +585,7 @@
 	},
 	"2020A_C249": 
 	{
-		"ktn": "2020A_C249",
-		"type": "Classical",
+		"ktn": "2020A_C249", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -677,9 +597,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "A", "A", "A", "A", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3789, "size": 1.0, "moonIndex": 17, "reqDate": null, "reqPortion": null},
@@ -691,8 +609,7 @@
 	},
 	"2020A_C254": 
 	{
-		"ktn": "2020A_C254",
-		"type": "Classical",
+		"ktn": "2020A_C254", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -703,9 +620,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "A", "X", "A", "P", "X", "X"],
-				"reqPortion": 0.75,
-				"appPortion": 0.75,
-				"appTotal": 0.75,
+				"reqPortion": 0.75, "appPortion": 0.75, "appTotal": 0.75,
 				"blocks":
 				[
 					{"id": 3692, "size": 0.75, "moonIndex": 20, "reqDate": null, "reqPortion": null}
@@ -715,8 +630,7 @@
 	},
 	"2020A_C255": 
 	{
-		"ktn": "2020A_C255",
-		"type": "Classical",
+		"ktn": "2020A_C255", "type": "Classical",
 		"datesToAvoid": ["2020-03-01", "2020-03-02", "2020-03-03", "2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-03-12", "2020-03-13", "2020-03-14", "2020-06-13", "2020-06-14", "2020-06-15", "2020-06-16", "2020-06-17", "2020-06-18", "2020-06-19", "2020-06-20"],
 		"priorityTargets":
 		[
@@ -732,9 +646,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "X", "P", "P", "P", "P", "P", "P"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3792, "size": 1.0, "moonIndex": 18, "reqDate": null, "reqPortion": null}
@@ -743,9 +655,7 @@
 			{
 				"instr": "NIRC2-LGS",
 				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3794, "size": 1.0, "moonIndex": 14, "reqDate": null, "reqPortion": null}
@@ -755,8 +665,7 @@
 	},
 	"2020A_C256": 
 	{
-		"ktn": "2020A_C256",
-		"type": "Classical",
+		"ktn": "2020A_C256", "type": "Classical",
 		"datesToAvoid": ["2020-06-08", "2020-06-09", "2020-06-10", "2020-06-11", "2020-05-15", "2020-05-16", "2020-05-17"],
 		"priorityTargets":
 		[
@@ -768,9 +677,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "A", "A", "A", "X", "P", "P", "X", "A", "A", "A", "A", "A", "P", "P"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3693, "size": 1.0, "moonIndex": 25, "reqDate": null, "reqPortion": null}
@@ -780,8 +687,7 @@
 	},
 	"2020A_C257": 
 	{
-		"ktn": "2020A_C257",
-		"type": "Classical",
+		"ktn": "2020A_C257", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -795,9 +701,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "P"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3795, "size": 1.0, "moonIndex": 22, "reqDate": null, "reqPortion": null},
@@ -809,8 +713,7 @@
 	},
 	"2020A_C258": 
 	{
-		"ktn": "2020A_C258",
-		"type": "Classical",
+		"ktn": "2020A_C258", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -823,9 +726,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3698, "size": 1.0, "moonIndex": 8, "reqDate": null, "reqPortion": null}
@@ -834,9 +735,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3696, "size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -845,9 +744,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["X", "P", "X", "X", "X", "X", "X", "X", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.75,
-				"appPortion": 0.75,
-				"appTotal": 0.75,
+				"reqPortion": 0.75, "appPortion": 0.75, "appTotal": 0.75,
 				"blocks":
 				[
 					{"id": 3694, "size": 0.75, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -857,8 +754,7 @@
 	},
 	"2020A_C259": 
 	{
-		"ktn": "2020A_C259",
-		"type": "Classical",
+		"ktn": "2020A_C259", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -877,9 +773,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3701, "size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -889,9 +783,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3700, "size": 0.5, "moonIndex": 12, "reqDate": null, "reqPortion": null}
@@ -900,9 +792,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["X", "X", "X", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3699, "size": 0.5, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -912,8 +802,7 @@
 	},
 	"2020A_C261": 
 	{
-		"ktn": "2020A_C261",
-		"type": "Classical",
+		"ktn": "2020A_C261", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -925,9 +814,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "A", "A", "-", "A", "P", "A", "-", "A", "A", "A", "-", "A", "A", "A", "", "", "", "", "", "", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3703, "size": 1.0, "moonIndex": 10, "reqDate": null, "reqPortion": null}
@@ -936,9 +823,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "A", "A", "-", "A", "A", "A", "-", "A", "P", "A", "-", "A", "A", "A", "-", "A", "A", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3705, "size": 1.0, "moonIndex": 19, "reqDate": null, "reqPortion": null}
@@ -948,8 +833,7 @@
 	},
 	"2020A_C262": 
 	{
-		"ktn": "2020A_C262",
-		"type": "Classical",
+		"ktn": "2020A_C262", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -961,9 +845,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 4.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 4.0,
 				"blocks":
 				[
 					{"id": 3706, "size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -975,9 +857,7 @@
 			{
 				"instr": "ESI",
 				"moonPrefs": ["P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3798, "size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -988,8 +868,7 @@
 	},
 	"2020A_C263": 
 	{
-		"ktn": "2020A_C263",
-		"type": "Classical",
+		"ktn": "2020A_C263", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1005,9 +884,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3710, "size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -1017,8 +894,7 @@
 	},
 	"2020A_C265": 
 	{
-		"ktn": "2020A_C265",
-		"type": "Classical",
+		"ktn": "2020A_C265", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1029,9 +905,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "", "A", "P", "A", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3711, "size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -1040,9 +914,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "A", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3712, "size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -1051,9 +923,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3713, "size": 1.0, "moonIndex": 11, "reqDate": null, "reqPortion": null}
@@ -1062,9 +932,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3714, "size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -1073,9 +941,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "A", "-", "-", "-", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3715, "size": 1.0, "moonIndex": 19, "reqDate": null, "reqPortion": null}
@@ -1085,8 +951,7 @@
 	},
 	"2020A_C266": 
 	{
-		"ktn": "2020A_C266",
-		"type": "Classical",
+		"ktn": "2020A_C266", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1097,9 +962,7 @@
 			{
 				"instr": "ESI",
 				"moonPrefs": ["A", "X", "A", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3800, "size": 0.5, "moonIndex": 2, "reqDate": null, "reqPortion": null}
@@ -1109,8 +972,7 @@
 	},
 	"2020A_C267": 
 	{
-		"ktn": "2020A_C267",
-		"type": "Classical",
+		"ktn": "2020A_C267", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1122,9 +984,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": ["-", "-", "-", "A", "A", "A", "A", "A", "A", "-", "A", "A", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3716, "size": 1.0, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -1133,9 +993,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": ["A", "A", "A", "A", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "", "", "", "", "", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3717, "size": 1.0, "moonIndex": 17, "reqDate": null, "reqPortion": null}
@@ -1145,8 +1003,7 @@
 	},
 	"2020A_C270": 
 	{
-		"ktn": "2020A_C270",
-		"type": "Classical",
+		"ktn": "2020A_C270", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1157,9 +1014,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "P", "", "", "", "P", "", "", "", "-", "", "", "", "-", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3718, "size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -1168,9 +1023,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "P", "-", "-", "-", "P", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3719, "size": 1.0, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -1180,8 +1033,7 @@
 	},
 	"2020A_C301": 
 	{
-		"ktn": "2020A_C301",
-		"type": "Classical",
+		"ktn": "2020A_C301", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1192,9 +1044,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 1.0, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 3738, "size": 0.25, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -1203,9 +1053,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 1.0, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 3741, "size": 0.25, "moonIndex": 20, "reqDate": null, "reqPortion": null}
@@ -1214,9 +1062,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3745, "size": 1.0, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -1226,8 +1072,7 @@
 	},
 	"2020A_C303": 
 	{
-		"ktn": "2020A_C303",
-		"type": "Classical",
+		"ktn": "2020A_C303", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1238,9 +1083,7 @@
 			{
 				"instr": "NIRSPAO-NGS",
 				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "P", "P", "P", "", "", "", "", "", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.5,
 				"blocks":
 				[
 					{"id": 3801, "size": 0.5, "moonIndex": 17, "reqDate": null, "reqPortion": null},
@@ -1252,8 +1095,7 @@
 	},
 	"2020A_D309": 
 	{
-		"ktn": "2020A_D309",
-		"type": "Classical",
+		"ktn": "2020A_D309", "type": "Classical",
 		"datesToAvoid": ["2020-06-11", "2020-06-12", "2020-06-13", "2020-06-14", "2020-06-15", "2020-06-16", "2020-06-17", "2020-06-18", "2020-06-19", "2020-06-20", "2020-06-21", "2020-06-22", "2020-06-23", "2020-06-24", "2020-06-25", "2020-06-26", "2020-06-27"],
 		"priorityTargets":
 		[
@@ -1272,9 +1114,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "A", "X", "X", "X", "A", "A", "A", "P", "P", "P", "P", "A", "A", "A"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4185, "size": 0.5, "moonIndex": 19, "reqDate": null, "reqPortion": null}
@@ -1284,8 +1124,7 @@
 	},
 	"2020A_D310": 
 	{
-		"ktn": "2020A_D310",
-		"type": "Classical",
+		"ktn": "2020A_D310", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1304,9 +1143,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["A", "X", "A", "P", "P", "X", "P", "X", "X", "X", "P", "P", "P", "X", "A", "P", "P", "X", "X", "A", "A", "X", "A", "A", "A", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4186, "size": 0.5, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -1316,8 +1153,7 @@
 	},
 	"2020A_H146": 
 	{
-		"ktn": "2020A_H146",
-		"type": "Classical",
+		"ktn": "2020A_H146", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1330,9 +1166,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 4133, "size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -1343,8 +1177,7 @@
 	},
 	"2020A_H224": 
 	{
-		"ktn": "2020A_H224",
-		"type": "Classical",
+		"ktn": "2020A_H224", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1355,9 +1188,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 4.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 4.0,
 				"blocks":
 				[
 					{"id": 4131, "size": 1.0, "moonIndex": 18, "reqDate": null, "reqPortion": null},
@@ -1370,8 +1201,7 @@
 	},
 	"2020A_H268": 
 	{
-		"ktn": "2020A_H268",
-		"type": "Classical",
+		"ktn": "2020A_H268", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1391,9 +1221,7 @@
 			{
 				"instr": "LRISp-ADC",
 				"moonPrefs": ["-", "-", "-", "P", "-", "-", "", "A", "-", "-", "-", "", "-", "", "-", "", "", "", "", "", "", "", "", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4122, "size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -1402,9 +1230,7 @@
 			{
 				"instr": "LRISp-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "-", "-", "-", "P", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4124, "size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -1413,9 +1239,7 @@
 			{
 				"instr": "LRISp-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "-", "-", "-", "P", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4123, "size": 1.0, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -1425,8 +1249,7 @@
 	},
 	"2020A_H272": 
 	{
-		"ktn": "2020A_H272",
-		"type": "Classical",
+		"ktn": "2020A_H272", "type": "Classical",
 		"datesToAvoid": ["2020-02-01", "2020-02-02", "2020-02-03", "2020-02-04", "2020-02-05", "2020-02-06", "2020-02-07", "2020-02-08", "2020-02-09", "2020-02-10", "2020-02-11", "2020-02-12", "2020-02-13", "2020-02-14", "2020-02-15", "2020-02-16", "2020-02-17", "2020-02-18", "2020-02-19", "2020-02-20", "2020-02-21", "2020-02-22", "2020-02-23", "2020-02-24", "2020-02-25", "2020-02-26", "2020-02-27", "2020-02-28", "2020-02-29", "2020-03-01", "2020-03-02", "2020-03-03", "2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-03-12", "2020-03-13", "2020-03-14", "2020-03-15", "2020-03-16", "2020-03-17", "2020-03-18", "2020-03-19", "2020-03-20", "2020-03-21", "2020-03-22", "2020-03-23", "2020-03-24", "2020-03-25", "2020-03-26", "2020-03-27", "2020-03-28", "2020-03-29", "2020-03-30", "2020-03-31", "2020-04-01", "2020-04-02", "2020-04-03", "2020-04-04", "2020-04-05", "2020-04-06", "2020-04-07", "2020-04-08", "2020-04-09", "2020-04-10", "2020-04-11", "2020-04-12", "2020-04-13", "2020-04-14", "2020-04-15", "2020-04-16", "2020-04-17", "2020-04-18", "2020-04-19", "2020-04-20", "2020-04-21", "2020-04-22", "2020-04-23", "2020-04-24", "2020-04-25", "2020-04-26", "2020-04-27", "2020-04-28", "2020-04-29", "2020-04-30"],
 		"priorityTargets":
 		[
@@ -1437,9 +1260,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "X", "A", "P", "A", "X", "A", "A", "A", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 4153, "size": 1.0, "moonIndex": 19, "reqDate": null, "reqPortion": null},
@@ -1451,8 +1272,7 @@
 	},
 	"2020A_H273": 
 	{
-		"ktn": "2020A_H273",
-		"type": "Classical",
+		"ktn": "2020A_H273", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1464,9 +1284,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "X", "A", "P", "A", "X", "A", "A", "A", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 4148, "size": 1.0, "moonIndex": 19, "reqDate": null, "reqPortion": null},
@@ -1478,8 +1296,7 @@
 	},
 	"2020A_H274": 
 	{
-		"ktn": "2020A_H274",
-		"type": "Classical",
+		"ktn": "2020A_H274", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1491,9 +1308,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["-", "-", "A", "P", "A", "-", "A", "P", "A", "-", "A", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4147, "size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -1503,8 +1318,7 @@
 	},
 	"2020A_H275": 
 	{
-		"ktn": "2020A_H275",
-		"type": "Classical",
+		"ktn": "2020A_H275", "type": "Classical",
 		"datesToAvoid": ["2020-04-09", "2020-04-10", "2020-04-11", "2020-04-12", "2020-05-06", "2020-05-07", "2020-05-08", "2020-05-09", "2020-06-03", "2020-06-04", "2020-06-05", "2020-07-01", "2020-07-02", "2020-07-03"],
 		"priorityTargets":
 		[
@@ -1515,9 +1329,7 @@
 			{
 				"instr": "NIRC2-LGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "P", "X", "P", "P", "P", "X", "A", "A", "A", "X", "A", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 4138, "size": 1.0, "moonIndex": 12, "reqDate": null, "reqPortion": null},
@@ -1529,8 +1341,7 @@
 	},
 	"2020A_H276": 
 	{
-		"ktn": "2020A_H276",
-		"type": "Classical",
+		"ktn": "2020A_H276", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1544,9 +1355,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4116, "size": 1.0, "moonIndex": 5, "reqDate": null, "reqPortion": null}
@@ -1556,8 +1365,7 @@
 	},
 	"2020A_H277": 
 	{
-		"ktn": "2020A_H277",
-		"type": "Classical",
+		"ktn": "2020A_H277", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1568,9 +1376,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["", "P", "P", "A", "A", "P", "P", "P", "A", "A", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.5,
 				"blocks":
 				[
 					{"id": 4119, "size": 0.5, "moonIndex": 2, "reqDate": null, "reqPortion": null},
@@ -1582,8 +1388,7 @@
 	},
 	"2020A_H279": 
 	{
-		"ktn": "2020A_H279",
-		"type": "Classical",
+		"ktn": "2020A_H279", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1594,9 +1399,7 @@
 			{
 				"instr": "NIRC2-LGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4136, "size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null}
@@ -1605,9 +1408,7 @@
 			{
 				"instr": "NIRC2-LGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4137, "size": 0.5, "moonIndex": 21, "reqDate": null, "reqPortion": null}
@@ -1617,8 +1418,7 @@
 	},
 	"2020A_H280": 
 	{
-		"ktn": "2020A_H280",
-		"type": "Classical",
+		"ktn": "2020A_H280", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1629,9 +1429,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "P"],
-				"reqPortion": 0.5,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4107, "size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null}
@@ -1641,8 +1439,7 @@
 	},
 	"2020A_H281": 
 	{
-		"ktn": "2020A_H281",
-		"type": "Classical",
+		"ktn": "2020A_H281", "type": "Classical",
 		"datesToAvoid": ["2020-02-22", "2020-02-23", "2020-02-24", "2020-02-25", "2020-02-26", "2020-02-27", "2020-02-28", "2020-02-29", "2020-03-01", "2020-03-02", "2020-03-03", "2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-03-12", "2020-03-13", "2020-03-14", "2020-03-15", "2020-03-16", "2020-03-17", "2020-03-18", "2020-03-19", "2020-03-20", "2020-03-21", "2020-03-22", "2020-03-23", "2020-03-24", "2020-03-25", "2020-03-26", "2020-03-27", "2020-03-28", "2020-03-29", "2020-03-30", "2020-03-31", "2020-04-01", "2020-04-02", "2020-04-03", "2020-04-04", "2020-04-05", "2020-04-06", "2020-04-07", "2020-04-08", "2020-04-09", "2020-04-10", "2020-04-11", "2020-04-12", "2020-04-13", "2020-04-14", "2020-04-15", "2020-04-16", "2020-04-17", "2020-04-18", "2020-04-19", "2020-04-20", "2020-04-21", "2020-04-22", "2020-04-23", "2020-04-24", "2020-04-25", "2020-04-26", "2020-04-27", "2020-04-28", "2020-04-29", "2020-04-30", "2020-05-01", "2020-05-02", "2020-05-03", "2020-05-04", "2020-05-05", "2020-05-06", "2020-05-07", "2020-05-08", "2020-05-09", "2020-05-10", "2020-05-11", "2020-05-12", "2020-05-13", "2020-05-14", "2020-05-15", "2020-05-16", "2020-05-17", "2020-05-18", "2020-05-19", "2020-05-20", "2020-05-21", "2020-05-22", "2020-05-23", "2020-05-24", "2020-05-25", "2020-05-26", "2020-05-27", "2020-05-28", "2020-05-29", "2020-05-30", "2020-05-31", "2020-06-01", "2020-06-02", "2020-06-03", "2020-06-04", "2020-06-05", "2020-06-06", "2020-06-07", "2020-06-08", "2020-06-09", "2020-06-10", "2020-06-11", "2020-06-12", "2020-06-13", "2020-06-14", "2020-06-15", "2020-06-16", "2020-06-17", "2020-06-18", "2020-06-19", "2020-06-20", "2020-06-21", "2020-06-22", "2020-06-23", "2020-06-24", "2020-06-25", "2020-06-26", "2020-06-27", "2020-06-28", "2020-06-29", "2020-06-30", "2020-07-01", "2020-07-02", "2020-07-03", "2020-07-04", "2020-07-05", "2020-07-06", "2020-07-07", "2020-07-08", "2020-07-09", "2020-07-10", "2020-07-11", "2020-07-12", "2020-07-13", "2020-07-14", "2020-07-15", "2020-07-16", "2020-07-17", "2020-07-18", "2020-07-19", "2020-07-20", "2020-07-21", "2020-07-22", "2020-07-23", "2020-07-24", "2020-07-25", "2020-07-26", "2020-07-27", "2020-07-28", "2020-07-29", "2020-07-30", "2020-07-31"],
 		"priorityTargets":
 		[
@@ -1653,9 +1450,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["P", "P", "P", "A", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4145, "size": 0.5, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -1665,8 +1460,7 @@
 	},
 	"2020A_H282": 
 	{
-		"ktn": "2020A_H282",
-		"type": "Classical",
+		"ktn": "2020A_H282", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1681,9 +1475,7 @@
 			{
 				"instr": "NIRES",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "A", "P", "P", "A", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4163, "size": 0.5, "moonIndex": 13, "reqDate": null, "reqPortion": null},
@@ -1693,9 +1485,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "P", "P", "P", "P", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4162, "size": 0.5, "moonIndex": 17, "reqDate": null, "reqPortion": null}
@@ -1705,8 +1495,7 @@
 	},
 	"2020A_H283": 
 	{
-		"ktn": "2020A_H283",
-		"type": "Classical",
+		"ktn": "2020A_H283", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1717,9 +1506,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 4.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 4.0,
 				"blocks":
 				[
 					{"id": 4169, "size": 1.0, "moonIndex": 10, "reqDate": null, "reqPortion": null},
@@ -1732,8 +1519,7 @@
 	},
 	"2020A_H308": 
 	{
-		"ktn": "2020A_H308",
-		"type": "Classical",
+		"ktn": "2020A_H308", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1744,9 +1530,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["P", "A", "X", "X", "P", "A", "X", "X", "P", "A", "X", "A", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4178, "size": 0.5, "moonIndex": 24, "reqDate": null, "reqPortion": null}
@@ -1756,8 +1540,7 @@
 	},
 	"2020A_H311": 
 	{
-		"ktn": "2020A_H311",
-		"type": "Classical",
+		"ktn": "2020A_H311", "type": "Classical",
 		"datesToAvoid": ["2020-06-20", "2020-06-21", "2020-06-22", "2020-06-23", "2020-06-24", "2020-06-25", "2020-06-26", "2020-06-27", "2020-02-05", "2020-02-06", "2020-03-17", "2020-03-18"],
 		"priorityTargets":
 		[
@@ -1769,9 +1552,7 @@
 			{
 				"instr": "NIRC2-LGS",
 				"moonPrefs": ["", "", "-", "-", "-", "-", "A", "P", "P", "P", "P", "A", "A", "-", "", "", "", "", "", "", "", "", "", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 4146, "size": 1.0, "moonIndex": 8, "reqDate": null, "reqPortion": null},
@@ -1781,9 +1562,7 @@
 			{
 				"instr": "NIRC2-LGS",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "X", "-", "P", "P", "P", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4168, "size": 1.0, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -1793,8 +1572,7 @@
 	},
 	"2020A_H312": 
 	{
-		"ktn": "2020A_H312",
-		"type": "Classical",
+		"ktn": "2020A_H312", "type": "Classical",
 		"datesToAvoid": ["2020-05-31", "2020-06-01", "2020-06-02", "2020-06-03", "2020-06-04", "2020-06-05", "2020-06-06", "2020-06-07", "2020-06-08", "2020-06-09", "2020-06-10", "2020-06-11", "2020-06-12", "2020-06-13", "2020-06-14", "2020-06-15", "2020-06-16", "2020-06-17", "2020-06-18", "2020-06-19", "2020-06-20", "2020-06-21", "2020-06-22", "2020-06-23", "2020-06-24", "2020-06-25", "2020-06-26", "2020-06-27", "2020-06-28", "2020-06-29", "2020-06-30", "2020-07-01", "2020-07-02", "2020-07-03", "2020-07-04", "2020-07-05", "2020-07-06", "2020-07-07", "2020-07-08", "2020-07-09", "2020-07-10", "2020-07-11", "2020-07-12", "2020-07-13", "2020-07-14", "2020-07-15", "2020-07-16", "2020-07-17", "2020-07-18", "2020-07-19", "2020-07-20", "2020-07-21", "2020-07-22", "2020-07-23", "2020-07-24", "2020-07-25", "2020-07-26", "2020-07-27", "2020-07-28", "2020-07-29", "2020-07-30", "2020-07-31"],
 		"priorityTargets":
 		[
@@ -1812,9 +1590,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["A", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "P", "X", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4182, "size": 1.0, "moonIndex": 4, "reqDate": null, "reqPortion": null}
@@ -1824,8 +1600,7 @@
 	},
 	"2020A_H313": 
 	{
-		"ktn": "2020A_H313",
-		"type": "Classical",
+		"ktn": "2020A_H313", "type": "Classical",
 		"datesToAvoid": ["2020-06-30", "2020-07-01", "2020-07-02", "2020-07-03", "2020-07-04", "2020-07-05", "2020-07-06", "2020-07-07", "2020-07-08", "2020-07-09", "2020-07-10", "2020-07-11", "2020-07-12", "2020-07-13", "2020-07-14", "2020-07-15", "2020-07-16", "2020-07-17", "2020-07-18", "2020-07-19", "2020-07-20", "2020-07-21", "2020-07-22", "2020-07-23", "2020-07-24", "2020-07-25", "2020-07-26", "2020-07-27", "2020-07-28", "2020-07-29", "2020-07-30", "2020-07-31"],
 		"priorityTargets":
 		[
@@ -1841,9 +1616,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 4158, "size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -1853,9 +1626,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4160, "size": 1.0, "moonIndex": 19, "reqDate": null, "reqPortion": null}
@@ -1865,8 +1636,7 @@
 	},
 	"2020A_H314": 
 	{
-		"ktn": "2020A_H314",
-		"type": "Classical",
+		"ktn": "2020A_H314", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1877,9 +1647,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 4151, "size": 1.0, "moonIndex": 11, "reqDate": null, "reqPortion": null},
@@ -1890,8 +1658,7 @@
 	},
 	"2020A_H319": 
 	{
-		"ktn": "2020A_H319",
-		"type": "Classical",
+		"ktn": "2020A_H319", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1902,9 +1669,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": ["A", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4183, "size": 0.5, "moonIndex": 1, "reqDate": null, "reqPortion": null},
@@ -1915,8 +1680,7 @@
 	},
 	"2020A_K291": 
 	{
-		"ktn": "2020A_K291",
-		"type": "Classical",
+		"ktn": "2020A_K291", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1936,9 +1700,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["", "", "", "-", "A", "P", "P", "P", "P", "P", "P", "P", "A", "A", "", "", "", "", "", "", "", "", "", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4100, "size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -1948,8 +1710,7 @@
 	},
 	"2020A_K293": 
 	{
-		"ktn": "2020A_K293",
-		"type": "Classical",
+		"ktn": "2020A_K293", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1960,9 +1721,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "A", "", "", "", "P", "", "", "", "P", "", "", "", "A", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4102, "size": 0.5, "moonIndex": 20, "reqDate": null, "reqPortion": null}
@@ -1972,8 +1731,7 @@
 	},
 	"2020A_K294": 
 	{
-		"ktn": "2020A_K294",
-		"type": "Classical",
+		"ktn": "2020A_K294", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1986,9 +1744,7 @@
 			{
 				"instr": "ESI",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "A", "P", "P", "P", "P", "P"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4104, "size": 1.0, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -1998,8 +1754,7 @@
 	},
 	"2020A_K297": 
 	{
-		"ktn": "2020A_K297",
-		"type": "Classical",
+		"ktn": "2020A_K297", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2016,9 +1771,7 @@
 			{
 				"instr": "LRISp-ADC",
 				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "A", "P", "P", "P", "P", "P", "P", "A", ""],
-				"reqPortion": 1.0,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 1.0, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4101, "size": 0.5, "moonIndex": 19, "reqDate": null, "reqPortion": null}
@@ -2028,8 +1781,7 @@
 	},
 	"2020A_K300": 
 	{
-		"ktn": "2020A_K300",
-		"type": "Classical",
+		"ktn": "2020A_K300", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2049,9 +1801,7 @@
 			{
 				"instr": "NIRC2-LGS",
 				"moonPrefs": ["A", "P", "P", "P", "P", "P", "P", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4103, "size": 0.5, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -2061,8 +1811,7 @@
 	},
 	"2020A_N007": 
 	{
-		"ktn": "2020A_N007",
-		"type": "Classical",
+		"ktn": "2020A_N007", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2073,9 +1822,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 4.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 4.0,
 				"blocks":
 				[
 					{"id": 3455, "size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null},
@@ -2088,8 +1835,7 @@
 	},
 	"2020A_N013": 
 	{
-		"ktn": "2020A_N013",
-		"type": "Classical",
+		"ktn": "2020A_N013", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2102,9 +1848,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3484, "size": 1.0, "moonIndex": 12, "reqDate": null, "reqPortion": null},
@@ -2116,8 +1860,7 @@
 	},
 	"2020A_N018": 
 	{
-		"ktn": "2020A_N018",
-		"type": "Classical",
+		"ktn": "2020A_N018", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets": [],
 		"instruments":
@@ -2125,9 +1868,7 @@
 			{
 				"instr": "HIRESb",
 				"moonPrefs": ["P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3451, "size": 1.0, "moonIndex": 14, "reqDate": null, "reqPortion": null}
@@ -2137,8 +1878,7 @@
 	},
 	"2020A_N021": 
 	{
-		"ktn": "2020A_N021",
-		"type": "Classical",
+		"ktn": "2020A_N021", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2151,9 +1891,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "A", "-"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3412, "size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": "second half"},
@@ -2164,8 +1902,7 @@
 	},
 	"2020A_N024": 
 	{
-		"ktn": "2020A_N024",
-		"type": "Classical",
+		"ktn": "2020A_N024", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2180,9 +1917,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["", "", "", "P", "", "", "", "P", "", "", "", "P", "", "", "", "P", "", "", "", "P", "", "", "", "A", "", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3431, "size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -2192,8 +1927,7 @@
 	},
 	"2020A_N026": 
 	{
-		"ktn": "2020A_N026",
-		"type": "Classical",
+		"ktn": "2020A_N026", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2211,9 +1945,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3454, "size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": null},
@@ -2224,8 +1956,7 @@
 	},
 	"2020A_N027": 
 	{
-		"ktn": "2020A_N027",
-		"type": "Classical",
+		"ktn": "2020A_N027", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2237,9 +1968,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["P", "P", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "P", "P", "P", "P"],
-				"reqPortion": 1.0,
-				"appPortion": 0.5,
-				"appTotal": 1.5,
+				"reqPortion": 1.0, "appPortion": 0.5, "appTotal": 1.5,
 				"blocks":
 				[
 					{"id": 3999, "size": 0.5, "moonIndex": 24, "reqDate": null, "reqPortion": null},
@@ -2251,8 +1980,7 @@
 	},
 	"2020A_N028": 
 	{
-		"ktn": "2020A_N028",
-		"type": "Classical",
+		"ktn": "2020A_N028", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2265,9 +1993,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3490, "size": 0.5, "moonIndex": 3, "reqDate": null, "reqPortion": "second half"},
@@ -2280,8 +2006,7 @@
 	},
 	"2020A_N037": 
 	{
-		"ktn": "2020A_N037",
-		"type": "Classical",
+		"ktn": "2020A_N037", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2292,9 +2017,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "X", "X", "P", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3402, "size": 1.0, "moonIndex": 22, "reqDate": "2020-07-13", "reqPortion": null}
@@ -2304,8 +2027,7 @@
 	},
 	"2020A_N040": 
 	{
-		"ktn": "2020A_N040",
-		"type": "Classical",
+		"ktn": "2020A_N040", "type": "Classical",
 		"datesToAvoid": ["2020-03-15", "2020-03-16", "2020-03-17", "2020-03-18", "2020-03-19", "2020-03-20", "2020-03-21", "2020-06-14", "2020-06-15", "2020-06-16", "2020-06-17", "2020-06-18", "2020-06-19"],
 		"priorityTargets":
 		[
@@ -2316,9 +2038,7 @@
 			{
 				"instr": "NIRC2-LGS",
 				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 0.5,
-				"appTotal": 1.5,
+				"reqPortion": 1.0, "appPortion": 0.5, "appTotal": 1.5,
 				"blocks":
 				[
 					{"id": 4180, "size": 0.75, "moonIndex": 11, "reqDate": null, "reqPortion": "first half"},
@@ -2329,8 +2049,7 @@
 	},
 	"2020A_N047": 
 	{
-		"ktn": "2020A_N047",
-		"type": "Classical",
+		"ktn": "2020A_N047", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2343,9 +2062,7 @@
 			{
 				"instr": "NIRSPAO-NGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "P", "P", "P", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3401, "size": 1.0, "moonIndex": 10, "reqDate": null, "reqPortion": null}
@@ -2355,8 +2072,7 @@
 	},
 	"2020A_N049": 
 	{
-		"ktn": "2020A_N049",
-		"type": "Classical",
+		"ktn": "2020A_N049", "type": "Classical",
 		"datesToAvoid": ["2020-06-01", "2020-06-02", "2020-06-03", "2020-06-04", "2020-06-05", "2020-06-06", "2020-06-07", "2020-06-08", "2020-06-09", "2020-06-10", "2020-06-11", "2020-06-12", "2020-06-13", "2020-06-14", "2020-06-15", "2020-06-16", "2020-06-17", "2020-06-18", "2020-06-19", "2020-06-20", "2020-06-21", "2020-06-22", "2020-06-23", "2020-06-24", "2020-06-25", "2020-06-26", "2020-06-27", "2020-06-28", "2020-06-29", "2020-06-30", "2020-07-01", "2020-07-02", "2020-07-03", "2020-07-04", "2020-07-05", "2020-07-06", "2020-07-07", "2020-07-08", "2020-07-09", "2020-07-10", "2020-07-11", "2020-07-12", "2020-07-13", "2020-07-14", "2020-07-15", "2020-07-16", "2020-07-17", "2020-07-18", "2020-07-19", "2020-07-20", "2020-07-21", "2020-07-22", "2020-07-23", "2020-07-24", "2020-07-25", "2020-07-26", "2020-07-27", "2020-07-28", "2020-07-29", "2020-07-30", "2020-07-31"],
 		"priorityTargets":
 		[
@@ -2370,9 +2086,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["A", "X", "A", "P", "P", "X", "A", "P", "A", "X", "A", "A", "A", "X", "A", "A", "X", "X", "A", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3432, "size": 1.0, "moonIndex": 4, "reqDate": null, "reqPortion": null}
@@ -2382,8 +2096,7 @@
 	},
 	"2020A_N054": 
 	{
-		"ktn": "2020A_N054",
-		"type": "Classical",
+		"ktn": "2020A_N054", "type": "Classical",
 		"datesToAvoid": ["2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-03-12", "2020-03-13", "2020-03-14", "2020-03-15", "2020-03-16", "2020-03-17", "2020-03-18", "2020-03-19", "2020-03-20", "2020-03-21", "2020-03-22", "2020-03-23", "2020-03-24", "2020-03-25", "2020-03-26", "2020-03-27", "2020-03-28", "2020-03-29", "2020-03-30", "2020-03-31", "2020-04-01", "2020-04-02", "2020-04-03", "2020-04-04", "2020-04-05", "2020-04-06", "2020-04-07", "2020-04-08", "2020-04-09", "2020-04-10", "2020-04-11", "2020-04-12", "2020-04-13", "2020-04-14", "2020-04-15", "2020-04-16", "2020-04-17", "2020-04-18", "2020-04-19", "2020-04-20", "2020-04-21", "2020-04-22", "2020-04-23", "2020-04-24", "2020-04-25", "2020-04-26", "2020-04-27", "2020-04-28", "2020-04-29", "2020-04-30", "2020-05-01", "2020-05-02", "2020-05-03", "2020-05-04", "2020-05-05", "2020-05-06", "2020-05-07", "2020-05-08", "2020-05-09", "2020-05-10", "2020-05-11", "2020-05-12", "2020-05-13", "2020-05-14", "2020-05-15", "2020-05-16", "2020-05-17", "2020-05-18", "2020-05-19", "2020-05-20", "2020-05-21", "2020-05-22", "2020-05-23", "2020-05-24", "2020-05-25", "2020-05-26", "2020-05-27", "2020-05-28", "2020-05-29", "2020-05-30", "2020-05-31", "2020-06-01", "2020-06-02", "2020-06-03", "2020-06-04", "2020-06-05", "2020-06-06", "2020-06-07", "2020-06-08", "2020-06-09", "2020-06-10", "2020-06-11", "2020-06-12", "2020-06-13", "2020-06-14", "2020-06-15", "2020-06-16", "2020-06-17", "2020-06-18", "2020-06-19", "2020-06-20", "2020-06-21", "2020-06-22", "2020-06-23", "2020-06-24", "2020-06-25", "2020-06-26", "2020-06-27", "2020-06-28", "2020-06-29", "2020-06-30", "2020-07-01", "2020-07-02", "2020-07-03", "2020-07-04", "2020-07-05", "2020-07-06", "2020-07-07", "2020-07-08", "2020-07-09", "2020-07-10", "2020-07-11", "2020-07-12", "2020-07-13", "2020-07-14", "2020-07-15", "2020-07-16", "2020-07-17", "2020-07-18", "2020-07-19", "2020-07-20", "2020-07-21", "2020-07-22", "2020-07-23", "2020-07-24", "2020-07-25", "2020-07-26", "2020-07-27", "2020-07-28", "2020-07-29", "2020-07-30", "2020-07-31"],
 		"priorityTargets":
 		[
@@ -2396,9 +2109,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["P", "P", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 0.5, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 3399, "size": 0.25, "moonIndex": 1, "reqDate": null, "reqPortion": "first quarter"}
@@ -2408,8 +2119,7 @@
 	},
 	"2020A_N056": 
 	{
-		"ktn": "2020A_N056",
-		"type": "Classical",
+		"ktn": "2020A_N056", "type": "Classical",
 		"datesToAvoid": ["2020-02-08", "2020-02-09", "2020-02-10", "2020-03-06", "2020-03-07", "2020-03-08", "2020-04-03", "2020-04-04", "2020-04-05"],
 		"priorityTargets":
 		[
@@ -2420,9 +2130,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["A", "A", "A", "A", "A", "A", "P", "P", "P", "A", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4179, "size": 0.5, "moonIndex": 8, "reqDate": null, "reqPortion": "first half"}
@@ -2432,8 +2140,7 @@
 	},
 	"2020A_N060": 
 	{
-		"ktn": "2020A_N060",
-		"type": "Classical",
+		"ktn": "2020A_N060", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2445,9 +2152,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "A", "A", "X", "A", "A", "A", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3428, "size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -2458,8 +2163,7 @@
 	},
 	"2020A_N063": 
 	{
-		"ktn": "2020A_N063",
-		"type": "Classical",
+		"ktn": "2020A_N063", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2470,9 +2174,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["X", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3476, "size": 0.5, "moonIndex": 3, "reqDate": null, "reqPortion": "second half"},
@@ -2485,8 +2187,7 @@
 	},
 	"2020A_N068": 
 	{
-		"ktn": "2020A_N068",
-		"type": "Classical",
+		"ktn": "2020A_N068", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2497,9 +2198,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": ["X", "A", "X", "A", "X", "X", "A", "X", "X", "A", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3403, "size": 1.0, "moonIndex": 6, "reqDate": "2020-03-14", "reqPortion": null},
@@ -2510,8 +2209,7 @@
 	},
 	"2020A_N079": 
 	{
-		"ktn": "2020A_N079",
-		"type": "Cadence",
+		"ktn": "2020A_N079", "type": "Cadence",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2522,9 +2220,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": [],
-				"reqPortion": 0.25,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 3470, "size": 0.25, "moonIndex": 11, "reqDate": "2020-04-25", "reqPortion": "fourth quarter"}
@@ -2534,8 +2230,7 @@
 	},
 	"2020A_N083": 
 	{
-		"ktn": "2020A_N083",
-		"type": "Classical",
+		"ktn": "2020A_N083", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2552,9 +2247,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A", "P", "P", "P", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3433, "size": 1.0, "moonIndex": 2, "reqDate": null, "reqPortion": null},
@@ -2565,8 +2258,7 @@
 	},
 	"2020A_N089": 
 	{
-		"ktn": "2020A_N089",
-		"type": "Classical",
+		"ktn": "2020A_N089", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2578,9 +2270,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3414, "size": 1.0, "moonIndex": 11, "reqDate": null, "reqPortion": null}
@@ -2590,8 +2280,7 @@
 	},
 	"2020A_N095": 
 	{
-		"ktn": "2020A_N095",
-		"type": "Classical",
+		"ktn": "2020A_N095", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2607,9 +2296,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3406, "size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -2619,8 +2306,7 @@
 	},
 	"2020A_N097": 
 	{
-		"ktn": "2020A_N097",
-		"type": "Classical",
+		"ktn": "2020A_N097", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2631,9 +2317,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "P", "A", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.5,
 				"blocks":
 				[
 					{"id": 3410, "size": 0.5, "moonIndex": 19, "reqDate": null, "reqPortion": "first half"},
@@ -2645,8 +2329,7 @@
 	},
 	"2020A_N098": 
 	{
-		"ktn": "2020A_N098",
-		"type": "Cadence",
+		"ktn": "2020A_N098", "type": "Cadence",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2657,9 +2340,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": [],
-				"reqPortion": 0.25,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 3422, "size": 0.25, "moonIndex": 11, "reqDate": null, "reqPortion": "fourth quarter"}
@@ -2668,9 +2349,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": [],
-				"reqPortion": 0.25,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 3437, "size": 0.25, "moonIndex": 23, "reqDate": null, "reqPortion": "first quarter"}
@@ -2679,9 +2358,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": [],
-				"reqPortion": 0.25,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 3441, "size": 0.5, "moonIndex": 19, "reqDate": null, "reqPortion": "second half"}
@@ -2691,8 +2368,7 @@
 	},
 	"2020A_N099": 
 	{
-		"ktn": "2020A_N099",
-		"type": "Classical",
+		"ktn": "2020A_N099", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2704,9 +2380,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "X", "A", "X", "A", "A", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "A", "A", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3416, "size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -2716,8 +2390,7 @@
 	},
 	"2020A_N100": 
 	{
-		"ktn": "2020A_N100",
-		"type": "Classical",
+		"ktn": "2020A_N100", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2732,9 +2405,7 @@
 			{
 				"instr": "NIRC2-LGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "P", "P", "P", "P", "P"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.5,
 				"blocks":
 				[
 					{"id": 3417, "size": 1.0, "moonIndex": 25, "reqDate": null, "reqPortion": null},
@@ -2745,8 +2416,7 @@
 	},
 	"2020A_N102": 
 	{
-		"ktn": "2020A_N102",
-		"type": "Classical",
+		"ktn": "2020A_N102", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2757,9 +2427,7 @@
 			{
 				"instr": "NIRC2-LGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "P", "P", "P", "P", "P"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3415, "size": 1.0, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -2769,8 +2437,7 @@
 	},
 	"2020A_N110": 
 	{
-		"ktn": "2020A_N110",
-		"type": "Classical",
+		"ktn": "2020A_N110", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2781,9 +2448,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["P", "X", "X", "P", "P", "X", "A", "A", "X", "X", "P", "P", "X", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3466, "size": 0.5, "moonIndex": 3, "reqDate": null, "reqPortion": "second half"},
@@ -2794,8 +2459,7 @@
 	},
 	"2020A_N119": 
 	{
-		"ktn": "2020A_N119",
-		"type": "Classical",
+		"ktn": "2020A_N119", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2806,9 +2470,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "A", "A", "X", "P", "P", "P", "P", "P", "P", "P", "P"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3405, "size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null}
@@ -2818,8 +2480,7 @@
 	},
 	"2020A_N123": 
 	{
-		"ktn": "2020A_N123",
-		"type": "Classical",
+		"ktn": "2020A_N123", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2839,9 +2500,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 6.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 6.0,
 				"blocks":
 				[
 					{"id": 3493, "size": 0.75, "moonIndex": 1, "reqDate": null, "reqPortion": "second half"},
@@ -2861,8 +2520,7 @@
 	},
 	"2020A_O284": 
 	{
-		"ktn": "2020A_O284",
-		"type": "Classical",
+		"ktn": "2020A_O284", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2877,9 +2535,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3804, "size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -2889,8 +2545,7 @@
 	},
 	"2020A_O286": 
 	{
-		"ktn": "2020A_O286",
-		"type": "Classical",
+		"ktn": "2020A_O286", "type": "Classical",
 		"datesToAvoid": ["2020-04-19", "2020-04-20", "2020-04-21", "2020-04-22", "2020-04-23", "2020-06-27", "2020-06-28", "2020-06-29", "2020-06-30", "2020-07-01", "2020-07-02", "2020-07-03", "2020-07-04"],
 		"priorityTargets":
 		[
@@ -2905,9 +2560,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["-", "-", "-", "A", "A", "-", "-", "P", "P", "-", "-", "X", "-", "-", "P", "P", "-", "-", "-", "-", "X", "X", "-", "-", "-", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3805, "size": 0.5, "moonIndex": 15, "reqDate": null, "reqPortion": null},
@@ -2918,8 +2571,7 @@
 	},
 	"2020A_O287": 
 	{
-		"ktn": "2020A_O287",
-		"type": "Classical",
+		"ktn": "2020A_O287", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2938,9 +2590,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["P", "X", "P", "A", "P", "X", "P", "A", "P", "X", "P", "A", "P", "X", "P", "A", "P", "X", "P", "A", "P", "X", "P", "A", "P", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3748, "size": 1.0, "moonIndex": 24, "reqDate": null, "reqPortion": null}
@@ -2949,9 +2599,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["A", "A", "A", "P", "A", "A", "A", "P", "A", "A", "A", "P", "A", "A", "A", "P", "A", "A", "A", "P", "A", "A", "A", "P", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3807, "size": 1.0, "moonIndex": 20, "reqDate": null, "reqPortion": null}
@@ -2960,9 +2608,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3720, "size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -2971,9 +2617,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3747, "size": 0.5, "moonIndex": 25, "reqDate": null, "reqPortion": null}
@@ -2983,8 +2627,7 @@
 	},
 	"2020A_S316": 
 	{
-		"ktn": "2020A_S316",
-		"type": "Classical",
+		"ktn": "2020A_S316", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3004,9 +2647,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4192, "size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -3016,8 +2657,7 @@
 	},
 	"2020A_S318": 
 	{
-		"ktn": "2020A_S318",
-		"type": "Classical",
+		"ktn": "2020A_S318", "type": "Classical",
 		"datesToAvoid": ["2020-07-10", "2020-07-11", "2020-07-12", "2020-07-13", "2020-07-14", "2020-07-15", "2020-07-16", "2020-07-17", "2020-07-18", "2020-07-19", "2020-07-20"],
 		"priorityTargets":
 		[
@@ -3030,9 +2670,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "A", "A", "P", "P", "A", "A", "A", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4193, "size": 1.0, "moonIndex": 20, "reqDate": null, "reqPortion": null}
@@ -3041,9 +2679,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "A", "P", "P"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4194, "size": 0.5, "moonIndex": 24, "reqDate": null, "reqPortion": null}
@@ -3053,8 +2689,7 @@
 	},
 	"2020A_S320": 
 	{
-		"ktn": "2020A_S320",
-		"type": "Classical",
+		"ktn": "2020A_S320", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3069,9 +2704,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4187, "size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -3081,8 +2714,7 @@
 	},
 	"2020A_S321": 
 	{
-		"ktn": "2020A_S321",
-		"type": "Classical",
+		"ktn": "2020A_S321", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3100,9 +2732,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4195, "size": 1.0, "moonIndex": 11, "reqDate": null, "reqPortion": null}
@@ -3112,8 +2742,7 @@
 	},
 	"2020A_S322": 
 	{
-		"ktn": "2020A_S322",
-		"type": "Classical",
+		"ktn": "2020A_S322", "type": "Classical",
 		"datesToAvoid": ["2020-02-08", "2020-02-09", "2020-02-10", "2020-02-11", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-04-03", "2020-04-04", "2020-04-05", "2020-04-06"],
 		"priorityTargets":
 		[
@@ -3124,9 +2753,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["P", "A", "X", "X", "A", "A", "P", "P", "P", "P", "P", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4196, "size": 0.5, "moonIndex": 9, "reqDate": null, "reqPortion": null},
@@ -3137,8 +2764,7 @@
 	},
 	"2020A_S324": 
 	{
-		"ktn": "2020A_S324",
-		"type": "Classical",
+		"ktn": "2020A_S324", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3149,9 +2775,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 2.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 4188, "size": 0.5, "moonIndex": 19, "reqDate": null, "reqPortion": null},
@@ -3164,8 +2788,7 @@
 	},
 	"2020A_U010": 
 	{
-		"ktn": "2020A_U010",
-		"type": "Classical",
+		"ktn": "2020A_U010", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3185,9 +2808,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "X", "A", "X", "A", "P", "P", "X", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4078, "size": 1.0, "moonIndex": 10, "reqDate": null, "reqPortion": null}
@@ -3197,8 +2818,7 @@
 	},
 	"2020A_U022": 
 	{
-		"ktn": "2020A_U022",
-		"type": "Cadence",
+		"ktn": "2020A_U022", "type": "Cadence",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3209,9 +2829,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": [],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3861, "size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null},
@@ -3222,8 +2840,7 @@
 	},
 	"2020A_U106": 
 	{
-		"ktn": "2020A_U106",
-		"type": "Cadence",
+		"ktn": "2020A_U106", "type": "Cadence",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3235,9 +2852,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": [],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3642, "size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": null},
@@ -3248,8 +2863,7 @@
 	},
 	"2020A_U121": 
 	{
-		"ktn": "2020A_U121",
-		"type": "Classical",
+		"ktn": "2020A_U121", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3261,9 +2875,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["-", "", "", "-", "-", "-", "A", "P", "A", "-", "A", "P", "A", "", "A", "-", "", "", "", "", "", "", "", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 4075, "size": 1.0, "moonIndex": 10, "reqDate": null, "reqPortion": null},
@@ -3274,8 +2886,7 @@
 	},
 	"2020A_U127": 
 	{
-		"ktn": "2020A_U127",
-		"type": "Classical",
+		"ktn": "2020A_U127", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3295,9 +2906,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 12.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 12.0,
 				"blocks":
 				[
 					{"id": 3534, "size": 0.75, "moonIndex": 22, "reqDate": null, "reqPortion": null},
@@ -3320,8 +2929,7 @@
 	},
 	"2020A_U138": 
 	{
-		"ktn": "2020A_U138",
-		"type": "Classical",
+		"ktn": "2020A_U138", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3340,9 +2948,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3620, "size": 1.0, "moonIndex": 8, "reqDate": null, "reqPortion": null},
@@ -3354,8 +2960,7 @@
 	},
 	"2020A_U139": 
 	{
-		"ktn": "2020A_U139",
-		"type": "Classical",
+		"ktn": "2020A_U139", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3368,9 +2973,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "P", "P", "P", "P", "P", "P", "A", "A", "-", "-", "-", "-", "-", "-", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3562, "size": 0.5, "moonIndex": 13, "reqDate": null, "reqPortion": null},
@@ -3383,8 +2986,7 @@
 	},
 	"2020A_U147": 
 	{
-		"ktn": "2020A_U147",
-		"type": "Classical",
+		"ktn": "2020A_U147", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3397,9 +2999,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.5,
 				"blocks":
 				[
 					{"id": 3925, "size": 0.5, "moonIndex": 15, "reqDate": null, "reqPortion": null},
@@ -3411,8 +3011,7 @@
 	},
 	"2020A_U148": 
 	{
-		"ktn": "2020A_U148",
-		"type": "Classical",
+		"ktn": "2020A_U148", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3432,9 +3031,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "X", "A", "X", "P", "P", "P", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4077, "size": 1.0, "moonIndex": 6, "reqDate": null, "reqPortion": null}
@@ -3444,8 +3041,7 @@
 	},
 	"2020A_U149": 
 	{
-		"ktn": "2020A_U149",
-		"type": "Classical",
+		"ktn": "2020A_U149", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3465,9 +3061,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": ["A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3867, "size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -3476,9 +3070,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "P", "P", "X", "P", "P", "P", "P", "P"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3996, "size": 0.5, "moonIndex": 25, "reqDate": null, "reqPortion": null}
@@ -3488,8 +3080,7 @@
 	},
 	"2020A_U150": 
 	{
-		"ktn": "2020A_U150",
-		"type": "Classical",
+		"ktn": "2020A_U150", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3501,9 +3092,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3629, "size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -3515,8 +3104,7 @@
 	},
 	"2020A_U152": 
 	{
-		"ktn": "2020A_U152",
-		"type": "Classical",
+		"ktn": "2020A_U152", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3529,9 +3117,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["P", "-", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3966, "size": 1.0, "moonIndex": 2, "reqDate": null, "reqPortion": null},
@@ -3542,9 +3128,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["P", "-", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4005, "size": 0.5, "moonIndex": 0, "reqDate": null, "reqPortion": null}
@@ -3554,8 +3138,7 @@
 	},
 	"2020A_U153": 
 	{
-		"ktn": "2020A_U153",
-		"type": "Classical",
+		"ktn": "2020A_U153", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3567,9 +3150,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3552, "size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -3580,8 +3161,7 @@
 	},
 	"2020A_U154": 
 	{
-		"ktn": "2020A_U154",
-		"type": "Classical",
+		"ktn": "2020A_U154", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3596,9 +3176,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3589, "size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -3609,8 +3187,7 @@
 	},
 	"2020A_U156": 
 	{
-		"ktn": "2020A_U156",
-		"type": "Classical",
+		"ktn": "2020A_U156", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3626,9 +3203,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["P", "P", "P", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3554, "size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -3637,9 +3212,7 @@
 			{
 				"instr": "ESI",
 				"moonPrefs": ["X", "X", "X", "X", "A", "A", "P", "P", "P", "A", "A", "A", "A", "P", "P", "P", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4018, "size": 0.5, "moonIndex": 13, "reqDate": null, "reqPortion": null},
@@ -3650,8 +3223,7 @@
 	},
 	"2020A_U158": 
 	{
-		"ktn": "2020A_U158",
-		"type": "Classical",
+		"ktn": "2020A_U158", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3671,9 +3243,7 @@
 			{
 				"instr": "NIRES",
 				"moonPrefs": ["P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A", "P", "P", "P", "A", "A", "A", "P", "X", "P", "P", "P", "P", "A"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.5,
 				"blocks":
 				[
 					{"id": 4048, "size": 0.5, "moonIndex": 1, "reqDate": null, "reqPortion": null},
@@ -3685,8 +3255,7 @@
 	},
 	"2020A_U159": 
 	{
-		"ktn": "2020A_U159",
-		"type": "Classical",
+		"ktn": "2020A_U159", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3700,9 +3269,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["", "", "", "P", "", "", "", "P", "", "", "", "P", "", "", "", "P", "", "", "", "A", "", "", "", "A", "", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 2.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 4079, "size": 0.5, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -3715,8 +3282,7 @@
 	},
 	"2020A_U160": 
 	{
-		"ktn": "2020A_U160",
-		"type": "Classical",
+		"ktn": "2020A_U160", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3727,9 +3293,7 @@
 			{
 				"instr": "ESI",
 				"moonPrefs": ["X", "X", "X", "X", "A", "X", "A", "P", "A", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4074, "size": 1.0, "moonIndex": 6, "reqDate": null, "reqPortion": null}
@@ -3738,9 +3302,7 @@
 			{
 				"instr": "NIRES",
 				"moonPrefs": ["X", "X", "X", "X", "A", "P", "P", "P", "P", "P", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4020, "size": 1.0, "moonIndex": 5, "reqDate": null, "reqPortion": null}
@@ -3750,8 +3312,7 @@
 	},
 	"2020A_U161": 
 	{
-		"ktn": "2020A_U161",
-		"type": "Classical",
+		"ktn": "2020A_U161", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3765,9 +3326,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "A", "A", "X", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4065, "size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -3776,9 +3335,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["P", "X", "X", "P", "P", "X", "X", "P", "A", "X", "P", "P", "X", "X", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4062, "size": 0.5, "moonIndex": 4, "reqDate": null, "reqPortion": null}
@@ -3788,8 +3345,7 @@
 	},
 	"2020A_U162": 
 	{
-		"ktn": "2020A_U162",
-		"type": "Classical",
+		"ktn": "2020A_U162", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3807,9 +3363,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4073, "size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -3818,9 +3372,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "A", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4098, "size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -3830,8 +3382,7 @@
 	},
 	"2020A_U164": 
 	{
-		"ktn": "2020A_U164",
-		"type": "Classical",
+		"ktn": "2020A_U164", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3848,9 +3399,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4067, "size": 1.0, "moonIndex": 16, "reqDate": null, "reqPortion": null}
@@ -3859,9 +3408,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "A", "A", "X", "X", "A", "A", "X", "X", "A", "A", "X", "P", "P", "X", "X", "P", "P", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4044, "size": 0.5, "moonIndex": 11, "reqDate": null, "reqPortion": null}
@@ -3871,8 +3418,7 @@
 	},
 	"2020A_U166": 
 	{
-		"ktn": "2020A_U166",
-		"type": "Classical",
+		"ktn": "2020A_U166", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3883,9 +3429,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "P", "P", "X", "A", "A", "X", "X", "A", "P", "A", "X", "P", "A", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 3.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 3.5,
 				"blocks":
 				[
 					{"id": 4042, "size": 0.5, "moonIndex": 11, "reqDate": null, "reqPortion": null},
@@ -3901,8 +3445,7 @@
 	},
 	"2020A_U167": 
 	{
-		"ktn": "2020A_U167",
-		"type": "Cadence",
+		"ktn": "2020A_U167", "type": "Cadence",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3913,9 +3456,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": [],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3512, "size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null},
@@ -3926,8 +3467,7 @@
 	},
 	"2020A_U168": 
 	{
-		"ktn": "2020A_U168",
-		"type": "Classical",
+		"ktn": "2020A_U168", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3938,9 +3478,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "P", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3555, "size": 1.0, "moonIndex": 11, "reqDate": null, "reqPortion": null}
@@ -3949,9 +3487,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["", "", "", "P", "", "", "", "A", "-", "", "", "P", "", "", "", "", "", "", "", "", "", "", "", "", "-", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 4037, "size": 0.5, "moonIndex": 11, "reqDate": null, "reqPortion": null},
@@ -3964,8 +3500,7 @@
 	},
 	"2020A_U169": 
 	{
-		"ktn": "2020A_U169",
-		"type": "Classical",
+		"ktn": "2020A_U169", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3977,9 +3512,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["X", "X", "X", "X", "X", "P", "P", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3632, "size": 1.0, "moonIndex": 6, "reqDate": null, "reqPortion": null}
@@ -3988,9 +3521,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "P", "P", "P", "P", "P", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3633, "size": 1.0, "moonIndex": 11, "reqDate": null, "reqPortion": null},
@@ -4001,8 +3532,7 @@
 	},
 	"2020A_U170": 
 	{
-		"ktn": "2020A_U170",
-		"type": "Classical",
+		"ktn": "2020A_U170", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4014,9 +3544,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["", "", "", "", "", "", "", "P", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3556, "size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -4025,9 +3553,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "P", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3557, "size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -4037,8 +3563,7 @@
 	},
 	"2020A_U171": 
 	{
-		"ktn": "2020A_U171",
-		"type": "Classical",
+		"ktn": "2020A_U171", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4049,9 +3574,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "P", "P"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4013, "size": 0.5, "moonIndex": 24, "reqDate": null, "reqPortion": null},
@@ -4062,8 +3585,7 @@
 	},
 	"2020A_U173": 
 	{
-		"ktn": "2020A_U173",
-		"type": "Classical",
+		"ktn": "2020A_U173", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4081,9 +3603,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "A", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 4068, "size": 1.0, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -4094,8 +3614,7 @@
 	},
 	"2020A_U178": 
 	{
-		"ktn": "2020A_U178",
-		"type": "Classical",
+		"ktn": "2020A_U178", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4106,9 +3625,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3558, "size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -4117,9 +3634,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3559, "size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -4129,8 +3644,7 @@
 	},
 	"2020A_U183": 
 	{
-		"ktn": "2020A_U183",
-		"type": "Classical",
+		"ktn": "2020A_U183", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4150,9 +3664,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "A", "A", "X", "A", "P", "P", "X", "P", "P", "P", "X", "A", "A", "A", "X", "A", "A", "A", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3635, "size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null},
@@ -4164,8 +3676,7 @@
 	},
 	"2020A_U184": 
 	{
-		"ktn": "2020A_U184",
-		"type": "Classical",
+		"ktn": "2020A_U184", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4178,9 +3689,7 @@
 			{
 				"instr": "HIRESb",
 				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3612, "size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null},
@@ -4192,9 +3701,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3619, "size": 1.0, "moonIndex": 2, "reqDate": null, "reqPortion": null}
@@ -4204,8 +3711,7 @@
 	},
 	"2020A_U185": 
 	{
-		"ktn": "2020A_U185",
-		"type": "Classical",
+		"ktn": "2020A_U185", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4217,9 +3723,7 @@
 			{
 				"instr": "ESI",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 4070, "size": 1.0, "moonIndex": 19, "reqDate": null, "reqPortion": null},
@@ -4230,8 +3734,7 @@
 	},
 	"2020A_U186": 
 	{
-		"ktn": "2020A_U186",
-		"type": "Classical",
+		"ktn": "2020A_U186", "type": "Classical",
 		"datesToAvoid": ["2020-07-07", "2020-07-08", "2020-07-09"],
 		"priorityTargets":
 		[
@@ -4243,9 +3746,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "P", "P", "A", "A", "A"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4093, "size": 0.5, "moonIndex": 21, "reqDate": null, "reqPortion": null},
@@ -4256,8 +3757,7 @@
 	},
 	"2020A_U187": 
 	{
-		"ktn": "2020A_U187",
-		"type": "Classical",
+		"ktn": "2020A_U187", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4268,9 +3768,7 @@
 			{
 				"instr": "NIRC2-LGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "", "", "", "", "P", "P", "P", "P"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 5.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 5.0,
 				"blocks":
 				[
 					{"id": 3992, "size": 0.5, "moonIndex": 24, "reqDate": null, "reqPortion": null},
@@ -4288,9 +3786,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "-", "-", "-", "-", "P", "P", "P", "P"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 3.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3566, "size": 0.5, "moonIndex": 13, "reqDate": null, "reqPortion": null},
@@ -4305,8 +3801,7 @@
 	},
 	"2020A_U188": 
 	{
-		"ktn": "2020A_U188",
-		"type": "Classical",
+		"ktn": "2020A_U188", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4317,9 +3812,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["X", "X", "A", "A", "A", "X", "A", "P", "P", "X", "A", "A", "A", "X", "A", "P", "A", "X", "A", "A", "A", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4032, "size": 0.5, "moonIndex": 8, "reqDate": null, "reqPortion": null}
@@ -4328,9 +3821,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["X", "X", "A", "A", "A", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "P", "P", "P", "A", "A", "A", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3574, "size": 0.5, "moonIndex": 5, "reqDate": null, "reqPortion": null}
@@ -4340,8 +3831,7 @@
 	},
 	"2020A_U189": 
 	{
-		"ktn": "2020A_U189",
-		"type": "Classical",
+		"ktn": "2020A_U189", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4352,9 +3842,7 @@
 			{
 				"instr": "OSIRIS-NGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "P", "P"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.5,
 				"blocks":
 				[
 					{"id": 3646, "size": 0.5, "moonIndex": 25, "reqDate": null, "reqPortion": null},
@@ -4366,8 +3854,7 @@
 	},
 	"2020A_U191": 
 	{
-		"ktn": "2020A_U191",
-		"type": "Classical",
+		"ktn": "2020A_U191", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4378,9 +3865,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["A", "X", "X", "A", "A", "X", "X", "P", "A", "X", "A", "P", "X", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 4056, "size": 0.5, "moonIndex": 14, "reqDate": null, "reqPortion": null},
@@ -4395,8 +3880,7 @@
 	},
 	"2020A_U193": 
 	{
-		"ktn": "2020A_U193",
-		"type": "Classical",
+		"ktn": "2020A_U193", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4415,9 +3899,7 @@
 			{
 				"instr": "NIRSPAO-NGS",
 				"moonPrefs": ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 4176, "size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null},
@@ -4428,8 +3910,7 @@
 	},
 	"2020A_U195": 
 	{
-		"ktn": "2020A_U195",
-		"type": "Classical",
+		"ktn": "2020A_U195", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4449,9 +3930,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "P", "P", "P", "P", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4007, "size": 0.5, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -4461,8 +3940,7 @@
 	},
 	"2020A_U201": 
 	{
-		"ktn": "2020A_U201",
-		"type": "Classical",
+		"ktn": "2020A_U201", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4474,9 +3952,7 @@
 			{
 				"instr": "OSIRIS-NGS",
 				"moonPrefs": ["", "", "", "", "", "", "", "X", "X", "X", "A", "P", "P", "X", "X", "X", "X", "X", "A", "P", "P", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3584, "size": 0.5, "moonIndex": 10, "reqDate": null, "reqPortion": null},
@@ -4487,8 +3963,7 @@
 	},
 	"2020A_U204": 
 	{
-		"ktn": "2020A_U204",
-		"type": "Classical",
+		"ktn": "2020A_U204", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4501,9 +3976,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4031, "size": 0.5, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -4512,9 +3985,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.25,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 4106, "size": 0.25, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -4524,8 +3995,7 @@
 	},
 	"2020A_U205": 
 	{
-		"ktn": "2020A_U205",
-		"type": "Classical",
+		"ktn": "2020A_U205", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4539,9 +4009,7 @@
 			{
 				"instr": "NIRC2-LGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "A", "X", "X", "X", "A", "P", "A", "A", "P", "A", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4025, "size": 0.5, "moonIndex": 17, "reqDate": null, "reqPortion": null}
@@ -4550,9 +4018,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "A", "X", "X", "A", "A", "X", "A", "P", "P", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4057, "size": 0.5, "moonIndex": 14, "reqDate": null, "reqPortion": null}
@@ -4561,9 +4027,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "P", "A", "X", "X", "X", "A", "P", "A", "A", "P", "A", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4026, "size": 0.5, "moonIndex": 17, "reqDate": null, "reqPortion": null},
@@ -4574,8 +4038,7 @@
 	},
 	"2020A_U207": 
 	{
-		"ktn": "2020A_U207",
-		"type": "Classical",
+		"ktn": "2020A_U207", "type": "Classical",
 		"datesToAvoid": ["2020-02-01", "2020-02-02", "2020-02-03", "2020-02-04", "2020-02-05", "2020-02-06", "2020-02-07", "2020-02-08", "2020-03-10", "2020-03-11", "2020-03-12", "2020-03-13", "2020-03-14", "2020-04-17", "2020-04-18", "2020-04-19", "2020-04-20", "2020-04-21", "2020-04-22", "2020-05-12", "2020-05-13", "2020-05-14", "2020-05-15", "2020-05-16", "2020-07-03", "2020-07-04", "2020-07-05", "2020-07-06", "2020-07-07", "2020-07-08", "2020-07-09", "2020-07-10", "2020-07-11", "2020-07-12", "2020-07-13", "2020-07-14", "2020-07-15", "2020-07-16", "2020-07-17", "2020-07-18", "2020-07-19"],
 		"priorityTargets":
 		[
@@ -4592,9 +4055,7 @@
 			{
 				"instr": "ESI",
 				"moonPrefs": ["X", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "P", "A", "A", "X", "A", "A", "A"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3863, "size": 0.25, "moonIndex": 23, "reqDate": null, "reqPortion": null},
@@ -4607,8 +4068,7 @@
 	},
 	"2020A_U208": 
 	{
-		"ktn": "2020A_U208",
-		"type": "Classical",
+		"ktn": "2020A_U208", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4624,9 +4084,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "P", "P", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 2.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3608, "size": 0.5, "moonIndex": 24, "reqDate": null, "reqPortion": null},
@@ -4639,8 +4097,7 @@
 	},
 	"2020A_U209": 
 	{
-		"ktn": "2020A_U209",
-		"type": "Classical",
+		"ktn": "2020A_U209", "type": "Classical",
 		"datesToAvoid": ["2020-02-14", "2020-02-28", "2020-04-24", "2020-05-22", "2020-06-05"],
 		"priorityTargets":
 		[
@@ -4657,9 +4114,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X", "A", "P", "A", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 4.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 4.0,
 				"blocks":
 				[
 					{"id": 3604, "size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null},
@@ -4676,8 +4131,7 @@
 	},
 	"2020A_U210": 
 	{
-		"ktn": "2020A_U210",
-		"type": "Classical",
+		"ktn": "2020A_U210", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4693,9 +4147,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "P", "X", "X", "X", "A", "X", "X", "X", "A", "X", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 4072, "size": 1.0, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -4705,8 +4157,7 @@
 	},
 	"2020A_U211": 
 	{
-		"ktn": "2020A_U211",
-		"type": "Classical",
+		"ktn": "2020A_U211", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4719,9 +4170,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "P", "P", "P", "P", "P", "P"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4011, "size": 0.5, "moonIndex": 25, "reqDate": null, "reqPortion": null}
@@ -4730,9 +4179,7 @@
 			{
 				"instr": "NIRSPAO-NGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "A", "P", "P", "P", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4010, "size": 0.5, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -4741,9 +4188,7 @@
 			{
 				"instr": "NIRSPEC",
 				"moonPrefs": ["P", "P", "P", "A", "X", "X", "X", "A", "P", "P", "P", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3876, "size": 0.5, "moonIndex": 0, "reqDate": null, "reqPortion": null}
@@ -4753,8 +4198,7 @@
 	},
 	"2020A_U212": 
 	{
-		"ktn": "2020A_U212",
-		"type": "Cadence",
+		"ktn": "2020A_U212", "type": "Cadence",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4765,9 +4209,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
-				"reqPortion": 0.25,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 3528, "size": 0.25, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -4776,9 +4218,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
-				"reqPortion": 0.25,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 3530, "size": 0.25, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -4787,9 +4227,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
-				"reqPortion": 0.25,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 3529, "size": 0.25, "moonIndex": 11, "reqDate": null, "reqPortion": null}
@@ -4798,9 +4236,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3524, "size": 0.5, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -4809,9 +4245,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
-				"reqPortion": 0.25,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 4200, "size": 0.25, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -4820,9 +4254,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
-				"reqPortion": 0.25,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 3521, "size": 0.25, "moonIndex": 18, "reqDate": null, "reqPortion": null}
@@ -4831,9 +4263,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
-				"reqPortion": 0.25,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 3520, "size": 0.25, "moonIndex": 20, "reqDate": null, "reqPortion": null}
@@ -4842,9 +4272,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
-				"reqPortion": 0.25,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 3515, "size": 0.25, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -4853,9 +4281,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
-				"reqPortion": 0.25,
-				"appPortion": 0.25,
-				"appTotal": 0.25,
+				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
 				"blocks":
 				[
 					{"id": 3516, "size": 0.25, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -4864,9 +4290,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3514, "size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null}
@@ -4876,8 +4300,7 @@
 	},
 	"2020A_U216": 
 	{
-		"ktn": "2020A_U216",
-		"type": "Classical",
+		"ktn": "2020A_U216", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4896,9 +4319,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["P", "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "P", "P", "P", "P", "P", "P", "P", "P", "P"],
-				"reqPortion": 0.25,
-				"appPortion": 0.25,
-				"appTotal": 0.5,
+				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3989, "size": 0.5, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -4908,8 +4329,7 @@
 	},
 	"2020A_U218": 
 	{
-		"ktn": "2020A_U218",
-		"type": "Classical",
+		"ktn": "2020A_U218", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4920,9 +4340,7 @@
 			{
 				"instr": "DEIMOS",
 				"moonPrefs": ["X", "X", "X", "P", "X", "X", "A", "A", "X", "X", "A", "X", "X", "X", "P", "X", "X", "P", "P", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3844, "size": 1.0, "moonIndex": 3, "reqDate": null, "reqPortion": null},
@@ -4934,8 +4352,7 @@
 	},
 	"2020A_U220": 
 	{
-		"ktn": "2020A_U220",
-		"type": "Classical",
+		"ktn": "2020A_U220", "type": "Classical",
 		"datesToAvoid": ["2020-04-04", "2020-04-05"],
 		"priorityTargets":
 		[
@@ -4946,9 +4363,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "P", "P", "P", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 2.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3577, "size": 0.5, "moonIndex": 9, "reqDate": null, "reqPortion": null},
@@ -4960,9 +4375,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["A", "X", "X", "X", "X", "X", "A", "P", "A", "X", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3596, "size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null},
@@ -4973,8 +4386,7 @@
 	},
 	"2020A_U222": 
 	{
-		"ktn": "2020A_U222",
-		"type": "Classical",
+		"ktn": "2020A_U222", "type": "Classical",
 		"datesToAvoid": ["2020-02-29", "2020-03-01", "2020-03-02", "2020-03-03", "2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-03-12", "2020-03-13", "2020-03-14", "2020-03-15", "2020-03-16"],
 		"priorityTargets":
 		[
@@ -4985,9 +4397,7 @@
 			{
 				"instr": "NIRC2-NGS",
 				"moonPrefs": ["P", "P", "P", "A", "X", "X", "X", "A", "P", "P", "P", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 2.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 4015, "size": 0.5, "moonIndex": 1, "reqDate": null, "reqPortion": null},
@@ -5000,8 +4410,7 @@
 	},
 	"2020A_U223": 
 	{
-		"ktn": "2020A_U223",
-		"type": "Classical",
+		"ktn": "2020A_U223", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -5018,9 +4427,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3583, "size": 1.0, "moonIndex": 6, "reqDate": null, "reqPortion": null}
@@ -5029,9 +4436,7 @@
 			{
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "A", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3578, "size": 0.5, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -5041,8 +4446,7 @@
 	},
 	"2020A_U228": 
 	{
-		"ktn": "2020A_U228",
-		"type": "Classical",
+		"ktn": "2020A_U228", "type": "Classical",
 		"datesToAvoid": ["2020-04-04", "2020-04-05", "2020-04-06"],
 		"priorityTargets":
 		[
@@ -5055,9 +4459,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["", "", "", "", "", "", "", "", "A", "P", "P", "A", "A", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3644, "size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null},
@@ -5068,8 +4470,7 @@
 	},
 	"2020A_W128": 
 	{
-		"ktn": "2020A_W128",
-		"type": "Classical",
+		"ktn": "2020A_W128", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -5080,9 +4481,7 @@
 			{
 				"instr": "ESI",
 				"moonPrefs": ["X", "X", "X", "X", "A", "X", "P", "P", "P", "X", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 1.0, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 3808, "size": 0.5, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -5092,8 +4491,7 @@
 	},
 	"2020A_W132": 
 	{
-		"ktn": "2020A_W132",
-		"type": "Classical",
+		"ktn": "2020A_W132", "type": "Classical",
 		"datesToAvoid": ["2020-02-09", "2020-03-07", "2020-02-01"],
 		"priorityTargets":
 		[
@@ -5104,9 +4502,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["P", "P", "P", "P", "P", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3722, "size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": null}
@@ -5116,8 +4512,7 @@
 	},
 	"2020A_W140": 
 	{
-		"ktn": "2020A_W140",
-		"type": "Classical",
+		"ktn": "2020A_W140", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -5128,9 +4523,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["P", "X", "P", "P", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3809, "size": 1.0, "moonIndex": 2, "reqDate": null, "reqPortion": null}
@@ -5140,8 +4533,7 @@
 	},
 	"2020A_W141": 
 	{
-		"ktn": "2020A_W141",
-		"type": "Classical",
+		"ktn": "2020A_W141", "type": "Classical",
 		"datesToAvoid": ["2020-02-10", "2020-02-11", "2020-02-12", "2020-02-13", "2020-02-14", "2020-02-15", "2020-02-16", "2020-02-17", "2020-02-18", "2020-02-19", "2020-02-20", "2020-02-21", "2020-02-22", "2020-02-23", "2020-02-24", "2020-02-25", "2020-02-26", "2020-02-27", "2020-02-28", "2020-02-29", "2020-03-01", "2020-03-02", "2020-03-03", "2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-03-12"],
 		"priorityTargets":
 		[
@@ -5154,9 +4546,7 @@
 			{
 				"instr": "NIRC2-LGS",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "A", "A", "P", "P", "A", "A", "A", "A", "A", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3810, "size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -5166,8 +4556,7 @@
 	},
 	"2020A_W143": 
 	{
-		"ktn": "2020A_W143",
-		"type": "Classical",
+		"ktn": "2020A_W143", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -5178,9 +4567,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["", "", "", "P", "", "", "", "P", "", "", "", "A", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 0.5,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
 				"blocks":
 				[
 					{"id": 4105, "size": 0.5, "moonIndex": 3, "reqDate": null, "reqPortion": null}
@@ -5190,8 +4577,7 @@
 	},
 	"2020A_W145": 
 	{
-		"ktn": "2020A_W145",
-		"type": "Classical",
+		"ktn": "2020A_W145", "type": "Classical",
 		"datesToAvoid": ["2020-02-07", "2020-02-08", "2020-02-09", "2020-02-10", "2020-02-11", "2020-02-12", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-04-02", "2020-04-03", "2020-04-04", "2020-04-05", "2020-04-06", "2020-04-07"],
 		"priorityTargets":
 		[
@@ -5202,9 +4588,7 @@
 			{
 				"instr": "MOSFIRE",
 				"moonPrefs": ["P", "P", "P", "P", "P", "P", "P", "A", "A", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 0.5,
-				"appPortion": 0.5,
-				"appTotal": 1.0,
+				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3723, "size": 0.5, "moonIndex": 4, "reqDate": null, "reqPortion": null},
@@ -5215,8 +4599,7 @@
 	},
 	"2020A_Y036": 
 	{
-		"ktn": "2020A_Y036",
-		"type": "Classical",
+		"ktn": "2020A_Y036", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -5227,9 +4610,7 @@
 			{
 				"instr": "NIRES",
 				"moonPrefs": ["P", "P", "P", "A", "A", "A", "P", "A", "A", "P", "A", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3818, "size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -5239,8 +4620,7 @@
 	},
 	"2020A_Y130": 
 	{
-		"ktn": "2020A_Y130",
-		"type": "Classical",
+		"ktn": "2020A_Y130", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -5251,9 +4631,7 @@
 			{
 				"instr": "KCWI",
 				"moonPrefs": ["", "", "", "", "", "", "", "-", "-", "", "-", "P", "A", "", "A", "P", "A", "", "-", "-", "", "", "", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3811, "size": 1.0, "moonIndex": 11, "reqDate": null, "reqPortion": null},
@@ -5263,9 +4641,7 @@
 			{
 				"instr": "LRIS-ADC",
 				"moonPrefs": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "P", "A", "-", "A", "P", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3731, "size": 1.0, "moonIndex": 10, "reqDate": null, "reqPortion": null},
@@ -5277,8 +4653,7 @@
 	},
 	"2020A_Y133": 
 	{
-		"ktn": "2020A_Y133",
-		"type": "Classical",
+		"ktn": "2020A_Y133", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -5290,9 +4665,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["X", "X", "X", "X", "P", "P", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "P", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3734, "size": 1.0, "moonIndex": 4, "reqDate": null, "reqPortion": null},
@@ -5303,8 +4676,7 @@
 	},
 	"2020A_Y134": 
 	{
-		"ktn": "2020A_Y134",
-		"type": "Classical",
+		"ktn": "2020A_Y134", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -5317,9 +4689,7 @@
 			{
 				"instr": "ESI",
 				"moonPrefs": ["P", "X", "P", "A", "A", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 3.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 3.0,
 				"blocks":
 				[
 					{"id": 3813, "size": 1.0, "moonIndex": 0, "reqDate": null, "reqPortion": null},
@@ -5331,8 +4701,7 @@
 	},
 	"2020A_Y135": 
 	{
-		"ktn": "2020A_Y135",
-		"type": "Classical",
+		"ktn": "2020A_Y135", "type": "Classical",
 		"datesToAvoid": ["2020-02-01", "2020-02-02", "2020-02-03", "2020-02-04", "2020-02-05", "2020-02-06", "2020-02-07", "2020-02-08", "2020-02-09", "2020-02-10", "2020-02-11", "2020-02-12", "2020-02-13", "2020-02-14", "2020-02-15", "2020-02-16", "2020-02-17", "2020-02-18", "2020-02-19", "2020-02-20", "2020-02-21", "2020-02-22", "2020-02-23", "2020-02-24", "2020-02-25", "2020-02-26", "2020-02-27", "2020-02-28", "2020-02-29", "2020-03-01", "2020-03-02", "2020-03-03", "2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-03-12", "2020-03-13", "2020-03-14", "2020-03-15", "2020-03-16", "2020-03-17", "2020-03-18", "2020-03-19", "2020-03-20", "2020-03-21", "2020-03-22", "2020-03-23", "2020-03-24", "2020-03-25", "2020-03-26", "2020-03-27", "2020-03-28", "2020-03-29", "2020-03-30", "2020-03-31", "2020-04-01", "2020-04-02", "2020-04-03", "2020-04-04", "2020-04-05", "2020-04-06", "2020-04-07", "2020-04-08", "2020-04-09", "2020-04-10", "2020-04-11", "2020-04-12", "2020-04-13", "2020-04-14", "2020-04-15", "2020-04-16", "2020-04-17", "2020-04-18", "2020-04-19", "2020-04-20", "2020-04-21", "2020-04-22", "2020-04-23", "2020-04-24", "2020-04-25", "2020-04-26", "2020-04-27", "2020-04-28", "2020-04-29", "2020-04-30", "2020-05-01", "2020-05-02", "2020-05-03", "2020-05-04", "2020-05-05", "2020-05-06", "2020-05-07", "2020-05-08", "2020-05-09", "2020-05-10", "2020-05-11", "2020-05-12", "2020-05-13", "2020-05-14", "2020-05-15", "2020-05-16", "2020-05-17", "2020-05-18", "2020-05-19", "2020-05-20", "2020-05-21", "2020-05-22", "2020-05-23", "2020-05-24", "2020-05-25", "2020-05-26", "2020-05-27", "2020-05-28", "2020-05-29", "2020-05-30", "2020-05-31", "2020-06-01", "2020-06-02", "2020-06-03", "2020-06-04", "2020-06-05", "2020-06-06", "2020-06-07", "2020-06-08"],
 		"priorityTargets":
 		[
@@ -5350,9 +4719,7 @@
 			{
 				"instr": "HIRESr",
 				"moonPrefs": ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "A", "A", "A", "A", "P", "P", "P", "P"],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 2.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
 				"blocks":
 				[
 					{"id": 3736, "size": 1.0, "moonIndex": 21, "reqDate": null, "reqPortion": null},
@@ -5363,8 +4730,7 @@
 	},
 	"2020A_Y288": 
 	{
-		"ktn": "2020A_Y288",
-		"type": "Classical",
+		"ktn": "2020A_Y288", "type": "Classical",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -5375,9 +4741,7 @@
 			{
 				"instr": "NIRES",
 				"moonPrefs": ["-", "-", "-", "-", "-", "A", "A", "P", "P", "P", "P", "A", "A", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "", "", ""],
-				"reqPortion": 1.0,
-				"appPortion": 1.0,
-				"appTotal": 1.0,
+				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 1.0,
 				"blocks":
 				[
 					{"id": 3816, "size": 1.0, "moonIndex": 9, "reqDate": null, "reqPortion": null}

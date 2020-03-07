@@ -13,19 +13,21 @@
 
 
 #todo: details
-!- Export to Carolyn's spreadsheet format
+- up arrow command line history
+- Are we heavily avoiding MOSFIRE/LRIS reconfigs vs say HIRES/MOSFIRE?
+- Implement runs attempts (ie progInstr blocks with same or adjacent moonIndex)
+!- Add institution balancing during block ordering step (group by inst in multiple arrays and then reform into large array)
+!- Fully formatted export to Carolyn's spreadsheet format
 !- Cadence has a range.  we need to factor that in for date options if reqDate not set.  and it should be consecutive right?
 !- Save/load entire schedule run (db or file) 
 !- force small portions to different days for same ktn (ie avoid same program on same night for 1/2 and 1/4) (ie dup col in show report) (we do this in scoreBlockSlot but not working well)
 !- Consider same program night adjacency desireable? similar to runs? 
-!- Add institution balancing during block ordering step (group by inst in multiple arrays and then reform into large array)
 !- Add in DateSpecific
 - target/airmass scoring (use lst@midnight data)
 - real query for other data: shutdowns, moon phases, etc (see proposals.InstrumentUnavailable)
 - classes: Block, Schedule?
 - IDEA: When picking a slot, cascade down in groups. See if any moonIndex work.  If not, see if any 'P' work and so on.  Or can we achieve this with our weighting?
 - Fix getReconfigScore. It really needs to define instrument positions and track state changes, for instance MOSFIRE switch to LRIS days later is still a reconfig.
-- Implement runs attempts (ie progInstr blocks with adjacent moonIndex)
 - NIRSPAO-NIRSPEC reconfig is worse than others.  Minimize NIRSPAO runs.  
 - Consider laser runs?
 - Rule: Avoid 3-way or 4-way splits with 2 or more programs
@@ -39,10 +41,11 @@
 
 
 # questions: 
-- Q: How do you know whether to clump program blocks into runs or to spread them out?
+- Q: How do you know whether to clump program blocks into runs or to spread them out?  A: If same or adjacent moonIndex
 - Q: If a card is slotted on an 'X' moon pref, what is more important?  To follow the suggested slot or find a non-X moon pref?  Or manually fix it for them?
 - Q: Would you give a program a date that is "P" or "A" but not requested moonIndex if it meant you could save a reconfig?
 - Q: Whats up with Subaru instrument selects?
+- Q: What is the deal with Planet Hunters again?
 
 
 

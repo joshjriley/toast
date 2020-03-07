@@ -77,8 +77,8 @@
     #######################################################################
 
     #order score and multiplier adjust based on size of block (NOTE: size is always a fraction ie 0.25, 0.5, 0.75, 1.0)
-    'blockOrderSizeScore': 1.5,
-    'blockOrderSizeMult': 10,
+    'blockOrderSizeScore': 5,
+    'blockOrderSizeMult': 4,
 
     #order score adjust if block has a specified date (NOTE: most cadence have specified date)
     'blockOrderReqDateScore': 8,

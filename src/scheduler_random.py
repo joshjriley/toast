@@ -61,7 +61,7 @@ class SchedulerRandom(Scheduler):
             self.scoreBlockSlots(schedule, block)
             slot = self.pickRandomBlockSlot(block)
             if slot == None: 
-                print (f"WARNING: No valid slots found for block program {block['ktn']}, instr {block['instr']} (mi: {block['moonIndex']})")
+                print (f"WARNING: No valid slots found for block program {block['ktn']}, instr {block['instr']}")
                 continue
             self.assignBlockToSchedule(
                 schedule,
@@ -122,7 +122,7 @@ class SchedulerRandom(Scheduler):
             #raw score is size
             #todo: use block['num']?
             #todo: how can we apply exponential?
-            block['order'] += block['size'] * self.config['blockOrderSizeMult'] * self.config['blockOrderSizeScore']
+            block['order'] += (block['size'] * self.config['blockOrderSizeMult']) + self.config['blockOrderSizeScore']
 
             #adjust if requested date
             if block['reqDate']: 
@@ -150,7 +150,7 @@ class SchedulerRandom(Scheduler):
             if block['orderMult']: 
                 block['order'] *= block['orderMult']
 
-            #see if fixed order multiplier defined
+            #see if order needs adjusting if not scheduled
             if 'id' in block and block['id'] in self.blockOrderLearnAdjusts:
                 adjust = self.blockOrderLearnAdjusts[block['id']]
                 if adjust > 0: 

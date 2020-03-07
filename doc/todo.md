@@ -13,8 +13,9 @@
 
 
 #todo: details
-!- Cadence has a range.  we need to factor that in for date options if reqDate not set.  and it should be consecutive
-!- Save/load scheduled program 
+!- Export to Carolyn's spreadsheet format
+!- Cadence has a range.  we need to factor that in for date options if reqDate not set.  and it should be consecutive right?
+!- Save/load entire schedule run (db or file) 
 !- force small portions to different days for same ktn (ie avoid same program on same night for 1/2 and 1/4) (ie dup col in show report) (we do this in scoreBlockSlot but not working well)
 !- Consider same program night adjacency desireable? similar to runs? 
 !- Add institution balancing during block ordering step (group by inst in multiple arrays and then reform into large array)
@@ -30,6 +31,7 @@
 - Rule: Avoid 3-way or 4-way splits with 2 or more programs
 - Engineering pref is to have a few each month preferably during bright time.  Should we allow some seeding of Engineering nights and avoid adjacency?
 - Program ranking per institution
+- Changes datesToAvoid in json to be list of start/end ranges.
 - option to run one of the telescopes only
 - check if the total proposed hours exceeds semester hours
 - instead of or additionally, have random movement of order by position instead of score randomness.

@@ -76,12 +76,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Start Keck auto-scheduler.")
     parser.add_argument("semester",   type=str,                                            help="Semester.")
     parser.add_argument("--method",   type=str,    dest="method",    default='random',     help="Algorithm method.")
-    parser.add_argument("--runCount", type=int,    dest="runCount",  default=1,            help="Number of times to run.")
     args = parser.parse_args()
 
 
     #run the scheduler of choice
-    if   args.method == 'random': scheduler = SchedulerRandom(args.semester, args.runCount)
+    if   args.method == 'random': scheduler = SchedulerRandom(args.semester)
     elif args.method == '???'   : scheduler = SchedulerXXXXXX(args.semester)
     else:
         print (f"Unknown method {args.method}")

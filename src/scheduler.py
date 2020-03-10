@@ -10,6 +10,7 @@ import pathlib
 import time
 import math
 import re
+import traceback
 import readline #automagically makes input() activate the arrow keys for history
 
 import logging
@@ -53,25 +54,33 @@ class Scheduler(object):
 
         #todo: check if the total proposed hours exceeds semester hours
 
-        #do it
-        self.schedule = self.createSchedule()
+        #inits
+        self.initScheduler()
+
+        #menu
         self.promptMenu()
-        #self.printSchedule(self.schedule)
 
 
-    def promptMenu(self):
+    def initScheduler(self):
+
+        self.schedule = None
+        self.blockOrderLearnAdjusts = {}
+
+
+    def getMenu(self):
 
 #todo: call this base menu from child and add in child functions there
-        try:
-            menu = "\n"
-            menu += "-------------------------------------------------------------------------\n"
-            menu += "|                            MENU                                        \n"
-            menu += "-------------------------------------------------------------------------\n"
-            menu += "|  show     [tel] [start] [end]        Show schedule by date        \n"
-            menu += "|  showmoon [tel] [start] [end]        Show schedule by moon index  \n"
-            menu += "|  showprog [progId]                   Show schedule by program code  \n"
+        menu = "\n"
+        menu += "-------------------------------------------------------------------------\n"
+        menu += "|                            MENU                                        \n"
+        menu += "-------------------------------------------------------------------------\n"
+        menu += "|  run [num]                           Run scheduler [num] times         \n"
+        menu += "|  conflicts                           Check conflicts                   \n"
+        if self.schedule:
+            menu += "|  show     [tel] [start] [end]        Show schedule by date         \n"
+            menu += "|  showmoon [tel] [start] [end]        Show schedule by moon index   \n"
+            menu += "|  showprog [progId]                   Show schedule by program code \n"
             menu += "|  stats                               Show stats                \n"
-            menu += "|  conflicts                           Check conflicts           \n"
             menu += "|  blockorders  [tel]                  Show block orders         \n"
             menu += "|  orderadjusts [tel]                  Show block order adjusts  \n"
             menu += "|  slotscores [blockId] [topN]         Show topN slot scores     \n"
@@ -80,13 +89,19 @@ class Scheduler(object):
             menu += "|  remove     [blockId]                Remove block              \n"
             menu += "|  swap       [blockId1] [blockId2]    Swap two blocks           \n"
             menu += "|  export [folder] [tel]               Export to csv             \n"
-            menu += "|  q                                   Quit (or Control-C)       \n"
-            menu += "-------------------------------------------------------------------------\n"
-            menu += "> "
+        menu += "|  q                                   Quit (or Control-C)               \n"
+        menu += "-------------------------------------------------------------------------\n"
+        menu += "> "
+        return menu        
 
-            quit = None
-            autoHelp = True
-            while quit is None:
+
+    def promptMenu(self):
+
+        quit = None
+        autoHelp = True
+        while quit is None:
+            try:
+                menu = self.getMenu()
                 prompt = menu if autoHelp else "\n> "
                 autoHelp = False
                 cmds = input(prompt).split()       
@@ -94,6 +109,12 @@ class Scheduler(object):
                 cmd = cmds[0]     
                 if   cmd == 'q':  
                     quit = True
+                elif cmd == 'run':  
+                    num   = int(cmds[1]) if len(cmds) > 1 else 1
+                    self.createSchedule(num)
+                    autoHelp = True
+                elif cmd == 'conflicts':  
+                    self.checkConflicts()                    
                 elif cmd == 'show':  
                     tel   = cmds[1] if len(cmds) > 1 else None
                     start = cmds[2] if len(cmds) > 2 else None
@@ -113,8 +134,6 @@ class Scheduler(object):
                     folder = cmds[1] if len(cmds) > 1 else None
                     tel    = cmds[2] if len(cmds) > 2 else None
                     self.exportSchedule(self.schedule, folder, tel)
-                elif cmd == 'conflicts':  
-                    self.checkConflicts()
                 elif cmd == 'orderadjusts':  
                     tel   = cmds[1] if len(cmds) > 1 else None
                     self.printOrderAdjusts(self.schedule, tel)
@@ -143,8 +162,9 @@ class Scheduler(object):
                 else:
                     log.error(f'Unrecognized command: {cmd}')
                     autoHelp = True
-        except Exception as e:
-            print("\n***** ERROR: ", str(e))
+            except Exception as e:
+                print("\n***** ERROR: ", str(e))
+                print (traceback.format_exc())
 
 
     def loadConfig(self):

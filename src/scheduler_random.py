@@ -11,38 +11,28 @@ from scheduler import Scheduler
 
 class SchedulerRandom(Scheduler):
 
-    def __init__(self, semester, runCount):
+    def __init__(self, semester):
 
         # Call the parent init
         super().__init__(semester)
 
-        #input class vars
-        self.runCount = runCount
 
+    def createSchedule(self, runCount):
 
-    def createSchedule(self):
-
-        #class var init
-        self.blockOrderLearnAdjusts = {}
-
-        #todo: Loop and create X number of schedules and take the one that scores best.
-        bestScore = None
-        bestSchedule = None
-        for i in range(0, self.runCount):
+        #Loop and create X number of schedules and take the one that scores best.
+        #todo: should we store a running top N?
+        for i in range(0, runCount):
     
             schedule = self.createScheduleRandom()
             self.markScheduleWarnings(schedule)
             self.scoreSchedule(schedule)
-            print (f"sched {i}: score = {schedule['meta']['score']}")
+            score = schedule['meta']['score']
+            print (f"sched {i}: score = {score}")
 
-            if bestScore == None or schedule['meta']['score'] >= bestScore:
-                bestScore = schedule['meta']['score']
-                bestSchedule = schedule
+            if self.schedule == None or score > self.schedule['meta']['score']:
+                self.schedule = schedule
 
             self.makeOrderAdjustments(schedule['blocks'])
-
-        #todo: should we store all schedules in an array or keep a running top N?
-        return bestSchedule
 
 
     def createScheduleRandom(self):

@@ -10,6 +10,7 @@ import pathlib
 import time
 import math
 import re
+import readline #automagically makes input() activate the arrow keys for history
 
 import logging
 log = logging.getLogger('toast')

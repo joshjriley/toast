@@ -11,10 +11,10 @@ from scheduler import Scheduler
 
 class SchedulerRandom(Scheduler):
 
-    def __init__(self, semester):
+    def __init__(self, configFile):
 
         # Call the parent init
-        super().__init__(semester)
+        super().__init__(configFile)
 
 
     def createSchedule(self, runCount):

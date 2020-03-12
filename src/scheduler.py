@@ -20,9 +20,9 @@ log = logging.getLogger('toast')
 
 class Scheduler(object):
 
-    def __init__(self, semester):
+    def __init__(self, configFile):
 
-        self.semester = semester
+        self.configFile = configFile
 
         #member class vars
         self.config = None
@@ -34,7 +34,7 @@ class Scheduler(object):
         self.loadConfig()
 
         #calc start and end date
-        self.startDate, self.endDate = self.getSemesterDates(self.semester)
+        self.startDate, self.endDate = self.getSemesterDates(self.config['semester'])
 
         #get needed input data
         self.datesList      = self.createDatesList(self.startDate, self.endDate)
@@ -44,7 +44,7 @@ class Scheduler(object):
         self.nightPhases    = self.getNightPhases()
         self.instrShutdowns = self.getInstrumentShutdowns()
         self.engineering    = self.getEngineering()
-        self.programs       = self.getPrograms(self.semester)
+        self.programs       = self.getPrograms(self.config['semester'])
 
         #perform data conversion optimizations
         self.createMoonDatesIndex()
@@ -69,7 +69,6 @@ class Scheduler(object):
 
     def getMenu(self):
 
-#todo: call this base menu from child and add in child functions there
         menu = "\n"
         menu += "-------------------------------------------------------------------------\n"
         menu += "|                            MENU                                        \n"
@@ -170,9 +169,8 @@ class Scheduler(object):
     def loadConfig(self):
 
         #load config
-        configFile = 'config.yaml'
-        assert os.path.isfile(configFile), f"ERROR: config file '{configFile}'' does not exist.  Exiting."
-        with open(configFile) as f: self.config = yaml.safe_load(f)        
+        assert os.path.isfile(self.configFile), f"ERROR: config file '{self.configFile}'' does not exist.  Exiting."
+        with open(self.configFile) as f: self.config = yaml.safe_load(f)        
 
         #do some basic calcs from config
         self.numSlots = int(1 / self.config['slotPerc'])
@@ -1005,7 +1003,7 @@ class Scheduler(object):
             2019-08-02  K2  [     N111     ][     C222     ]
             2019-08-02  K2  [ N123 ][ C123 ][ U123 ][ K123 ]
         '''        
-        print (f"Semester: {self.semester}")
+        print (f"Semester: {self.config['semester']}")
 
         totalUnused = 0.0
         for telkey, telsched in schedule['telescopes'].items():
@@ -1076,7 +1074,7 @@ class Scheduler(object):
         '''
         Print out stats on schedule
         '''        
-        print (f"Semester: {self.semester}")
+        print (f"Semester: {self.config['semester']}")
         print (f"Schedule score: {schedule['meta']['score']}")
         for telkey, telsched in schedule['telescopes'].items():
 

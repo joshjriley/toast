@@ -71,21 +71,13 @@ if __name__ == "__main__":
     create_logger()
     log.info(f"Starting TOAST program.")
 
-
     # arg parser
-    parser = argparse.ArgumentParser(description="Start Keck auto-scheduler.")
-    parser.add_argument("semester",   type=str,                                            help="Semester.")
-    parser.add_argument("--method",   type=str,    dest="method",    default='random',     help="Algorithm method.")
+    parser = argparse.ArgumentParser(description="Start Keck scheduler")
+    parser.add_argument("configFile", type=str, help="Config file for run.")
     args = parser.parse_args()
 
-
-    #run the scheduler of choice
-    if   args.method == 'random': scheduler = SchedulerRandom(args.semester)
-    elif args.method == '???'   : scheduler = SchedulerXXXXXX(args.semester)
-    else:
-        print (f"Unknown method {args.method}")
-        sys.exit(0)
-
+    #run the scheduler
+    scheduler = SchedulerRandom(args.configFile)
     scheduler.start()
 
     

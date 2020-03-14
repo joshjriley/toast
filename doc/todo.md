@@ -13,7 +13,7 @@
 
 
 #todo: details
-- up arrow command line history
+- machine to run this on? (vmks2 or vmwebtools)
 - Are we heavily avoiding MOSFIRE/LRIS reconfigs vs say HIRES/MOSFIRE?
 - Implement runs attempts (ie progInstr blocks with same or adjacent moonIndex)
 !- Add institution balancing during block ordering step (group by inst in multiple arrays and then reform into large array)
@@ -23,6 +23,7 @@
 !- force small portions to different days for same ktn (ie avoid same program on same night for 1/2 and 1/4) (ie dup col in show report) (we do this in scoreBlockSlot but not working well)
 !- Consider same program night adjacency desireable? similar to runs? 
 !- Add in DateSpecific
+- Score Carolyn's 2020A schedule
 - target/airmass scoring (use lst@midnight data)
 - real query for other data: shutdowns, moon phases, etc (see proposals.InstrumentUnavailable)
 - classes: Block, Schedule?

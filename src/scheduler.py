@@ -191,8 +191,8 @@ class Scheduler(object):
     def getTelescopes(self):
 
         data = None
-        if 'telescopesFile' in self.config: 
-            fp = self.config['telescopesFile']
+        if 'telescopes' in self.config['files']: 
+            fp = self.config['files']['telescopes']
             assert os.path.isfile(fp), f"ERROR: getTelescopes: file '{fp}'' does not exist.  Exiting."
             with open(fp) as f: data = yaml.safe_load(f)        
         else:
@@ -207,8 +207,8 @@ class Scheduler(object):
     def getInstruments(self):
 
         data = None
-        if 'instrumentsFile' in self.config: 
-            fp = self.config['instrumentsFile']
+        if 'instruments' in self.config['files']: 
+            fp = self.config['files']['instruments']
             assert os.path.isfile(fp), f"ERROR: getInstruments: file '{fp}'' does not exist.  Exiting."
             with open(fp) as f: data = yaml.safe_load(f)        
         else:
@@ -223,8 +223,8 @@ class Scheduler(object):
     def getEngineering(self):
 
         data = None
-        if 'engineeringFile' in self.config: 
-            fp = self.config['engineeringFile']
+        if 'engineering' in self.config['files']: 
+            fp = self.config['files']['engineering']
             assert os.path.isfile(fp), f"ERROR: getEngineering: file '{fp}'' does not exist.  Exiting."
             with open(fp) as f: data = yaml.safe_load(f)        
         else:
@@ -236,8 +236,8 @@ class Scheduler(object):
     def getPrograms(self, semester):
 
         data = None
-        if 'programsFile' in self.config: 
-            fp = self.config['programsFile']
+        if 'programs' in self.config['files']: 
+            fp = self.config['files']['programs']
             assert os.path.isfile(fp), f"ERROR: getPrograms: file '{fp}'' does not exist.  Exiting."
             with open(fp) as f: data = json.load(f)        
         else:
@@ -249,8 +249,8 @@ class Scheduler(object):
     def getInstrumentShutdowns(self):
 
         data = None
-        if self.config['instrShutdownsFile']: 
-            fp = self.config['instrShutdownsFile']
+        if 'instrShutdowns' in self.config['files']: 
+            fp = self.config['files']['instrShutdowns']
             assert os.path.isfile(fp), f"ERROR: getInstrumentShutdowns: file '{fp}'' does not exist.  Exiting."
             with open(fp) as f: data = yaml.safe_load(f)        
         else:
@@ -306,7 +306,7 @@ class Scheduler(object):
         block = {
             'id': 0,             # database id
             'size': None,        # fractional size of night (ie 0.25, 0.5, 0.75, 1.0)
-            'moonIndex': None,   # index to moon phase date range as defined in config "moonPhaseFile"
+            'moonIndex': None,   # index to moon phase date range as defined in config "moonPhase"
             'reqDate': None,     # requested date to schedule
             'reqPortion': None,  # requested portion of night to schedule ("first half", "second quarter")
 
@@ -748,8 +748,8 @@ class Scheduler(object):
     #######################################################################
 
     def getMoonPhases(self):
-        if self.config['moonPhasesFile']: 
-            fp = self.config['moonPhasesFile']
+        if 'moonPhases' in self.config['files']: 
+            fp = self.config['files']['moonPhases']
             assert os.path.isfile(fp), f"ERROR: getMoonPhases: file '{fp}'' does not exist.  Exiting."
             with open(fp) as f: data = yaml.safe_load(f)        
             return data
@@ -822,8 +822,8 @@ class Scheduler(object):
     def getNightPhases(self):
         #TODO: NOTE: This data file comes from Keck scheduler (aka Carolyn) which is reformatted from 
         #UCO page: http://ucolick.org/calendar/keckcal2011-20/index.html
-        if self.config['nightPhasesFile']: 
-            fp = self.config['nightPhasesFile']
+        if 'nightPhases' in self.config['files']: 
+            fp = self.config['files']['nightPhases']
             assert os.path.isfile(fp), f"ERROR: getNightPhases: file '{fp}'' does not exist.  Exiting."
             data = pd.read_csv(fp)        
             return data

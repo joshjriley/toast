@@ -5,7 +5,7 @@ import json
 import pandas
 import datetime
 import db_conn
-
+import argparse
 
 
 #todo: Load this from config file
@@ -293,7 +293,7 @@ def saveProgramDataToFile(programs, outfile, compact=False):
                 txt += "\t\t\t{\n"
                 txt += f'\t\t\t\t"instr": "{instr["instr"]}",\n'
                 txt += f'\t\t\t\t"moonPrefs": {json.dumps(instr["moonPrefs"])},\n'
-                txt += f'\t\t\t\t"reqPortion": {instr["reqPortion"]}, appPortion": {instr["appPortion"]}, appTotal": {instr["appTotal"]},\n'
+                txt += f'\t\t\t\t"reqPortion": {instr["reqPortion"]}, "appPortion": {instr["appPortion"]}, "appTotal": {instr["appTotal"]},\n'
                 txt += f'\t\t\t\t"blocks":\n'
                 txt += f'\t\t\t\t[\n'
                 for bcount, block in enumerate(instr['blocks']):
@@ -319,11 +319,18 @@ def saveProgramDataToFile(programs, outfile, compact=False):
 #------------------------------------------------------------------------------
 if __name__ == "__main__":
 
-    semester     = sys.argv[1]
-    dbConfigFile = sys.argv[2]
-    outdir       = sys.argv[3] 
+    # arg parser
+    parser = argparse.ArgumentParser(description="Retrieve and transform Keck schedule data by semester.")
+    parser.add_argument("semester", type=str, help="Semester.")
+    parser.add_argument("dbConfig", type=str, help="Database config file.")
+    parser.add_argument("outdir", type=str, help="Path to output dir.")
+    args = parser.parse_args()
 
-    data = queryProgramData(semester, dbConfigFile)
+    semester = sys.argv[1]
+    dbConfig = sys.argv[2]
+    outdir   = sys.argv[3] 
+
+    data = queryProgramData(semester, dbConfig)
     programs = formDataToStandard(data)
 
     outfile = f"{outdir}/{semester}-programs.json"

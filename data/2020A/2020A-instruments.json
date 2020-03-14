@@ -1,0 +1,21 @@
+[
+    {"instr": "HIRESb",             "tel": "1", "loc": "RNAS"},
+    {"instr": "HIRESr",             "tel": "1", "loc": "RNAS"},
+    {"instr": "LRIS-ADC",           "tel": "1", "loc": "CASS"},
+    {"instr": "LRISp-ADC",          "tel": "1", "loc": "CASS"},
+    {"instr": "MOSFIRE",            "tel": "1", "loc": "CASS"},
+    {"instr": "OSIRIS-LGS",         "tel": "1", "loc": "LNAS"},
+    {"instr": "OSIRIS-NGS",         "tel": "1", "loc": "LNAS"},
+
+    {"instr": "DEIMOS",             "tel": "2", "loc": "RNAS"},
+    {"instr": "ESI",                "tel": "2", "loc": "CASS"},
+    {"instr": "ESI-ifu",            "tel": "2", "loc": "CASS"},
+    {"instr": "KCWI",               "tel": "2", "loc": "RNAS"},
+    {"instr": "NIRC2-LGS",          "tel": "2", "loc": "LNAS"},
+    {"instr": "NIRC2-NGS",          "tel": "2", "loc": "LNAS"},
+    {"instr": "NIRES",              "tel": "2", "loc": "RBC"},
+    {"instr": "NIRSPEC",            "tel": "2", "loc": "RNAS"},
+    {"instr": "NIRSPAO-LGS",        "tel": "2", "loc": "LNAS"},
+    {"instr": "NIRSPAO-NGS",        "tel": "2", "loc": "LNAS"},
+]
+

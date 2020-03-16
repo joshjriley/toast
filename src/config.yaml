@@ -12,13 +12,16 @@
     #----------------------------------------------------------------------
     # DATA INPUTS
     #----------------------------------------------------------------------
-    'telescopesFile'     : '../test/2020A-telescopes.json',
-    'instrumentsFile'    : '../test/2020A-instruments.json',
-    'moonPhasesFile'     : '../test/2020A-moon-phases.json',
-    'nightPhasesFile'    : '../test/2020A-night-phases.csv',
-    'instrShutdownsFile' : '../test/2020A-instr-shutdowns.json',
-    'engineeringFile'    : '../test/2020A-engineering.json',
-    'programsFile'       : '../test/2020A-programs.json',
+    'files':
+    {
+        'telescopes'     : 'data/2020A/2020A-telescopes.json',
+        'instruments'    : 'data/2020A/2020A-instruments.json',
+        'moonPhases'     : 'data/2020A/2020A-moon-phases.json',
+        'nightPhases'    : 'data/2020A/2020A-night-phases.csv',
+        'instrShutdowns' : 'data/2020A/2020A-instr-shutdowns.json',
+        'engineering'    : 'data/2020A/2020A-engineering.json',
+        'programs'       : 'data/2020A/2020A-programs.json',
+    },
 
 
     #----------------------------------------------------------------------

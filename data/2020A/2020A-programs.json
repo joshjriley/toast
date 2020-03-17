@@ -1,7 +1,7 @@
 {
 	"2020A_C003": 
 	{
-		"ktn": "2020A_C003", "type": "Classical",
+		"ktn": "2020A_C003", "type": "Classical", "piFirst": "Andrew", "piLast": "Howard", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -38,7 +38,7 @@
 	},
 	"2020A_C157": 
 	{
-		"ktn": "2020A_C157", "type": "Classical",
+		"ktn": "2020A_C157", "type": "Classical", "piFirst": "Evan", "piLast": "Kirby", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -65,7 +65,7 @@
 	},
 	"2020A_C165": 
 	{
-		"ktn": "2020A_C165", "type": "Classical",
+		"ktn": "2020A_C165", "type": "Classical", "piFirst": "Tom", "piLast": "Soifer", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -103,7 +103,7 @@
 	},
 	"2020A_C177": 
 	{
-		"ktn": "2020A_C177", "type": "Classical",
+		"ktn": "2020A_C177", "type": "Classical", "piFirst": "Charles", "piLast": "Beichman", "inst": "CIT",
 		"datesToAvoid": ["2020-05-01", "2020-05-02", "2020-05-03", "2020-05-04", "2020-05-05", "2020-05-06", "2020-05-07"],
 		"priorityTargets":
 		[
@@ -125,7 +125,7 @@
 	},
 	"2020A_C197": 
 	{
-		"ktn": "2020A_C197", "type": "Classical",
+		"ktn": "2020A_C197", "type": "Classical", "piFirst": "Geoffrey", "piLast": "Blake", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -163,7 +163,7 @@
 	},
 	"2020A_C198": 
 	{
-		"ktn": "2020A_C198", "type": "Classical",
+		"ktn": "2020A_C198", "type": "Classical", "piFirst": "Geoffrey", "piLast": "Blake", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -188,7 +188,7 @@
 	},
 	"2020A_C206": 
 	{
-		"ktn": "2020A_C206", "type": "Classical",
+		"ktn": "2020A_C206", "type": "Classical", "piFirst": "Nick", "piLast": "Scoville", "inst": "CIT",
 		"datesToAvoid": ["2020-02-08", "2020-02-09", "2020-02-10", "2020-02-11", "2020-02-12", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-04-03", "2020-04-04", "2020-04-05", "2020-04-06", "2020-04-07"],
 		"priorityTargets":
 		[
@@ -212,7 +212,7 @@
 	},
 	"2020A_C221": 
 	{
-		"ktn": "2020A_C221", "type": "Classical",
+		"ktn": "2020A_C221", "type": "Classical", "piFirst": "Heather", "piLast": "Knutson", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -242,7 +242,7 @@
 	},
 	"2020A_C226": 
 	{
-		"ktn": "2020A_C226", "type": "Classical",
+		"ktn": "2020A_C226", "type": "Classical", "piFirst": "Jason", "piLast": "Wang", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -266,7 +266,7 @@
 	},
 	"2020A_C230": 
 	{
-		"ktn": "2020A_C230", "type": "Classical",
+		"ktn": "2020A_C230", "type": "Classical", "piFirst": "Evan", "piLast": "Kirby", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -287,7 +287,7 @@
 	},
 	"2020A_C231": 
 	{
-		"ktn": "2020A_C231", "type": "Classical",
+		"ktn": "2020A_C231", "type": "Classical", "piFirst": "Charles", "piLast": "Steidel", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -327,7 +327,7 @@
 	},
 	"2020A_C232": 
 	{
-		"ktn": "2020A_C232", "type": "Classical",
+		"ktn": "2020A_C232", "type": "Classical", "piFirst": "Christopher", "piLast": "Martin", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -353,7 +353,7 @@
 	},
 	"2020A_C234": 
 	{
-		"ktn": "2020A_C234", "type": "Classical",
+		"ktn": "2020A_C234", "type": "Classical", "piFirst": "Chuck", "piLast": "Steidel", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -379,7 +379,7 @@
 	},
 	"2020A_C235": 
 	{
-		"ktn": "2020A_C235", "type": "Classical",
+		"ktn": "2020A_C235", "type": "Classical", "piFirst": "Hannah", "piLast": "Earnshaw", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -406,7 +406,7 @@
 	},
 	"2020A_C236": 
 	{
-		"ktn": "2020A_C236", "type": "Classical",
+		"ktn": "2020A_C236", "type": "Classical", "piFirst": "Christoffer", "piLast": "Fremling", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -454,7 +454,7 @@
 	},
 	"2020A_C240": 
 	{
-		"ktn": "2020A_C240", "type": "Classical",
+		"ktn": "2020A_C240", "type": "Classical", "piFirst": "Mike", "piLast": "Brown", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -476,7 +476,7 @@
 	},
 	"2020A_C241": 
 	{
-		"ktn": "2020A_C241", "type": "Classical",
+		"ktn": "2020A_C241", "type": "Classical", "piFirst": "Mansi", "piLast": "Kasliwal", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -524,7 +524,7 @@
 	},
 	"2020A_C244": 
 	{
-		"ktn": "2020A_C244", "type": "Classical",
+		"ktn": "2020A_C244", "type": "Classical", "piFirst": "Lin", "piLast": "Yan", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -552,7 +552,7 @@
 	},
 	"2020A_C247": 
 	{
-		"ktn": "2020A_C247", "type": "Classical",
+		"ktn": "2020A_C247", "type": "Classical", "piFirst": "Dimitri", "piLast": "Mawet", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -585,7 +585,7 @@
 	},
 	"2020A_C249": 
 	{
-		"ktn": "2020A_C249", "type": "Classical",
+		"ktn": "2020A_C249", "type": "Classical", "piFirst": "Dimitri", "piLast": "Mawet", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -609,7 +609,7 @@
 	},
 	"2020A_C254": 
 	{
-		"ktn": "2020A_C254", "type": "Classical",
+		"ktn": "2020A_C254", "type": "Classical", "piFirst": "Renee", "piLast": "Ludlam", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -630,7 +630,7 @@
 	},
 	"2020A_C255": 
 	{
-		"ktn": "2020A_C255", "type": "Classical",
+		"ktn": "2020A_C255", "type": "Classical", "piFirst": "Maxwell", "piLast": "Millar-Blanchaer", "inst": "CIT",
 		"datesToAvoid": ["2020-03-01", "2020-03-02", "2020-03-03", "2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-03-12", "2020-03-13", "2020-03-14", "2020-06-13", "2020-06-14", "2020-06-15", "2020-06-16", "2020-06-17", "2020-06-18", "2020-06-19", "2020-06-20"],
 		"priorityTargets":
 		[
@@ -665,7 +665,7 @@
 	},
 	"2020A_C256": 
 	{
-		"ktn": "2020A_C256", "type": "Classical",
+		"ktn": "2020A_C256", "type": "Classical", "piFirst": "Lina", "piLast": "Necib", "inst": "CIT",
 		"datesToAvoid": ["2020-06-08", "2020-06-09", "2020-06-10", "2020-06-11", "2020-05-15", "2020-05-16", "2020-05-17"],
 		"priorityTargets":
 		[
@@ -687,7 +687,7 @@
 	},
 	"2020A_C257": 
 	{
-		"ktn": "2020A_C257", "type": "Classical",
+		"ktn": "2020A_C257", "type": "Classical", "piFirst": "Kevin", "piLast": "Fogarty", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -713,7 +713,7 @@
 	},
 	"2020A_C258": 
 	{
-		"ktn": "2020A_C258", "type": "Classical",
+		"ktn": "2020A_C258", "type": "Classical", "piFirst": "Fei", "piLast": "Dai", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -754,7 +754,7 @@
 	},
 	"2020A_C259": 
 	{
-		"ktn": "2020A_C259", "type": "Classical",
+		"ktn": "2020A_C259", "type": "Classical", "piFirst": "Daniel", "piLast": "Goldstein", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -802,7 +802,7 @@
 	},
 	"2020A_C261": 
 	{
-		"ktn": "2020A_C261", "type": "Classical",
+		"ktn": "2020A_C261", "type": "Classical", "piFirst": "George", "piLast": "Djorgovski", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -833,7 +833,7 @@
 	},
 	"2020A_C262": 
 	{
-		"ktn": "2020A_C262", "type": "Classical",
+		"ktn": "2020A_C262", "type": "Classical", "piFirst": "Thomas", "piLast": "Prince", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -868,7 +868,7 @@
 	},
 	"2020A_C263": 
 	{
-		"ktn": "2020A_C263", "type": "Classical",
+		"ktn": "2020A_C263", "type": "Classical", "piFirst": "Maria", "piLast": "Charisi", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -894,7 +894,7 @@
 	},
 	"2020A_C265": 
 	{
-		"ktn": "2020A_C265", "type": "Classical",
+		"ktn": "2020A_C265", "type": "Classical", "piFirst": "Shri", "piLast": "Kulkarni", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -951,7 +951,7 @@
 	},
 	"2020A_C266": 
 	{
-		"ktn": "2020A_C266", "type": "Classical",
+		"ktn": "2020A_C266", "type": "Classical", "piFirst": "James", "piLast": "Fuller", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -972,7 +972,7 @@
 	},
 	"2020A_C267": 
 	{
-		"ktn": "2020A_C267", "type": "Classical",
+		"ktn": "2020A_C267", "type": "Classical", "piFirst": "George", "piLast": "Djorgovski", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1003,7 +1003,7 @@
 	},
 	"2020A_C270": 
 	{
-		"ktn": "2020A_C270", "type": "Classical",
+		"ktn": "2020A_C270", "type": "Classical", "piFirst": "Vikram", "piLast": "Ravi", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1033,7 +1033,7 @@
 	},
 	"2020A_C301": 
 	{
-		"ktn": "2020A_C301", "type": "Classical",
+		"ktn": "2020A_C301", "type": "Classical", "piFirst": "Director", "piLast": "CIT", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1072,7 +1072,7 @@
 	},
 	"2020A_C303": 
 	{
-		"ktn": "2020A_C303", "type": "Classical",
+		"ktn": "2020A_C303", "type": "Classical", "piFirst": "Mike", "piLast": "Brown", "inst": "CIT",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1095,7 +1095,7 @@
 	},
 	"2020A_D309": 
 	{
-		"ktn": "2020A_D309", "type": "Classical",
+		"ktn": "2020A_D309", "type": "Classical", "piFirst": "Jeffrey", "piLast": "Chilcote", "inst": "Notre Dame",
 		"datesToAvoid": ["2020-06-11", "2020-06-12", "2020-06-13", "2020-06-14", "2020-06-15", "2020-06-16", "2020-06-17", "2020-06-18", "2020-06-19", "2020-06-20", "2020-06-21", "2020-06-22", "2020-06-23", "2020-06-24", "2020-06-25", "2020-06-26", "2020-06-27"],
 		"priorityTargets":
 		[
@@ -1124,7 +1124,7 @@
 	},
 	"2020A_D310": 
 	{
-		"ktn": "2020A_D310", "type": "Classical",
+		"ktn": "2020A_D310", "type": "Classical", "piFirst": "J. Christopher", "piLast": "Howk", "inst": "Notre Dame",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1153,7 +1153,7 @@
 	},
 	"2020A_H146": 
 	{
-		"ktn": "2020A_H146", "type": "Classical",
+		"ktn": "2020A_H146", "type": "Classical", "piFirst": "Kathy", "piLast": "Cooksey", "inst": "UH",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1177,7 +1177,7 @@
 	},
 	"2020A_H224": 
 	{
-		"ktn": "2020A_H224", "type": "Classical",
+		"ktn": "2020A_H224", "type": "Classical", "piFirst": "Lauren", "piLast": "Weiss", "inst": "UH",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1201,7 +1201,7 @@
 	},
 	"2020A_H268": 
 	{
-		"ktn": "2020A_H268", "type": "Classical",
+		"ktn": "2020A_H268", "type": "Classical", "piFirst": "Benjamin", "piLast": "Shappee", "inst": "UH",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1249,7 +1249,7 @@
 	},
 	"2020A_H272": 
 	{
-		"ktn": "2020A_H272", "type": "Classical",
+		"ktn": "2020A_H272", "type": "Classical", "piFirst": "Antoinette", "piLast": "Cowie", "inst": "UH",
 		"datesToAvoid": ["2020-02-01", "2020-02-02", "2020-02-03", "2020-02-04", "2020-02-05", "2020-02-06", "2020-02-07", "2020-02-08", "2020-02-09", "2020-02-10", "2020-02-11", "2020-02-12", "2020-02-13", "2020-02-14", "2020-02-15", "2020-02-16", "2020-02-17", "2020-02-18", "2020-02-19", "2020-02-20", "2020-02-21", "2020-02-22", "2020-02-23", "2020-02-24", "2020-02-25", "2020-02-26", "2020-02-27", "2020-02-28", "2020-02-29", "2020-03-01", "2020-03-02", "2020-03-03", "2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-03-12", "2020-03-13", "2020-03-14", "2020-03-15", "2020-03-16", "2020-03-17", "2020-03-18", "2020-03-19", "2020-03-20", "2020-03-21", "2020-03-22", "2020-03-23", "2020-03-24", "2020-03-25", "2020-03-26", "2020-03-27", "2020-03-28", "2020-03-29", "2020-03-30", "2020-03-31", "2020-04-01", "2020-04-02", "2020-04-03", "2020-04-04", "2020-04-05", "2020-04-06", "2020-04-07", "2020-04-08", "2020-04-09", "2020-04-10", "2020-04-11", "2020-04-12", "2020-04-13", "2020-04-14", "2020-04-15", "2020-04-16", "2020-04-17", "2020-04-18", "2020-04-19", "2020-04-20", "2020-04-21", "2020-04-22", "2020-04-23", "2020-04-24", "2020-04-25", "2020-04-26", "2020-04-27", "2020-04-28", "2020-04-29", "2020-04-30"],
 		"priorityTargets":
 		[
@@ -1272,7 +1272,7 @@
 	},
 	"2020A_H273": 
 	{
-		"ktn": "2020A_H273", "type": "Classical",
+		"ktn": "2020A_H273", "type": "Classical", "piFirst": "David", "piLast": "Sanders", "inst": "UH",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1296,7 +1296,7 @@
 	},
 	"2020A_H274": 
 	{
-		"ktn": "2020A_H274", "type": "Classical",
+		"ktn": "2020A_H274", "type": "Classical", "piFirst": "Lennox", "piLast": "Cowie", "inst": "UH",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1318,7 +1318,7 @@
 	},
 	"2020A_H275": 
 	{
-		"ktn": "2020A_H275", "type": "Classical",
+		"ktn": "2020A_H275", "type": "Classical", "piFirst": "Charlotte", "piLast": "Bond", "inst": "UH",
 		"datesToAvoid": ["2020-04-09", "2020-04-10", "2020-04-11", "2020-04-12", "2020-05-06", "2020-05-07", "2020-05-08", "2020-05-09", "2020-06-03", "2020-06-04", "2020-06-05", "2020-07-01", "2020-07-02", "2020-07-03"],
 		"priorityTargets":
 		[
@@ -1341,7 +1341,7 @@
 	},
 	"2020A_H276": 
 	{
-		"ktn": "2020A_H276", "type": "Classical",
+		"ktn": "2020A_H276", "type": "Classical", "piFirst": "Jamie", "piLast": "Tayar", "inst": "UH",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1365,7 +1365,7 @@
 	},
 	"2020A_H277": 
 	{
-		"ktn": "2020A_H277", "type": "Classical",
+		"ktn": "2020A_H277", "type": "Classical", "piFirst": "Roy", "piLast": "Gal", "inst": "UH",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1388,7 +1388,7 @@
 	},
 	"2020A_H279": 
 	{
-		"ktn": "2020A_H279", "type": "Classical",
+		"ktn": "2020A_H279", "type": "Classical", "piFirst": "Daniel", "piLast": "Huber", "inst": "UH",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1418,7 +1418,7 @@
 	},
 	"2020A_H280": 
 	{
-		"ktn": "2020A_H280", "type": "Classical",
+		"ktn": "2020A_H280", "type": "Classical", "piFirst": "Daniel", "piLast": "Huber", "inst": "UH",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1439,7 +1439,7 @@
 	},
 	"2020A_H281": 
 	{
-		"ktn": "2020A_H281", "type": "Classical",
+		"ktn": "2020A_H281", "type": "Classical", "piFirst": "Michael", "piLast": "Bottom", "inst": "UH",
 		"datesToAvoid": ["2020-02-22", "2020-02-23", "2020-02-24", "2020-02-25", "2020-02-26", "2020-02-27", "2020-02-28", "2020-02-29", "2020-03-01", "2020-03-02", "2020-03-03", "2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-03-12", "2020-03-13", "2020-03-14", "2020-03-15", "2020-03-16", "2020-03-17", "2020-03-18", "2020-03-19", "2020-03-20", "2020-03-21", "2020-03-22", "2020-03-23", "2020-03-24", "2020-03-25", "2020-03-26", "2020-03-27", "2020-03-28", "2020-03-29", "2020-03-30", "2020-03-31", "2020-04-01", "2020-04-02", "2020-04-03", "2020-04-04", "2020-04-05", "2020-04-06", "2020-04-07", "2020-04-08", "2020-04-09", "2020-04-10", "2020-04-11", "2020-04-12", "2020-04-13", "2020-04-14", "2020-04-15", "2020-04-16", "2020-04-17", "2020-04-18", "2020-04-19", "2020-04-20", "2020-04-21", "2020-04-22", "2020-04-23", "2020-04-24", "2020-04-25", "2020-04-26", "2020-04-27", "2020-04-28", "2020-04-29", "2020-04-30", "2020-05-01", "2020-05-02", "2020-05-03", "2020-05-04", "2020-05-05", "2020-05-06", "2020-05-07", "2020-05-08", "2020-05-09", "2020-05-10", "2020-05-11", "2020-05-12", "2020-05-13", "2020-05-14", "2020-05-15", "2020-05-16", "2020-05-17", "2020-05-18", "2020-05-19", "2020-05-20", "2020-05-21", "2020-05-22", "2020-05-23", "2020-05-24", "2020-05-25", "2020-05-26", "2020-05-27", "2020-05-28", "2020-05-29", "2020-05-30", "2020-05-31", "2020-06-01", "2020-06-02", "2020-06-03", "2020-06-04", "2020-06-05", "2020-06-06", "2020-06-07", "2020-06-08", "2020-06-09", "2020-06-10", "2020-06-11", "2020-06-12", "2020-06-13", "2020-06-14", "2020-06-15", "2020-06-16", "2020-06-17", "2020-06-18", "2020-06-19", "2020-06-20", "2020-06-21", "2020-06-22", "2020-06-23", "2020-06-24", "2020-06-25", "2020-06-26", "2020-06-27", "2020-06-28", "2020-06-29", "2020-06-30", "2020-07-01", "2020-07-02", "2020-07-03", "2020-07-04", "2020-07-05", "2020-07-06", "2020-07-07", "2020-07-08", "2020-07-09", "2020-07-10", "2020-07-11", "2020-07-12", "2020-07-13", "2020-07-14", "2020-07-15", "2020-07-16", "2020-07-17", "2020-07-18", "2020-07-19", "2020-07-20", "2020-07-21", "2020-07-22", "2020-07-23", "2020-07-24", "2020-07-25", "2020-07-26", "2020-07-27", "2020-07-28", "2020-07-29", "2020-07-30", "2020-07-31"],
 		"priorityTargets":
 		[
@@ -1460,7 +1460,7 @@
 	},
 	"2020A_H282": 
 	{
-		"ktn": "2020A_H282", "type": "Classical",
+		"ktn": "2020A_H282", "type": "Classical", "piFirst": "Jacqueline", "piLast": "Keane", "inst": "UH",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1495,7 +1495,7 @@
 	},
 	"2020A_H283": 
 	{
-		"ktn": "2020A_H283", "type": "Classical",
+		"ktn": "2020A_H283", "type": "Classical", "piFirst": "Ashley", "piLast": "Chontos", "inst": "UH",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1519,7 +1519,7 @@
 	},
 	"2020A_H308": 
 	{
-		"ktn": "2020A_H308", "type": "Classical",
+		"ktn": "2020A_H308", "type": "Classical", "piFirst": "Richard", "piLast": "Griffiths", "inst": "UH",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1540,7 +1540,7 @@
 	},
 	"2020A_H311": 
 	{
-		"ktn": "2020A_H311", "type": "Classical",
+		"ktn": "2020A_H311", "type": "Classical", "piFirst": "Michael", "piLast": "Liu", "inst": "UH",
 		"datesToAvoid": ["2020-06-20", "2020-06-21", "2020-06-22", "2020-06-23", "2020-06-24", "2020-06-25", "2020-06-26", "2020-06-27", "2020-02-05", "2020-02-06", "2020-03-17", "2020-03-18"],
 		"priorityTargets":
 		[
@@ -1572,7 +1572,7 @@
 	},
 	"2020A_H312": 
 	{
-		"ktn": "2020A_H312", "type": "Classical",
+		"ktn": "2020A_H312", "type": "Classical", "piFirst": "Duncan", "piLast": "Farrah", "inst": "UH",
 		"datesToAvoid": ["2020-05-31", "2020-06-01", "2020-06-02", "2020-06-03", "2020-06-04", "2020-06-05", "2020-06-06", "2020-06-07", "2020-06-08", "2020-06-09", "2020-06-10", "2020-06-11", "2020-06-12", "2020-06-13", "2020-06-14", "2020-06-15", "2020-06-16", "2020-06-17", "2020-06-18", "2020-06-19", "2020-06-20", "2020-06-21", "2020-06-22", "2020-06-23", "2020-06-24", "2020-06-25", "2020-06-26", "2020-06-27", "2020-06-28", "2020-06-29", "2020-06-30", "2020-07-01", "2020-07-02", "2020-07-03", "2020-07-04", "2020-07-05", "2020-07-06", "2020-07-07", "2020-07-08", "2020-07-09", "2020-07-10", "2020-07-11", "2020-07-12", "2020-07-13", "2020-07-14", "2020-07-15", "2020-07-16", "2020-07-17", "2020-07-18", "2020-07-19", "2020-07-20", "2020-07-21", "2020-07-22", "2020-07-23", "2020-07-24", "2020-07-25", "2020-07-26", "2020-07-27", "2020-07-28", "2020-07-29", "2020-07-30", "2020-07-31"],
 		"priorityTargets":
 		[
@@ -1600,7 +1600,7 @@
 	},
 	"2020A_H313": 
 	{
-		"ktn": "2020A_H313", "type": "Classical",
+		"ktn": "2020A_H313", "type": "Classical", "piFirst": "Harald", "piLast": "Ebeling", "inst": "UH",
 		"datesToAvoid": ["2020-06-30", "2020-07-01", "2020-07-02", "2020-07-03", "2020-07-04", "2020-07-05", "2020-07-06", "2020-07-07", "2020-07-08", "2020-07-09", "2020-07-10", "2020-07-11", "2020-07-12", "2020-07-13", "2020-07-14", "2020-07-15", "2020-07-16", "2020-07-17", "2020-07-18", "2020-07-19", "2020-07-20", "2020-07-21", "2020-07-22", "2020-07-23", "2020-07-24", "2020-07-25", "2020-07-26", "2020-07-27", "2020-07-28", "2020-07-29", "2020-07-30", "2020-07-31"],
 		"priorityTargets":
 		[
@@ -1636,7 +1636,7 @@
 	},
 	"2020A_H314": 
 	{
-		"ktn": "2020A_H314", "type": "Classical",
+		"ktn": "2020A_H314", "type": "Classical", "piFirst": "Harald", "piLast": "Ebeling", "inst": "UH",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1658,7 +1658,7 @@
 	},
 	"2020A_H319": 
 	{
-		"ktn": "2020A_H319", "type": "Classical",
+		"ktn": "2020A_H319", "type": "Classical", "piFirst": "Duncan", "piLast": "Farrah", "inst": "UH",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1680,7 +1680,7 @@
 	},
 	"2020A_K291": 
 	{
-		"ktn": "2020A_K291", "type": "Classical",
+		"ktn": "2020A_K291", "type": "Classical", "piFirst": "Hilton", "piLast": "Lewis", "inst": "Keck",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1710,7 +1710,7 @@
 	},
 	"2020A_K293": 
 	{
-		"ktn": "2020A_K293", "type": "Classical",
+		"ktn": "2020A_K293", "type": "Classical", "piFirst": "Hilton", "piLast": "Lewis", "inst": "Keck",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1731,7 +1731,7 @@
 	},
 	"2020A_K294": 
 	{
-		"ktn": "2020A_K294", "type": "Classical",
+		"ktn": "2020A_K294", "type": "Classical", "piFirst": "Hilton", "piLast": "Lewis", "inst": "Keck",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1754,7 +1754,7 @@
 	},
 	"2020A_K297": 
 	{
-		"ktn": "2020A_K297", "type": "Classical",
+		"ktn": "2020A_K297", "type": "Classical", "piFirst": "Hilton", "piLast": "Lewis", "inst": "Keck",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1781,7 +1781,7 @@
 	},
 	"2020A_K300": 
 	{
-		"ktn": "2020A_K300", "type": "Classical",
+		"ktn": "2020A_K300", "type": "Classical", "piFirst": "Hilton", "piLast": "Lewis", "inst": "Keck",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1811,7 +1811,7 @@
 	},
 	"2020A_N007": 
 	{
-		"ktn": "2020A_N007", "type": "Classical",
+		"ktn": "2020A_N007", "type": "Classical", "piFirst": "Lauren", "piLast": "Weiss", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1835,7 +1835,7 @@
 	},
 	"2020A_N013": 
 	{
-		"ktn": "2020A_N013", "type": "Classical",
+		"ktn": "2020A_N013", "type": "Classical", "piFirst": "Daniel", "piLast": "Masters", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1860,7 +1860,7 @@
 	},
 	"2020A_N018": 
 	{
-		"ktn": "2020A_N018", "type": "Classical",
+		"ktn": "2020A_N018", "type": "Classical", "piFirst": "Siyi", "piLast": "Xu", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets": [],
 		"instruments":
@@ -1878,7 +1878,7 @@
 	},
 	"2020A_N021": 
 	{
-		"ktn": "2020A_N021", "type": "Classical",
+		"ktn": "2020A_N021", "type": "Classical", "piFirst": "Chris", "piLast": "Churchill", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1902,7 +1902,7 @@
 	},
 	"2020A_N024": 
 	{
-		"ktn": "2020A_N024", "type": "Classical",
+		"ktn": "2020A_N024", "type": "Classical", "piFirst": "Alberto", "piLast": "Bolatto", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1927,7 +1927,7 @@
 	},
 	"2020A_N026": 
 	{
-		"ktn": "2020A_N026", "type": "Classical",
+		"ktn": "2020A_N026", "type": "Classical", "piFirst": "Federico", "piLast": "Marocco", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1956,7 +1956,7 @@
 	},
 	"2020A_N027": 
 	{
-		"ktn": "2020A_N027", "type": "Classical",
+		"ktn": "2020A_N027", "type": "Classical", "piFirst": "Thayne", "piLast": "Currie", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1980,7 +1980,7 @@
 	},
 	"2020A_N028": 
 	{
-		"ktn": "2020A_N028", "type": "Classical",
+		"ktn": "2020A_N028", "type": "Classical", "piFirst": "Alice", "piLast": "Shapley", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2006,7 +2006,7 @@
 	},
 	"2020A_N037": 
 	{
-		"ktn": "2020A_N037", "type": "Classical",
+		"ktn": "2020A_N037", "type": "Classical", "piFirst": "Paul Wilson", "piLast": "Cauley", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2027,7 +2027,7 @@
 	},
 	"2020A_N040": 
 	{
-		"ktn": "2020A_N040", "type": "Classical",
+		"ktn": "2020A_N040", "type": "Classical", "piFirst": "William", "piLast": "Grundy", "inst": "NASA",
 		"datesToAvoid": ["2020-03-15", "2020-03-16", "2020-03-17", "2020-03-18", "2020-03-19", "2020-03-20", "2020-03-21", "2020-06-14", "2020-06-15", "2020-06-16", "2020-06-17", "2020-06-18", "2020-06-19"],
 		"priorityTargets":
 		[
@@ -2049,7 +2049,7 @@
 	},
 	"2020A_N047": 
 	{
-		"ktn": "2020A_N047", "type": "Classical",
+		"ktn": "2020A_N047", "type": "Classical", "piFirst": "Marissa", "piLast": "Vogt", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2072,7 +2072,7 @@
 	},
 	"2020A_N049": 
 	{
-		"ktn": "2020A_N049", "type": "Classical",
+		"ktn": "2020A_N049", "type": "Classical", "piFirst": "Joseph", "piLast": "Burchett", "inst": "NASA",
 		"datesToAvoid": ["2020-06-01", "2020-06-02", "2020-06-03", "2020-06-04", "2020-06-05", "2020-06-06", "2020-06-07", "2020-06-08", "2020-06-09", "2020-06-10", "2020-06-11", "2020-06-12", "2020-06-13", "2020-06-14", "2020-06-15", "2020-06-16", "2020-06-17", "2020-06-18", "2020-06-19", "2020-06-20", "2020-06-21", "2020-06-22", "2020-06-23", "2020-06-24", "2020-06-25", "2020-06-26", "2020-06-27", "2020-06-28", "2020-06-29", "2020-06-30", "2020-07-01", "2020-07-02", "2020-07-03", "2020-07-04", "2020-07-05", "2020-07-06", "2020-07-07", "2020-07-08", "2020-07-09", "2020-07-10", "2020-07-11", "2020-07-12", "2020-07-13", "2020-07-14", "2020-07-15", "2020-07-16", "2020-07-17", "2020-07-18", "2020-07-19", "2020-07-20", "2020-07-21", "2020-07-22", "2020-07-23", "2020-07-24", "2020-07-25", "2020-07-26", "2020-07-27", "2020-07-28", "2020-07-29", "2020-07-30", "2020-07-31"],
 		"priorityTargets":
 		[
@@ -2096,7 +2096,7 @@
 	},
 	"2020A_N054": 
 	{
-		"ktn": "2020A_N054", "type": "Classical",
+		"ktn": "2020A_N054", "type": "Classical", "piFirst": "Munazza", "piLast": "Alam", "inst": "NASA",
 		"datesToAvoid": ["2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-03-12", "2020-03-13", "2020-03-14", "2020-03-15", "2020-03-16", "2020-03-17", "2020-03-18", "2020-03-19", "2020-03-20", "2020-03-21", "2020-03-22", "2020-03-23", "2020-03-24", "2020-03-25", "2020-03-26", "2020-03-27", "2020-03-28", "2020-03-29", "2020-03-30", "2020-03-31", "2020-04-01", "2020-04-02", "2020-04-03", "2020-04-04", "2020-04-05", "2020-04-06", "2020-04-07", "2020-04-08", "2020-04-09", "2020-04-10", "2020-04-11", "2020-04-12", "2020-04-13", "2020-04-14", "2020-04-15", "2020-04-16", "2020-04-17", "2020-04-18", "2020-04-19", "2020-04-20", "2020-04-21", "2020-04-22", "2020-04-23", "2020-04-24", "2020-04-25", "2020-04-26", "2020-04-27", "2020-04-28", "2020-04-29", "2020-04-30", "2020-05-01", "2020-05-02", "2020-05-03", "2020-05-04", "2020-05-05", "2020-05-06", "2020-05-07", "2020-05-08", "2020-05-09", "2020-05-10", "2020-05-11", "2020-05-12", "2020-05-13", "2020-05-14", "2020-05-15", "2020-05-16", "2020-05-17", "2020-05-18", "2020-05-19", "2020-05-20", "2020-05-21", "2020-05-22", "2020-05-23", "2020-05-24", "2020-05-25", "2020-05-26", "2020-05-27", "2020-05-28", "2020-05-29", "2020-05-30", "2020-05-31", "2020-06-01", "2020-06-02", "2020-06-03", "2020-06-04", "2020-06-05", "2020-06-06", "2020-06-07", "2020-06-08", "2020-06-09", "2020-06-10", "2020-06-11", "2020-06-12", "2020-06-13", "2020-06-14", "2020-06-15", "2020-06-16", "2020-06-17", "2020-06-18", "2020-06-19", "2020-06-20", "2020-06-21", "2020-06-22", "2020-06-23", "2020-06-24", "2020-06-25", "2020-06-26", "2020-06-27", "2020-06-28", "2020-06-29", "2020-06-30", "2020-07-01", "2020-07-02", "2020-07-03", "2020-07-04", "2020-07-05", "2020-07-06", "2020-07-07", "2020-07-08", "2020-07-09", "2020-07-10", "2020-07-11", "2020-07-12", "2020-07-13", "2020-07-14", "2020-07-15", "2020-07-16", "2020-07-17", "2020-07-18", "2020-07-19", "2020-07-20", "2020-07-21", "2020-07-22", "2020-07-23", "2020-07-24", "2020-07-25", "2020-07-26", "2020-07-27", "2020-07-28", "2020-07-29", "2020-07-30", "2020-07-31"],
 		"priorityTargets":
 		[
@@ -2119,7 +2119,7 @@
 	},
 	"2020A_N056": 
 	{
-		"ktn": "2020A_N056", "type": "Classical",
+		"ktn": "2020A_N056", "type": "Classical", "piFirst": "Allison", "piLast": "Strom", "inst": "NASA",
 		"datesToAvoid": ["2020-02-08", "2020-02-09", "2020-02-10", "2020-03-06", "2020-03-07", "2020-03-08", "2020-04-03", "2020-04-04", "2020-04-05"],
 		"priorityTargets":
 		[
@@ -2140,7 +2140,7 @@
 	},
 	"2020A_N060": 
 	{
-		"ktn": "2020A_N060", "type": "Classical",
+		"ktn": "2020A_N060", "type": "Classical", "piFirst": "Jeyhan", "piLast": "Kartaltepe", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2163,7 +2163,7 @@
 	},
 	"2020A_N063": 
 	{
-		"ktn": "2020A_N063", "type": "Classical",
+		"ktn": "2020A_N063", "type": "Classical", "piFirst": "Taylor", "piLast": "Hutchison", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2187,7 +2187,7 @@
 	},
 	"2020A_N068": 
 	{
-		"ktn": "2020A_N068", "type": "Classical",
+		"ktn": "2020A_N068", "type": "Classical", "piFirst": "Jacob", "piLast": "Bean", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2209,7 +2209,7 @@
 	},
 	"2020A_N079": 
 	{
-		"ktn": "2020A_N079", "type": "Cadence",
+		"ktn": "2020A_N079", "type": "Cadence", "piFirst": "Carl", "piLast": "Schmidt", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2230,7 +2230,7 @@
 	},
 	"2020A_N083": 
 	{
-		"ktn": "2020A_N083", "type": "Classical",
+		"ktn": "2020A_N083", "type": "Classical", "piFirst": "Erica", "piLast": "Gonzales", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2258,7 +2258,7 @@
 	},
 	"2020A_N089": 
 	{
-		"ktn": "2020A_N089", "type": "Classical",
+		"ktn": "2020A_N089", "type": "Classical", "piFirst": "Jane", "piLast": "Rigby", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2280,7 +2280,7 @@
 	},
 	"2020A_N095": 
 	{
-		"ktn": "2020A_N095", "type": "Classical",
+		"ktn": "2020A_N095", "type": "Classical", "piFirst": "Peter", "piLast": "Senchyna", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2306,7 +2306,7 @@
 	},
 	"2020A_N097": 
 	{
-		"ktn": "2020A_N097", "type": "Classical",
+		"ktn": "2020A_N097", "type": "Classical", "piFirst": "Justin", "piLast": "Hom", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2329,7 +2329,7 @@
 	},
 	"2020A_N098": 
 	{
-		"ktn": "2020A_N098", "type": "Cadence",
+		"ktn": "2020A_N098", "type": "Cadence", "piFirst": "Ya-Lin", "piLast": "Wu", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2368,12 +2368,12 @@
 	},
 	"2020A_N099": 
 	{
-		"ktn": "2020A_N099", "type": "Classical",
+		"ktn": "2020A_N099", "type": "Classical", "piFirst": "Rongmon", "piLast": "Bordoloi", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
 			{"priority": 1, "ra": "14:29:54.857", "dec": "+12:02:38.68", "epoch": "J2000", "target": "SGAS J142954.9+120239"},
-			{"priority": 1, "ra": "14:58:36.143", "dec": "-00:23:58.17", "epoch": "J2000", "target": "SGAS J145836.1\u00e2\u0088\u0092002358"}
+			{"priority": 1, "ra": "14:58:36.143", "dec": "-00:23:58.17", "epoch": "J2000", "target": "SGAS J145836.1\u00e2\u02c6\u2019002358"}
 		],
 		"instruments":
 		[
@@ -2390,7 +2390,7 @@
 	},
 	"2020A_N100": 
 	{
-		"ktn": "2020A_N100", "type": "Classical",
+		"ktn": "2020A_N100", "type": "Classical", "piFirst": "Trent", "piLast": "Dupuy", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2416,7 +2416,7 @@
 	},
 	"2020A_N102": 
 	{
-		"ktn": "2020A_N102", "type": "Classical",
+		"ktn": "2020A_N102", "type": "Classical", "piFirst": "Adam", "piLast": "Kraus", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2437,7 +2437,7 @@
 	},
 	"2020A_N110": 
 	{
-		"ktn": "2020A_N110", "type": "Classical",
+		"ktn": "2020A_N110", "type": "Classical", "piFirst": "Patrick", "piLast": "Kelly", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2459,7 +2459,7 @@
 	},
 	"2020A_N119": 
 	{
-		"ktn": "2020A_N119", "type": "Classical",
+		"ktn": "2020A_N119", "type": "Classical", "piFirst": "Brendan", "piLast": "Bowler", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2480,7 +2480,7 @@
 	},
 	"2020A_N123": 
 	{
-		"ktn": "2020A_N123", "type": "Classical",
+		"ktn": "2020A_N123", "type": "Classical", "piFirst": "Andrew", "piLast": "Howard", "inst": "NASA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2520,7 +2520,7 @@
 	},
 	"2020A_O284": 
 	{
-		"ktn": "2020A_O284", "type": "Classical",
+		"ktn": "2020A_O284", "type": "Classical", "piFirst": "Kerry", "piLast": "Paterson", "inst": "Northwestern",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2545,7 +2545,7 @@
 	},
 	"2020A_O286": 
 	{
-		"ktn": "2020A_O286", "type": "Classical",
+		"ktn": "2020A_O286", "type": "Classical", "piFirst": "L Clifton", "piLast": "Johnson", "inst": "Northwestern",
 		"datesToAvoid": ["2020-04-19", "2020-04-20", "2020-04-21", "2020-04-22", "2020-04-23", "2020-06-27", "2020-06-28", "2020-06-29", "2020-06-30", "2020-07-01", "2020-07-02", "2020-07-03", "2020-07-04"],
 		"priorityTargets":
 		[
@@ -2571,7 +2571,7 @@
 	},
 	"2020A_O287": 
 	{
-		"ktn": "2020A_O287", "type": "Classical",
+		"ktn": "2020A_O287", "type": "Classical", "piFirst": "Peter", "piLast": "Blanchard", "inst": "Northwestern",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2627,7 +2627,7 @@
 	},
 	"2020A_S316": 
 	{
-		"ktn": "2020A_S316", "type": "Classical",
+		"ktn": "2020A_S316", "type": "Classical", "piFirst": "Takashi", "piLast": "Kojima", "inst": "Subaru",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2657,12 +2657,12 @@
 	},
 	"2020A_S318": 
 	{
-		"ktn": "2020A_S318", "type": "Classical",
+		"ktn": "2020A_S318", "type": "Classical", "piFirst": "Tadayuki", "piLast": "Kodama", "inst": "Subaru",
 		"datesToAvoid": ["2020-07-10", "2020-07-11", "2020-07-12", "2020-07-13", "2020-07-14", "2020-07-15", "2020-07-16", "2020-07-17", "2020-07-18", "2020-07-19", "2020-07-20"],
 		"priorityTargets":
 		[
-			{"priority": 1, "ra": "22:15:58.50", "dec": "-17:38:03.0", "epoch": "J2000", "target": "XMMJ2215.9\u00e2\u0080\u00931738"},
-			{"priority": 2, "ra": "16:01:17.30", "dec": "-00:28:48.0", "epoch": "J2000", "target": "USS1558\u00e2\u0080\u0093003"},
+			{"priority": 1, "ra": "22:15:58.50", "dec": "-17:38:03.0", "epoch": "J2000", "target": "XMMJ2215.9\u00e2\u20ac\u201c1738"},
+			{"priority": 2, "ra": "16:01:17.30", "dec": "-00:28:48.0", "epoch": "J2000", "target": "USS1558\u00e2\u20ac\u201c003"},
 			{"priority": 3, "ra": "21:07:14.82", "dec": "+23:31:45.0", "epoch": "J2000", "target": "4C23.56"}
 		],
 		"instruments":
@@ -2689,7 +2689,7 @@
 	},
 	"2020A_S320": 
 	{
-		"ktn": "2020A_S320", "type": "Classical",
+		"ktn": "2020A_S320", "type": "Classical", "piFirst": "Yuichi", "piLast": "Harikane", "inst": "Subaru",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2714,7 +2714,7 @@
 	},
 	"2020A_S321": 
 	{
-		"ktn": "2020A_S321", "type": "Classical",
+		"ktn": "2020A_S321", "type": "Classical", "piFirst": "Yuichi", "piLast": "Harikane", "inst": "Subaru",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2742,7 +2742,7 @@
 	},
 	"2020A_S322": 
 	{
-		"ktn": "2020A_S322", "type": "Classical",
+		"ktn": "2020A_S322", "type": "Classical", "piFirst": "Masayuki", "piLast": "Tanaka", "inst": "Subaru",
 		"datesToAvoid": ["2020-02-08", "2020-02-09", "2020-02-10", "2020-02-11", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-04-03", "2020-04-04", "2020-04-05", "2020-04-06"],
 		"priorityTargets":
 		[
@@ -2764,7 +2764,7 @@
 	},
 	"2020A_S324": 
 	{
-		"ktn": "2020A_S324", "type": "Classical",
+		"ktn": "2020A_S324", "type": "Classical", "piFirst": "Satoshi", "piLast": "Kikuta", "inst": "Subaru",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2788,7 +2788,7 @@
 	},
 	"2020A_U010": 
 	{
-		"ktn": "2020A_U010", "type": "Classical",
+		"ktn": "2020A_U010", "type": "Classical", "piFirst": "Crystal", "piLast": "Martin", "inst": "UCSB",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2818,7 +2818,7 @@
 	},
 	"2020A_U022": 
 	{
-		"ktn": "2020A_U022", "type": "Cadence",
+		"ktn": "2020A_U022", "type": "Cadence", "piFirst": "Imke", "piLast": "de Pater", "inst": "UCB",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2840,7 +2840,7 @@
 	},
 	"2020A_U106": 
 	{
-		"ktn": "2020A_U106", "type": "Cadence",
+		"ktn": "2020A_U106", "type": "Cadence", "piFirst": "Saul", "piLast": "Perlmutter", "inst": "UC-lbnl",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2863,7 +2863,7 @@
 	},
 	"2020A_U121": 
 	{
-		"ktn": "2020A_U121", "type": "Classical",
+		"ktn": "2020A_U121", "type": "Classical", "piFirst": "George", "piLast": "Becker", "inst": "UCR",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2886,7 +2886,7 @@
 	},
 	"2020A_U127": 
 	{
-		"ktn": "2020A_U127", "type": "Classical",
+		"ktn": "2020A_U127", "type": "Classical", "piFirst": "Erik", "piLast": "Petigura", "inst": "UCLA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2929,7 +2929,7 @@
 	},
 	"2020A_U138": 
 	{
-		"ktn": "2020A_U138", "type": "Classical",
+		"ktn": "2020A_U138", "type": "Classical", "piFirst": "Tommaso", "piLast": "Treu", "inst": "UCLA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2960,7 +2960,7 @@
 	},
 	"2020A_U139": 
 	{
-		"ktn": "2020A_U139", "type": "Classical",
+		"ktn": "2020A_U139", "type": "Classical", "piFirst": "Tommaso", "piLast": "Treu", "inst": "UCLA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2986,7 +2986,7 @@
 	},
 	"2020A_U147": 
 	{
-		"ktn": "2020A_U147", "type": "Classical",
+		"ktn": "2020A_U147", "type": "Classical", "piFirst": "Chung-Pei", "piLast": "Ma", "inst": "UCB",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3011,7 +3011,7 @@
 	},
 	"2020A_U148": 
 	{
-		"ktn": "2020A_U148", "type": "Classical",
+		"ktn": "2020A_U148", "type": "Classical", "piFirst": "Gabriela", "piLast": "Canalizo", "inst": "UCR",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3041,7 +3041,7 @@
 	},
 	"2020A_U149": 
 	{
-		"ktn": "2020A_U149", "type": "Classical",
+		"ktn": "2020A_U149", "type": "Classical", "piFirst": "Adam", "piLast": "Burgasser", "inst": "UCSD",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3080,7 +3080,7 @@
 	},
 	"2020A_U150": 
 	{
-		"ktn": "2020A_U150", "type": "Classical",
+		"ktn": "2020A_U150", "type": "Classical", "piFirst": "Gillian", "piLast": "Wilson", "inst": "UCR",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3104,7 +3104,7 @@
 	},
 	"2020A_U152": 
 	{
-		"ktn": "2020A_U152", "type": "Classical",
+		"ktn": "2020A_U152", "type": "Classical", "piFirst": "Lori", "piLast": "Lubin", "inst": "UCD",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3138,7 +3138,7 @@
 	},
 	"2020A_U153": 
 	{
-		"ktn": "2020A_U153", "type": "Classical",
+		"ktn": "2020A_U153", "type": "Classical", "piFirst": "Alex", "piLast": "Filippenko", "inst": "UCB",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3161,7 +3161,7 @@
 	},
 	"2020A_U154": 
 	{
-		"ktn": "2020A_U154", "type": "Classical",
+		"ktn": "2020A_U154", "type": "Classical", "piFirst": "Alex", "piLast": "Filippenko", "inst": "UCB",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3187,7 +3187,7 @@
 	},
 	"2020A_U156": 
 	{
-		"ktn": "2020A_U156", "type": "Classical",
+		"ktn": "2020A_U156", "type": "Classical", "piFirst": "Adam", "piLast": "Burgasser", "inst": "UCSD",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3223,7 +3223,7 @@
 	},
 	"2020A_U158": 
 	{
-		"ktn": "2020A_U158", "type": "Classical",
+		"ktn": "2020A_U158", "type": "Classical", "piFirst": "Adam", "piLast": "Burgasser", "inst": "UCSD",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3255,7 +3255,7 @@
 	},
 	"2020A_U159": 
 	{
-		"ktn": "2020A_U159", "type": "Classical",
+		"ktn": "2020A_U159", "type": "Classical", "piFirst": "Karin", "piLast": "Sandstrom", "inst": "UCSD",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3282,7 +3282,7 @@
 	},
 	"2020A_U160": 
 	{
-		"ktn": "2020A_U160", "type": "Classical",
+		"ktn": "2020A_U160", "type": "Classical", "piFirst": "Tucker", "piLast": "Jones", "inst": "UCD",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3312,7 +3312,7 @@
 	},
 	"2020A_U161": 
 	{
-		"ktn": "2020A_U161", "type": "Classical",
+		"ktn": "2020A_U161", "type": "Classical", "piFirst": "Laura", "piLast": "Sales", "inst": "UCR",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3345,7 +3345,7 @@
 	},
 	"2020A_U162": 
 	{
-		"ktn": "2020A_U162", "type": "Classical",
+		"ktn": "2020A_U162", "type": "Classical", "piFirst": "Alison", "piLast": "Coil", "inst": "UCSD",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3382,7 +3382,7 @@
 	},
 	"2020A_U164": 
 	{
-		"ktn": "2020A_U164", "type": "Classical",
+		"ktn": "2020A_U164", "type": "Classical", "piFirst": "Tucker", "piLast": "Jones", "inst": "UCD",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3418,7 +3418,7 @@
 	},
 	"2020A_U166": 
 	{
-		"ktn": "2020A_U166", "type": "Classical",
+		"ktn": "2020A_U166", "type": "Classical", "piFirst": "Michael", "piLast": "Cooper", "inst": "UCI",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3445,7 +3445,7 @@
 	},
 	"2020A_U167": 
 	{
-		"ktn": "2020A_U167", "type": "Cadence",
+		"ktn": "2020A_U167", "type": "Cadence", "piFirst": "Imke", "piLast": "de Pater", "inst": "UCB",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3467,7 +3467,7 @@
 	},
 	"2020A_U168": 
 	{
-		"ktn": "2020A_U168", "type": "Classical",
+		"ktn": "2020A_U168", "type": "Classical", "piFirst": "Jason", "piLast": "Prochaska", "inst": "UCSC",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3500,7 +3500,7 @@
 	},
 	"2020A_U169": 
 	{
-		"ktn": "2020A_U169", "type": "Classical",
+		"ktn": "2020A_U169", "type": "Classical", "piFirst": "Alice", "piLast": "Shapley", "inst": "UCLA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3532,7 +3532,7 @@
 	},
 	"2020A_U170": 
 	{
-		"ktn": "2020A_U170", "type": "Classical",
+		"ktn": "2020A_U170", "type": "Classical", "piFirst": "Jason", "piLast": "Prochaska", "inst": "UCSC",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3563,7 +3563,7 @@
 	},
 	"2020A_U171": 
 	{
-		"ktn": "2020A_U171", "type": "Classical",
+		"ktn": "2020A_U171", "type": "Classical", "piFirst": "Shelley", "piLast": "Wright", "inst": "UCSD",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3585,7 +3585,7 @@
 	},
 	"2020A_U173": 
 	{
-		"ktn": "2020A_U173", "type": "Classical",
+		"ktn": "2020A_U173", "type": "Classical", "piFirst": "Alison", "piLast": "Coil", "inst": "UCSD",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3614,7 +3614,7 @@
 	},
 	"2020A_U178": 
 	{
-		"ktn": "2020A_U178", "type": "Classical",
+		"ktn": "2020A_U178", "type": "Classical", "piFirst": "Dan", "piLast": "Weisz", "inst": "UCB",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3644,7 +3644,7 @@
 	},
 	"2020A_U183": 
 	{
-		"ktn": "2020A_U183", "type": "Classical",
+		"ktn": "2020A_U183", "type": "Classical", "piFirst": "Joseph", "piLast": "Hennawi", "inst": "UCSB",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3676,7 +3676,7 @@
 	},
 	"2020A_U184": 
 	{
-		"ktn": "2020A_U184", "type": "Classical",
+		"ktn": "2020A_U184", "type": "Classical", "piFirst": "Carl", "piLast": "Melis", "inst": "UCSD",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3711,7 +3711,7 @@
 	},
 	"2020A_U185": 
 	{
-		"ktn": "2020A_U185", "type": "Classical",
+		"ktn": "2020A_U185", "type": "Classical", "piFirst": "Lars", "piLast": "Bildsten", "inst": "UCSB",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3734,7 +3734,7 @@
 	},
 	"2020A_U186": 
 	{
-		"ktn": "2020A_U186", "type": "Classical",
+		"ktn": "2020A_U186", "type": "Classical", "piFirst": "Rebecca", "piLast": "Jensen-Clem", "inst": "UCSC",
 		"datesToAvoid": ["2020-07-07", "2020-07-08", "2020-07-09"],
 		"priorityTargets":
 		[
@@ -3757,7 +3757,7 @@
 	},
 	"2020A_U187": 
 	{
-		"ktn": "2020A_U187", "type": "Classical",
+		"ktn": "2020A_U187", "type": "Classical", "piFirst": "Andrea", "piLast": "Ghez", "inst": "UCLA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3801,7 +3801,7 @@
 	},
 	"2020A_U188": 
 	{
-		"ktn": "2020A_U188", "type": "Classical",
+		"ktn": "2020A_U188", "type": "Classical", "piFirst": "Tucker", "piLast": "Jones", "inst": "UCD",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3831,7 +3831,7 @@
 	},
 	"2020A_U189": 
 	{
-		"ktn": "2020A_U189", "type": "Classical",
+		"ktn": "2020A_U189", "type": "Classical", "piFirst": "Quinn", "piLast": "Konopacky", "inst": "UCSD",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3854,7 +3854,7 @@
 	},
 	"2020A_U191": 
 	{
-		"ktn": "2020A_U191", "type": "Classical",
+		"ktn": "2020A_U191", "type": "Classical", "piFirst": "Jean", "piLast": "Brodie", "inst": "UCSC",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3880,7 +3880,7 @@
 	},
 	"2020A_U193": 
 	{
-		"ktn": "2020A_U193", "type": "Classical",
+		"ktn": "2020A_U193", "type": "Classical", "piFirst": "Andy", "piLast": "Skemer", "inst": "UCSC",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3910,7 +3910,7 @@
 	},
 	"2020A_U195": 
 	{
-		"ktn": "2020A_U195", "type": "Classical",
+		"ktn": "2020A_U195", "type": "Classical", "piFirst": "Jean", "piLast": "Turner", "inst": "UCLA",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3940,7 +3940,7 @@
 	},
 	"2020A_U201": 
 	{
-		"ktn": "2020A_U201", "type": "Classical",
+		"ktn": "2020A_U201", "type": "Classical", "piFirst": "Gaspard", "piLast": "Duchene", "inst": "UCB",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3963,7 +3963,7 @@
 	},
 	"2020A_U204": 
 	{
-		"ktn": "2020A_U204", "type": "Classical",
+		"ktn": "2020A_U204", "type": "Classical", "piFirst": "Paul", "piLast": "Kalas", "inst": "UCB",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3995,7 +3995,7 @@
 	},
 	"2020A_U205": 
 	{
-		"ktn": "2020A_U205", "type": "Classical",
+		"ktn": "2020A_U205", "type": "Classical", "piFirst": "Steph", "piLast": "Sallum", "inst": "UCI",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4038,7 +4038,7 @@
 	},
 	"2020A_U207": 
 	{
-		"ktn": "2020A_U207", "type": "Classical",
+		"ktn": "2020A_U207", "type": "Classical", "piFirst": "David", "piLast": "Williams", "inst": "UCSC",
 		"datesToAvoid": ["2020-02-01", "2020-02-02", "2020-02-03", "2020-02-04", "2020-02-05", "2020-02-06", "2020-02-07", "2020-02-08", "2020-03-10", "2020-03-11", "2020-03-12", "2020-03-13", "2020-03-14", "2020-04-17", "2020-04-18", "2020-04-19", "2020-04-20", "2020-04-21", "2020-04-22", "2020-05-12", "2020-05-13", "2020-05-14", "2020-05-15", "2020-05-16", "2020-07-03", "2020-07-04", "2020-07-05", "2020-07-06", "2020-07-07", "2020-07-08", "2020-07-09", "2020-07-10", "2020-07-11", "2020-07-12", "2020-07-13", "2020-07-14", "2020-07-15", "2020-07-16", "2020-07-17", "2020-07-18", "2020-07-19"],
 		"priorityTargets":
 		[
@@ -4068,7 +4068,7 @@
 	},
 	"2020A_U208": 
 	{
-		"ktn": "2020A_U208", "type": "Classical",
+		"ktn": "2020A_U208", "type": "Classical", "piFirst": "Tesla", "piLast": "Jeltema", "inst": "UCSC",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4097,7 +4097,7 @@
 	},
 	"2020A_U209": 
 	{
-		"ktn": "2020A_U209", "type": "Classical",
+		"ktn": "2020A_U209", "type": "Classical", "piFirst": "Ryan", "piLast": "Foley", "inst": "UCSC",
 		"datesToAvoid": ["2020-02-14", "2020-02-28", "2020-04-24", "2020-05-22", "2020-06-05"],
 		"priorityTargets":
 		[
@@ -4131,7 +4131,7 @@
 	},
 	"2020A_U210": 
 	{
-		"ktn": "2020A_U210", "type": "Classical",
+		"ktn": "2020A_U210", "type": "Classical", "piFirst": "Fred", "piLast": "Hamann", "inst": "UCR",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4157,7 +4157,7 @@
 	},
 	"2020A_U211": 
 	{
-		"ktn": "2020A_U211", "type": "Classical",
+		"ktn": "2020A_U211", "type": "Classical", "piFirst": "Eugene", "piLast": "Chiang", "inst": "UCB",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4198,7 +4198,7 @@
 	},
 	"2020A_U212": 
 	{
-		"ktn": "2020A_U212", "type": "Cadence",
+		"ktn": "2020A_U212", "type": "Cadence", "piFirst": "Jessica", "piLast": "Lu", "inst": "UCB",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4300,7 +4300,7 @@
 	},
 	"2020A_U216": 
 	{
-		"ktn": "2020A_U216", "type": "Classical",
+		"ktn": "2020A_U216", "type": "Classical", "piFirst": "Paul", "piLast": "Kalas", "inst": "UCB",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4329,7 +4329,7 @@
 	},
 	"2020A_U218": 
 	{
-		"ktn": "2020A_U218", "type": "Classical",
+		"ktn": "2020A_U218", "type": "Classical", "piFirst": "Puragra", "piLast": "Guhathakurta", "inst": "UCSC",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4352,7 +4352,7 @@
 	},
 	"2020A_U220": 
 	{
-		"ktn": "2020A_U220", "type": "Classical",
+		"ktn": "2020A_U220", "type": "Classical", "piFirst": "Mariska", "piLast": "Kriek", "inst": "UCB",
 		"datesToAvoid": ["2020-04-04", "2020-04-05"],
 		"priorityTargets":
 		[
@@ -4386,7 +4386,7 @@
 	},
 	"2020A_U222": 
 	{
-		"ktn": "2020A_U222", "type": "Classical",
+		"ktn": "2020A_U222", "type": "Classical", "piFirst": "Philip", "piLast": "Hinz", "inst": "UCSC",
 		"datesToAvoid": ["2020-02-29", "2020-03-01", "2020-03-02", "2020-03-03", "2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-03-12", "2020-03-13", "2020-03-14", "2020-03-15", "2020-03-16"],
 		"priorityTargets":
 		[
@@ -4410,7 +4410,7 @@
 	},
 	"2020A_U223": 
 	{
-		"ktn": "2020A_U223", "type": "Classical",
+		"ktn": "2020A_U223", "type": "Classical", "piFirst": "Fred", "piLast": "Hamann", "inst": "UCR",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4446,7 +4446,7 @@
 	},
 	"2020A_U228": 
 	{
-		"ktn": "2020A_U228", "type": "Classical",
+		"ktn": "2020A_U228", "type": "Classical", "piFirst": "Brian", "piLast": "Siana", "inst": "UCR",
 		"datesToAvoid": ["2020-04-04", "2020-04-05", "2020-04-06"],
 		"priorityTargets":
 		[
@@ -4470,7 +4470,7 @@
 	},
 	"2020A_W128": 
 	{
-		"ktn": "2020A_W128", "type": "Classical",
+		"ktn": "2020A_W128", "type": "Classical", "piFirst": "Glenn", "piLast": "Kacprzak", "inst": "Swinburne",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4491,7 +4491,7 @@
 	},
 	"2020A_W132": 
 	{
-		"ktn": "2020A_W132", "type": "Classical",
+		"ktn": "2020A_W132", "type": "Classical", "piFirst": "Karl", "piLast": "Glazebrook", "inst": "Swinburne",
 		"datesToAvoid": ["2020-02-09", "2020-03-07", "2020-02-01"],
 		"priorityTargets":
 		[
@@ -4512,7 +4512,7 @@
 	},
 	"2020A_W140": 
 	{
-		"ktn": "2020A_W140", "type": "Classical",
+		"ktn": "2020A_W140", "type": "Classical", "piFirst": "Duncan", "piLast": "Forbes", "inst": "Swinburne",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4533,7 +4533,7 @@
 	},
 	"2020A_W141": 
 	{
-		"ktn": "2020A_W141", "type": "Classical",
+		"ktn": "2020A_W141", "type": "Classical", "piFirst": "Tiantian", "piLast": "Yuan", "inst": "Swinburne",
 		"datesToAvoid": ["2020-02-10", "2020-02-11", "2020-02-12", "2020-02-13", "2020-02-14", "2020-02-15", "2020-02-16", "2020-02-17", "2020-02-18", "2020-02-19", "2020-02-20", "2020-02-21", "2020-02-22", "2020-02-23", "2020-02-24", "2020-02-25", "2020-02-26", "2020-02-27", "2020-02-28", "2020-02-29", "2020-03-01", "2020-03-02", "2020-03-03", "2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-03-12"],
 		"priorityTargets":
 		[
@@ -4556,7 +4556,7 @@
 	},
 	"2020A_W143": 
 	{
-		"ktn": "2020A_W143", "type": "Classical",
+		"ktn": "2020A_W143", "type": "Classical", "piFirst": "Deanne", "piLast": "Fisher", "inst": "Swinburne",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4577,7 +4577,7 @@
 	},
 	"2020A_W145": 
 	{
-		"ktn": "2020A_W145", "type": "Classical",
+		"ktn": "2020A_W145", "type": "Classical", "piFirst": "Ivo", "piLast": "Labbe", "inst": "Swinburne",
 		"datesToAvoid": ["2020-02-07", "2020-02-08", "2020-02-09", "2020-02-10", "2020-02-11", "2020-02-12", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-04-02", "2020-04-03", "2020-04-04", "2020-04-05", "2020-04-06", "2020-04-07"],
 		"priorityTargets":
 		[
@@ -4599,7 +4599,7 @@
 	},
 	"2020A_Y036": 
 	{
-		"ktn": "2020A_Y036", "type": "Classical",
+		"ktn": "2020A_Y036", "type": "Classical", "piFirst": "C.", "piLast": "Urry", "inst": "Yale(CIT)",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4620,7 +4620,7 @@
 	},
 	"2020A_Y130": 
 	{
-		"ktn": "2020A_Y130", "type": "Classical",
+		"ktn": "2020A_Y130", "type": "Classical", "piFirst": "Pieter", "piLast": "van Dokkum", "inst": "Yale(CIT)",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4653,7 +4653,7 @@
 	},
 	"2020A_Y133": 
 	{
-		"ktn": "2020A_Y133", "type": "Classical",
+		"ktn": "2020A_Y133", "type": "Classical", "piFirst": "Songhu", "piLast": "Wang", "inst": "Yale(CIT)",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4676,7 +4676,7 @@
 	},
 	"2020A_Y134": 
 	{
-		"ktn": "2020A_Y134", "type": "Classical",
+		"ktn": "2020A_Y134", "type": "Classical", "piFirst": "Vivienne", "piLast": "Baldassare", "inst": "Yale(CIT)",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4701,7 +4701,7 @@
 	},
 	"2020A_Y135": 
 	{
-		"ktn": "2020A_Y135", "type": "Classical",
+		"ktn": "2020A_Y135", "type": "Classical", "piFirst": "Songhu", "piLast": "Wang", "inst": "Yale(CIT)",
 		"datesToAvoid": ["2020-02-01", "2020-02-02", "2020-02-03", "2020-02-04", "2020-02-05", "2020-02-06", "2020-02-07", "2020-02-08", "2020-02-09", "2020-02-10", "2020-02-11", "2020-02-12", "2020-02-13", "2020-02-14", "2020-02-15", "2020-02-16", "2020-02-17", "2020-02-18", "2020-02-19", "2020-02-20", "2020-02-21", "2020-02-22", "2020-02-23", "2020-02-24", "2020-02-25", "2020-02-26", "2020-02-27", "2020-02-28", "2020-02-29", "2020-03-01", "2020-03-02", "2020-03-03", "2020-03-04", "2020-03-05", "2020-03-06", "2020-03-07", "2020-03-08", "2020-03-09", "2020-03-10", "2020-03-11", "2020-03-12", "2020-03-13", "2020-03-14", "2020-03-15", "2020-03-16", "2020-03-17", "2020-03-18", "2020-03-19", "2020-03-20", "2020-03-21", "2020-03-22", "2020-03-23", "2020-03-24", "2020-03-25", "2020-03-26", "2020-03-27", "2020-03-28", "2020-03-29", "2020-03-30", "2020-03-31", "2020-04-01", "2020-04-02", "2020-04-03", "2020-04-04", "2020-04-05", "2020-04-06", "2020-04-07", "2020-04-08", "2020-04-09", "2020-04-10", "2020-04-11", "2020-04-12", "2020-04-13", "2020-04-14", "2020-04-15", "2020-04-16", "2020-04-17", "2020-04-18", "2020-04-19", "2020-04-20", "2020-04-21", "2020-04-22", "2020-04-23", "2020-04-24", "2020-04-25", "2020-04-26", "2020-04-27", "2020-04-28", "2020-04-29", "2020-04-30", "2020-05-01", "2020-05-02", "2020-05-03", "2020-05-04", "2020-05-05", "2020-05-06", "2020-05-07", "2020-05-08", "2020-05-09", "2020-05-10", "2020-05-11", "2020-05-12", "2020-05-13", "2020-05-14", "2020-05-15", "2020-05-16", "2020-05-17", "2020-05-18", "2020-05-19", "2020-05-20", "2020-05-21", "2020-05-22", "2020-05-23", "2020-05-24", "2020-05-25", "2020-05-26", "2020-05-27", "2020-05-28", "2020-05-29", "2020-05-30", "2020-05-31", "2020-06-01", "2020-06-02", "2020-06-03", "2020-06-04", "2020-06-05", "2020-06-06", "2020-06-07", "2020-06-08"],
 		"priorityTargets":
 		[
@@ -4730,7 +4730,7 @@
 	},
 	"2020A_Y288": 
 	{
-		"ktn": "2020A_Y288", "type": "Classical",
+		"ktn": "2020A_Y288", "type": "Classical", "piFirst": "Pieter", "piLast": "van Dokkum", "inst": "Yale(CIT)",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[

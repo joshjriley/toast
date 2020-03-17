@@ -774,7 +774,7 @@ class Scheduler(object):
     def createMoonPrefLookups(self):
         '''
         For each progInstr, create a moon pref hash for each date so we don't have to search for date ranges
-        during processing.
+        during processing.  NOTE: Also fixes unassigned neutrals with "N" value
         '''
         #todo: note: any value not defined is set to neutral (ie blank, "-"). handle this better
         for ktn, program in self.programs.items():
@@ -787,6 +787,7 @@ class Scheduler(object):
                         val = progInstr['moonPrefs'][index]
                         if val not in self.config['moonDatePrefScore']:
                             val = "N"
+                            progInstr['moonPrefs'][index] = "N"
                         progInstr['moonPrefLookup'][date] = val
 
 
@@ -940,67 +941,75 @@ class Scheduler(object):
         #TODO: Finish this later once we figure out how the new process will work
         '''
         xstr = lambda s: s or ""
-        try:
-            #loop telescopes
-            for telkey, telsched in schedule['telescopes'].items():
-                if tel and telkey != tel: continue
+        #loop telescopes
+        for telkey, telsched in schedule['telescopes'].items():
+            if tel and telkey != tel: continue
 
-                #create output file
-                timestamp = dt.now().strftime('%Y-%m-%d-%H-%M-%S')
-                telname = self.telescopes[telkey]['name'].replace(' ', '')
-                outFilepath = f'sched_worksheet_{telname}_{timestamp}.txt'
-                if outFolder: outFilepath = outFolder + '/' + outFilepath
-                print(f"Writing to {outFilepath}")
-                file = open(outFilepath, 'w')
+            #create output file
+            timestamp = dt.now().strftime('%Y-%m-%d-%H-%M-%S')
+            telname = self.telescopes[telkey]['name'].replace(' ', '')
+            outFilepath = f'sched_worksheet_{telname}_{timestamp}.txt'
+            if outFolder: outFilepath = outFolder + '/' + outFilepath
+            print(f"Writing to {outFilepath}")
+            file = open(outFilepath, 'w')
 
-                #loop moon phase dates
-                for index, mp in enumerate(self.moonPhases):
-                    dates = self.createDatesList(mp['start'], mp['end'])
+            #loop moon phase dates
+            for index, mp in enumerate(self.moonPhases):
+                dates = self.createDatesList(mp['start'], mp['end'])
 
-                    #section header
-                    file.write("\n")
-                    file.write(f"Phase {index}")
-                    file.write("\tDate (HST)\tDay\tDark%\tMoon@Mid\tLST@mid")
-                    file.write("\tPI Last\tPI First\tInstrument\tInstitution\tKTN\tType\tSize\tPhase Req\tDates to Avoid\tCard Date\tCard Portion")
-                    file.write("\tScheduler Notes\tTarget\tPAX\tSpecial Requests\n")
+                #section header
+                file.write("\n")
+                file.write(f"Phase {index}")
+                file.write("\tDate (HST)\tDay\tDark%\tMoon@Mid\tLST@mid")
+                file.write("\tPI Last\tPI First\tInstrument\tInstitution\tKTN\tType\tSize\tPhase Req\tDates to Avoid\tCard Date\tCard Portion")
+                file.write("\tScheduler Notes\tTarget\tPAX\tSpecial Requests\n")
 
-                    #date moon info and blocks
-                    for date in dates:
+                #date moon info and blocks
+                for date in dates:
 
-                        #moon info
-                        file.write(f"\t{date}")
-                        file.write("\t" + dt.strptime(date, '%Y-%m-%d').strftime('%a').upper())
-                        file.write("\t" + mp['type'])
-                        file.write("\t" + '?')
-                        file.write("\t" + "?")
+                    #moon info
+                    file.write(f"\t{date}")
+                    file.write("\t" + dt.strptime(date, '%Y-%m-%d').strftime('%a').upper())
+                    file.write("\t" + mp['type'])
+                    file.write("\t" + '?')
+                    file.write("\t" + "?")
 
-                        night = telsched['nights'][date]
-                        count = 0
-                        for i, block in enumerate(night['slots']):
-                            if block == None: continue
+                    night = telsched['nights'][date]
+                    count = 0
+                    for i, block in enumerate(night['slots']):
+                        if block == None: continue
 
-                            if count > 0: file.write("\t\t\t\t\t")
-                            count += 1
+                        if count > 0: file.write("\t\t\t\t\t")
+                        count += 1
 
-                            file.write(f"\t??last??")                   #todo
-                            file.write(f"\t??first??")                  #todo
-                            file.write(f"\t{block['instr']}")
-                            file.write(f"\t??inst??")                   #todo
-                            file.write(f"\t{block['ktn']}")
-                            file.write(f"\t{block['type']}")
-                            file.write(f"\t{block['size']}")
-                            file.write(f"\tmp{block['moonIndex']}")     #todo: convert to readable str
-                            file.write(f"\t??avoid??")                   #todo
-                            file.write(f"\t{xstr(block['reqDate'])}")     
-                            file.write(f"\t{xstr(block['reqPortion'])}")
+                        ktn = block['ktn']
+                        prog = self.programs[ktn]
+                        piFirst = prog['piFirst'] 
+                        piLast  = prog['piLast']  
+                        inst    = prog['inst']    
+                        pax     = block['progInstr']['moonPrefs'] if block['progInstr'] else ''
 
-                            file.write("\n")
+                        file.write(f"\t{piLast}")                   
+                        file.write(f"\t{piFirst}")                  
+                        file.write(f"\t{block['instr']}")
+                        file.write(f"\t{inst}")                   
+                        file.write(f"\t{ktn}")
+                        file.write(f"\t{block['type']}")
+                        file.write(f"\t{block['size']}")
+                        file.write(f"\t{block['moonIndex']}")     
+                        file.write(f"\t??avoid??")                   #todo
+                        file.write(f"\t{xstr(block['reqDate'])}")     
+                        file.write(f"\t{xstr(block['reqPortion'])}")
+                        file.write(f"\t")                   #todo
+                        file.write(f"\t")                   #todo
+                        file.write(f"\t{''.join(pax)}")                   #todo
+                        file.write(f"\t")                   #todo
 
-                    file.write("\n")
+                        file.write("\n")
 
-                file.close() 
-        except Exception as e:
-            print("ERROR: ", str(e))               
+                file.write("\n")
+
+            file.close() 
 
 
     def printSchedule(self, schedule, tel=None, start=None, end=None, moonStart=None, moonEnd=None, prog=None, format='txt'):

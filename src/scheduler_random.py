@@ -97,6 +97,7 @@ class SchedulerRandom(Scheduler):
             for key, data in eng.items():
                 block[key] = data
             blocks.append(block)
+            self.programs[block['ktn']] = {"ktn": block['ktn'], "type": "Classical", "piFirst": "", "piLast": "ENG", "inst": "Keck"}
 
         return blocks
 

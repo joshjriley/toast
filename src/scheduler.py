@@ -74,15 +74,15 @@ class Scheduler(object):
         menu += "|                            MENU                                        \n"
         menu += "-------------------------------------------------------------------------\n"
         menu += "|  run [num]                           Run scheduler [num] times         \n"
-        menu += "|  conflicts                           Check conflicts                   \n"
+        menu += "|  conflicts                           Check pre-schedule input conflicts\n"
         if self.schedule:
-            menu += "|  show     [tel] [start] [end]        Show schedule by date         \n"
+            menu += "|  show     [tel] [start] [end]        Show schedule by date (yyyy-mm-dd)        \n"
             menu += "|  showmoon [tel] [start] [end]        Show schedule by moon index   \n"
-            menu += "|  showprog [progId]                   Show schedule by program code \n"
-            menu += "|  stats                               Show stats                \n"
-            menu += "|  blockorders  [tel]                  Show block orders         \n"
-            menu += "|  orderadjusts [tel]                  Show block order adjusts  \n"
-            menu += "|  slotscores [blockId] [topN]         Show topN slot scores     \n"
+            menu += "|  showprog [progId]                   Show schedule by like program code \n"
+            menu += "|  stats                               Show run stats                \n"
+            menu += "|  blockorders  [tel]                  Show block ordering calcs         \n"
+            menu += "|  orderadjusts [tel]                  Show block order learning adjustments  \n"
+            #menu += "|  slotscores [blockId] [topN]         Show topN slot scores     \n"
             menu += "|  findswap   [blockId]                Find best swap options    \n"
             menu += "|  move       [blockId] [date] [index] Move block                \n"
             menu += "|  remove     [blockId]                Remove block              \n"
@@ -104,7 +104,9 @@ class Scheduler(object):
                 prompt = menu if autoHelp else "\n> "
                 autoHelp = False
                 cmds = input(prompt).split()       
-                if not cmds: continue
+                if not cmds: 
+                    autoHelp = True
+                    continue
                 cmd = cmds[0]     
                 if   cmd == 'q':  
                     quit = True
@@ -467,6 +469,9 @@ class Scheduler(object):
         dataSort1 = sorted(data, key=lambda k: k['scoresum'], reverse=True)
 
         #show top 40
+        print (f"Showing top 40 slot swaps for {blockId}:")
+        print (f"(NOTE: Score1 is block {block1} in swapped block slot and Score2 is vice-versa)")
+        print(f"id\tsum\tscore1\tscore2\tdate\tidx")
         max = 40
         for i, d in enumerate(dataSort1):
             print(f"{d['id']}\t{d['scoresum']}\t{d['score1']}\t{d['score2']}\t{d['date']}\t{d['index']}")
@@ -599,7 +604,7 @@ class Scheduler(object):
         instrs = instrStr.split('+')
         for instr in instrs:
             if instr not in self.instruments: continue
-            instrBase = self.instruments[instr]['base'] if instr in self.instruments else None
+            instrBase = self.instruments[instr]['base']
             for delta in range(-1, 2, 2):
                 yesBase  = 0
                 yesExact = 0
@@ -859,19 +864,15 @@ class Scheduler(object):
         for ktn, program in self.programs.items():
             for progInstr in program['instruments']:
                 for block in progInstr['blocks']:
-
                     if progInstr['moonPrefs']:
-
                         if block['reqDate']:
                             pref = progInstr['moonPrefLookup'][block['reqDate']]
                             if pref == 'X':
-                                print (f"reqDate {block['reqDate']} is pref 'X': ", ktn, progInstr['instr'], block['id'] )
-
-
+                                print (f"reqDate {block['reqDate']} is pref 'X': {ktn}, {progInstr['instr']}, block {block['id']}")
                         mi = block['moonIndex']
                         pref = progInstr['moonPrefs'][mi]
                         if pref == 'X':
-                            print (f"moonIndex '{mi}' is pref 'X': ", ktn, progInstr['instr'], block['id'] )
+                            print (f"moonIndex '{mi}' is pref 'X': {ktn}, {progInstr['instr']}, block {block['id']}" )
 
         #see if any moon periods are over-requested
         for tel, t in self.telescopes.items():

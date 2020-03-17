@@ -528,13 +528,15 @@ class SchedulerRandom(Scheduler):
 
     def showBlockOrders(self, schedule, tel=None):
 
-        print(f"id\tscore\tsize\ttype")
+        print ("Showing order that blocks were scheduled with order score:")
+        print ("(NOTE: Order may not reflect score order if config blockOrderRandomScoreMult was used)")
+        print(f"id\tscore\tsize\ttype\n-------------------------------------")
         for block in schedule['blocks']:
             print (f"{block['id']}\t{block['order']:.2f}\t{block['size']}\t{block['type']}")
 
 
     def showBlockSlotScores(self, schedule, blockId, topN):
-        pass
+        print ("Not implemented yet")
 #todo: do a slot['postscore'] that considers current state of schedule (some scoring functions won't work as assumed!)
 
         # #NOTE: rawscore used as list driver 

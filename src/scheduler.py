@@ -598,6 +598,7 @@ class Scheduler(object):
         numLoc   = 0
         instrs = instrStr.split('+')
         for instr in instrs:
+            if instr not in self.instruments: continue
             instrBase = self.instruments[instr]['base'] if instr in self.instruments else None
             for delta in range(-1, 2, 2):
                 yesBase  = 0

@@ -939,7 +939,7 @@ class Scheduler(object):
         Writes out schedule to specific format required by Keck scheduler (cjordan)
         #TODO: Finish this later once we figure out how the new process will work
         '''
-
+        xstr = lambda s: s or ""
         try:
             #loop telescopes
             for telkey, telsched in schedule['telescopes'].items():
@@ -947,7 +947,8 @@ class Scheduler(object):
 
                 #create output file
                 timestamp = dt.now().strftime('%Y-%m-%d-%H-%M-%S')
-                outFilepath = f'sched_worksheet_{telkey}_{timestamp}.txt'
+                telname = self.telescopes[telkey]['name'].replace(' ', '')
+                outFilepath = f'sched_worksheet_{telname}_{timestamp}.txt'
                 if outFolder: outFilepath = outFolder + '/' + outFilepath
                 print(f"Writing to {outFilepath}")
                 file = open(outFilepath, 'w')
@@ -967,7 +968,6 @@ class Scheduler(object):
                     for date in dates:
 
                         #moon info
-                        file.write("\n")
                         file.write(f"\t{date}")
                         file.write("\t" + dt.strptime(date, '%Y-%m-%d').strftime('%a').upper())
                         file.write("\t" + mp['type'])
@@ -991,8 +991,8 @@ class Scheduler(object):
                             file.write(f"\t{block['size']}")
                             file.write(f"\tmp{block['moonIndex']}")     #todo: convert to readable str
                             file.write(f"\t??avoid??")                   #todo
-                            file.write(f"\t{block['reqDate']}")     
-                            file.write(f"\t{block['reqPortion']}")
+                            file.write(f"\t{xstr(block['reqDate'])}")     
+                            file.write(f"\t{xstr(block['reqPortion'])}")
 
                             file.write("\n")
 

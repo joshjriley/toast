@@ -215,7 +215,7 @@
     'schedReqPortionPenalty': -15,
 
     #todo: is this too steep a penalty given we can manually adjust things later?
-    'schedOrphanBlockPenalty': -100,
+    'schedOrphanBlockPenalty': -50,
 
     'schedSameProgramPenalty': -2,
 

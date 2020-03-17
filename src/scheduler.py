@@ -586,25 +586,38 @@ class Scheduler(object):
 
 
     def getNumAdjacentInstrDates(self, instrStr, schedule, tel, date):
+        '''
+        Count up stats on what instruments are scheduled on adjacent days.
+        NOTE: Different instruments in same location are the worst switches.
+        '''
         #todo: This whole thing is inefficient
         #todo: Should we count more than just +/- one day?
         numExact = 0
         numBase  = 0
+        numEmpty = 0
+        numLoc   = 0
         instrs = instrStr.split('+')
         for instr in instrs:
             instrBase = self.instruments[instr]['base'] if instr in self.instruments else None
             for delta in range(-1, 2, 2):
                 yesBase  = 0
                 yesExact = 0
+                yesLoc   = 0
                 adjDate = self.getDeltaDate(date, delta)
                 schedInstrs = self.getScheduleDateInstrs(schedule, tel, adjDate)
                 for schedInstr in schedInstrs:
-                    schedInstrBase = self.instruments[schedInstr]['base'] if schedInstr in self.instruments else None
+                    if schedInstr not in self.instruments: continue
+                    schedInstrBase = self.instruments[schedInstr]['base']
                     if instrBase == schedInstrBase: yesBase = 1
                     if instr     == schedInstr    : yesExact = 1
-                if yesBase:  numBase += 1
-                if yesExact: numExact += 1
-        return numExact, numBase  
+                    if (    instrBase != schedInstrBase 
+                        and self.instruments[instr]['loc'] != self.instruments[schedInstr]['loc']):
+                        yesLoc = 1
+                if len(schedInstrs) == 0: numEmpty += 1
+                elif yesExact: numExact += 1
+                elif yesBase : numBase  += 1
+                elif yesLoc  : numLoc   += 1
+        return numExact, numBase, numEmpty, numLoc  
 
 
     def getNumAdjacentPrograms(self, ktn, schedule, tel, date):

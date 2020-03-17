@@ -246,9 +246,11 @@ class SchedulerRandom(Scheduler):
             score += self.config['scheduledInstrMatchScore']
 
         #consider previous and next night, same instrument is better (ie less reconfigs)
-        numAdjExact, numAdjBase = self.getNumAdjacentInstrDates(block['instr'], schedule, block['tel'], date)
-        score += numAdjExact * self.config['adjExactInstrScore']
-        score += numAdjBase  * self.config['adjBaseInstrScore']
+        numExact, numBase, numEmpty, numLoc = self.getNumAdjacentInstrDates(block['instr'], schedule, block['tel'], date)
+        score += numExact * self.config['adjExactInstrScore']
+        score += numBase  * self.config['adjBaseInstrScore']
+        score += numEmpty * self.config['adjEmptyInstrScore']
+        score += numLoc   * self.config['adjLocInstrScore']
 
         #consider previous and next night, same program is better (ie create runs)
         numAdjPrograms = self.getNumAdjacentPrograms(block['ktn'], schedule, block['tel'], date)

@@ -161,10 +161,15 @@
     #score added for slot if it matches requested portion
     'reqPortionIndexScore': 10,
 
-    #score added for slot if adjacent date has same instrument scheduled (up to 2x) 
+    #score added for slot based on instrument adjacency (up to 2x) 
+    #(adjExact is exact same instr, adjBase is same instr base, adjEmpty is no adj instr, adjLoc is different instr and diff loc)
     #(NOTE: This helps produce instr runs, but it is in addition to specific instr adjacent score (ie HIRESr vs HIRESb))
+    #(NOTE: adjLocInstr is an adjacent different instrument but same location (ie CASS, RNAS) and these should be avoided)
     'adjExactInstrScore': 4,
     'adjBaseInstrScore': 2,
+    'adjEmptyInstrScore': 1,
+    'adjLocInstrScore': 0.5,
+
 
     #score added for slot if adjacent date has same program scheduled (up to 2x) 
     #(NOTE: This helps produce program runs)

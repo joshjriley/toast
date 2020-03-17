@@ -983,11 +983,11 @@ class Scheduler(object):
                         count += 1
 
                         ktn = block['ktn']
-                        prog = self.programs[ktn]
-                        piFirst = prog['piFirst'] 
-                        piLast  = prog['piLast']  
-                        inst    = prog['inst']    
-                        pax     = block['progInstr']['moonPrefs'] if block['progInstr'] else ''
+                        prog = self.programs[ktn] if ktn in self.programs else None
+                        piFirst = prog['piFirst'] if prog else ''
+                        piLast  = prog['piLast']  if prog else ''
+                        inst    = prog['inst']    if prog else ''
+                        pax     = block['progInstr']['moonPrefs'] if prog and block['progInstr'] else ''
 
                         file.write(f"\t{piLast}")                   
                         file.write(f"\t{piFirst}")                  

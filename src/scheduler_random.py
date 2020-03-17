@@ -71,6 +71,7 @@ class SchedulerRandom(Scheduler):
         #todo: for instruments that prefer runs, use 'num' to group together consecutive blocks
         blocks = []
         for ktn, program in self.programs.items():
+            print (program.keys())
             for progInstr in program['instruments']:
                 for blockData in progInstr['blocks']:
 
@@ -97,7 +98,6 @@ class SchedulerRandom(Scheduler):
             for key, data in eng.items():
                 block[key] = data
             blocks.append(block)
-            self.programs[block['ktn']] = {"ktn": block['ktn'], "type": "Classical", "piFirst": "", "piLast": "ENG", "inst": "Keck"}
 
         return blocks
 

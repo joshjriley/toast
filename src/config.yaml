@@ -206,17 +206,24 @@
     # Penalized score based on how many times we switch instruments the next night, ie reconfigs.
     'schedReconfigPenalty': -4,
 
+    # Score based on whether moon pref was met
     'schedMoonPrefScore': {'P': 3,  'A': 1,  'N': -2,  'X': -15},
 
+    # Score based on if scheduled moon index was met
     'schedMoonIndexScore': 2,
 
+    # Penalty if we didn't schedule requested date
     'schedReqDatePenalty': -30,
 
+    #penalty if we didn't schedule requested portion of night
     'schedReqPortionPenalty': -15,
 
+    #Penalty for blocks that could not be scheduled.
     #todo: is this too steep a penalty given we can manually adjust things later?
     'schedOrphanBlockPenalty': -50,
 
+    #penalty for same program same night
+    #todo: Not sure if this is the right approach to avoid this
     'schedSameProgramPenalty': -2,
 
 

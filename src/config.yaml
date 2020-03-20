@@ -114,6 +114,9 @@
     #order score adjust if block type is cadence
     'blockOrderCadenceScore': 10,
 
+    #order score adjust if block is grouped in a run
+    'blockGroupedScore': 7,
+
     #plus or minus adjustment factor to order score (ie 0.10 is +- 10%)
     #NOTE: This can be bumped up to get some very different ordering if scheduling is coming out the same every time
     'blockOrderRandomScoreMult': 0.05,
@@ -171,9 +174,10 @@
     'adjLocInstrScore': 0.5,
 
 
-    #score added for slot if adjacent date has same program scheduled (up to 2x) 
+    #score added for slot if adjacent date has same program scheduled or in same run group (up to 2x) 
     #(NOTE: This helps produce program runs)
-    'adjProgramScore': 2,
+    'adjProgramScore': 1,
+    'adjGroupScore': 6,
 
     #penalty added for slot if same program same night
     'sameProgramPenalty': -4,
@@ -207,7 +211,7 @@
     'schedReconfigPenalty': -4,
 
     # Score based on whether moon pref was met
-    'schedMoonPrefScore': {'P': 3,  'A': 1,  'N': -2,  'X': -15},
+    'schedMoonPrefScore': {'P': 5,  'A': 2,  'N': -2,  'X': -15},
 
     # Score based on if scheduled moon index was met
     'schedMoonIndexScore': 2,
@@ -225,6 +229,10 @@
     #penalty for same program same night
     #todo: Not sure if this is the right approach to avoid this
     'schedSameProgramPenalty': -2,
+
+    #penalty for same program same night
+    #todo: Not sure if this is the right approach to avoid this
+    'schedNotGroupedPenalty': -8,
 
 
 

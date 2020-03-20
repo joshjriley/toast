@@ -82,6 +82,7 @@ class Scheduler(object):
             menu += "|  stats                               Show run stats                \n"
             menu += "|  blockorders  [tel]                  Show block ordering calcs         \n"
             menu += "|  orderadjusts [tel]                  Show block order learning adjustments  \n"
+            menu += "|  groups [tel]                        Show groups  \n"
             #menu += "|  slotscores [blockId] [topN]         Show topN slot scores     \n"
             menu += "|  findswap   [blockId]                Find best swap options    \n"
             menu += "|  move       [blockId] [date] [index] Move block                \n"
@@ -138,6 +139,9 @@ class Scheduler(object):
                 elif cmd == 'orderadjusts':  
                     tel   = cmds[1] if len(cmds) > 1 else None
                     self.printOrderAdjusts(self.schedule, tel)
+                elif cmd == 'groups':  
+                    tel   = cmds[1] if len(cmds) > 1 else None
+                    self.printGroups(self.schedule, tel)
                 elif cmd == 'blockorders':  
                     tel   = cmds[1] if len(cmds) > 1 else None
                     self.showBlockOrders(self.schedule, tel)
@@ -328,6 +332,8 @@ class Scheduler(object):
             'orderMult': None,   # admin multiplier for calculated block order score
 
             'slots': None,       # temp array of slot data and slot scoring for picking slot in schedule
+
+            'groupIdx': None,    #is block part of block group with same or adj moon index
         }
         return block
 
@@ -626,20 +632,25 @@ class Scheduler(object):
         return numExact, numBase, numEmpty, numLoc  
 
 
-    def getNumAdjacentPrograms(self, ktn, schedule, tel, date):
+    def getNumAdjacentPrograms(self, ktn, groupIdx, schedule, tel, date):
         '''
         Look for same program on adjacent days.  Return 0, 1, or 2.
         '''
-        num  = 0
+        numAdjProg  = 0
+        numAdjGroup = 0
         for delta in range(-1, 2, 2):
-            yes = 0
             adjDate = self.getDeltaDate(date, delta)
             blocks = self.getScheduleDateBlocks(schedule, tel, adjDate)
             for block in blocks:
                 if block['ktn'] == ktn: 
-                    num += 1
+                    numAdjProg += 1
                     break
-        return num
+#todo: test this
+            for block in blocks:
+                if groupIdx != None and block['groupIdx'] == groupIdx: 
+                    numAdjGroup += 1
+                    break
+        return numAdjProg, numAdjGroup
 
 
     def getNumSameProgramsOnDate(self, ktn, schedule, tel, date):
@@ -1038,7 +1049,7 @@ class Scheduler(object):
             print (f' Schedule for {schedName}:')
             print (f'============================')
             print (f'{"Date".ljust(11)}\tIdx\tSize\t{"KTN".ljust(9)}\t{"Instr".ljust(11)}\t{"Type".ljust(11)}\t', end='')
-            print (f'{"Id".ljust(5)}\tScDt?\tRqDt?\tRqPt?\tMnIdx?\tMnPrf?\tDup?\tScore')
+            print (f'{"Id".ljust(5)}\tScDt?\tRqDt?\tRqPt?\tMnIdx?\tMnPrf?\tDup?\tGrp?\tScore')
             prevMoonIndex = None
             for date in self.datesList:
                 if start and date < start: continue
@@ -1076,6 +1087,7 @@ class Scheduler(object):
                     print(f"\t{block['warnMoonIndex']}", end='')
                     print(f"\t{warnMoonPref}", end='')
                     print(f"\t{block['warnSameProgram']}", end='')
+                    print(f"\t{block['warnGroup']}", end='')
                     print(f"\t{block['score']}", end='')
                     percTotal += block['size']
                     num += 1

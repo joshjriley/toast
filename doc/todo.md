@@ -13,9 +13,6 @@
 
 
 #todo: details
-- machine to run this on? (vmks2 or vmwebtools)
-- Are we heavily avoiding MOSFIRE/LRIS reconfigs vs say HIRES/MOSFIRE?
-- Implement runs attempts (ie progInstr blocks with same or adjacent moonIndex)
 !- Add institution balancing during block ordering step (group by inst in multiple arrays and then reform into large array)
 !- Fully formatted export to Carolyn's spreadsheet format
 !- Cadence has a range.  we need to factor that in for date options if reqDate not set.  and it should be consecutive right?
@@ -29,6 +26,7 @@
 - classes: Block, Schedule?
 - IDEA: When picking a slot, cascade down in groups. See if any moonIndex work.  If not, see if any 'P' work and so on.  Or can we achieve this with our weighting?
 - Fix getReconfigScore. It really needs to define instrument positions and track state changes, for instance MOSFIRE switch to LRIS days later is still a reconfig.
+- Improve adjacent instrument scoring
 - NIRSPAO-NIRSPEC reconfig is worse than others.  Minimize NIRSPAO runs.  
 - Consider laser runs?
 - Rule: Avoid 3-way or 4-way splits with 2 or more programs

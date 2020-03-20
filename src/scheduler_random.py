@@ -2,6 +2,7 @@ from random import randrange, shuffle, random, uniform, randint
 import math
 import sys
 import numpy as np
+import pprint
 
 import logging
 log = logging.getLogger('toast')
@@ -42,7 +43,8 @@ class SchedulerRandom(Scheduler):
 
         #create blocks from all programs and sort by difficulty/importance
         schedule['blocks'] = self.createProgramBlocks()
-        schedule['blocks'] = self.sortBlocks(schedule['blocks'])
+        schedule['groups'] = self.createBlockGroups(schedule['blocks'])
+        schedule['blocks'] = self.sortBlocks(schedule['blocks'], schedule['groups'])
 
         #for each block, score every possible slot, sort, and pick one from the best to schedule
         for block in schedule['blocks']:
@@ -51,7 +53,7 @@ class SchedulerRandom(Scheduler):
             self.scoreBlockSlots(schedule, block)
             slot = self.pickRandomBlockSlot(block)
             if slot == None: 
-                print (f"WARNING: No valid slots found for block program {block['ktn']}, instr {block['instr']}")
+                print (f"WARNING: No valid slots found for block id {block['id']}, program {block['ktn']}, instr {block['instr']}")
                 continue
             self.assignBlockToSchedule(
                 schedule,
@@ -62,6 +64,35 @@ class SchedulerRandom(Scheduler):
             )
 
         return schedule
+
+
+    def createBlockGroups(self, blocks):
+        '''
+        Find all blocks that are same program same or adjacent moon phase and add them to a group.
+        '''
+
+        #Per program, find only isolated or adj pair moon indexes
+        #TODO: Only doing same moonIndex for now.  Add adjacency check.  NOTE: 3 adjacent phases is not a group.
+
+        groups1 = {}
+        for block in blocks:
+            if not block['moonIndex']: continue
+            key = f"{block['ktn']}-m{block['moonIndex']}"
+            if key not in groups1: groups1[key] = []
+            groups1[key].append(block)
+
+        groups2 = {}
+        for key, group in groups1.items():
+            if len(group) == 1:
+                group[0]['groupIdx'] = None
+                continue
+            group2 = []
+            for partner in group:
+                group2.append(partner['id'])
+                partner['groupIdx'] = key
+            groups2[key] = group2
+
+        return groups2
 
 
     def createProgramBlocks(self):
@@ -92,8 +123,10 @@ class SchedulerRandom(Scheduler):
 
         #add engineering blocks
         #note: engineering data should have schedDate and schedIndex defined
+        id = -1
         for eng in self.engineering:
             block = self.initBlock()
+            block['id'] = id = id-1
             for key, data in eng.items():
                 block[key] = data
             blocks.append(block)
@@ -101,7 +134,7 @@ class SchedulerRandom(Scheduler):
         return blocks
 
 
-    def sortBlocks(self, blocks):
+    def sortBlocks(self, blocks, groups):
         '''
         Score and sort blocks based on size, importance, difficulty, etc.
         '''
@@ -136,6 +169,10 @@ class SchedulerRandom(Scheduler):
             if block['type'].lower() == 'cadence': 
                 block['order'] += self.config['blockOrderCadenceScore']
 
+            #adjust if grouped
+            if block['groupIdx']: 
+                block['order'] += self.config['blockGroupedScore']
+
             #see if fixed order multiplier defined
             if block['orderMult']: 
                 block['order'] *= block['orderMult']
@@ -151,29 +188,44 @@ class SchedulerRandom(Scheduler):
             block['order'] += block['order'] * bormRand
 
         #sort by order
-        blocksSorted = sorted(blocks, key=lambda k: k['order'], reverse=True)
+        blocks = sorted(blocks, key=lambda k: k['order'], reverse=True)
 
         #random index fluctuations (more effective at moving things stuck with high or low scores)
-        num = len(blocksSorted)
+        num = len(blocks)
         if self.config['blockOrderRandomScoreMult']:
             rng = int(num * self.config['blockOrderRandomScoreMult'])
             for idx in range(0, num):                
-                block = blocksSorted.pop(idx)
+                block = blocks.pop(idx)
                 newidx = idx + randint(-1*rng, rng)
                 if   newidx < 0   : newidx = 0
                 elif newidx >= num: newidx = num-1
-                blocksSorted.insert(newidx, block)
+                blocks.insert(newidx, block)
+
+        #if a block is in a group, find partners and move them up adjacent
+        newBlocks = []
+        moved = {}
+        while len(blocks):
+            block = blocks.pop(0)
+            newBlocks.append(block)
+            if block['groupIdx'] == None: continue
+            for pid in groups[block['groupIdx']]:
+                if pid == block['id']: continue
+                idx = next((idx for idx, item in enumerate(blocks) if item["id"] == pid), False)
+                if idx is False: continue
+                partner = blocks.pop(idx)
+                newBlocks.append(partner)
+        blocks = newBlocks
 
         #if any blocks are fixed scheduled, bump those to the top
-        num = len(blocksSorted)
+        num = len(blocks)
         for idx in range(0, num):                
-            block = blocksSorted[idx]
+            block = blocks[idx]
             if block['schedDate']: 
-                block = blocksSorted.pop(idx)
-                blocksSorted.insert(0, block)
+                block = blocks.pop(idx)
+                blocks.insert(0, block)
 
         #re-assign final results
-        return blocksSorted
+        return blocks
 
 
     def initBlockSlots(self, block):
@@ -252,9 +304,10 @@ class SchedulerRandom(Scheduler):
         score += numEmpty * self.config['adjEmptyInstrScore']
         score += numLoc   * self.config['adjLocInstrScore']
 
-        #consider previous and next night, same program is better (ie create runs)
-        numAdjPrograms = self.getNumAdjacentPrograms(block['ktn'], schedule, block['tel'], date)
-        score += numAdjPrograms * self.config['adjProgramScore']
+        #consider previous and next night, same group is better (ie create runs)
+        numAdjProg, numAdjGroup = self.getNumAdjacentPrograms(block['ktn'], block['groupIdx'], schedule, block['tel'], date)
+        score += numAdjProg  * self.config['adjProgramScore']
+        score += numAdjGroup * self.config['adjGroupScore']
 
         #penalty for same program same night
         numSamePrograms = self.getNumSameProgramsOnDate(block['ktn'], schedule, block['tel'], date)
@@ -366,6 +419,13 @@ class SchedulerRandom(Scheduler):
             if num > 1:
                 block['warnSameProgram'] = 1
 
+            #part of run group but not adj to run
+            block['warnGroup'] = ''
+            if block['schedDate'] and block['groupIdx']:
+                numAdjProg, numAdjGroup = self.getNumAdjacentPrograms(block['ktn'], block['groupIdx'], schedule, block['tel'], block['schedDate'])
+                if block['groupIdx'] and numAdjGroup == 0:
+                    block['warnGroup'] = 1
+
 
         #store list of unscheduled blocks
         schedule['unscheduledBlocks'] = []
@@ -406,6 +466,10 @@ class SchedulerRandom(Scheduler):
             #Penalty score for orphaned blocks
             if block['warnSameProgram']:
                 block['score'] += self.config['schedSameProgramPenalty']
+
+            #Penalty score for not scheduling in group
+            if block['warnGroup']:
+                block['score'] += self.config['schedNotGroupedPenalty']
 
             #Score based on which moon pref we obtained for block
             if block['progInstr'] and block['progInstr']['moonPrefLookup'] and block['schedDate']:
@@ -524,6 +588,12 @@ class SchedulerRandom(Scheduler):
         for d in sorted(data, key = lambda i: i['adjust']):
             block = d['block']
             print (f"{round(d['adjust'], 1)}\t{block['id']}\t{block['ktn']}\t{block['instr']}\t")
+
+
+    def printGroups(self, schedule, tel=None):
+
+        for key, group in schedule['groups'].items():
+            print (f"{key}: ", group)
 
 
     def showBlockOrders(self, schedule, tel=None):

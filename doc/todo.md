@@ -13,6 +13,7 @@
 
 
 #todo: details
+
 !- Add institution balancing during block ordering step (group by inst in multiple arrays and then reform into large array)
 !- Fully formatted export to Carolyn's spreadsheet format
 !- Cadence has a range.  we need to factor that in for date options if reqDate not set.  and it should be consecutive right?
@@ -20,6 +21,7 @@
 !- force small portions to different days for same ktn (ie avoid same program on same night for 1/2 and 1/4) (ie dup col in show report) (we do this in scoreBlockSlot but not working well)
 !- Consider same program night adjacency desireable? similar to runs? 
 !- Add in DateSpecific
+!- Normalize scoring
 - Score Carolyn's 2020A schedule
 - target/airmass scoring (use lst@midnight data)
 - real query for other data: shutdowns, moon phases, etc (see proposals.InstrumentUnavailable)

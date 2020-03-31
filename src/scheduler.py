@@ -547,14 +547,14 @@ class Scheduler(object):
 
 
     def getScheduleDateBlocks(self, schedule, tel, date):
-        telsched = schedule['telescopes'][tel]
-        if date not in telsched['nights']:
-            return []
-        night = telsched['nights'][date]
         blocks = []
-        for block in night['slots']:
-            if block == None: continue
-            blocks.append(block)
+        for telkey, telsched in schedule['telescopes'].items():
+            if tel != None and tel != telkey: continue
+            if date not in telsched['nights']: continue
+            night = telsched['nights'][date]
+            for block in night['slots']:
+                if block == None: continue
+                blocks.append(block)
         return blocks
 
 
@@ -645,7 +645,6 @@ class Scheduler(object):
                 if block['ktn'] == ktn: 
                     numAdjProg += 1
                     break
-#todo: test this
             for block in blocks:
                 if groupIdx != None and block['groupIdx'] == groupIdx: 
                     numAdjGroup += 1

@@ -305,12 +305,12 @@ class SchedulerRandom(Scheduler):
         score += numLoc   * self.config['adjLocInstrScore']
 
         #consider previous and next night, same group is better (ie create runs)
-        numAdjProg, numAdjGroup = self.getNumAdjacentPrograms(block['ktn'], block['groupIdx'], schedule, block['tel'], date)
+        numAdjProg, numAdjGroup = self.getNumAdjacentPrograms(block['ktn'], block['groupIdx'], schedule, None, date)
         score += numAdjProg  * self.config['adjProgramScore']
         score += numAdjGroup * self.config['adjGroupScore']
 
         #penalty for same program same night
-        numSamePrograms = self.getNumSameProgramsOnDate(block['ktn'], schedule, block['tel'], date)
+        numSamePrograms = self.getNumSameProgramsOnDate(block['ktn'], schedule, None, date)
         score += numSamePrograms * self.config['sameProgramPenalty']
 
         #score added for slot if it fills beginning or end slots
@@ -403,6 +403,8 @@ class SchedulerRandom(Scheduler):
                 block['warnMoonIndex'] = block['moonIndex'] if (schedMoonIndex != block['moonIndex']) else ''
 
             #not scheduled on a preferred date?
+            
+            
 #todo: this doesn't handle when has 'A' prefs but no 'P' prefs, and assigned is X or N
 #todo: create hasPrefsA and hasPrefsP
             block['warnMoonPref'] = ''
@@ -415,14 +417,14 @@ class SchedulerRandom(Scheduler):
 
             #same program scheduled same night
             block['warnSameProgram'] = ''
-            num = self.getNumSameProgramsOnDate(block['ktn'], schedule, block['tel'], block['schedDate'])
+            num = self.getNumSameProgramsOnDate(block['ktn'], schedule, None, block['schedDate'])
             if num > 1:
                 block['warnSameProgram'] = 1
 
             #part of run group but not adj to run
             block['warnGroup'] = ''
             if block['schedDate'] and block['groupIdx']:
-                numAdjProg, numAdjGroup = self.getNumAdjacentPrograms(block['ktn'], block['groupIdx'], schedule, block['tel'], block['schedDate'])
+                numAdjProg, numAdjGroup = self.getNumAdjacentPrograms(block['ktn'], block['groupIdx'], schedule, None, block['schedDate'])
                 if block['groupIdx'] and numAdjGroup == 0:
                     block['warnGroup'] = 1
 

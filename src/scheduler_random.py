@@ -3,6 +3,7 @@ import math
 import sys
 import numpy as np
 import pprint
+import statistics
 
 import logging
 log = logging.getLogger('toast')
@@ -216,6 +217,9 @@ class SchedulerRandom(Scheduler):
                 newBlocks.append(partner)
         blocks = newBlocks
 
+        #apply institutional balancing
+        blocks = self.balanceBlocksByInstitution(blocks)
+
         #if any blocks are fixed scheduled, bump those to the top
         num = len(blocks)
         for idx in range(0, num):                
@@ -226,6 +230,53 @@ class SchedulerRandom(Scheduler):
 
         #re-assign final results
         return blocks
+
+
+    def balanceBlocksByInstitution(self, blocks):
+
+        #arrange blocks by institution first letter
+        insts = {}
+        for block in blocks:
+            ktn = block['ktn']
+            letter = 'none'
+            if ktn and '_' in ktn:
+                sem, progid = ktn.split('_')
+                letter = progid[0]
+            if letter not in insts: insts[letter] = []
+            insts[letter].append(block)
+
+        #get avg length of letter array
+        lens = []
+        for letter, inst in insts.items():
+            lens.append(len(inst))
+        avg = math.floor(statistics.mean(lens))
+
+        numPops = {}
+        for letter, inst in insts.items():
+            numPops[letter] = 1 + math.floor(len(inst)/avg)
+
+        #loop thru letters until done
+        newblocks = []
+        ltrIdx = 0
+        numEmpty = 0
+        letters = list(insts.keys())
+        shuffle(letters)
+        while numEmpty <= len(letters):
+            l = ltrIdx % len(letters)
+            letter = letters[l]
+            ltrIdx += 1
+
+            inst = insts[letter]
+            if len(inst) > 0:
+                numEmpty = 0
+                for i in range(0, numPops[letter]):
+                    if len(inst) > 0:
+                        block = insts[letter].pop(0)
+                        newblocks.append(block)
+            else:
+                numEmpty += 1
+
+        return newblocks
 
 
     def initBlockSlots(self, block):

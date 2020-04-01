@@ -1002,7 +1002,7 @@ class Scheduler(object):
                 file.write(f"Phase {index}")
                 file.write("\tDate (HST)\tDay\tDark%\tMoon@Mid\tLST@mid")
                 file.write("\tPI Last\tPI First\tInstrument\tInstitution\tKTN\tType\tSize\tPhase Req\tDates to Avoid\tCard Date\tCard Portion")
-                file.write("\tScheduler Notes\tTarget\tPAX\tSpecial Requests\n")
+                file.write("\tScheduler Notes\tTargets\tPAX\tSpecial Requests\n")
 
                 #date moon info and blocks
                 for date in dates:
@@ -1030,7 +1030,14 @@ class Scheduler(object):
                         pax     = block['progInstr']['moonPrefs'] if prog and block['progInstr'] else ''
                         dta     = prog['datesToAvoid'] if prog and 'datesToAvoid' in prog else ''
                         dta = str(dta).replace("', '", " to ").replace("[[", "[").replace("]]","]").replace("[", "").replace("]","").replace("'", "")
-    
+
+                        targetStr = ''
+                        if prog and 'priorityTargets' in prog:
+                            targets = []
+                            for t in prog['priorityTargets']:
+                                targets.append(f"({t['target']}, {t['ra']}, {t['dec']})")
+                            targetStr = ', '.join(targets)
+
                         file.write(f"\t{piLast}")                   
                         file.write(f"\t{piFirst}")                  
                         file.write(f"\t{block['instr']}")
@@ -1042,9 +1049,9 @@ class Scheduler(object):
                         file.write(f"\t{dta}")              
                         file.write(f"\t{xstr(block['reqDate'])}")     
                         file.write(f"\t{xstr(block['reqPortion'])}")
-                        file.write(f"\t")                   #todo
-                        file.write(f"\t")                   #todo
-                        file.write(f"\t{''.join(pax)}")                   #todo
+                        file.write(f"\t")                   #note: this is blank for keck scheduler
+                        file.write(f"\t{targetStr}")              
+                        file.write(f"\t{''.join(pax)}")
                         file.write(f"\t")                   #todo
 
                         file.write("\n")

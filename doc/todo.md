@@ -13,14 +13,14 @@
 
 
 #todo: details
-!- Auto-correct conflicts
 !- Add in DateSpecific
 !- Fully formatted export to Carolyn's spreadsheet format
+!- Program ranking per institution
 !- Save/load entire schedule run (db or file) 
 !- force small portions to different days for same ktn (ie avoid same program on same night for 1/2 and 1/4) (ie dup col in show report) (we do this in scoreBlockSlot but not working well)
 !- Normalize scoring
 !- Cadence has a range.  factor that in for date options if reqDate not set.  and it should be consecutive right?
-- Score Carolyn's 2020A schedule
+- Score Carolyn's 2020A schedule (this may be impossible since there is no linkage to specific progInstr, but we could do another type of scoring)
 - target/airmass scoring (use lst@midnight data)
 - real query for other data: shutdowns, moon phases, etc (see proposals.InstrumentUnavailable)
 - classes: Block, Schedule?
@@ -31,8 +31,6 @@
 - Consider laser runs?
 - Rule: Avoid 3-way or 4-way splits with 2 or more programs
 - Engineering pref is to have a few each month preferably during bright time.  Should we allow some seeding of Engineering nights and avoid adjacency?
-- Program ranking per institution
-- Changes datesToAvoid in json to be list of start/end ranges.
 - option to run one of the telescopes only
 - check if the total proposed hours exceeds semester hours
 - instead of or additionally, have random movement of order by position instead of score randomness.

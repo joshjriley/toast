@@ -51,6 +51,7 @@ class Scheduler(object):
         self.createMoonIndexDates()
         self.createMoonPrefLookups()
         self.createInstrBaseNames()
+        self.createDatesToAvoidLookup()
 
         #checks
         #todo: check if the total proposed hours exceeds semester hours
@@ -497,7 +498,7 @@ class Scheduler(object):
         #check for program dates to avoid
         if block['ktn'] in self.programs:
             prog = self.programs[block['ktn']]
-            if date in prog['datesToAvoid']:
+            if date in prog['datesToAvoidLookup']:
                 if verbose: print(f"ERROR: date {date} is marked as program date to avoid.")
                 return False
 
@@ -766,6 +767,15 @@ class Scheduler(object):
         else                                : return reqPortion
 
 
+    def createDatesToAvoidLookup(self):
+        for ktn, program in self.programs.items():
+            program['datesToAvoidLookup'] = {}
+            for dateRange in program['datesToAvoid']:
+                dates = self.createDatesList(dateRange[0], dateRange[1])
+                for d in dates:
+                    program['datesToAvoidLookup'][d] = 1
+
+
     def createDatesList(self, startDate, endDate):
 
         startDate = startDate.replace('-','')
@@ -1018,7 +1028,9 @@ class Scheduler(object):
                         piLast  = prog['piLast']  if prog else ''
                         inst    = prog['inst']    if prog else ''
                         pax     = block['progInstr']['moonPrefs'] if prog and block['progInstr'] else ''
-
+                        dta     = prog['datesToAvoid'] if prog and 'datesToAvoid' in prog else ''
+                        dta = str(dta).replace("', '", " to ").replace("[[", "[").replace("]]","]").
+    
                         file.write(f"\t{piLast}")                   
                         file.write(f"\t{piFirst}")                  
                         file.write(f"\t{block['instr']}")
@@ -1027,7 +1039,7 @@ class Scheduler(object):
                         file.write(f"\t{block['type']}")
                         file.write(f"\t{block['size']}")
                         file.write(f"\t{block['moonIndex']}")     
-                        file.write(f"\t??avoid??")                   #todo
+                        file.write(f"\t{dta}")              
                         file.write(f"\t{xstr(block['reqDate'])}")     
                         file.write(f"\t{xstr(block['reqPortion'])}")
                         file.write(f"\t")                   #todo

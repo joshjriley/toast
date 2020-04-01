@@ -209,7 +209,8 @@ def formDataToStandard(progData):
         #todo: sort dates?
         datesToAvoid = []
         for av in prog['datesToAvoid']:
-            datesToAvoid += convertDateRangeToDatesArray(av['AvoidStartDate'], av['AvoidEndDate'])
+            rng = [av['AvoidStartDate'], av['AvoidEndDate']]
+            datesToAvoid.append(rng)
         programs[ktn]['datesToAvoid'] = datesToAvoid
 
         # priority targets
@@ -277,7 +278,7 @@ def saveProgramDataToFile(programs, outfile, compact=False):
         for pcount, (i, prog) in enumerate(programs.items()):
             txt += f'\t"{prog["ktn"]}": \n'
             txt += "\t{\n"
-            txt += f'\t\t"ktn": "{prog["ktn"]}", "type": "{prog["type"]}, "piFirst": "{prog["piFirst"]}", "piLast": "{prog["piLast"]}", "inst": "{prog["inst"]}"s,\n'
+            txt += f'\t\t"ktn": "{prog["ktn"]}", "type": "{prog["type"]}", "piFirst": "{prog["piFirst"]}", "piLast": "{prog["piLast"]}", "inst": "{prog["inst"]}",\n'
             txt += f'\t\t"datesToAvoid": {json.dumps(prog["datesToAvoid"], default=jsonConverter)},\n'
 
             if len(prog['priorityTargets']) == 0:

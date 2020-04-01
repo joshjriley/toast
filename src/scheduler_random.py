@@ -218,7 +218,8 @@ class SchedulerRandom(Scheduler):
         blocks = newBlocks
 
         #apply institutional balancing
-        blocks = self.balanceBlocksByInstitution(blocks)
+        if self.config['blockOrderInstBalance']: 
+            blocks = self.balanceBlocksByInstitution(blocks)
 
         #if any blocks are fixed scheduled, bump those to the top
         num = len(blocks)
@@ -254,6 +255,9 @@ class SchedulerRandom(Scheduler):
         numPops = {}
         for letter, inst in insts.items():
             numPops[letter] = 1 + math.floor(len(inst)/avg)
+            if letter in self.config['blockOrderInstBalanceAdjusts']:
+                adjust = self.config['blockOrderInstBalanceAdjusts'][letter]
+                numPops[letter] += adjust
 
         #loop thru letters until done
         newblocks = []
@@ -265,7 +269,6 @@ class SchedulerRandom(Scheduler):
             l = ltrIdx % len(letters)
             letter = letters[l]
             ltrIdx += 1
-
             inst = insts[letter]
             if len(inst) > 0:
                 numEmpty = 0

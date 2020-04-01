@@ -133,6 +133,14 @@
     #TODO: Is this a good idea?
     'blockOrderProblemLearnMax': 15.0,
 
+    #Institutional balancing on/off.  And, balanace adjusts which schedules that many more extra blocks each cycle through
+    #the institution letters.  Balancing by default calcs the proportions, but adjusts give more.
+    'blockOrderInstBalance': True,
+    'blockOrderInstBalanceAdjusts':
+    {
+        # 'N': 1,
+        # "U": 3,
+    },
 
 
     #----------------------------------------------------------------------

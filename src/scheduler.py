@@ -1029,7 +1029,7 @@ class Scheduler(object):
                         inst    = prog['inst']    if prog else ''
                         pax     = block['progInstr']['moonPrefs'] if prog and block['progInstr'] else ''
                         dta     = prog['datesToAvoid'] if prog and 'datesToAvoid' in prog else ''
-                        dta = str(dta).replace("', '", " to ").replace("[[", "[").replace("]]","]")
+                        dta = str(dta).replace("', '", " to ").replace("[[", "[").replace("]]","]").replace("[", "").replace("]","").replace("'", "")
     
                         file.write(f"\t{piLast}")                   
                         file.write(f"\t{piFirst}")                  

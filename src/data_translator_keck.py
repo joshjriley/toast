@@ -47,7 +47,7 @@ def queryProgramData(semester, dbConfigFile):
         #------------------------------------------------------------------------------
         # Get program data
         #------------------------------------------------------------------------------
-        query = f"select KTN, ProgramType, AllocInst from ProgramInformation where KTN='{ktn}'"
+        query = f"select KTN, ProgramType, AllocInst, SpecialRequests from ProgramInformation where KTN='{ktn}'"
         prog = dbc.query('proposals', query, getOne=True)
         if not prog:
             print ('WARNING: NO PROG INFO. SKIPPING. (possible ktn rename) ', ktn)
@@ -204,6 +204,7 @@ def formDataToStandard(progData):
         programs[ktn]['piFirst'] = prog['piFirst']
         programs[ktn]['piLast']  = prog['piLast']
         programs[ktn]['inst']    = prog['AllocInst']
+        programs[ktn]['specialRequests'] = prog['SpecialRequests'].replace("\r", " ").replace("\n", " ").replace("\t", " ");
 
         #dates to avoid    
         #todo: sort dates?
@@ -279,6 +280,7 @@ def saveProgramDataToFile(programs, outfile, compact=False):
             txt += f'\t"{prog["ktn"]}": \n'
             txt += "\t{\n"
             txt += f'\t\t"ktn": "{prog["ktn"]}", "type": "{prog["type"]}", "piFirst": "{prog["piFirst"]}", "piLast": "{prog["piLast"]}", "inst": "{prog["inst"]}",\n'
+            txt += f'\t\t"specialRequests": {json.dumps(prog["specialRequests"])},\n'
             txt += f'\t\t"datesToAvoid": {json.dumps(prog["datesToAvoid"], default=jsonConverter)},\n'
 
             if len(prog['priorityTargets']) == 0:

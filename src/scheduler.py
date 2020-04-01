@@ -1028,6 +1028,7 @@ class Scheduler(object):
                         piLast  = prog['piLast']  if prog else ''
                         inst    = prog['inst']    if prog else ''
                         pax     = block['progInstr']['moonPrefs'] if prog and block['progInstr'] else ''
+                        special = prog['specialRequests'] if prog and 'specialRequests' in prog else ''
                         dta     = prog['datesToAvoid'] if prog and 'datesToAvoid' in prog else ''
                         dta = str(dta).replace("', '", " to ").replace("[[", "[").replace("]]","]").replace("[", "").replace("]","").replace("'", "")
 
@@ -1052,7 +1053,7 @@ class Scheduler(object):
                         file.write(f"\t")                   #note: this is blank for keck scheduler
                         file.write(f"\t{targetStr}")              
                         file.write(f"\t{''.join(pax)}")
-                        file.write(f"\t")                   #todo
+                        file.write(f"\t{special}")                   #todo
 
                         file.write("\n")
 

@@ -2,6 +2,7 @@
 	"2020A_C003": 
 	{
 		"ktn": "2020A_C003", "type": "Classical", "piFirst": "Andrew", "piLast": "Howard", "inst": "CIT",
+		"specialRequests": "We request that the schedule of nights for the Doppler planets searches of the California Planet  Search (CPS) be determined with two goals in mind. First, we request that 1/2 of our nights be  bunched into high-cadence campaigns (defined below). Second, we request that the other 1/2 of  the nights be spread evenly through the remaining time, with at least one CPS night per  lunation. We prefer first half nights for the setting TESS targets. We request (if possible) the  scheduling of 1-2 high-cadence campaigns for CPS as a whole. We define high-cadence  campaign as ~8 nights allocated in ~16 calendar nights. This allocation of nights will maximize  the scientific yield of this proposal and other projects within CPS, while focusing our primary  observing time on targets that are yet to be identified by the TESS satellite. We have targets  available at all RA, ten of which are listed below (most are notional targets).    Our proposed distribution of nights will allow us to track planets with orbital periods of days to  weeks (a large part of our sample) as well as months and longer (also important). Our programs  can easily accommodate half or fractional nights; they are especially advantageous during the  high cadence period to increase coverage. Expected PIs for this project (the TESS-Keck  Survey) in 2020A will be Howard (NASA), Howard (Caltech), and Petigura (UC). PIs from the  broader CPS collaboration include Howard, Petigura, Fulton, Kane, Batalha, Dressing, Weiss,  Huber, Crossfield, and Robertson. In the past we have been awarded ~30-50 nights/semester in  total. We recognize that scheduling is difficult (perhaps over constrained) and thank the Keck  staff for their efforts. The PI is happy to consult by email/phone to facilitate scheduling.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -39,6 +40,7 @@
 	"2020A_C157": 
 	{
 		"ktn": "2020A_C157", "type": "Classical", "piFirst": "Evan", "piLast": "Kirby", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -66,6 +68,7 @@
 	"2020A_C165": 
 	{
 		"ktn": "2020A_C165", "type": "Classical", "piFirst": "Tom", "piLast": "Soifer", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -104,6 +107,7 @@
 	"2020A_C177": 
 	{
 		"ktn": "2020A_C177", "type": "Classical", "piFirst": "Charles", "piLast": "Beichman", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [["2020-05-01", "2020-05-07"]],
 		"priorityTargets":
 		[
@@ -126,6 +130,7 @@
 	"2020A_C197": 
 	{
 		"ktn": "2020A_C197", "type": "Classical", "piFirst": "Geoffrey", "piLast": "Blake", "inst": "CIT",
+		"specialRequests": "In this proposal we ask for five half nights to observe a subset of the 12 exoplanet systems in our Direct Detection program. We are testing an observing strategy that prioritizes epochs where the primary velocity of the system is small. Therefore, we prefer half nights that have multiple targets up and with near-zero primary velocities. There are a few specific half nights that we could not accept however, because the systems up during those half nights are in near conjuncture positions so that planetary lines would not be well separated from the stellar lines. These specific half nights that we could not accept are: (1st half night) 2/2, 2/3, 2/5, 2/9, 2/11, 2/14, 2/16, 2/21, 2/23, 2/28, 3/03, 3/06, 4/26, 5/28, 5/31, 6/2, 6/4, 6/6, 6/10, 6/12, 6/14, 6/17, 6/25, 7/4, 7/5, 7/10, 7/13, 7/14, 7/15, 7/18, 7/20, 7/21, 7/23, 7/24, 7/25, 7/29, and (2nd half night) 2/28, 3/01, 3/03, 3/09, 3/11, 3/22, 3/24, 3/26, 3/28, 4/13, 4/16, 4/18, 4/23, 4/24, 4/25, 4/26, 5/3, 5/4, 5/6, 5/14, 5/15, 5/16, 5/17, 5/20, 5/24, 5/25, 5/26, 5/31, 6/3, 6/4, 6/6, 6/14, 6/17, 6/23, 6/25, 7/14, 7/25. Any other half night would be acceptable. We recognize that NIRSPEC is due to be unavailable from February into mid-March, but we list sub-optimal nights here too in case the instrument is ready earlier than expected.    If full nights are allocated instead, the time requested for the WD/BD binaries (proposal C199) could be folded in. If scheduled, we will share our quantitative assessment of the performance of NIRSPEC2.0 with the Keck community in as timely a fashion as possible.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -164,6 +169,7 @@
 	"2020A_C198": 
 	{
 		"ktn": "2020A_C198", "type": "Classical", "piFirst": "Geoffrey", "piLast": "Blake", "inst": "CIT",
+		"specialRequests": "Half night observations where the disk sources transit near sunrise or sunset optimize the doppler shifts w.r.t. telluric features, and so are preferred in our request.  The individual requests for the three half nights in the two blocks are for one L band half night (water) and two M band half nights (CO) to acquire the necessary echelle grating settings. It is not imperative that the L and M nights be adjacent. It would be helpful, but not imperative, for the two M band half nights to be back-to-back. If it would be more helpful to the scheduler to make the two M-band have night and one L-band half night requests separately in the table below, we can update this cover sheet.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -189,6 +195,7 @@
 	"2020A_C206": 
 	{
 		"ktn": "2020A_C206", "type": "Classical", "piFirst": "Nick", "piLast": "Scoville", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [["2020-02-08", "2020-02-12"], ["2020-03-07", "2020-03-11"], ["2020-04-03", "2020-04-07"]],
 		"priorityTargets":
 		[
@@ -213,6 +220,7 @@
 	"2020A_C221": 
 	{
 		"ktn": "2020A_C221", "type": "Classical", "piFirst": "Heather", "piLast": "Knutson", "inst": "CIT",
+		"specialRequests": "In order to detect thermal emission from this planet we must observe for an extended period of time around the phase of secondary eclipse.  This can be achieved using two full nights of time in March/early April, or the equivalent number of half nights later in April.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -243,6 +251,7 @@
 	"2020A_C226": 
 	{
 		"ktn": "2020A_C226", "type": "Classical", "piFirst": "Jason", "piLast": "Wang", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -267,6 +276,7 @@
 	"2020A_C230": 
 	{
 		"ktn": "2020A_C230", "type": "Classical", "piFirst": "Evan", "piLast": "Kirby", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -288,6 +298,7 @@
 	"2020A_C231": 
 	{
 		"ktn": "2020A_C231", "type": "Classical", "piFirst": "Charles", "piLast": "Steidel", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -328,6 +339,7 @@
 	"2020A_C232": 
 	{
 		"ktn": "2020A_C232", "type": "Classical", "piFirst": "Christopher", "piLast": "Martin", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -354,6 +366,7 @@
 	"2020A_C234": 
 	{
 		"ktn": "2020A_C234", "type": "Classical", "piFirst": "Chuck", "piLast": "Steidel", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -380,6 +393,7 @@
 	"2020A_C235": 
 	{
 		"ktn": "2020A_C235", "type": "Classical", "piFirst": "Hannah", "piLast": "Earnshaw", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -407,6 +421,7 @@
 	"2020A_C236": 
 	{
 		"ktn": "2020A_C236", "type": "Classical", "piFirst": "Christoffer", "piLast": "Fremling", "inst": "CIT",
+		"specialRequests": "ZTF is continuously finding around 4.5 SE per month that fullfills the criteria outlined in this proposal, and each month of 2020A we will have 4.5 SE to observe. These can be observed using one half night at Keck each month. We request four half nights spaced out during dark time during 2020A.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -455,6 +470,7 @@
 	"2020A_C240": 
 	{
 		"ktn": "2020A_C240", "type": "Classical", "piFirst": "Mike", "piLast": "Brown", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -477,6 +493,7 @@
 	"2020A_C241": 
 	{
 		"ktn": "2020A_C241", "type": "Classical", "piFirst": "Mansi", "piLast": "Kasliwal", "inst": "CIT",
+		"specialRequests": "We request a half night of NIRES in each of February and April. We request a half night of LRIS in each of March and May. ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -525,6 +542,7 @@
 	"2020A_C244": 
 	{
 		"ktn": "2020A_C244", "type": "Classical", "piFirst": "Lin", "piLast": "Yan", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -553,6 +571,7 @@
 	"2020A_C247": 
 	{
 		"ktn": "2020A_C247", "type": "Classical", "piFirst": "Dimitri", "piLast": "Mawet", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -586,6 +605,7 @@
 	"2020A_C249": 
 	{
 		"ktn": "2020A_C249", "type": "Classical", "piFirst": "Dimitri", "piLast": "Mawet", "inst": "CIT",
+		"specialRequests": "Please coordinate to schedule the UH (Liu, Chun) and Caltech (Mawet) runs close to each other.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -610,6 +630,7 @@
 	"2020A_C254": 
 	{
 		"ktn": "2020A_C254", "type": "Classical", "piFirst": "Renee", "piLast": "Ludlam", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -631,6 +652,7 @@
 	"2020A_C255": 
 	{
 		"ktn": "2020A_C255", "type": "Classical", "piFirst": "Maxwell", "piLast": "Millar-Blanchaer", "inst": "CIT",
+		"specialRequests": "We request that our nights not be schedule in the first two weeks of March of the week of June 15th. Ideally our two nights are not schedule more than a month apart, but this can be somewhat flexible if need be. ",
 		"datesToAvoid": [["2020-03-01", "2020-03-14"], ["2020-06-13", "2020-06-20"]],
 		"priorityTargets":
 		[
@@ -666,6 +688,7 @@
 	"2020A_C256": 
 	{
 		"ktn": "2020A_C256", "type": "Classical", "piFirst": "Lina", "piLast": "Necib", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [["2020-06-08", "2020-06-11"], ["2020-05-15", "2020-05-17"]],
 		"priorityTargets":
 		[
@@ -688,6 +711,7 @@
 	"2020A_C257": 
 	{
 		"ktn": "2020A_C257", "type": "Classical", "piFirst": "Kevin", "piLast": "Fogarty", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -714,6 +738,7 @@
 	"2020A_C258": 
 	{
 		"ktn": "2020A_C258", "type": "Classical", "piFirst": "Fei", "piLast": "Dai", "inst": "CIT",
+		"specialRequests": "We request observations of three targets, each of which hosts a transiting planet and requires a night matching the transit ephemeris.    WASP-107 UT 02/26/2020 only event in 2020A  K2-287      UT 03/31/2020 only event in 2020A  K2-100      UT 02/05/2020 or UT 04/07/2020 and we only need 3/4 night for this system",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -755,6 +780,7 @@
 	"2020A_C259": 
 	{
 		"ktn": "2020A_C259", "type": "Classical", "piFirst": "Daniel", "piLast": "Goldstein", "inst": "CIT",
+		"specialRequests": "We request the second half of each of the proposed 4 x 0.5n, and we would prefer the two half-nights in the second run separated by several days, if possible. ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -803,6 +829,7 @@
 	"2020A_C261": 
 	{
 		"ktn": "2020A_C261", "type": "Classical", "piFirst": "George", "piLast": "Djorgovski", "inst": "CIT",
+		"specialRequests": "Instead of the full nights in Sep/Oct, we could use second half-nights in Aug, or the first half-nights in Nov.  Time can be scheduled in multiple runs.  ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -834,6 +861,7 @@
 	"2020A_C262": 
 	{
 		"ktn": "2020A_C262", "type": "Classical", "piFirst": "Thomas", "piLast": "Prince", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -869,6 +897,7 @@
 	"2020A_C263": 
 	{
 		"ktn": "2020A_C263", "type": "Classical", "piFirst": "Maria", "piLast": "Charisi", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -895,6 +924,7 @@
 	"2020A_C265": 
 	{
 		"ktn": "2020A_C265", "type": "Classical", "piFirst": "Shri", "piLast": "Kulkarni", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -952,6 +982,7 @@
 	"2020A_C266": 
 	{
 		"ktn": "2020A_C266", "type": "Classical", "piFirst": "James", "piLast": "Fuller", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -973,6 +1004,7 @@
 	"2020A_C267": 
 	{
 		"ktn": "2020A_C267", "type": "Classical", "piFirst": "George", "piLast": "Djorgovski", "inst": "CIT",
+		"specialRequests": "Ideally we'd like 2 runs for a better coverage of the RA range.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1004,6 +1036,7 @@
 	"2020A_C270": 
 	{
 		"ktn": "2020A_C270", "type": "Classical", "piFirst": "Vikram", "piLast": "Ravi", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1034,6 +1067,7 @@
 	"2020A_C301": 
 	{
 		"ktn": "2020A_C301", "type": "Classical", "piFirst": "Director", "piLast": "CIT", "inst": "CIT",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1073,6 +1107,7 @@
 	"2020A_C303": 
 	{
 		"ktn": "2020A_C303", "type": "Classical", "piFirst": "Mike", "piLast": "Brown", "inst": "CIT",
+		"specialRequests": "We are requesting 3 sequential nights when Europa is appropriately placed with respect to Jupiter. There are only 3 acceptable sets of nights when Europa is correctly placed. In order from most-ideal to least-ideal, these are (UT) 15, 16, 17 June and  (UT) 1, 2, 3 June, and (UT) 8, 9, 10 June. The requested time for these nights is the second half of the night.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1096,6 +1131,7 @@
 	"2020A_D309": 
 	{
 		"ktn": "2020A_D309", "type": "Classical", "piFirst": "Jeffrey", "piLast": "Chilcote", "inst": "Notre Dame",
+		"specialRequests": "",
 		"datesToAvoid": [["2020-06-11", "2020-06-27"]],
 		"priorityTargets":
 		[
@@ -1125,6 +1161,7 @@
 	"2020A_D310": 
 	{
 		"ktn": "2020A_D310", "type": "Classical", "piFirst": "J. Christopher", "piLast": "Howk", "inst": "Notre Dame",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1154,6 +1191,7 @@
 	"2020A_H146": 
 	{
 		"ktn": "2020A_H146", "type": "Classical", "piFirst": "Kathy", "piLast": "Cooksey", "inst": "UH",
+		"specialRequests": "Feb 1-Apr 26 (dark/gray) preferred.  Apr 27-May 25 (dark/gray) acceptable.  Any of above can be full or half nights.  May 26-Jul 31 (dark/gray) 1st-half nights acceptable",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1178,6 +1216,7 @@
 	"2020A_H224": 
 	{
 		"ktn": "2020A_H224", "type": "Classical", "piFirst": "Lauren", "piLast": "Weiss", "inst": "UH",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1202,6 +1241,7 @@
 	"2020A_H268": 
 	{
 		"ktn": "2020A_H268", "type": "Classical", "piFirst": "Benjamin", "piLast": "Shappee", "inst": "UH",
+		"specialRequests": "We request nights separated to get a time series, please do not schedule back to back nights. ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1250,6 +1290,7 @@
 	"2020A_H272": 
 	{
 		"ktn": "2020A_H272", "type": "Classical", "piFirst": "Antoinette", "piLast": "Cowie", "inst": "UH",
+		"specialRequests": "NEP not observable in February, March ",
 		"datesToAvoid": [["2020-02-01", "2020-04-30"]],
 		"priorityTargets":
 		[
@@ -1273,6 +1314,7 @@
 	"2020A_H273": 
 	{
 		"ktn": "2020A_H273", "type": "Classical", "piFirst": "David", "piLast": "Sanders", "inst": "UH",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1297,6 +1339,7 @@
 	"2020A_H274": 
 	{
 		"ktn": "2020A_H274", "type": "Classical", "piFirst": "Lennox", "piLast": "Cowie", "inst": "UH",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1319,6 +1362,7 @@
 	"2020A_H275": 
 	{
 		"ktn": "2020A_H275", "type": "Classical", "piFirst": "Charlotte", "piLast": "Bond", "inst": "UH",
+		"specialRequests": "- Here we have asked for NIRC2-LGS, but intend to use the Pyramid WFS for NGS.  However, we propose LGS as a back up.  We will inform Keck of need for LGS in advance of the observations.  - This proposal is part of a shared risk science verification program for the Pyramid WFS.  If possible please schedule the UH (Bond) and Caltech (Mawet) runs for PWFS close to each other.  - Avoid dates with moon in target field (listed below).",
 		"datesToAvoid": [["2020-04-09", "2020-04-12"], ["2020-05-06", "2020-05-09"], ["2020-06-03", "2020-06-05"], ["2020-07-01", "2020-07-03"]],
 		"priorityTargets":
 		[
@@ -1342,6 +1386,7 @@
 	"2020A_H276": 
 	{
 		"ktn": "2020A_H276", "type": "Classical", "piFirst": "Jamie", "piLast": "Tayar", "inst": "UH",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1366,6 +1411,7 @@
 	"2020A_H277": 
 	{
 		"ktn": "2020A_H277", "type": "Classical", "piFirst": "Roy", "piLast": "Gal", "inst": "UH",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1389,6 +1435,7 @@
 	"2020A_H279": 
 	{
 		"ktn": "2020A_H279", "type": "Classical", "piFirst": "Daniel", "piLast": "Huber", "inst": "UH",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1419,6 +1466,7 @@
 	"2020A_H280": 
 	{
 		"ktn": "2020A_H280", "type": "Classical", "piFirst": "Daniel", "piLast": "Huber", "inst": "UH",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1440,6 +1488,7 @@
 	"2020A_H281": 
 	{
 		"ktn": "2020A_H281", "type": "Classical", "piFirst": "Michael", "piLast": "Bottom", "inst": "UH",
+		"specialRequests": "",
 		"datesToAvoid": [["2020-02-22", "2020-07-31"]],
 		"priorityTargets":
 		[
@@ -1461,6 +1510,7 @@
 	"2020A_H282": 
 	{
 		"ktn": "2020A_H282", "type": "Classical", "piFirst": "Jacqueline", "piLast": "Keane", "inst": "UH",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1496,6 +1546,7 @@
 	"2020A_H283": 
 	{
 		"ktn": "2020A_H283", "type": "Classical", "piFirst": "Ashley", "piLast": "Chontos", "inst": "UH",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1520,6 +1571,7 @@
 	"2020A_H308": 
 	{
 		"ktn": "2020A_H308", "type": "Classical", "piFirst": "Richard", "piLast": "Griffiths", "inst": "UH",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1541,6 +1593,7 @@
 	"2020A_H311": 
 	{
 		"ktn": "2020A_H311", "type": "Classical", "piFirst": "Michael", "piLast": "Liu", "inst": "UH",
+		"specialRequests": "Grey/dark time is needed as many of our targets have faint tiptilt stars.  ",
 		"datesToAvoid": [["2020-06-20", "2020-06-27"], ["2020-02-05", "2020-02-06"], ["2020-03-17", "2020-03-18"]],
 		"priorityTargets":
 		[
@@ -1573,6 +1626,7 @@
 	"2020A_H312": 
 	{
 		"ktn": "2020A_H312", "type": "Classical", "piFirst": "Duncan", "piLast": "Farrah", "inst": "UH",
+		"specialRequests": "Half nights are also acceptable, if scheduled appropriately for the RA range",
 		"datesToAvoid": [["2020-05-31", "2020-07-31"]],
 		"priorityTargets":
 		[
@@ -1601,6 +1655,7 @@
 	"2020A_H313": 
 	{
 		"ktn": "2020A_H313", "type": "Classical", "piFirst": "Harald", "piLast": "Ebeling", "inst": "UH",
+		"specialRequests": "Any split run of dark nights in February through June is acceptable, as long as the two runs are separated by at least two months. We greatly prefer the highlighted combination of March (2n) and June (1n).",
 		"datesToAvoid": [["2020-06-30", "2020-07-31"]],
 		"priorityTargets":
 		[
@@ -1637,6 +1692,7 @@
 	"2020A_H314": 
 	{
 		"ktn": "2020A_H314", "type": "Classical", "piFirst": "Harald", "piLast": "Ebeling", "inst": "UH",
+		"specialRequests": "The MOSFIRE run must be scheduled after the DEIMOS run. Splitting the 2 requested DEIMOS nights into two separate 1n runs is acceptable as long as the latter are separated by at least two months.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1659,6 +1715,7 @@
 	"2020A_H319": 
 	{
 		"ktn": "2020A_H319", "type": "Classical", "piFirst": "Duncan", "piLast": "Farrah", "inst": "UH",
+		"specialRequests": "For the half nights, observations are only possible for first half nights",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1681,6 +1738,7 @@
 	"2020A_K291": 
 	{
 		"ktn": "2020A_K291", "type": "Classical", "piFirst": "Hilton", "piLast": "Lewis", "inst": "Keck",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1711,6 +1769,7 @@
 	"2020A_K293": 
 	{
 		"ktn": "2020A_K293", "type": "Classical", "piFirst": "Hilton", "piLast": "Lewis", "inst": "Keck",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1732,6 +1791,7 @@
 	"2020A_K294": 
 	{
 		"ktn": "2020A_K294", "type": "Classical", "piFirst": "Hilton", "piLast": "Lewis", "inst": "Keck",
+		"specialRequests": "The prioritization of targets below is keyed to instrument.   WR98a is my #1 target.  WR122 is #2 but will actually require a longer integration.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1755,6 +1815,7 @@
 	"2020A_K297": 
 	{
 		"ktn": "2020A_K297", "type": "Classical", "piFirst": "Hilton", "piLast": "Lewis", "inst": "Keck",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1782,6 +1843,7 @@
 	"2020A_K300": 
 	{
 		"ktn": "2020A_K300", "type": "Classical", "piFirst": "Hilton", "piLast": "Lewis", "inst": "Keck",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1812,6 +1874,7 @@
 	"2020A_N007": 
 	{
 		"ktn": "2020A_N007", "type": "Classical", "piFirst": "Lauren", "piLast": "Weiss", "inst": "NASA",
+		"specialRequests": "Note that we lost 1.0 nights of time from this program in 2019B (August 9) due to the July/August observatory closure.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1836,6 +1899,7 @@
 	"2020A_N013": 
 	{
 		"ktn": "2020A_N013", "type": "Classical", "piFirst": "Daniel", "piLast": "Masters", "inst": "NASA",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1861,6 +1925,7 @@
 	"2020A_N018": 
 	{
 		"ktn": "2020A_N018", "type": "Classical", "piFirst": "Siyi", "piLast": "Xu", "inst": "NASA",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets": [],
 		"instruments":
@@ -1879,6 +1944,7 @@
 	"2020A_N021": 
 	{
 		"ktn": "2020A_N021", "type": "Classical", "piFirst": "Chris", "piLast": "Churchill", "inst": "NASA",
+		"specialRequests": "We request for two half-night (2nd half) during grey/dark time for the 2020A semester.  Our priority preference is July 15-30, 2020.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1903,6 +1969,7 @@
 	"2020A_N024": 
 	{
 		"ktn": "2020A_N024", "type": "Classical", "piFirst": "Alberto", "piLast": "Bolatto", "inst": "NASA",
+		"specialRequests": "We require a single dark night. We strongly prefer it be scheduled as a whole night. But if need be are willing to accept two half nights. If the night is broken into two half-nights we prefer they not be scheduled back-to-back so that we can better hedge against the weather, and also cover a larger range in LST. ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1928,6 +1995,7 @@
 	"2020A_N026": 
 	{
 		"ktn": "2020A_N026", "type": "Classical", "piFirst": "Federico", "piLast": "Marocco", "inst": "NASA",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1957,6 +2025,7 @@
 	"2020A_N027": 
 	{
 		"ktn": "2020A_N027", "type": "Classical", "piFirst": "Thayne", "piLast": "Currie", "inst": "NASA",
+		"specialRequests": "While we have requested full nights, this proposal can be split up into half-night allocations for both instruments for ease of scheduling.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -1981,6 +2050,7 @@
 	"2020A_N028": 
 	{
 		"ktn": "2020A_N028", "type": "Classical", "piFirst": "Alice", "piLast": "Shapley", "inst": "NASA",
+		"specialRequests": "This is a 2-semester request, for 3 nights in 2020A and 3 nights in 2020B. Our target fields are up for at least the 2nd half of the night from 2/1-3/12. They span the whole night from 3/13-4/30, and at least the first half of the night from 5/1-6/30. Therefore, we can be allocated 2nd-half nights from 2/1-3/12, full nights from 3/13-4/30, and 1st-half nights from 5/1-6/30.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2007,6 +2077,7 @@
 	"2020A_N037": 
 	{
 		"ktn": "2020A_N037", "type": "Classical", "piFirst": "Paul Wilson", "piLast": "Cauley", "inst": "NASA",
+		"specialRequests": "The target is a transiting planet. The only transits available for our science in  2020A are the local Hawaii nights of July 13 and June 23. We prefer the night of  July 13.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2028,6 +2099,7 @@
 	"2020A_N040": 
 	{
 		"ktn": "2020A_N040", "type": "Classical", "piFirst": "William", "piLast": "Grundy", "inst": "NASA",
+		"specialRequests": "Partial/fractional nights are fine with us, if that helps scheduling.    We need to use the differential tracking mode (originally developed by Al Conrad) in order to track the telescope at (very slow) non-siderial rates while using a stationary appulse star for tip-tilt correction.    We would prefer to avoid being scheduled during LPSC (March 15-21), ACM (June 14-19), or DPS (Oct. 24-31).",
 		"datesToAvoid": [["2020-03-15", "2020-03-21"], ["2020-06-14", "2020-06-19"]],
 		"priorityTargets":
 		[
@@ -2050,6 +2122,7 @@
 	"2020A_N047": 
 	{
 		"ktn": "2020A_N047", "type": "Classical", "piFirst": "Marissa", "piLast": "Vogt", "inst": "NASA",
+		"specialRequests": "Please see target list for observing time scheduling.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2073,6 +2146,7 @@
 	"2020A_N049": 
 	{
 		"ktn": "2020A_N049", "type": "Classical", "piFirst": "Joseph", "piLast": "Burchett", "inst": "NASA",
+		"specialRequests": "We are observing low surface brightness features and require high sensitivity at blue wavelengths (to ~3500 Angstrom).  Therefore, we request dark time if possible.  Also, we request that our observations are not scheduled after June 1, 2020, as only 1 out of our 4 targets will be above 1.5 airmass then.",
 		"datesToAvoid": [["2020-06-01", "2020-07-31"]],
 		"priorityTargets":
 		[
@@ -2097,6 +2171,7 @@
 	"2020A_N054": 
 	{
 		"ktn": "2020A_N054", "type": "Classical", "piFirst": "Munazza", "piLast": "Alam", "inst": "NASA",
+		"specialRequests": "Cannot observe ~half of the targets proposed here after March 3",
 		"datesToAvoid": [["2020-03-04", "2020-07-31"]],
 		"priorityTargets":
 		[
@@ -2120,6 +2195,7 @@
 	"2020A_N056": 
 	{
 		"ktn": "2020A_N056", "type": "Classical", "piFirst": "Allison", "piLast": "Strom", "inst": "NASA",
+		"specialRequests": "During bright time in 2020A, the moon can be very close to the COSMOS field, limiting observations, especially in Y-band (relative to H- and K-band). As listed elsewhere, we would prefer to avoid February 8-10, March 6-8, and April 3-5. Further, after mid-April, the COSMOS field is above an airmass of 1.5 for less than 4 hours, which would make it challenging to satisfy the requirements of the proposed observing program.",
 		"datesToAvoid": [["2020-02-08", "2020-02-10"], ["2020-03-06", "2020-03-08"], ["2020-04-03", "2020-04-05"]],
 		"priorityTargets":
 		[
@@ -2141,6 +2217,7 @@
 	"2020A_N060": 
 	{
 		"ktn": "2020A_N060", "type": "Classical", "piFirst": "Jeyhan", "piLast": "Kartaltepe", "inst": "NASA",
+		"specialRequests": "Full nights preferable when we can observe both EGS and COSMOS (February through mid-May). Half-nights acceptable until mid-June. ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2164,6 +2241,7 @@
 	"2020A_N063": 
 	{
 		"ktn": "2020A_N063", "type": "Classical", "piFirst": "Taylor", "piLast": "Hutchison", "inst": "NASA",
+		"specialRequests": "We have only requested full nights as this has been NASA's preference in the past, but we are amenable to four second-half nights in February or first-half nights in May.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2188,6 +2266,7 @@
 	"2020A_N068": 
 	{
 		"ktn": "2020A_N068", "type": "Classical", "piFirst": "Jacob", "piLast": "Bean", "inst": "NASA",
+		"specialRequests": "This program must be scheduled to coincide with transits of the planets that are fully observable at low airmass. Dates given below are local Hawaii civil dates. The order is the priority. We request two full nights. If these nights can't be scheduled due to NIRSPEC downtime then we could use IRD on Subaru through the time exchange.  March 14-15  February 24-25  February 5-6  April 2-3  April 21-22",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2210,6 +2289,7 @@
 	"2020A_N079": 
 	{
 		"ktn": "2020A_N079", "type": "Cadence", "piFirst": "Carl", "piLast": "Schmidt", "inst": "NASA",
+		"specialRequests": "Io eclipse windows (UTC) presently available for joint HST and Keck viewing:  April 03 13:20-14:30 (Airmass 3.1-1.9)  April 26 13:24-14:40 (Airmass 1.7-1.4, HST presently scheduled)  May 12 11:40-12:45 (Airmass 2.2-1.6)  May 28 09:55-10:50 (Airmass 3.0-2.0)",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2231,6 +2311,7 @@
 	"2020A_N083": 
 	{
 		"ktn": "2020A_N083", "type": "Classical", "piFirst": "Erica", "piLast": "Gonzales", "inst": "NASA",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2259,6 +2340,7 @@
 	"2020A_N089": 
 	{
 		"ktn": "2020A_N089", "type": "Classical", "piFirst": "Jane", "piLast": "Rigby", "inst": "NASA",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2281,6 +2363,7 @@
 	"2020A_N095": 
 	{
 		"ktn": "2020A_N095", "type": "Classical", "piFirst": "Peter", "piLast": "Senchyna", "inst": "NASA",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2307,6 +2390,7 @@
 	"2020A_N097": 
 	{
 		"ktn": "2020A_N097", "type": "Classical", "piFirst": "Justin", "piLast": "Hom", "inst": "NASA",
+		"specialRequests": "Half nights requested need to be scheduled as first half of the night. Only one coordinate is listed as a priority candidate because all targets in the sample are in a tight concentration of coordinates",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2330,6 +2414,7 @@
 	"2020A_N098": 
 	{
 		"ktn": "2020A_N098", "type": "Cadence", "piFirst": "Ya-Lin", "piLast": "Wu", "inst": "NASA",
+		"specialRequests": "The proposed observations can be scheduled from March to the end of July, not restricted to the Date and Range listed below. For observations scheduled in July, we prefer the Q1 part of night.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2369,6 +2454,7 @@
 	"2020A_N099": 
 	{
 		"ktn": "2020A_N099", "type": "Classical", "piFirst": "Rongmon", "piLast": "Bordoloi", "inst": "NASA",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2391,6 +2477,7 @@
 	"2020A_N100": 
 	{
 		"ktn": "2020A_N100", "type": "Classical", "piFirst": "Trent", "piLast": "Dupuy", "inst": "NASA",
+		"specialRequests": "Availability of the Kepler field is best in July; we rapidly lose our observing window on it before July 1. It would be fine to be scheduled into half-nights any time in June or July, if that makes scheduling easier. I marked June as \"Acceptable\" for that reason, but note that it doesn't really work for whole nights - only for half nights.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2417,6 +2504,7 @@
 	"2020A_N102": 
 	{
 		"ktn": "2020A_N102", "type": "Classical", "piFirst": "Adam", "piLast": "Kraus", "inst": "NASA",
+		"specialRequests": "Scheduling into second-half nights after May 26 would also be fine. We're observing the Kepler field, so we would want LST > 16h at handoff.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2438,6 +2526,7 @@
 	"2020A_N110": 
 	{
 		"ktn": "2020A_N110", "type": "Classical", "piFirst": "Patrick", "piLast": "Kelly", "inst": "NASA",
+		"specialRequests": "For the preferred or acceptable dates below, we only request the half of the night when the Moon is largely not visible. A single whole night during dark time in March would also be acceptable.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2460,6 +2549,7 @@
 	"2020A_N119": 
 	{
 		"ktn": "2020A_N119", "type": "Classical", "piFirst": "Brendan", "piLast": "Bowler", "inst": "NASA",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2481,6 +2571,7 @@
 	"2020A_N123": 
 	{
 		"ktn": "2020A_N123", "type": "Classical", "piFirst": "Andrew", "piLast": "Howard", "inst": "NASA",
+		"specialRequests": "We request that the schedule of nights for the Doppler planets searches of the California Planet Search (CPS) be determined with two goals in mind. First, we request that 1/2 of our nights be bunched into high-cadence campaigns (defined below). Second, we request that the other 1/2 of the nights be spread evenly through the remaining time, with at least one CPS night per lunation.  We prefer first half nights for the setting TESS targets.  We request (if possible) the scheduling of 1-2 high-cadence campaigns for CPS as a whole.  We define high-cadence campaign as ~8 nights allocated in ~16 calendar nights.  This allocation of nights will maximize the scientific yield of this proposal and other projects within CPS, while focusing our primary observing time on targets that are yet to be identified by the TESS satellite. We have targets available at all RA, ten of which are listed below (most are notional targets).    Our proposed distribution of nights will allow us to track planets with orbital periods of days to weeks (a large part of our sample) as well as months and longer (also important).  Our programs can easily accommodate half or fractional nights; they are especially advantageous during the high cadence period to increase coverage.  Expected PIs for this project (the TESS-Keck Survey) in 2020A will be Howard (NASA), Howard (Caltech), and Petigura (UC).  PIs from the broader CPS collaboration include Howard, Petigura, Fulton, Kane, Batalha, Dressing, Weiss, Huber, Crossfield, and Robertson.  In the past we have been awarded ~30-50 nights/semester in total. We recognize that scheduling is difficult (perhaps over constrained) and thank the Keck staff for their efforts.  The PI is happy to consult by email/phone to facilitate scheduling.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2521,6 +2612,7 @@
 	"2020A_O284": 
 	{
 		"ktn": "2020A_O284", "type": "Classical", "piFirst": "Kerry", "piLast": "Paterson", "inst": "Northwestern",
+		"specialRequests": "This is a resubmission of the 2019A proposal for the missed DEIMOS (dark) night in 2019A. We request that scheduling for this night be taken into account with the normal 2020A proposal: The NU-Keck Environments of Extreme Transients Program, and is not scheduled consecutively for more than 2 nights at a time.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2546,6 +2638,7 @@
 	"2020A_O286": 
 	{
 		"ktn": "2020A_O286", "type": "Classical", "piFirst": "L Clifton", "piLast": "Johnson", "inst": "Northwestern",
+		"specialRequests": "We request two consecutive half-nights.  Observability of targets is acceptable during 1) second half of 17 February - 2 March dark+gray time, 2) second half of 17-31 March dark+gray time, and 3) first half of 11-25 May dark+gray time.  ",
 		"datesToAvoid": [["2020-04-19", "2020-04-23"], ["2020-06-27", "2020-07-04"]],
 		"priorityTargets":
 		[
@@ -2572,6 +2665,7 @@
 	"2020A_O287": 
 	{
 		"ktn": "2020A_O287", "type": "Classical", "piFirst": "Peter", "piLast": "Blanchard", "inst": "Northwestern",
+		"specialRequests": "We request that our nights are spread throughout the semester to allow us to monitor the evolution of interacting SNe at late times. Spreading the program over several months throughout the semester will also allow us to access the wide range in R.A. covered by our targets. Many of the transient sources that will constitute the primary targets for this program are not yet known, as their progenitor systems have not yet exploded.  Several known targets we are following are given in the target list.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2628,6 +2722,7 @@
 	"2020A_S316": 
 	{
 		"ktn": "2020A_S316", "type": "Classical", "piFirst": "Takashi", "piLast": "Kojima", "inst": "Subaru",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2658,6 +2753,7 @@
 	"2020A_S318": 
 	{
 		"ktn": "2020A_S318", "type": "Classical", "piFirst": "Tadayuki", "piLast": "Kodama", "inst": "Subaru",
+		"specialRequests": "A half night allocation should be a second half night (after midnight) due to the RA of the targets.",
 		"datesToAvoid": [["2020-07-10", "2020-07-20"]],
 		"priorityTargets":
 		[
@@ -2690,6 +2786,7 @@
 	"2020A_S320": 
 	{
 		"ktn": "2020A_S320", "type": "Classical", "piFirst": "Yuichi", "piLast": "Harikane", "inst": "Subaru",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2715,6 +2812,7 @@
 	"2020A_S321": 
 	{
 		"ktn": "2020A_S321", "type": "Classical", "piFirst": "Yuichi", "piLast": "Harikane", "inst": "Subaru",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2743,6 +2841,7 @@
 	"2020A_S322": 
 	{
 		"ktn": "2020A_S322", "type": "Classical", "piFirst": "Masayuki", "piLast": "Tanaka", "inst": "Subaru",
+		"specialRequests": "",
 		"datesToAvoid": [["2020-02-08", "2020-02-11"], ["2020-03-07", "2020-03-10"], ["2020-04-03", "2020-04-06"]],
 		"priorityTargets":
 		[
@@ -2765,6 +2864,7 @@
 	"2020A_S324": 
 	{
 		"ktn": "2020A_S324", "type": "Classical", "piFirst": "Satoshi", "piLast": "Kikuta", "inst": "Subaru",
+		"specialRequests": "We prefer dark nights, since our target is very faint (~1e-18 erg/s/cm^2/arcsec^2).  We will observe only one object with RA of ~16 hr and Dec of ~19 degree in this program. To maximize the observation efficiency, the second half dark night in Mar/Apr or first half dark night in Jun are the best choices. Allocation of 2 full nights in May will make an hour of dead time due to the elevation limit. Thus, we prefer 4 half nights than 2 nights. We sincerely appreciate supports by the staffs required to do split-night observations.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2789,6 +2889,7 @@
 	"2020A_U010": 
 	{
 		"ktn": "2020A_U010", "type": "Classical", "piFirst": "Crystal", "piLast": "Martin", "inst": "UCSB",
+		"specialRequests": "We prefer to be scheduled on full nights in March/April. We can accept the first half of the night in June. We can accept the second half of the night in February.  ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2819,6 +2920,7 @@
 	"2020A_U022": 
 	{
 		"ktn": "2020A_U022", "type": "Cadence", "piFirst": "Imke", "piLast": "de Pater", "inst": "UCB",
+		"specialRequests": "Need specific dates to coincide with Juno and VLA observations: UT 24 and 25 July 2020 are requested. ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2841,6 +2943,7 @@
 	"2020A_U106": 
 	{
 		"ktn": "2020A_U106", "type": "Cadence", "piFirst": "Saul", "piLast": "Perlmutter", "inst": "UC-lbnl",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2864,6 +2967,7 @@
 	"2020A_U121": 
 	{
 		"ktn": "2020A_U121", "type": "Classical", "piFirst": "George", "piLast": "Becker", "inst": "UCR",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2887,6 +2991,7 @@
 	"2020A_U127": 
 	{
 		"ktn": "2020A_U127", "type": "Classical", "piFirst": "Erik", "piLast": "Petigura", "inst": "UCLA",
+		"specialRequests": "We request that the schedule of nights for the Doppler planets searches of the California Planet Search (CPS) be determined with two goals in mind. First, we request that 1/2 of our nights be bunched into high-cadence campaigns (defined below). Second, we request that the other 1/2 of the  nights be spread evenly through the remaining  time, with at least one CPS  night per lunation.  We prefer first half nights for the setting TESS targets. We request (if possible) the scheduling  of 1-2  high-cadence  campaigns for CPS as a whole.  We define  high-cadence campaign as ~8 nights allocated in ~16 calendar nights.  This allocation of nights will maximize the scientific yield of this proposal and other projects within CPS, while focusing  our primary observing time on targets that are yet to be identified by the TESS satellite.  We  have targets available at all RA, ten of which are listed below (most are notional targets).    Our proposed distribution of nights will allow us to track planets with orbital periods of days to weeks (a large part of our sample) as well as months and longer (also important). Our programs can easily accommodate half or fractional nights; they are especially advantageous during the high cadence period to increase coverage. Expected PIs for this project (the TESS-Keck Survey) in 2020A will be Howard (NASA), Howard (Caltech), Chontos (UH).  PIs from the broader  CPS collaboration include Howard, Petigura, Fulton, Kane, Batalha, Dressing, Weiss, Huber, Crossfield, and Robertson. In the past we have been awarded ~30-50 nights/semester in total. We  recognize that scheduling is difficult (perhaps over constrained) and thank the  Keck staff for their efforts. ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2930,6 +3035,7 @@
 	"2020A_U138": 
 	{
 		"ktn": "2020A_U138", "type": "Classical", "piFirst": "Tommaso", "piLast": "Treu", "inst": "UCLA",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2961,6 +3067,7 @@
 	"2020A_U139": 
 	{
 		"ktn": "2020A_U139", "type": "Classical", "piFirst": "Tommaso", "piLast": "Treu", "inst": "UCLA",
+		"specialRequests": "Four first-half nights in May would be ideal, given the restricted availability of OSIRIS-LGS.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -2987,6 +3094,7 @@
 	"2020A_U147": 
 	{
 		"ktn": "2020A_U147", "type": "Classical", "piFirst": "Chung-Pei", "piLast": "Ma", "inst": "UCB",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3012,6 +3120,7 @@
 	"2020A_U148": 
 	{
 		"ktn": "2020A_U148", "type": "Classical", "piFirst": "Gabriela", "piLast": "Canalizo", "inst": "UCR",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3042,6 +3151,7 @@
 	"2020A_U149": 
 	{
 		"ktn": "2020A_U149", "type": "Classical", "piFirst": "Adam", "piLast": "Burgasser", "inst": "UCSD",
+		"specialRequests": "Preferred scheduling is one full night in March/April and one first-half night in June/July",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3081,6 +3191,7 @@
 	"2020A_U150": 
 	{
 		"ktn": "2020A_U150", "type": "Classical", "piFirst": "Gillian", "piLast": "Wilson", "inst": "UCR",
+		"specialRequests": "Our primary \"A\" semester target field is COSMOS UltraVISTA (RA ~10 hours). We request three nights in any combination of full or half nights (full nights in February or March, first-half nights in April). The observations do not require dark time.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3105,6 +3216,7 @@
 	"2020A_U152": 
 	{
 		"ktn": "2020A_U152", "type": "Classical", "piFirst": "Lori", "piLast": "Lubin", "inst": "UCD",
+		"specialRequests": "Based on the target RAs, the optimal observing time is as early in February as possible. To complete the  observations, we request 3 full nights plus one first-half night. The additional half-night is necessary to maximize time on Cl J0332-2749, which never reaches high airmass at Keck.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3139,6 +3251,7 @@
 	"2020A_U153": 
 	{
 		"ktn": "2020A_U153", "type": "Classical", "piFirst": "Alex", "piLast": "Filippenko", "inst": "UCB",
+		"specialRequests": "We request two dark first-half nights (from 5 d before to 2 d after new moon); the targets are very faint and deep blue exposures are required. The best dark run is in March 2020; February 2020 is second best, and April 2020 is a distant third. If Filippenko's *other* 1-night LRIS proposal is also accepted, the *second* half of each of these two nights could conveniently be assigned to that program, thereby minimizing the inconvenience of pairing half nights among different proposers.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3162,6 +3275,7 @@
 	"2020A_U154": 
 	{
 		"ktn": "2020A_U154", "type": "Classical", "piFirst": "Alex", "piLast": "Filippenko", "inst": "UCB",
+		"specialRequests": "Dark time is preferred: deep blue exposures are needed for the [O II] 3727 line, which is often faint. If Filippenko's *other* 1-night LRIS proposal (which requires two *first-half* dark nights) is also accepted, the present proposal could conveniently be assigned the *second* half of each of these two nights, thereby minimizing the inconvenience of pairing half nights among different proposers.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3188,6 +3302,7 @@
 	"2020A_U156": 
 	{
 		"ktn": "2020A_U156", "type": "Classical", "piFirst": "Adam", "piLast": "Burgasser", "inst": "UCSD",
+		"specialRequests": "For HIRES, the single target J0815+4729 is optimally observed in late February/early March to obtain a full night of data  For ESI, our targets (8h - 15h) should be scheduled as two first-half nights in March and May respectively",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3224,6 +3339,7 @@
 	"2020A_U158": 
 	{
 		"ktn": "2020A_U158", "type": "Classical", "piFirst": "Adam", "piLast": "Burgasser", "inst": "UCSD",
+		"specialRequests": "3 separate half-nights preferably scheduled first half in February, May and mid-June-July",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3256,6 +3372,7 @@
 	"2020A_U159": 
 	{
 		"ktn": "2020A_U159", "type": "Classical", "piFirst": "Karin", "piLast": "Sandstrom", "inst": "UCSD",
+		"specialRequests": "For scheduling we prefer whole dark nights. However we will accept half nights during grey time, as long as the moon is not up during our half of the night. If the night is broken up into half nights, then there is no need to schedule them together. In fact if they are scheduled separately this could hedge against weather.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3283,6 +3400,7 @@
 	"2020A_U160": 
 	{
 		"ktn": "2020A_U160", "type": "Classical", "piFirst": "Tucker", "piLast": "Jones", "inst": "UCD",
+		"specialRequests": "We would also accept LRIS on Keck I instead of ESI, in the event that Keck II is more heavily oversubscribed. We can accomplish redshift confirmation and many of our immediate science goals with LRIS. P/A dates for LRIS are the same as for ESI.    We prefer to be scheduled as full nights, but we can accept half nights (dark half with ESI) over a wider range of dates. In addition to the dates listed as P/A, we can accept first-half nights with ESI from May 11-25 and June 9-24. We can accept first-half nights with NIRES from April 27 - June 24.  ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3313,6 +3431,7 @@
 	"2020A_U161": 
 	{
 		"ktn": "2020A_U161", "type": "Classical", "piFirst": "Laura", "piLast": "Sales", "inst": "UCR",
+		"specialRequests": "We are applying for 1.5 nights. Our highest preference would be for second half nights in the periods 1-2 Feb, 17 Feb-2 March or 17-27 March, or first half nights in the period 11-26 April, or 11-25 May. Second half nights in the period 28-31 March or full nights in the period 17-31 March or 15-26 April are acceptable but not ideal.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3346,6 +3465,7 @@
 	"2020A_U162": 
 	{
 		"ktn": "2020A_U162", "type": "Classical", "piFirst": "Alison", "piLast": "Coil", "inst": "UCSD",
+		"specialRequests": "We can use a second half night in February, full nights in March, April, May, and June, and a first half night in July, for a total of 1.5 nights. ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3383,6 +3503,7 @@
 	"2020A_U164": 
 	{
 		"ktn": "2020A_U164", "type": "Classical", "piFirst": "Tucker", "piLast": "Jones", "inst": "UCD",
+		"specialRequests": "We prefer the 1.5 nights to be scheduled consecutively but it is not necessary.     The half-night (dark half) can be scheduled as a FIRST HALF in the range May 11 - June 24. It can alternatively be a SECOND HALF in the range Feb 17 - April 30.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3419,6 +3540,7 @@
 	"2020A_U166": 
 	{
 		"ktn": "2020A_U166", "type": "Classical", "piFirst": "Michael", "piLast": "Cooper", "inst": "UCI",
+		"specialRequests": "Mar 17 - Apr 22 --- second half of night  May 11 - Jun 20 --- first half of night",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3446,6 +3568,7 @@
 	"2020A_U167": 
 	{
 		"ktn": "2020A_U167", "type": "Cadence", "piFirst": "Imke", "piLast": "de Pater", "inst": "UCB",
+		"specialRequests": "Need specific dates to coincide with Juno and VLA observations: UT 24 and 25 July 2020 are requested. We request simultaneous HIRES and NIRSPEC observations on Keck (different proposals).",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3468,6 +3591,7 @@
 	"2020A_U168": 
 	{
 		"ktn": "2020A_U168", "type": "Classical", "piFirst": "Jason", "piLast": "Prochaska", "inst": "UCSC",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3501,6 +3625,7 @@
 	"2020A_U169": 
 	{
 		"ktn": "2020A_U169", "type": "Classical", "piFirst": "Alice", "piLast": "Shapley", "inst": "UCLA",
+		"specialRequests": "We are dividing our MOSFIRE request into 2 parts: (1) 1 full night to be split between COSMOS and GOODS-N, to be scheduled within the window 3/7/20-3/31/20; (2) 2 full nights to be spent on GOODS-N, to be scheduled within the window 3/15/20-4/30/20.     On the following dates, the moon gets too close (within 20 degrees) to the COSMOS field: 03/07/20-03/09/20. Please do not schedule us on these nights. ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3533,6 +3658,7 @@
 	"2020A_U170": 
 	{
 		"ktn": "2020A_U170", "type": "Classical", "piFirst": "Jason", "piLast": "Prochaska", "inst": "UCSC",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3564,6 +3690,7 @@
 	"2020A_U171": 
 	{
 		"ktn": "2020A_U171", "type": "Classical", "piFirst": "Shelley", "piLast": "Wright", "inst": "UCSD",
+		"specialRequests": "Since this is a low airmass source we need to maximize time on this source. We prefer 2 x 1/2 nights in July 2020.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3586,6 +3713,7 @@
 	"2020A_U173": 
 	{
 		"ktn": "2020A_U173", "type": "Classical", "piFirst": "Alison", "piLast": "Coil", "inst": "UCSD",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3615,6 +3743,7 @@
 	"2020A_U178": 
 	{
 		"ktn": "2020A_U178", "type": "Classical", "piFirst": "Dan", "piLast": "Weisz", "inst": "UCB",
+		"specialRequests": "Due to the faintness of the objects we request dark time.  We also request that the 3 nights be scheduled consecutively in late Feb 2020.  ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3645,6 +3774,7 @@
 	"2020A_U183": 
 	{
 		"ktn": "2020A_U183", "type": "Classical", "piFirst": "Joseph", "piLast": "Hennawi", "inst": "UCSB",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3677,6 +3807,7 @@
 	"2020A_U184": 
 	{
 		"ktn": "2020A_U184", "type": "Classical", "piFirst": "Carl", "piLast": "Melis", "inst": "UCSD",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3712,6 +3843,7 @@
 	"2020A_U185": 
 	{
 		"ktn": "2020A_U185", "type": "Classical", "piFirst": "Lars", "piLast": "Bildsten", "inst": "UCSB",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3735,6 +3867,7 @@
 	"2020A_U186": 
 	{
 		"ktn": "2020A_U186", "type": "Classical", "piFirst": "Rebecca", "piLast": "Jensen-Clem", "inst": "UCSC",
+		"specialRequests": "We request four 2nd half nights of NIRC2-NGS observations. Our preferred dates are June 25 - July 15. Additional acceptable dates include June 15 - 24 and July 16 - 31. We exclude July 7 - 9 to maintain a moon exclusion angle of >20 degrees.",
 		"datesToAvoid": [["2020-07-07", "2020-07-09"]],
 		"priorityTargets":
 		[
@@ -3758,6 +3891,7 @@
 	"2020A_U187": 
 	{
 		"ktn": "2020A_U187", "type": "Classical", "piFirst": "Andrea", "piLast": "Ghez", "inst": "UCLA",
+		"specialRequests": "For March & early April (until 4/15) runs, we request last 1/4 nights.  For late April & May:  second 1/2 nights.  For July:  first 1/2 nights.    Please avoid the following dates as the target is too close to the moon:  May 6-9, June 2-5, June 29 - July 4.  ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3802,6 +3936,7 @@
 	"2020A_U188": 
 	{
 		"ktn": "2020A_U188", "type": "Classical", "piFirst": "Tucker", "piLast": "Jones", "inst": "UCD",
+		"specialRequests": "We can be scheduled for SECOND HALF nights in the range 13 Feb - 26 April, and FIRST HALF nights in the range 27 April - 28 June.  ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3832,6 +3967,7 @@
 	"2020A_U189": 
 	{
 		"ktn": "2020A_U189", "type": "Classical", "piFirst": "Quinn", "piLast": "Konopacky", "inst": "UCSD",
+		"specialRequests": "We are requesting a total of 1.5 nights of time.  Due to the RA of our target, we are requesting second half nights in the end of July.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3855,6 +3991,7 @@
 	"2020A_U191": 
 	{
 		"ktn": "2020A_U191", "type": "Classical", "piFirst": "Jean", "piLast": "Brodie", "inst": "UCSC",
+		"specialRequests": "Dark full nights preferred from 18-28 March, 15-26 April.  These second-half nights are acceptable:  1, 18-29 Feb; 1, 29-31 Mar  These first-half nights are acceptable:  12-14 Apr; 11-24 May  ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3881,6 +4018,7 @@
 	"2020A_U193": 
 	{
 		"ktn": "2020A_U193", "type": "Classical", "piFirst": "Andy", "piLast": "Skemer", "inst": "UCSC",
+		"specialRequests": "Please note that we are requesting to use the KPIC Fiber Injection Unit.    This program should be scheduled in a block with the related Caltech proposal by Dimitri Mawet.  ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3911,6 +4049,7 @@
 	"2020A_U195": 
 	{
 		"ktn": "2020A_U195", "type": "Classical", "piFirst": "Jean", "piLast": "Turner", "inst": "UCLA",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3941,6 +4080,7 @@
 	"2020A_U201": 
 	{
 		"ktn": "2020A_U201", "type": "Classical", "piFirst": "Gaspard", "piLast": "Duchene", "inst": "UCB",
+		"specialRequests": "Given the RA and Dec of these star forming regions, we are requesting either second half-nights in late April or first half nights in late June. The targets listed below are single objects representative of the rho Ophiuchus and Sco-Cen subsamples, which contain 6 and 11 targets, respectively.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3964,6 +4104,7 @@
 	"2020A_U204": 
 	{
 		"ktn": "2020A_U204", "type": "Classical", "piFirst": "Paul", "piLast": "Kalas", "inst": "UCB",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -3996,6 +4137,7 @@
 	"2020A_U205": 
 	{
 		"ktn": "2020A_U205", "type": "Classical", "piFirst": "Steph", "piLast": "Sallum", "inst": "UCI",
+		"specialRequests": "Our observations require large amounts of parallactic angle coverage, so we request 4 half nights roughly centered on transit for each of our targets. One target, WSB 60, would benefit from LGS, and we plan to use NGS on the other three. Two of our NGS targets and the LGS target are at 16.5 hours, and the remaining NGS target is at 18.5 hours. We listed the preferred and acceptable date ranges below, and we include slightly more detail about first, middle, or second half here.    2 x (0.5 NGS) and 1 x (0.5 LGS):  Preferred first half: 6/15-6/25  Acceptable first half: 6/5-6/15,6/25-6/28  Preferred middle half: 5/20-6/1  Acceptable middle half: 5/15-5/20  Preferred second half:4/5-4/15  Acceptable second half:4/1-4/5,4/15-4/20    1 x (0.5 NGS):  Preferred first half: 7/1-7/10  Acceptable first half: 6/28-7/1,7/10-7/12  Preferred middle half: 6/5-6/10  Acceptable middle half: 6/10-6/15  Preferred second half: 5/1-5/10  Acceptable second half: 5/10-5/15",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4039,6 +4181,7 @@
 	"2020A_U207": 
 	{
 		"ktn": "2020A_U207", "type": "Classical", "piFirst": "David", "piLast": "Williams", "inst": "UCSC",
+		"specialRequests": "",
 		"datesToAvoid": [["2020-02-01", "2020-02-08"], ["2020-03-10", "2020-03-14"], ["2020-04-17", "2020-04-22"], ["2020-05-12", "2020-05-16"], ["2020-07-03", "2020-07-19"]],
 		"priorityTargets":
 		[
@@ -4069,6 +4212,7 @@
 	"2020A_U208": 
 	{
 		"ktn": "2020A_U208", "type": "Classical", "piFirst": "Tesla", "piLast": "Jeltema", "inst": "UCSC",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4098,6 +4242,7 @@
 	"2020A_U209": 
 	{
 		"ktn": "2020A_U209", "type": "Classical", "piFirst": "Ryan", "piLast": "Foley", "inst": "UCSC",
+		"specialRequests": "Since our targets span a large RA range, we request nights spread out in time.  The ideal scheduling would be one night in each of February, March/April, May/June, and July.  Half nights are also acceptable.",
 		"datesToAvoid": [["2020-02-14", "2020-02-14"], ["2020-02-28", "2020-02-28"], ["2020-04-24", "2020-04-24"], ["2020-05-22", "2020-05-22"], ["2020-06-05", "2020-06-05"]],
 		"priorityTargets":
 		[
@@ -4132,6 +4277,7 @@
 	"2020A_U210": 
 	{
 		"ktn": "2020A_U210", "type": "Classical", "piFirst": "Fred", "piLast": "Hamann", "inst": "UCR",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4158,6 +4304,7 @@
 	"2020A_U211": 
 	{
 		"ktn": "2020A_U211", "type": "Classical", "piFirst": "Eugene", "piLast": "Chiang", "inst": "UCB",
+		"specialRequests": "In total, we request one NIRSPEC second half night, one NIRSPAO second half night, and a NIRSPEC first or second half night to observe the three bound objects and three complimentary free-floating brown dwarfs. For the NIRSPEC second half night (to observe 2M2236), we request time between UT June 15 \u00e2\u20ac\u201c UT July 31.  No dates to avoid.  For the NIRSPAO second half night (to observe 1RXS1609), we request time between UT March 15 \u00e2\u20ac\u201c UT April 15.  Dates to avoid when the moon is within 25 degrees of the target include UT March 15 \u00e2\u20ac\u201c UT March 16 and UT April 9 \u00e2\u20ac\u201c UT April 12.  For the final four targets (SDSS1110, G196-3, 2M1506, 2M1115), we request either a NIRSPEC second half night between UT February 1 \u00e2\u20ac\u201c UT February 20, or a NIRSPEC first half night between UT March 20 \u00e2\u20ac\u201c UT May 1. Dates to avoid when the moon is within 25 degrees of the target include UT February 9 \u00e2\u20ac\u201c UT February 12, UT April 4 \u00e2\u20ac\u201c UT April 7, and UT May 1.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4199,6 +4346,7 @@
 	"2020A_U212": 
 	{
 		"ktn": "2020A_U212", "type": "Cadence", "piFirst": "Jessica", "piLast": "Lu", "inst": "UCB",
+		"specialRequests": "Some of our targets have fainter tip-tilt stars (R=17), thus we impose a 30 deg moon avoidance  limit. Dates to avoid due to moon: April 11-15, May 8-12, June 4-9, July 2-7 UT 2020    The nights should be spread evenly over this time period. The bulge is visible in the second half  of the night in April-May, the 2nd and 3rd quarters of the night in June, and the last half of the  night in July.    We prefer using OSIRIS for all requested nights, but will be able to use NIRC2 for our observations as well if necessary.    We can easily share nights with NIRC2 or OSIRIS astrometry programs; particularly  those conducting large surveys (e.g. M.~Liu, W.~Best, A.~Kraus, M.~Ireland, I.~de Pater,  C.~Beichman, M.~Ammons, H.~Knutson, G.~Serabyn, D.~Mawet, A.~Mann). Note, we cannot  easily share with Galactic Center programs as we point to the same sky position.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4301,6 +4449,7 @@
 	"2020A_U216": 
 	{
 		"ktn": "2020A_U216", "type": "Classical", "piFirst": "Paul", "piLast": "Kalas", "inst": "UCB",
+		"specialRequests": "Due to the RA distribution of our targets, we request a first-half quarter night in February and a first-half quarter night in June or July. If quarter nights are not possible, one half night in February would also work.  In particular, an early semester quarter night will allow us to greatly refine the orbit of the AB Dor binary HIP 14807.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4330,6 +4479,7 @@
 	"2020A_U218": 
 	{
 		"ktn": "2020A_U218", "type": "Classical", "piFirst": "Puragra", "piLast": "Guhathakurta", "inst": "UCSC",
+		"specialRequests": "Preferred: full nights in late February  Acceptable: first half nights in March and April",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4353,6 +4503,7 @@
 	"2020A_U220": 
 	{
 		"ktn": "2020A_U220", "type": "Classical", "piFirst": "Mariska", "piLast": "Kriek", "inst": "UCB",
+		"specialRequests": "",
 		"datesToAvoid": [["2020-04-04", "2020-04-05"]],
 		"priorityTargets":
 		[
@@ -4387,6 +4538,7 @@
 	"2020A_U222": 
 	{
 		"ktn": "2020A_U222", "type": "Classical", "piFirst": "Philip", "piLast": "Hinz", "inst": "UCSC",
+		"specialRequests": "CoI Charlotte Bond (required for operating the Pyramid WFS) is unavailable Feb. 29 - March 16",
 		"datesToAvoid": [["2020-02-29", "2020-03-16"]],
 		"priorityTargets":
 		[
@@ -4411,6 +4563,7 @@
 	"2020A_U223": 
 	{
 		"ktn": "2020A_U223", "type": "Classical", "piFirst": "Fred", "piLast": "Hamann", "inst": "UCR",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4447,6 +4600,7 @@
 	"2020A_U228": 
 	{
 		"ktn": "2020A_U228", "type": "Classical", "piFirst": "Brian", "piLast": "Siana", "inst": "UCR",
+		"specialRequests": "",
 		"datesToAvoid": [["2020-04-04", "2020-04-06"]],
 		"priorityTargets":
 		[
@@ -4471,6 +4625,7 @@
 	"2020A_W128": 
 	{
 		"ktn": "2020A_W128", "type": "Classical", "piFirst": "Glenn", "piLast": "Kacprzak", "inst": "Swinburne",
+		"specialRequests": "While ESI is our preferred instrument, we would also accept LRIS on Keck I in the event that Keck II is more heavily oversubscribed. We can accomplish redshift confirmation and many of our immediate science goals with LRIS.  We prefer to be scheduled as a full night, but we can accept 2 first half nights (dark half) over a wider range of dates. We could observe one first half between March 17-31, April 11-26. The second first half night could be observed during May 15-29 and June 9-28. ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4492,6 +4647,7 @@
 	"2020A_W132": 
 	{
 		"ktn": "2020A_W132", "type": "Classical", "piFirst": "Karl", "piLast": "Glazebrook", "inst": "Swinburne",
+		"specialRequests": "",
 		"datesToAvoid": [["2020-02-09", "2020-02-09"], ["2020-03-07", "2020-03-07"], ["2020-02-01", "2020-02-01"]],
 		"priorityTargets":
 		[
@@ -4513,6 +4669,7 @@
 	"2020A_W140": 
 	{
 		"ktn": "2020A_W140", "type": "Classical", "piFirst": "Duncan", "piLast": "Forbes", "inst": "Swinburne",
+		"specialRequests": "Single target with RA = 08hr. ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4534,6 +4691,7 @@
 	"2020A_W141": 
 	{
 		"ktn": "2020A_W141", "type": "Classical", "piFirst": "Tiantian", "piLast": "Yuan", "inst": "Swinburne",
+		"specialRequests": "",
 		"datesToAvoid": [["2020-02-10", "2020-03-12"]],
 		"priorityTargets":
 		[
@@ -4557,6 +4715,7 @@
 	"2020A_W143": 
 	{
 		"ktn": "2020A_W143", "type": "Classical", "piFirst": "Deanne", "piLast": "Fisher", "inst": "Swinburne",
+		"specialRequests": "We have only 1 target and we are making long integrations. We therefore prefer to be scheduled in February/March in a whole nights. If this is unschedulable we will accept half nights in April.  ",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4578,6 +4737,7 @@
 	"2020A_W145": 
 	{
 		"ktn": "2020A_W145", "type": "Classical", "piFirst": "Ivo", "piLast": "Labbe", "inst": "Swinburne",
+		"specialRequests": "",
 		"datesToAvoid": [["2020-02-07", "2020-02-12"], ["2020-03-06", "2020-03-10"], ["2020-04-02", "2020-04-07"]],
 		"priorityTargets":
 		[
@@ -4600,6 +4760,7 @@
 	"2020A_Y036": 
 	{
 		"ktn": "2020A_Y036", "type": "Classical", "piFirst": "C.", "piLast": "Urry", "inst": "Yale(CIT)",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4621,6 +4782,7 @@
 	"2020A_Y130": 
 	{
 		"ktn": "2020A_Y130", "type": "Classical", "piFirst": "Pieter", "piLast": "van Dokkum", "inst": "Yale(CIT)",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4654,6 +4816,7 @@
 	"2020A_Y133": 
 	{
 		"ktn": "2020A_Y133", "type": "Classical", "piFirst": "Songhu", "piLast": "Wang", "inst": "Yale(CIT)",
+		"specialRequests": "We request two specific nights for this proposal, 2020 March 2/3 and June 1/2, when transits of our targets are predicted to occur.",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4677,6 +4840,7 @@
 	"2020A_Y134": 
 	{
 		"ktn": "2020A_Y134", "type": "Classical", "piFirst": "Vivienne", "piLast": "Baldassare", "inst": "Yale(CIT)",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[
@@ -4702,6 +4866,7 @@
 	"2020A_Y135": 
 	{
 		"ktn": "2020A_Y135", "type": "Classical", "piFirst": "Songhu", "piLast": "Wang", "inst": "Yale(CIT)",
+		"specialRequests": "We have a strong preference for later dates in this observing cycle, ideally during the end of July when the Kepler field is relatively high in the sky for a full 8 hours.",
 		"datesToAvoid": [["2020-02-01", "2020-06-08"]],
 		"priorityTargets":
 		[
@@ -4731,6 +4896,7 @@
 	"2020A_Y288": 
 	{
 		"ktn": "2020A_Y288", "type": "Classical", "piFirst": "Pieter", "piLast": "van Dokkum", "inst": "Yale(CIT)",
+		"specialRequests": "",
 		"datesToAvoid": [],
 		"priorityTargets":
 		[

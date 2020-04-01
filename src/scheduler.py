@@ -52,7 +52,9 @@ class Scheduler(object):
         self.createMoonPrefLookups()
         self.createInstrBaseNames()
 
+        #checks
         #todo: check if the total proposed hours exceeds semester hours
+        if self.config['correctMoonPrefConflicts']: self.checkMoonPrefConflicts(True)
 
         #inits
         self.initScheduler()
@@ -868,6 +870,11 @@ class Scheduler(object):
     #######################################################################
 
     def checkConflicts(self):
+        self.checkMoonPrefConflicts(True)
+        self.showMoonPhaseAlloc()
+
+
+    def checkMoonPrefConflicts(self, fix=False):
 
         #look for blocks with schedDate or moonPref on 'X' moon pref
         print("\n=== Requested Moon Index vs Moon Prefs conflicts ===")
@@ -879,10 +886,21 @@ class Scheduler(object):
                             pref = progInstr['moonPrefLookup'][block['reqDate']]
                             if pref == 'X':
                                 print (f"reqDate {block['reqDate']} is pref 'X': {ktn}, {progInstr['instr']}, block {block['id']}")
+                                if fix: 
+                                    print('FIXING')
+                                    progInstr['moonPrefLookup'][block['reqDate']] = 'N'
                         mi = block['moonIndex']
                         pref = progInstr['moonPrefs'][mi]
                         if pref == 'X':
                             print (f"moonIndex '{mi}' is pref 'X': {ktn}, {progInstr['instr']}, block {block['id']}" )
+                            if fix:
+                                print('FIXING')
+                                progInstr['moonPrefs'][mi] = 'N'
+        if fix:
+            self.createMoonPrefLookups()
+
+
+    def showMoonPhaseAlloc(self):
 
         #see if any moon periods are over-requested
         for tel, t in self.telescopes.items():

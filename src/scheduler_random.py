@@ -4,6 +4,7 @@ import sys
 import numpy as np
 import pprint
 import statistics
+import time
 
 import logging
 log = logging.getLogger('toast')
@@ -23,6 +24,7 @@ class SchedulerRandom(Scheduler):
 
         #Loop and create X number of schedules and take the one that scores best.
         #todo: should we store a running top N?
+        start = time.time()
         for i in range(0, runCount):
     
             schedule = self.createScheduleRandom()
@@ -30,11 +32,12 @@ class SchedulerRandom(Scheduler):
             self.scoreSchedule(schedule)
             score = schedule['meta']['score']
             print (f"sched {i}: score = {score}")
-
             if self.schedule == None or score > self.schedule['meta']['score']:
                 self.schedule = schedule
-
             self.makeOrderAdjustments(schedule['blocks'])
+
+        end = time.time()
+        print('Elapsed time: ', round(end-start, 2), ' seconds')
 
 
     def createScheduleRandom(self):

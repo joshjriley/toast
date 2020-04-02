@@ -2301,6 +2301,7 @@
 				"instr": "HIRESr",
 				"moonPrefs": [],
 				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
+				"date": "2020-04-26", "dayRange": 0,
 				"blocks":
 				[
 					{"id": 3470, "size": 0.25, "moonIndex": 11, "reqDate": "2020-04-25", "reqPortion": "fourth quarter"}
@@ -2426,6 +2427,7 @@
 				"instr": "NIRSPEC",
 				"moonPrefs": [],
 				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
+				"date": "2020-04-15", "dayRange": 10,
 				"blocks":
 				[
 					{"id": 3422, "size": 0.25, "moonIndex": 11, "reqDate": null, "reqPortion": "fourth quarter"}
@@ -2435,6 +2437,7 @@
 				"instr": "NIRSPEC",
 				"moonPrefs": [],
 				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
+				"date": "2020-05-15", "dayRange": 10,
 				"blocks":
 				[
 					{"id": 3437, "size": 0.25, "moonIndex": 23, "reqDate": null, "reqPortion": "first quarter"}
@@ -2444,6 +2447,7 @@
 				"instr": "NIRSPEC",
 				"moonPrefs": [],
 				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
+				"date": "2020-06-15", "dayRange": 10,
 				"blocks":
 				[
 					{"id": 3441, "size": 0.5, "moonIndex": 19, "reqDate": null, "reqPortion": "second half"}
@@ -2932,6 +2936,7 @@
 				"instr": "NIRSPEC",
 				"moonPrefs": [],
 				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
+				"date": "2020-07-24", "dayRange": 1,
 				"blocks":
 				[
 					{"id": 3861, "size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null},
@@ -2956,6 +2961,7 @@
 				"instr": "LRIS-ADC",
 				"moonPrefs": [],
 				"reqPortion": 1.0, "appPortion": 1.0, "appTotal": 2.0,
+				"date": "2020-02-12", "dayRange": 3,
 				"blocks":
 				[
 					{"id": 3642, "size": 1.0, "moonIndex": 1, "reqDate": null, "reqPortion": null},
@@ -3580,6 +3586,7 @@
 				"instr": "HIRESr",
 				"moonPrefs": [],
 				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 1.0,
+				"date": "2020-07-24", "dayRange": 1,
 				"blocks":
 				[
 					{"id": 3512, "size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null},
@@ -4358,6 +4365,7 @@
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
 				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
+				"date": "2020-03-25", "dayRange": 5,
 				"blocks":
 				[
 					{"id": 3528, "size": 0.25, "moonIndex": 7, "reqDate": null, "reqPortion": null}
@@ -4367,6 +4375,7 @@
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
 				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
+				"date": "2020-04-05", "dayRange": 5,
 				"blocks":
 				[
 					{"id": 3530, "size": 0.25, "moonIndex": 9, "reqDate": null, "reqPortion": null}
@@ -4376,6 +4385,7 @@
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
 				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
+				"date": "2020-04-24", "dayRange": 5,
 				"blocks":
 				[
 					{"id": 3529, "size": 0.25, "moonIndex": 11, "reqDate": null, "reqPortion": null}
@@ -4385,6 +4395,7 @@
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
 				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
+				"date": "2020-05-15", "dayRange": 3,
 				"blocks":
 				[
 					{"id": 3524, "size": 0.5, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -4394,6 +4405,7 @@
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
 				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
+				"date": "2020-05-23", "dayRange": 3,
 				"blocks":
 				[
 					{"id": 4200, "size": 0.25, "moonIndex": 15, "reqDate": null, "reqPortion": null}
@@ -4403,6 +4415,7 @@
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
 				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
+				"date": "2020-06-13", "dayRange": 3,
 				"blocks":
 				[
 					{"id": 3521, "size": 0.25, "moonIndex": 18, "reqDate": null, "reqPortion": null}
@@ -4412,6 +4425,7 @@
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
 				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
+				"date": "2020-06-25", "dayRange": 3,
 				"blocks":
 				[
 					{"id": 3520, "size": 0.25, "moonIndex": 20, "reqDate": null, "reqPortion": null}
@@ -4421,6 +4435,7 @@
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
 				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
+				"date": "2020-07-10", "dayRange": 3,
 				"blocks":
 				[
 					{"id": 3515, "size": 0.25, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -4430,6 +4445,7 @@
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
 				"reqPortion": 0.25, "appPortion": 0.25, "appTotal": 0.25,
+				"date": "2020-07-12", "dayRange": 3,
 				"blocks":
 				[
 					{"id": 3516, "size": 0.25, "moonIndex": 22, "reqDate": null, "reqPortion": null}
@@ -4439,6 +4455,7 @@
 				"instr": "OSIRIS-LGS",
 				"moonPrefs": [],
 				"reqPortion": 0.5, "appPortion": 0.5, "appTotal": 0.5,
+				"date": "2020-07-20", "dayRange": 3,
 				"blocks":
 				[
 					{"id": 3514, "size": 0.5, "moonIndex": 23, "reqDate": null, "reqPortion": null}

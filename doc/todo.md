@@ -13,17 +13,15 @@
 
 
 #todo: details
-!- Add in DateSpecific
-!- Fully formatted export to Carolyn's spreadsheet format
+!- Continue with institution grouping pop if part of group
+!- Add in DateSpecific (see progInstr['dateOptions'])
 !- Program ranking per institution
 !- Save/load entire schedule run (db or file) 
 !- force small portions to different days for same ktn (ie avoid same program on same night for 1/2 and 1/4) (ie dup col in show report) (we do this in scoreBlockSlot but not working well)
 !- Normalize scoring
-!- Cadence has a range.  factor that in for date options if reqDate not set.  and it should be consecutive right?
 - Score Carolyn's 2020A schedule (this may be impossible since there is no linkage to specific progInstr, but we could do another type of scoring)
 - target/airmass scoring (use lst@midnight data)
 - real query for other data: shutdowns, moon phases, etc (see proposals.InstrumentUnavailable)
-- classes: Block, Schedule?
 - IDEA: When picking a slot, cascade down in groups. See if any moonIndex work.  If not, see if any 'P' work and so on.  Or can we achieve this with our weighting?
 - Fix getReconfigScore. It really needs to define instrument positions and track state changes, for instance MOSFIRE switch to LRIS days later is still a reconfig.
 - Improve adjacent instrument scoring
@@ -33,6 +31,7 @@
 - Engineering pref is to have a few each month preferably during bright time.  Should we allow some seeding of Engineering nights and avoid adjacency?
 - option to run one of the telescopes only
 - check if the total proposed hours exceeds semester hours
+- check for Cadence/Specific date conflicts
 - instead of or additionally, have random movement of order by position instead of score randomness.
 
 

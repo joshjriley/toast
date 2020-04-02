@@ -52,6 +52,7 @@ class Scheduler(object):
         self.createMoonPrefLookups()
         self.createInstrBaseNames()
         self.createDatesToAvoidLookup()
+        self.createDateOptions()
 
         #checks
         #todo: check if the total proposed hours exceeds semester hours
@@ -479,7 +480,7 @@ class Scheduler(object):
 
         #show top 40
         print (f"Showing top 40 slot swaps for {blockId}:")
-        print (f"(NOTE: Score1 is block {block1} in swapped block slot and Score2 is vice-versa)")
+        print (f"(NOTE: Score1 is block {block1['id']} in swapped block slot and Score2 is vice-versa)")
         print(f"id\tsum\tscore1\tscore2\tdate\tidx")
         max = 40
         for i, d in enumerate(dataSort1):
@@ -776,6 +777,30 @@ class Scheduler(object):
                     program['datesToAvoidLookup'][d] = 1
 
 
+    def createDateOptions(self):
+        '''
+        For each cadence progInstr, create a list of dates with priorities
+        '''
+        for ktn, program in self.programs.items():
+            if program['type'] != 'Cadence': continue
+            for progInstr in program['instruments']:
+                date = progInstr['date']
+                rng  = progInstr['dayRange']
+                progInstr['dateOptions'] = {date:1}
+                for i in range(1, rng):
+                    prevDate = self.getDeltaDate(date, i*-1)
+                    nextDate = self.getDeltaDate(date, i)
+                    progInstr['dateOptions'][prevDate] = i+1
+                    progInstr['dateOptions'][nextDate] = i+1
+
+
+    def getDateOptionMatchPriority(self, block, date):
+        if 'dateOptions' not in block['progInstr']: return None
+        opts = block['progInstr']['dateOptions']
+        if date in opts: return opts[date]
+        else           : return None
+
+
     def createDatesList(self, startDate, endDate):
 
         startDate = startDate.replace('-','')
@@ -1053,7 +1078,7 @@ class Scheduler(object):
                         file.write(f"\t")                   #note: this is blank for keck scheduler
                         file.write(f"\t{targetStr}")              
                         file.write(f"\t{''.join(pax)}")
-                        file.write(f"\t{special}")                   #todo
+                        file.write(f"\t{special}")         
 
                         file.write("\n")
 

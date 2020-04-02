@@ -109,6 +109,8 @@ def queryProgramData(semester, dbConfigFile):
                 elif type == "Cadence"  : 
                     progInstr['moonPrefs']  = None
                     progInstr['reqPortion'] = infoReq['Time']
+                    progInstr['date'] = infoReq['Date']
+                    progInstr['dayRange'] = infoReq['DayRange']
 
 
             #------------------------------------------------------------------------------
@@ -237,6 +239,10 @@ def formDataToStandard(progData):
                 'appPortion': float(instr['appPortion']),
                 'appTotal'  : float(instr['appTotal']),
             }
+            if prog['ProgramType'] == 'Cadence':
+                progInstr['date']     = instr['date']
+                progInstr['dayRange'] = instr['dayRange']
+
             blocks = []
             for card in instr['cards']:
                 if card['Portion'] and card['Portion'].lower() == 'any': card['Portion'] = None
@@ -300,6 +306,8 @@ def saveProgramDataToFile(programs, outfile, compact=False):
                 txt += f'\t\t\t\t"instr": "{instr["instr"]}",\n'
                 txt += f'\t\t\t\t"moonPrefs": {json.dumps(instr["moonPrefs"])},\n'
                 txt += f'\t\t\t\t"reqPortion": {instr["reqPortion"]}, "appPortion": {instr["appPortion"]}, "appTotal": {instr["appTotal"]},\n'
+                if prog['type'] == 'Cadence': 
+                    txt += f'\t\t\t\t"date": \"{instr["date"]}\", "dayRange": {instr["dayRange"]},\n'
                 txt += f'\t\t\t\t"blocks":\n'
                 txt += f'\t\t\t\t[\n'
                 for bcount, block in enumerate(instr['blocks']):

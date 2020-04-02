@@ -172,6 +172,10 @@
     #score added for slot if it matches requested portion
     'reqPortionIndexScore': 10,
 
+    #score added for slot if it matches requested date options (ie cadence date + range options)
+    #NOTE: dates farther away from dates center will decay score by 1/d
+    'reqDateOptionsScore': 10,
+
     #score added for slot based on instrument adjacency (up to 2x) 
     #(adjExact is exact same instr, adjBase is same instr base, adjEmpty is no adj instr, adjLoc is different instr and diff loc)
     #(NOTE: This helps produce instr runs, but it is in addition to specific instr adjacent score (ie HIRESr vs HIRESb))

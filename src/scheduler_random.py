@@ -377,6 +377,10 @@ class SchedulerRandom(Scheduler):
         numBlocks = self.getNumBlocksScheduledOnDate(schedule, block['tel'], date)
         if numBlocks > 0: score += self.config['avoidEmptyDatesScore']
 
+        #score added if we hit dateOptions
+        priority = self.getDateOptionMatchPriority(block, date)
+        if priority: score += self.config['reqDateOptionsScore'] * 1/priority
+
         #todo: add priority target score
         #score += self.getTargetScore(date, block['ktn'], index, block['size'])
 

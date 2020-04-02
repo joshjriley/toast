@@ -277,7 +277,9 @@ class SchedulerRandom(Scheduler):
                     if len(inst) > 0:
                         block = insts[letter].pop(0)
                         newblocks.append(block)
-                        if block['groupIdx']: i--   #keep group blocks together
+                        #keep group blocks together
+                        #todo: do we really want to do this? Also, as coded this gives advantage to insts with lots of groups.
+                        if block['groupIdx']: i -= 1   
             else:
                 numEmpty += 1
 
@@ -478,8 +480,6 @@ class SchedulerRandom(Scheduler):
                 block['warnMoonIndex'] = block['moonIndex'] if (schedMoonIndex != block['moonIndex']) else ''
 
             #not scheduled on a preferred date?
-            
-            
 #todo: this doesn't handle when has 'A' prefs but no 'P' prefs, and assigned is X or N
 #todo: create hasPrefsA and hasPrefsP
             block['warnMoonPref'] = ''

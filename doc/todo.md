@@ -14,6 +14,8 @@
 
 #todo: details
 !- Continue with institution grouping pop if part of group
+- more randomness config to order shuffling
+- measure run time
 !- Add in DateSpecific (see progInstr['dateOptions'])
 !- Program ranking per institution
 !- Save/load entire schedule run (db or file) 

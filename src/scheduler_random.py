@@ -252,6 +252,7 @@ class SchedulerRandom(Scheduler):
             lens.append(len(inst))
         avg = math.floor(statistics.mean(lens))
 
+        #get number to pop off array per inst
         numPops = {}
         for letter, inst in insts.items():
             numPops[letter] = 1 + math.floor(len(inst)/avg)
@@ -259,7 +260,7 @@ class SchedulerRandom(Scheduler):
                 adjust = self.config['blockOrderInstBalanceAdjusts'][letter]
                 numPops[letter] += adjust
 
-        #loop thru letters until done
+        #loop thru inst letters until done popping off all blocks
         newblocks = []
         ltrIdx = 0
         numEmpty = 0
@@ -276,6 +277,7 @@ class SchedulerRandom(Scheduler):
                     if len(inst) > 0:
                         block = insts[letter].pop(0)
                         newblocks.append(block)
+                        if block['groupIdx']: i--   #keep group blocks together
             else:
                 numEmpty += 1
 

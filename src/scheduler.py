@@ -787,7 +787,7 @@ class Scheduler(object):
                 date = progInstr['date']
                 rng  = progInstr['dayRange']
                 progInstr['dateOptions'] = {date:1}
-                for i in range(1, rng):
+                for i in range(1, rng+1):
                     prevDate = self.getDeltaDate(date, i*-1)
                     nextDate = self.getDeltaDate(date, i)
                     progInstr['dateOptions'][prevDate] = i+1
@@ -1136,6 +1136,10 @@ class Scheduler(object):
                     bid = block['id'] if 'id' in block else ''
                     warnMoonPref = 'a' if block['warnMoonPref'] == 'A' else block['warnMoonPref']
 
+                    warnReqDate = ''
+                    if block['warnReqDateOptions']: warnReqDate = block['warnReqDateOptions']
+                    if block['warnReqDate']:        warnReqDate = block['warnReqDate'][5:]
+
                     if num>0: print ("\n            \t", end='')
                     print(f"{block['schedIndex']}", end='')
                     print(f"\t{block['size']}", end='')
@@ -1144,7 +1148,7 @@ class Scheduler(object):
                     print(f"\t{block['type'][:11].ljust(10)}", end='')
                     print(f"\t[{bid}]", end='')
                     print(f"\t{block['warnSchedDate']}", end='')
-                    print(f"\t{block['warnReqDate'][5:]}", end='')
+                    print(f"\t{warnReqDate}", end='')
                     print(f"\t{self.convertReqPortionStr(block['warnReqPortion'])}", end='')
                     print(f"\t{block['warnMoonIndex']}", end='')
                     print(f"\t{warnMoonPref}", end='')

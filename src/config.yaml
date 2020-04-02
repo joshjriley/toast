@@ -228,11 +228,16 @@
     # Score based on if scheduled moon index was met
     'schedMoonIndexScore': 2,
 
-    # Penalty if we didn't schedule requested date
+    # Penalty if we didn't schedule requested date or dateOptions
+    # NOTE: For date options, penalty will scale if we hit a lower priority date option
     'schedReqDatePenalty': -30,
 
     #penalty if we didn't schedule requested portion of night
     'schedReqPortionPenalty': -15,
+
+    # Penalty if we didn't schedule one of requested date options
+    # NOTE: Penalty will scale if we hit a lower priority date option
+    'schedReqDateOptionsPenalty': -30,
 
     #Penalty for blocks that could not be scheduled.
     #todo: is this too steep a penalty given we can manually adjust things later?

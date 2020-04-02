@@ -347,6 +347,10 @@ class SchedulerRandom(Scheduler):
         if self.isReqPortionMatch(block['reqPortion'], index, block['size']):
             score += self.config['reqPortionIndexScore']
 
+        #score added if we hit dateOptions
+        priority = self.getDateOptionMatchPriority(block, date)
+        if priority: score += self.config['reqDateOptionsScore'] * 1/priority
+
         #consider if split night, same instrument better than split different instrument
         if self.isScheduledInstrMatch(block['instr'], schedule, block['tel'], date):
             score += self.config['scheduledInstrMatchScore']
@@ -376,10 +380,6 @@ class SchedulerRandom(Scheduler):
         #score added if other slots are filled already on this date
         numBlocks = self.getNumBlocksScheduledOnDate(schedule, block['tel'], date)
         if numBlocks > 0: score += self.config['avoidEmptyDatesScore']
-
-        #score added if we hit dateOptions
-        priority = self.getDateOptionMatchPriority(block, date)
-        if priority: score += self.config['reqDateOptionsScore'] * 1/priority
 
         #todo: add priority target score
         #score += self.getTargetScore(date, block['ktn'], index, block['size'])
@@ -448,6 +448,21 @@ class SchedulerRandom(Scheduler):
                 if block['schedDate'] != block['reqDate']:
                     block['warnReqDate'] = block['reqDate']
 
+            #not scheduled on requested date options
+            block['warnReqDateOptions'] = ''
+            block['warnReqDatePerc'] = 0
+            if block['progInstr'] and 'dateOptions' in block['progInstr']:
+                opts = block['progInstr']['dateOptions']
+                if block['schedDate'] not in opts:
+                    block['warnReqDateOptions'] = list(opts)[0][5:]
+                    block['warnReqDatePerc'] = 1
+                    if len(opts) > 1: block['warnReqDateOptions'] += f'+'
+                else:
+                    priority = opts[block['schedDate']]
+                    if priority > 1:
+                        block['warnReqDateOptions'] = f'p{priority}'
+                        block['warnReqDatePerc'] = (priority-1)/10
+
             #not scheduled on requested portion of night
             block['warnReqPortion'] = ''
             if 'reqPortion' in block and block['reqPortion'] and block['schedIndex'] != None:
@@ -514,6 +529,10 @@ class SchedulerRandom(Scheduler):
             #Penalty score based on whether or not we hit requested date
             if block['warnReqDate']:
                 block['score'] += self.config['schedReqDatePenalty']
+
+            #Penalty score based on whether or not we hit requested date option
+            if block['warnReqDateOptions']:
+                block['score'] += self.config['schedReqDateOptionsPenalty'] * block['warnReqDatePerc']
 
             #Penalty score based on whether or not we hit requested portion
             if block['warnReqPortion']:
